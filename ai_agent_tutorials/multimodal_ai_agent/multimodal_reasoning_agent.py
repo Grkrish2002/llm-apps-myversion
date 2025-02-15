@@ -1,6 +1,7 @@
 import streamlit as st
 from phi.agent import Agent
 from phi.model.google import Gemini
+from phi.model.together import Together
 from phi.tools.duckduckgo import DuckDuckGo
 from dotenv import load_dotenv
 import google.generativeai as genai
@@ -16,7 +17,11 @@ genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
 def main():
     # Set up the reasoning agent
     agent = Agent(
-        model=Gemini(id="gemini-2.0-flash-thinking-exp-1219"), 
+        # model=Gemini(id="gemini-2.0-flash-thinking-exp-1219"), 
+        # model=Gemini(id="gemini-2.0-flash-thinking-exp"),
+        # model=Gemini(id="gemini-2.0-flash"),
+        model=Gemini(id="gemini-2.0-flash-001"),
+        # model=Gemini(id="gemini-2.0-pro-exp-02-05"),
         markdown=True
     )
 
