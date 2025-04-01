@@ -1,0 +1,3826 @@
+@prefix : <http://example.com/ontology/retail#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix retail: <http://example.org/ontology/retail#> .
+@prefix retail1: <http://example.org/ontology/retail/replenishment#> .
+@base <http://example.com/ontology/retail#> .
+
+<http://example.com/ontology/retail> rdf:type owl:Ontology ;
+                                      rdfs:comment "Ontology for Retail Forecasting & Replenishment" ,
+                                                   "Ontology for Retail Replenishment Optimization" ;
+                                      rdfs:label "Retail Replenishment Ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#boolean
+xsd:boolean rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#dateTime
+xsd:dateTime rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#decimal
+xsd:decimal rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#duration
+xsd:duration rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#integer
+xsd:integer rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#string
+xsd:string rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.com/ontology/retail#adjustmentInWarehouse
+:adjustmentInWarehouse rdf:type owl:ObjectProperty ;
+                       rdfs:domain :InventoryAdjustment ;
+                       rdfs:range :Warehouse ;
+                       rdfs:label "adjustment In Warehouse" .
+
+
+###  http://example.com/ontology/retail#adjustsItem
+:adjustsItem rdf:type owl:ObjectProperty ;
+             rdfs:domain :InventoryAdjustment ;
+             rdfs:range :Item ;
+             rdfs:label "adjusts Item" .
+
+
+###  http://example.com/ontology/retail#appliesToItem
+:appliesToItem rdf:type owl:ObjectProperty ;
+               rdfs:domain :ItemLocation ;
+               rdfs:range :Item ;
+               rdfs:label "applies To Item" .
+
+
+###  http://example.com/ontology/retail#appliesToLocation
+:appliesToLocation rdf:type owl:ObjectProperty ;
+                   rdfs:domain :ItemLocation ;
+                   rdfs:range :Location ;
+                   rdfs:label "applies To Location" .
+
+
+###  http://example.com/ontology/retail#assignedTo
+:assignedTo rdf:type owl:ObjectProperty ;
+            rdfs:domain :WarehouseTask ;
+            rdfs:range :Employee ;
+            rdfs:label "assigned To" .
+
+
+###  http://example.com/ontology/retail#authorizedBy
+:authorizedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :InventoryAdjustment ;
+              rdfs:range :Employee ;
+              rdfs:label "authorized By" .
+
+
+###  http://example.com/ontology/retail#billsTo
+:billsTo rdf:type owl:ObjectProperty ;
+         rdfs:domain :PurchaseOrder ;
+         rdfs:range :Location ;
+         rdfs:label "bills To" .
+
+
+###  http://example.com/ontology/retail#countPerformedIn
+:countPerformedIn rdf:type owl:ObjectProperty ;
+                  rdfs:domain :PhysicalInventoryCount ;
+                  rdfs:range :Warehouse ;
+                  rdfs:label "count Performed In" .
+
+
+###  http://example.com/ontology/retail#countedBy
+:countedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :PhysicalInventoryCountLine ;
+           rdfs:range :Employee ;
+           rdfs:label "counted By" .
+
+
+###  http://example.com/ontology/retail#createdBy
+:createdBy rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :PurchaseOrder
+                                       :TransferOrder
+                                     )
+                       ] ;
+           rdfs:range :Employee ;
+           rdfs:label "created By" .
+
+
+###  http://example.com/ontology/retail#forecastForItem
+:forecastForItem rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Forecast ;
+                 rdfs:range :Item ;
+                 rdfs:label "forecast For Item" .
+
+
+###  http://example.com/ontology/retail#forecastForLocation
+:forecastForLocation rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Forecast ;
+                     rdfs:range :Location ;
+                     rdfs:label "forecast For Location" .
+
+
+###  http://example.com/ontology/retail#hasConcept
+:hasConcept rdf:type owl:ObjectProperty ;
+            rdfs:domain :MovePhase ;
+            rdfs:range :WarehouseOperations ;
+            rdfs:label "Concept is a high level sub-process under phase" ,
+                       "has concept" .
+
+
+###  http://example.com/ontology/retail#hasItemLocationParameters
+:hasItemLocationParameters rdf:type owl:ObjectProperty ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( :Item
+                                                       :Location
+                                                     )
+                                       ] ;
+                           rdfs:range :ItemLocation ;
+                           rdfs:label "has Item Location Parameters" .
+
+
+###  http://example.com/ontology/retail#hasLineItem
+:hasLineItem rdf:type owl:ObjectProperty ;
+             owl:inverseOf :lineItemOf ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :PhysicalInventoryCount
+                                         :PurchaseOrder
+                                         :TransferOrder
+                                       )
+                         ] ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :PhysicalInventoryCountLine
+                                        :PurchaseOrderLine
+                                        :TransferOrderLine
+                                      )
+                        ] ;
+             rdfs:label "has Line Item" .
+
+
+###  http://example.com/ontology/retail#hasMasterClasses
+:hasMasterClasses rdf:type owl:ObjectProperty ;
+                  rdfs:domain :MovePhase ;
+                  rdfs:range :Master ;
+                  rdfs:comment "includes the master classes" ;
+                  rdfs:label "has master classes" .
+
+
+###  http://example.com/ontology/retail#hasStockType
+:hasStockType rdf:type owl:ObjectProperty ;
+              rdfs:domain :InventoryRecord ;
+              rdfs:range :StockType ;
+              rdfs:label "has Stock Type" .
+
+
+###  http://example.com/ontology/retail#hasStorageLocation
+:hasStorageLocation rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :isLocatedWithinWarehouse ;
+                    rdfs:domain :Warehouse ;
+                    rdfs:range :StorageLocation ;
+                    rdfs:label "has Storage Location" .
+
+
+###  http://example.com/ontology/retail#hasSupplier
+:hasSupplier rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isSupplierFor ;
+             rdfs:domain :PurchaseOrder ;
+             rdfs:range :Supplier ;
+             rdfs:label "has Supplier" .
+
+
+###  http://example.com/ontology/retail#influencesItem
+:influencesItem rdf:type owl:ObjectProperty ;
+                rdfs:domain :DemandInfluencingFactor ;
+                rdfs:range :Item ;
+                rdfs:label "influences Item" .
+
+
+###  http://example.com/ontology/retail#influencesLocation
+:influencesLocation rdf:type owl:ObjectProperty ;
+                    rdfs:domain :DemandInfluencingFactor ;
+                    rdfs:range :Location ;
+                    rdfs:label "influences Location" .
+
+
+###  http://example.com/ontology/retail#inventoryAtLocation
+:inventoryAtLocation rdf:type owl:ObjectProperty ;
+                     rdfs:domain :InventoryRecord ;
+                     rdfs:range :Location ;
+                     rdfs:label "inventory At Location" .
+
+
+###  http://example.com/ontology/retail#inventoryInStorageLocation
+:inventoryInStorageLocation rdf:type owl:ObjectProperty ;
+                            rdfs:domain :InventoryRecord ;
+                            rdfs:range :StorageLocation ;
+                            rdfs:label "inventory In Storage Location" .
+
+
+###  http://example.com/ontology/retail#inventoryOfItem
+:inventoryOfItem rdf:type owl:ObjectProperty ;
+                 rdfs:domain :InventoryRecord ;
+                 rdfs:range :Item ;
+                 rdfs:label "inventory Of Item" .
+
+
+###  http://example.com/ontology/retail#isLocatedWithinWarehouse
+:isLocatedWithinWarehouse rdf:type owl:ObjectProperty ;
+                          rdfs:domain :StorageLocation ;
+                          rdfs:range :Warehouse ;
+                          rdfs:label "is Located Within Warehouse" .
+
+
+###  http://example.com/ontology/retail#isSupplierFor
+:isSupplierFor rdf:type owl:ObjectProperty ;
+               rdfs:domain :Supplier ;
+               rdfs:range :PurchaseOrder ;
+               rdfs:label "is Supplier For" .
+
+
+###  http://example.com/ontology/retail#lineItemOf
+:lineItemOf rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :PhysicalInventoryCountLine
+                                        :PurchaseOrderLine
+                                        :TransferOrderLine
+                                      )
+                        ] ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :PhysicalInventoryCount
+                                       :PurchaseOrder
+                                       :TransferOrder
+                                     )
+                       ] ;
+            rdfs:label "line Item Of" .
+
+
+###  http://example.com/ontology/retail#recountedBy
+:recountedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :PhysicalInventoryCountLine ;
+             rdfs:range :Employee ;
+             rdfs:label "recounted By" .
+
+
+###  http://example.com/ontology/retail#referencesDocument
+:referencesDocument rdf:type owl:ObjectProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( :InventoryAdjustment
+                                                :WarehouseTask
+                                              )
+                                ] ;
+                    rdfs:range owl:Thing ;
+                    rdfs:label "references Document" .
+
+
+###  http://example.com/ontology/retail#referencesItem
+:referencesItem rdf:type owl:ObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :PhysicalInventoryCountLine
+                                            :PurchaseOrderLine
+                                            :TransferOrderLine
+                                          )
+                            ] ;
+                rdfs:range :Item ;
+                rdfs:label "references Item" .
+
+
+###  http://example.com/ontology/retail#referencesStockType
+:referencesStockType rdf:type owl:ObjectProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :InventoryAdjustment
+                                                 :PhysicalInventoryCountLine
+                                               )
+                                 ] ;
+                     rdfs:range :StockType ;
+                     rdfs:label "references Stock Type" .
+
+
+###  http://example.com/ontology/retail#referencesStorageLocation
+:referencesStorageLocation rdf:type owl:ObjectProperty ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( :InventoryAdjustment
+                                                       :PhysicalInventoryCountLine
+                                                       :WarehouseTask
+                                                     )
+                                       ] ;
+                           rdfs:range :StorageLocation ;
+                           rdfs:label "references Storage Location" .
+
+
+###  http://example.com/ontology/retail#scheduledBy
+:scheduledBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :PhysicalInventoryCount ;
+             rdfs:range :Employee ;
+             rdfs:label "scheduled By" .
+
+
+###  http://example.com/ontology/retail#shipsTo
+:shipsTo rdf:type owl:ObjectProperty ;
+         rdfs:domain :PurchaseOrder ;
+         rdfs:range :Location ;
+         rdfs:label "ships To" .
+
+
+###  http://example.com/ontology/retail#taskForItem
+:taskForItem rdf:type owl:ObjectProperty ;
+             rdfs:domain :WarehouseTask ;
+             rdfs:range :Item ;
+             rdfs:label "task For Item" .
+
+
+###  http://example.com/ontology/retail#taskFromLocation
+:taskFromLocation rdf:type owl:ObjectProperty ;
+                  rdfs:domain :WarehouseTask ;
+                  rdfs:range :StorageLocation ;
+                  rdfs:label "task From Location" .
+
+
+###  http://example.com/ontology/retail#taskInWarehouse
+:taskInWarehouse rdf:type owl:ObjectProperty ;
+                 rdfs:domain :WarehouseTask ;
+                 rdfs:range :Warehouse ;
+                 rdfs:label "task In Warehouse" .
+
+
+###  http://example.com/ontology/retail#taskToLocation
+:taskToLocation rdf:type owl:ObjectProperty ;
+                rdfs:domain :WarehouseTask ;
+                rdfs:range :StorageLocation ;
+                rdfs:label "task To Location" .
+
+
+###  http://example.com/ontology/retail#transfersFrom
+:transfersFrom rdf:type owl:ObjectProperty ;
+               rdfs:domain :TransferOrder ;
+               rdfs:range :Location ;
+               rdfs:label "transfers From" .
+
+
+###  http://example.com/ontology/retail#transfersTo
+:transfersTo rdf:type owl:ObjectProperty ;
+             rdfs:domain :TransferOrder ;
+             rdfs:range :Location ;
+             rdfs:label "transfers To" .
+
+
+###  http://example.com/ontology/retail#worksAt
+:worksAt rdf:type owl:ObjectProperty ;
+         rdfs:domain :Employee ;
+         rdfs:range :Warehouse ;
+         rdfs:label "works At" .
+
+
+###  http://example.org/ontology/retail#basedOnOrderProposal
+retail:basedOnOrderProposal rdf:type owl:ObjectProperty ;
+                            owl:inverseOf retail:generatesPurchaseOrder ;
+                            rdfs:domain retail:PurchaseOrder ;
+                            rdfs:range retail:OrderProposal ;
+                            rdfs:comment "Links a purchase order back to the order proposal it was created from (optional)." ;
+                            rdfs:label "based on order proposal" .
+
+
+###  http://example.org/ontology/retail#belongsToLocationHierarchy
+retail:belongsToLocationHierarchy rdf:type owl:ObjectProperty ;
+                                  rdfs:domain retail:Location ;
+                                  rdfs:range retail:LocationHierarchyNode ;
+                                  rdfs:comment "Links a Location to its node in the location hierarchy." ;
+                                  rdfs:label "belongs to location hierarchy" .
+
+
+###  http://example.org/ontology/retail#belongsToProductHierarchy
+retail:belongsToProductHierarchy rdf:type owl:ObjectProperty ;
+                                 rdfs:domain retail:Item ;
+                                 rdfs:range retail:ProductHierarchyNode ;
+                                 rdfs:comment "Links an Item to its node in the product hierarchy." ;
+                                 rdfs:label "belongs to product hierarchy" .
+
+
+###  http://example.org/ontology/retail#difLinkAffectsItem
+retail:difLinkAffectsItem rdf:type owl:ObjectProperty ;
+                          owl:inverseOf retail:isAffectedByDIFLink ;
+                          rdfs:domain retail:DIF_ItemLocationLink ;
+                          rdfs:range retail:Item ;
+                          rdfs:comment "Links a DIF association to the affected Item." ;
+                          rdfs:label "dif link affects item" .
+
+
+###  http://example.org/ontology/retail#difLinkAffectsLocation
+retail:difLinkAffectsLocation rdf:type owl:ObjectProperty ;
+                              owl:inverseOf retail:isAffectedAtLocationByDIFLink ;
+                              rdfs:domain retail:DIF_ItemLocationLink ;
+                              rdfs:range retail:Location ;
+                              rdfs:comment "Links a DIF association to the affected Location." ;
+                              rdfs:label "dif link affects location" .
+
+
+###  http://example.org/ontology/retail#difLinkForDIF
+retail:difLinkForDIF rdf:type owl:ObjectProperty ;
+                     owl:inverseOf retail:hasDIFLink ;
+                     rdfs:domain retail:DIF_ItemLocationLink ;
+                     rdfs:range retail:DemandInfluencingFactor ;
+                     rdfs:comment "Links a DIF association to the specific DIF." ;
+                     rdfs:label "dif link for dif" .
+
+
+###  http://example.org/ontology/retail#exceptionRelatedToForecast
+retail:exceptionRelatedToForecast rdf:type owl:ObjectProperty ;
+                                  rdfs:domain retail:ForecastException ;
+                                  rdfs:range retail:Forecast ;
+                                  rdfs:comment "Links a forecast exception to the specific forecast record." ;
+                                  rdfs:label "exception related to forecast" .
+
+
+###  http://example.org/ontology/retail#exceptionRelatedToItem
+retail:exceptionRelatedToItem rdf:type owl:ObjectProperty ;
+                              rdfs:domain retail:ExceptionLog ;
+                              rdfs:range retail:Item ;
+                              rdfs:comment "Links an exception log entry to a related item (optional)." ;
+                              rdfs:label "exception related to item" .
+
+
+###  http://example.org/ontology/retail#exceptionRelatedToLocation
+retail:exceptionRelatedToLocation rdf:type owl:ObjectProperty ;
+                                  rdfs:domain retail:ExceptionLog ;
+                                  rdfs:range retail:Location ;
+                                  rdfs:comment "Links an exception log entry to a related location (optional)." ;
+                                  rdfs:label "exception related to location" .
+
+
+###  http://example.org/ontology/retail#exceptionRelatedToOrderProposal
+retail:exceptionRelatedToOrderProposal rdf:type owl:ObjectProperty ;
+                                       rdfs:domain retail:ReplenishmentException ;
+                                       rdfs:range retail:OrderProposal ;
+                                       rdfs:comment "Links a replenishment exception to a related order proposal." ;
+                                       rdfs:label "exception related to order proposal" .
+
+
+###  http://example.org/ontology/retail#exceptionRelatedToPurchaseOrder
+retail:exceptionRelatedToPurchaseOrder rdf:type owl:ObjectProperty ;
+                                       rdfs:domain retail:ReplenishmentException ;
+                                       rdfs:range retail:PurchaseOrder ;
+                                       rdfs:comment "Links a replenishment exception to a related purchase order." ;
+                                       rdfs:label "exception related to purchase order" .
+
+
+###  http://example.org/ontology/retail#exceptionRelatedToRequirement
+retail:exceptionRelatedToRequirement rdf:type owl:ObjectProperty ;
+                                     rdfs:domain retail:ReplenishmentException ;
+                                     rdfs:range retail:ReplenishmentRequirement ;
+                                     rdfs:comment "Links a replenishment exception to a related requirement." ;
+                                     rdfs:label "exception related to requirement" .
+
+
+###  http://example.org/ontology/retail#forecastAppliesToLocation
+retail:forecastAppliesToLocation rdf:type owl:ObjectProperty ;
+                                 owl:inverseOf retail:hasForecastForLocation ;
+                                 rdfs:domain retail:Forecast ;
+                                 rdfs:range retail:Location ;
+                                 rdfs:comment "Links a forecast record to the location it applies to." ;
+                                 rdfs:label "forecast applies to location" .
+
+
+###  http://example.org/ontology/retail#forecastForTimePeriod
+retail:forecastForTimePeriod rdf:type owl:ObjectProperty ;
+                             owl:inverseOf retail:hasForecastInPeriod ;
+                             rdfs:domain retail:Forecast ;
+                             rdfs:range retail:TimePeriod ;
+                             rdfs:comment "Links a forecast record to the time period it covers." ;
+                             rdfs:label "forecast for time period" .
+
+
+###  http://example.org/ontology/retail#forecastsItem
+retail:forecastsItem rdf:type owl:ObjectProperty ;
+                     owl:inverseOf retail:hasForecast ;
+                     rdfs:domain retail:Forecast ;
+                     rdfs:range retail:Item ;
+                     rdfs:comment "Links a forecast record to the item being forecasted." ;
+                     rdfs:label "forecasts item" .
+
+
+###  http://example.org/ontology/retail#generatesOrderProposal
+retail:generatesOrderProposal rdf:type owl:ObjectProperty ;
+                              owl:inverseOf retail:originatesFromRequirement ;
+                              rdfs:domain retail:ReplenishmentRequirement ;
+                              rdfs:range retail:OrderProposal ;
+                              rdfs:comment "Links a replenishment requirement to the order proposal(s) generated from it." ;
+                              rdfs:label "generates order proposal" .
+
+
+###  http://example.org/ontology/retail#generatesPurchaseOrder
+retail:generatesPurchaseOrder rdf:type owl:ObjectProperty ;
+                              rdfs:domain retail:OrderProposal ;
+                              rdfs:range retail:PurchaseOrder ;
+                              rdfs:comment "Links an order proposal to the purchase order created from it." ;
+                              rdfs:label "generates purchase order" .
+
+
+###  http://example.org/ontology/retail#handledByUser
+retail:handledByUser rdf:type owl:ObjectProperty ;
+                     owl:inverseOf retail:handlesException ;
+                     rdfs:domain retail:ExceptionLog ;
+                     rdfs:range retail:User ;
+                     rdfs:comment "Links an exception log entry to the user who handled or resolved it." ;
+                     rdfs:label "handled by user" .
+
+
+###  http://example.org/ontology/retail#handlesException
+retail:handlesException rdf:type owl:ObjectProperty ;
+                        rdfs:domain retail:User ;
+                        rdfs:range retail:ExceptionLog ;
+                        rdfs:comment "Links a user to the exceptions they have handled." ;
+                        rdfs:label "handles exception" .
+
+
+###  http://example.org/ontology/retail#hasChildNode
+retail:hasChildNode rdf:type owl:ObjectProperty ;
+                    owl:inverseOf retail:hasParentNode ;
+                    rdfs:domain retail:HierarchyNode ;
+                    rdfs:range retail:HierarchyNode ;
+                    rdfs:comment "Links a hierarchy node to its child nodes." ;
+                    rdfs:label "has child node" .
+
+
+###  http://example.org/ontology/retail#hasDIFLink
+retail:hasDIFLink rdf:type owl:ObjectProperty ;
+                  rdfs:domain retail:DemandInfluencingFactor ;
+                  rdfs:range retail:DIF_ItemLocationLink ;
+                  rdfs:comment "Links a DIF to its specific item/location associations." ;
+                  rdfs:label "has dif link" .
+
+
+###  http://example.org/ontology/retail#hasForecast
+retail:hasForecast rdf:type owl:ObjectProperty ;
+                   rdfs:domain retail:Item ;
+                   rdfs:range retail:Forecast ;
+                   rdfs:comment "Links an item to its forecast records." ;
+                   rdfs:label "has forecast" .
+
+
+###  http://example.org/ontology/retail#hasForecastForLocation
+retail:hasForecastForLocation rdf:type owl:ObjectProperty ;
+                              rdfs:domain retail:Location ;
+                              rdfs:range retail:Forecast ;
+                              rdfs:comment "Links a location to its forecast records." ;
+                              rdfs:label "has forecast for location" .
+
+
+###  http://example.org/ontology/retail#hasForecastInPeriod
+retail:hasForecastInPeriod rdf:type owl:ObjectProperty ;
+                           rdfs:domain retail:TimePeriod ;
+                           rdfs:range retail:Forecast ;
+                           rdfs:comment "Links a time period to the forecasts applicable within it." ;
+                           rdfs:label "has forecast in period" .
+
+
+###  http://example.org/ontology/retail#hasLineItem
+retail:hasLineItem rdf:type owl:ObjectProperty ;
+                   owl:inverseOf retail:isPartOfPurchaseOrder ;
+                   rdfs:domain retail:PurchaseOrder ;
+                   rdfs:range retail:PurchaseOrderLine ;
+                   rdfs:comment "Links a purchase order to its constituent line items." ;
+                   rdfs:label "has line item" .
+
+
+###  http://example.org/ontology/retail#hasOrderProposal
+retail:hasOrderProposal rdf:type owl:ObjectProperty ;
+                        owl:inverseOf retail:proposesOrderItem ;
+                        rdfs:domain retail:Item ;
+                        rdfs:range retail:OrderProposal ;
+                        rdfs:comment "Links an item to the order proposals it is included in." ;
+                        rdfs:label "has order proposal" .
+
+
+###  http://example.org/ontology/retail#hasOrderProposalForLocation
+retail:hasOrderProposalForLocation rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf retail:proposesOrderForLocation ;
+                                   rdfs:domain retail:Location ;
+                                   rdfs:range retail:OrderProposal ;
+                                   rdfs:comment "Links a location to the order proposals destined for it." ;
+                                   rdfs:label "has order proposal for location" .
+
+
+###  http://example.org/ontology/retail#hasParameterSetForItem
+retail:hasParameterSetForItem rdf:type owl:ObjectProperty ;
+                              owl:inverseOf retail:parameterSetAppliesToItem ;
+                              rdfs:domain retail:Item ;
+                              rdfs:range retail:ForecastParameterSet ,
+                                         retail:ReplenishmentParameterSet ;
+                              rdfs:comment "Links an Item to its associated parameter sets." ;
+                              rdfs:label "has parameter set for item" .
+
+
+###  http://example.org/ontology/retail#hasParameterSetForLocation
+retail:hasParameterSetForLocation rdf:type owl:ObjectProperty ;
+                                  owl:inverseOf retail:parameterSetAppliesToLocation ;
+                                  rdfs:domain retail:Location ;
+                                  rdfs:range retail:ForecastParameterSet ,
+                                             retail:ReplenishmentParameterSet ;
+                                  rdfs:comment "Links a Location to its associated parameter sets." ;
+                                  rdfs:label "has parameter set for location" .
+
+
+###  http://example.org/ontology/retail#hasParentNode
+retail:hasParentNode rdf:type owl:ObjectProperty ;
+                     rdfs:domain retail:HierarchyNode ;
+                     rdfs:range retail:HierarchyNode ;
+                     rdfs:comment "Links a hierarchy node to its parent node." ;
+                     rdfs:label "has parent node" .
+
+
+###  http://example.org/ontology/retail#hasPreferredSupplier
+retail:hasPreferredSupplier rdf:type owl:ObjectProperty ;
+                            owl:inverseOf retail:isPreferredSupplierFor ;
+                            rdfs:domain retail:ReplenishmentParameterSet ;
+                            rdfs:range retail:Supplier ;
+                            rdfs:comment "Links replenishment parameters to an optional preferred supplier for the item/location." ;
+                            rdfs:label "has preferred supplier" .
+
+
+###  http://example.org/ontology/retail#hasPurchaseOrder
+retail:hasPurchaseOrder rdf:type owl:ObjectProperty ;
+                        owl:inverseOf retail:orderedFromSupplier ;
+                        rdfs:domain retail:Supplier ;
+                        rdfs:range retail:PurchaseOrder ;
+                        rdfs:comment "Links a supplier to the purchase orders placed with them." ;
+                        rdfs:label "has purchase order" .
+
+
+###  http://example.org/ontology/retail#hasRequirement
+retail:hasRequirement rdf:type owl:ObjectProperty ;
+                      owl:inverseOf retail:requirementForItem ;
+                      rdfs:domain retail:Item ;
+                      rdfs:range retail:ReplenishmentRequirement ;
+                      rdfs:comment "Links an item to its replenishment requirements." ;
+                      rdfs:label "has requirement" .
+
+
+###  http://example.org/ontology/retail#hasRequirementAtLocation
+retail:hasRequirementAtLocation rdf:type owl:ObjectProperty ;
+                                owl:inverseOf retail:requirementForLocation ;
+                                rdfs:domain retail:Location ;
+                                rdfs:range retail:ReplenishmentRequirement ;
+                                rdfs:comment "Links a location to its replenishment requirements." ;
+                                rdfs:label "has requirement at location" .
+
+
+###  http://example.org/ontology/retail#hasRequirementInPeriod
+retail:hasRequirementInPeriod rdf:type owl:ObjectProperty ;
+                              owl:inverseOf retail:requirementForTimePeriod ;
+                              rdfs:domain retail:TimePeriod ;
+                              rdfs:range retail:ReplenishmentRequirement ;
+                              rdfs:comment "Links a time period to the replenishment requirements within it." ;
+                              rdfs:label "has requirement in period" .
+
+
+###  http://example.org/ontology/retail#isAffectedAtLocationByDIFLink
+retail:isAffectedAtLocationByDIFLink rdf:type owl:ObjectProperty ;
+                                     rdfs:domain retail:Location ;
+                                     rdfs:range retail:DIF_ItemLocationLink ;
+                                     rdfs:comment "Links a Location to the DIF associations affecting it." ;
+                                     rdfs:label "is affected at location by dif link" .
+
+
+###  http://example.org/ontology/retail#isAffectedByDIFLink
+retail:isAffectedByDIFLink rdf:type owl:ObjectProperty ;
+                           rdfs:domain retail:Item ;
+                           rdfs:range retail:DIF_ItemLocationLink ;
+                           rdfs:comment "Links an Item to the DIF associations affecting it." ;
+                           rdfs:label "is affected by dif link" .
+
+
+###  http://example.org/ontology/retail#isOnPurchaseOrderLine
+retail:isOnPurchaseOrderLine rdf:type owl:ObjectProperty ;
+                             owl:inverseOf retail:ordersItem ;
+                             rdfs:domain retail:Item ;
+                             rdfs:range retail:PurchaseOrderLine ;
+                             rdfs:comment "Links an item to the purchase order lines it appears on." ;
+                             rdfs:label "is on purchase order line" .
+
+
+###  http://example.org/ontology/retail#isPartOfPurchaseOrder
+retail:isPartOfPurchaseOrder rdf:type owl:ObjectProperty ;
+                             rdfs:domain retail:PurchaseOrderLine ;
+                             rdfs:range retail:PurchaseOrder ;
+                             rdfs:comment "Links a purchase order line item back to its parent purchase order." ;
+                             rdfs:label "is part of purchase order" .
+
+
+###  http://example.org/ontology/retail#isPreferredSupplierFor
+retail:isPreferredSupplierFor rdf:type owl:ObjectProperty ;
+                              rdfs:domain retail:Supplier ;
+                              rdfs:range retail:ReplenishmentParameterSet ;
+                              rdfs:comment "Links a supplier to the item/location replenishment parameters where it's preferred." ;
+                              rdfs:label "is preferred supplier for" .
+
+
+###  http://example.org/ontology/retail#isProposedSupplierFor
+retail:isProposedSupplierFor rdf:type owl:ObjectProperty ;
+                             owl:inverseOf retail:proposesOrderFromSupplier ;
+                             rdfs:domain retail:Supplier ;
+                             rdfs:range retail:OrderProposal ;
+                             rdfs:comment "Links a supplier to the order proposals suggesting them." ;
+                             rdfs:label "is proposed supplier for" .
+
+
+###  http://example.org/ontology/retail#isUsedByParameterSet
+retail:isUsedByParameterSet rdf:type owl:ObjectProperty ;
+                            owl:inverseOf retail:usesReplenishmentModel ;
+                            rdfs:domain retail:ReplenishmentModel ;
+                            rdfs:range retail:ReplenishmentParameterSet ;
+                            rdfs:comment "Links a replenishment model to the parameter sets that use it." ;
+                            rdfs:label "is used by parameter set" .
+
+
+###  http://example.org/ontology/retail#orderedFromSupplier
+retail:orderedFromSupplier rdf:type owl:ObjectProperty ;
+                           rdfs:domain retail:PurchaseOrder ;
+                           rdfs:range retail:Supplier ;
+                           rdfs:comment "Links a purchase order to the supplier it is placed with." ;
+                           rdfs:label "ordered from supplier" .
+
+
+###  http://example.org/ontology/retail#ordersItem
+retail:ordersItem rdf:type owl:ObjectProperty ;
+                  rdfs:domain retail:PurchaseOrderLine ;
+                  rdfs:range retail:Item ;
+                  rdfs:comment "Links a purchase order line item to the specific item being ordered." ;
+                  rdfs:label "orders item" .
+
+
+###  http://example.org/ontology/retail#originatesFromRequirement
+retail:originatesFromRequirement rdf:type owl:ObjectProperty ;
+                                 rdfs:domain retail:OrderProposal ;
+                                 rdfs:range retail:ReplenishmentRequirement ;
+                                 rdfs:comment "Links an order proposal back to the requirement(s) that generated it." ;
+                                 rdfs:label "originates from requirement" .
+
+
+###  http://example.org/ontology/retail#parameterSetAppliesToItem
+retail:parameterSetAppliesToItem rdf:type owl:ObjectProperty ;
+                                 rdfs:domain retail:ForecastParameterSet ,
+                                             retail:ReplenishmentParameterSet ;
+                                 rdfs:range retail:Item ;
+                                 rdfs:comment "Links a parameter set to the Item it applies to (can be optional/global)." ;
+                                 rdfs:label "parameter set applies to item" .
+
+
+###  http://example.org/ontology/retail#parameterSetAppliesToLocation
+retail:parameterSetAppliesToLocation rdf:type owl:ObjectProperty ;
+                                     rdfs:domain retail:ForecastParameterSet ,
+                                                 retail:ReplenishmentParameterSet ;
+                                     rdfs:range retail:Location ;
+                                     rdfs:comment "Links a parameter set to the Location it applies to (can be optional/global)." ;
+                                     rdfs:label "parameter set applies to location" .
+
+
+###  http://example.org/ontology/retail#proposesOrderForLocation
+retail:proposesOrderForLocation rdf:type owl:ObjectProperty ;
+                                rdfs:domain retail:OrderProposal ;
+                                rdfs:range retail:Location ;
+                                rdfs:comment "Links an order proposal to the destination location." ;
+                                rdfs:label "proposes order for location" .
+
+
+###  http://example.org/ontology/retail#proposesOrderFromSupplier
+retail:proposesOrderFromSupplier rdf:type owl:ObjectProperty ;
+                                 rdfs:domain retail:OrderProposal ;
+                                 rdfs:range retail:Supplier ;
+                                 rdfs:comment "Links an order proposal to the suggested supplier." ;
+                                 rdfs:label "proposes order from supplier" .
+
+
+###  http://example.org/ontology/retail#proposesOrderItem
+retail:proposesOrderItem rdf:type owl:ObjectProperty ;
+                         rdfs:domain retail:OrderProposal ;
+                         rdfs:range retail:Item ;
+                         rdfs:comment "Links an order proposal to the item proposed for ordering." ;
+                         rdfs:label "proposes order item" .
+
+
+###  http://example.org/ontology/retail#receivesPurchaseOrder
+retail:receivesPurchaseOrder rdf:type owl:ObjectProperty ;
+                             owl:inverseOf retail:shipsToLocation ;
+                             rdfs:domain retail:Location ;
+                             rdfs:range retail:PurchaseOrder ;
+                             rdfs:comment "Links a location to the purchase orders destined for it." ;
+                             rdfs:label "receives purchase order" .
+
+
+###  http://example.org/ontology/retail#requirementForItem
+retail:requirementForItem rdf:type owl:ObjectProperty ;
+                          rdfs:domain retail:ReplenishmentRequirement ;
+                          rdfs:range retail:Item ;
+                          rdfs:comment "Links a replenishment requirement to the required item." ;
+                          rdfs:label "requirement for item" .
+
+
+###  http://example.org/ontology/retail#requirementForLocation
+retail:requirementForLocation rdf:type owl:ObjectProperty ;
+                              rdfs:domain retail:ReplenishmentRequirement ;
+                              rdfs:range retail:Location ;
+                              rdfs:comment "Links a replenishment requirement to the location where stock is required." ;
+                              rdfs:label "requirement for location" .
+
+
+###  http://example.org/ontology/retail#requirementForTimePeriod
+retail:requirementForTimePeriod rdf:type owl:ObjectProperty ;
+                                rdfs:domain retail:ReplenishmentRequirement ;
+                                rdfs:range retail:TimePeriod ;
+                                rdfs:comment "Links a replenishment requirement to the time period it is for." ;
+                                rdfs:label "requirement for time period" .
+
+
+###  http://example.org/ontology/retail#shipsToLocation
+retail:shipsToLocation rdf:type owl:ObjectProperty ;
+                       rdfs:domain retail:PurchaseOrder ;
+                       rdfs:range retail:Location ;
+                       rdfs:comment "Links a purchase order to its destination location." ;
+                       rdfs:label "ships to location" .
+
+
+###  http://example.org/ontology/retail#usesReplenishmentModel
+retail:usesReplenishmentModel rdf:type owl:ObjectProperty ;
+                              rdfs:domain retail:ReplenishmentParameterSet ;
+                              rdfs:range retail:ReplenishmentModel ;
+                              rdfs:comment "Links replenishment parameters to the replenishment model used." ;
+                              rdfs:label "uses replenishment model" .
+
+
+###  http://example.org/ontology/retail/replenishment#appliesToItem
+retail1:appliesToItem rdf:type owl:ObjectProperty ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( retail1:AlertThreshold
+                                                  retail1:InventoryTarget
+                                                  retail1:ReplenishmentParameter
+                                                  retail1:ReplenishmentPerformanceMetric
+                                                )
+                                  ] ;
+                      rdfs:range retail1:Item ;
+                      rdfs:label "applies to item" .
+
+
+###  http://example.org/ontology/retail/replenishment#appliesToLocation
+retail1:appliesToLocation rdf:type owl:ObjectProperty ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( retail1:AlertThreshold
+                                                      retail1:InventoryTarget
+                                                      retail1:ReplenishmentParameter
+                                                      retail1:ReplenishmentPerformanceMetric
+                                                    )
+                                      ] ;
+                          rdfs:range retail1:Location ;
+                          rdfs:label "applies to location" .
+
+
+###  http://example.org/ontology/retail/replenishment#appliesToLocationGroup
+retail1:appliesToLocationGroup rdf:type owl:ObjectProperty ;
+                               rdfs:domain [ rdf:type owl:Class ;
+                                             owl:unionOf ( retail1:AlertThreshold
+                                                           retail1:InventoryTarget
+                                                           retail1:ReplenishmentParameter
+                                                           retail1:ReplenishmentPerformanceMetric
+                                                         )
+                                           ] ;
+                               rdfs:range retail1:LocationGroup ;
+                               rdfs:label "applies to location group" .
+
+
+###  http://example.org/ontology/retail/replenishment#containsLocation
+retail1:containsLocation rdf:type owl:ObjectProperty ;
+                         owl:inverseOf retail1:isMemberOfGroup ;
+                         rdfs:domain retail1:LocationGroup ;
+                         rdfs:range retail1:Location ;
+                         rdfs:label "contains location" .
+
+
+###  http://example.org/ontology/retail/replenishment#isMemberOfGroup
+retail1:isMemberOfGroup rdf:type owl:ObjectProperty ;
+                        rdfs:domain retail1:Location ;
+                        rdfs:range retail1:LocationGroup ;
+                        rdfs:label "is member of group" .
+
+
+###  http://example.org/ontology/retail/replenishment#isSuppliedBy
+retail1:isSuppliedBy rdf:type owl:ObjectProperty ;
+                     owl:inverseOf retail1:suppliesItem ;
+                     rdfs:domain retail1:Item ;
+                     rdfs:range retail1:Supplier ;
+                     rdfs:label "is supplied by" .
+
+
+###  http://example.org/ontology/retail/replenishment#specifiedBySupplier
+retail1:specifiedBySupplier rdf:type owl:ObjectProperty ;
+                            rdfs:domain [ rdf:type owl:Class ;
+                                          owl:unionOf ( retail1:ReplenishmentParameter
+                                                        retail1:ReplenishmentPerformanceMetric
+                                                      )
+                                        ] ;
+                            rdfs:range retail1:Supplier ;
+                            rdfs:label "specified by supplier" .
+
+
+###  http://example.org/ontology/retail/replenishment#suppliesItem
+retail1:suppliesItem rdf:type owl:ObjectProperty ;
+                     rdfs:domain retail1:Supplier ;
+                     rdfs:range retail1:Item ;
+                     rdfs:label "supplies item" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.com/ontology/retail#actualReceiptDate
+:actualReceiptDate rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :TransferOrder ;
+                   rdfs:range xsd:date ;
+                   rdfs:comment "Actual event date" ;
+                   rdfs:label "actual Receipt Date" .
+
+
+###  http://example.com/ontology/retail#actualShipDate
+:actualShipDate rdf:type owl:DatatypeProperty ;
+                rdfs:domain :TransferOrder ;
+                rdfs:range xsd:date ;
+                rdfs:comment "Actual event date" ;
+                rdfs:label "actual Ship Date" .
+
+
+###  http://example.com/ontology/retail#address
+:address rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Supplier ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Supplier address" ;
+         rdfs:label "address" .
+
+
+###  http://example.com/ontology/retail#addressLine1
+:addressLine1 rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Location ;
+              rdfs:range xsd:string ;
+              rdfs:comment "`City`, `State`, `PostalCode`, `Country`: Physical address" ;
+              rdfs:label "address Line1" .
+
+
+###  http://example.com/ontology/retail#adjustmentID
+:adjustmentID rdf:type owl:DatatypeProperty ;
+              rdfs:domain :InventoryAdjustment ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Inventory adjustment ID" ;
+              rdfs:label "adjustment ID" .
+
+
+###  http://example.com/ontology/retail#adjustmentProcessed
+:adjustmentProcessed rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :PhysicalInventoryCountLine ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:comment "Flag indicating if an adjustment transaction was created" ;
+                     rdfs:label "adjustment Processed" .
+
+
+###  http://example.com/ontology/retail#adjustmentTimestamp
+:adjustmentTimestamp rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :InventoryAdjustment ;
+                     rdfs:range xsd:dateTime ;
+                     rdfs:comment "Date and time of the adjustment transaction" ;
+                     rdfs:label "adjustment Timestamp" .
+
+
+###  http://example.com/ontology/retail#adjustmentType
+:adjustmentType rdf:type owl:DatatypeProperty ;
+                rdfs:domain :InventoryAdjustment ;
+                rdfs:range xsd:string ;
+                rdfs:comment "'Damage', 'Expiry', 'Theft', 'Found', 'PICountGain', 'PICountLoss', 'QualityHoldRelease', 'StockTypeChange'" ;
+                rdfs:label "adjustment Type" .
+
+
+###  http://example.com/ontology/retail#alertThresholdMax
+:alertThresholdMax rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :ItemLocation ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:comment "Threshold for alert" ;
+                   rdfs:label "alert Threshold Max" .
+
+
+###  http://example.com/ontology/retail#alertThresholdMin
+:alertThresholdMin rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :ItemLocation ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:comment "Threshold for alert" ;
+                   rdfs:label "alert Threshold Min" .
+
+
+###  http://example.com/ontology/retail#batchNumber
+:batchNumber rdf:type owl:DatatypeProperty ;
+             rdfs:domain :InventoryRecord ;
+             rdfs:range xsd:string ;
+             rdfs:comment "If tracking batches/lots" ;
+             rdfs:label "batch Number" .
+
+
+###  http://example.com/ontology/retail#brandName
+:brandName rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Item ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Brand of the item" ;
+           rdfs:label "brand Name" .
+
+
+###  http://example.com/ontology/retail#capacityUOM
+:capacityUOM rdf:type owl:DatatypeProperty ;
+             rdfs:domain :StorageLocation ;
+             rdfs:range xsd:string ;
+             rdfs:comment "storage capacity" ;
+             rdfs:label "capacity UOM" .
+
+
+###  http://example.com/ontology/retail#city
+:city rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Location ;
+      rdfs:range xsd:string ;
+      rdfs:comment "Physical address city" ;
+      rdfs:label "city" .
+
+
+###  http://example.com/ontology/retail#completionTimestamp
+:completionTimestamp rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :WarehouseTask ;
+                     rdfs:range xsd:dateTime ;
+                     rdfs:comment "Warehouse task completion timestamp" ;
+                     rdfs:label "completion Timestamp" .
+
+
+###  http://example.com/ontology/retail#contactInfo
+:contactInfo rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Supplier ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Supplier contact details" ;
+             rdfs:label "contact Info" .
+
+
+###  http://example.com/ontology/retail#costPrice
+:costPrice rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Item ;
+           rdfs:range xsd:decimal ;
+           rdfs:comment "Standard cost of the item" ;
+           rdfs:label "cost Price" .
+
+
+###  http://example.com/ontology/retail#countDate
+:countDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :PhysicalInventoryCount ;
+           rdfs:range xsd:date ;
+           rdfs:comment "Date the count is performed/scheduled" ;
+           rdfs:label "count Date" .
+
+
+###  http://example.com/ontology/retail#countID
+:countID rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PhysicalInventoryCount ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Physical inventory count ID" ;
+         rdfs:label "count ID" .
+
+
+###  http://example.com/ontology/retail#countLineID
+:countLineID rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PhysicalInventoryCountLine ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Physical inventory count line ID" ;
+             rdfs:label "count Line ID" .
+
+
+###  http://example.com/ontology/retail#countStatus
+:countStatus rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PhysicalInventoryCount ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Physical inventory count status - 'Planned', 'InProgress', 'Completed', 'Reconciled'" ;
+             rdfs:label "count Status" .
+
+
+###  http://example.com/ontology/retail#countTimestamp
+:countTimestamp rdf:type owl:DatatypeProperty ;
+                rdfs:domain :PhysicalInventoryCountLine ;
+                rdfs:range xsd:dateTime ;
+                rdfs:comment "Time of the physical count" ;
+                rdfs:label "count Timestamp" .
+
+
+###  http://example.com/ontology/retail#countType
+:countType rdf:type owl:DatatypeProperty ;
+           rdfs:domain :PhysicalInventoryCount ;
+           rdfs:range xsd:string ;
+           rdfs:comment "'CycleCount', 'FullInventory', 'SpotCheck'" ;
+           rdfs:label "count Type" .
+
+
+###  http://example.com/ontology/retail#countedQuantity
+:countedQuantity rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :PhysicalInventoryCountLine ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:comment "Quantity physically counted (first count)" ;
+                 rdfs:label "counted Quantity" .
+
+
+###  http://example.com/ontology/retail#country
+:country rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Location ;
+         rdfs:range xsd:string ;
+         rdfs:comment "country part of address" ;
+         rdfs:label "country" .
+
+
+###  http://example.com/ontology/retail#creationDate
+:creationDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :TransferOrder ;
+              rdfs:range xsd:date ;
+              rdfs:comment "Date of creation of transfer order" ;
+              rdfs:label "creation Date" .
+
+
+###  http://example.com/ontology/retail#creationTimestamp
+:creationTimestamp rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :WarehouseTask ;
+                   rdfs:range xsd:dateTime ;
+                   rdfs:comment "warehouse task creation timestamp" ;
+                   rdfs:label "creation Timestamp" .
+
+
+###  http://example.com/ontology/retail#defaultLeadTimeDays
+:defaultLeadTimeDays rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Supplier ;
+                     rdfs:range xsd:integer ;
+                     rdfs:comment "Typical time from order placement to delivery" ;
+                     rdfs:label "default Lead Time Days" .
+
+
+###  http://example.com/ontology/retail#depth
+:depth rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Item ;
+       rdfs:range xsd:decimal ;
+       rdfs:comment "Physical characteristics relevant for storage and logistics" ;
+       rdfs:label "depth" .
+
+
+###  http://example.com/ontology/retail#description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Item ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Text description of the item" ;
+             rdfs:label "description" .
+
+
+###  http://example.com/ontology/retail#dimensionUOM
+:dimensionUOM rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Item ;
+              rdfs:range xsd:string ;
+              rdfs:comment "`Height`, `Width`, `Depth`, `WeightUOM`, `Weight`: Physical characteristics relevant for storage and logistics." ;
+              rdfs:label "dimension UOM" .
+
+
+###  http://example.com/ontology/retail#discrepancyQuantity
+:discrepancyQuantity rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :PhysicalInventoryCountLine ;
+                     rdfs:range xsd:decimal ;
+                     rdfs:comment "Calculated difference (Counted - System)" ;
+                     rdfs:label "discrepancy Quantity" .
+
+
+###  http://example.com/ontology/retail#employeeID
+:employeeID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Employee ;
+            rdfs:range xsd:string ;
+            rdfs:comment "employee ID" ;
+            rdfs:label "employee ID" .
+
+
+###  http://example.com/ontology/retail#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+         rdfs:domain :DemandInfluencingFactor ;
+         rdfs:range xsd:date ;
+         rdfs:comment "End date of period of influence" ;
+         rdfs:label "end Date" .
+
+
+###  http://example.com/ontology/retail#expectedDeliveryDate
+:expectedDeliveryDate rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :PurchaseOrder ;
+                      rdfs:range xsd:date ;
+                      rdfs:comment "Supplier's promised delivery date" ;
+                      rdfs:label "expected Delivery Date" .
+
+
+###  http://example.com/ontology/retail#expiryDate
+:expiryDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :InventoryRecord ;
+            rdfs:range xsd:date ;
+            rdfs:comment "expiry date if applicable" ;
+            rdfs:label "expiry Date" .
+
+
+###  http://example.com/ontology/retail#factorDescription
+:factorDescription rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :DemandInfluencingFactor ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Details of the factor" ;
+                   rdfs:label "factor Description" .
+
+
+###  http://example.com/ontology/retail#factorID
+:factorID rdf:type owl:DatatypeProperty ;
+          rdfs:domain :DemandInfluencingFactor ;
+          rdfs:range xsd:string ;
+          rdfs:comment "demand influencing factor ID" ;
+          rdfs:label "factor ID" .
+
+
+###  http://example.com/ontology/retail#factorType
+:factorType rdf:type owl:DatatypeProperty ;
+            rdfs:domain :DemandInfluencingFactor ;
+            rdfs:range xsd:string ;
+            rdfs:comment "e.g., 'Promotion', 'Holiday', 'Weather Event', 'Competitor Activity', 'Cannibalization'" ;
+            rdfs:label "factor Type" .
+
+
+###  http://example.com/ontology/retail#firstName
+:firstName rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Employee ;
+           rdfs:range xsd:string ;
+           rdfs:comment "first name of employee" ;
+           rdfs:label "first Name" .
+
+
+###  http://example.com/ontology/retail#forecastID
+:forecastID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Forecast ;
+            rdfs:range xsd:string ;
+            rdfs:comment "forecast ID" ;
+            rdfs:label "forecast ID" .
+
+
+###  http://example.com/ontology/retail#forecastPeriodEndDate
+:forecastPeriodEndDate rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Forecast ;
+                       rdfs:range xsd:date ;
+                       rdfs:comment "forecast period start date" ;
+                       rdfs:label "forecast Period End Date" .
+
+
+###  http://example.com/ontology/retail#forecastPeriodStartDate
+:forecastPeriodStartDate rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Forecast ;
+                         rdfs:range xsd:date ;
+                         rdfs:comment "forecast period end date" ;
+                         rdfs:label "forecast Period Start Date" .
+
+
+###  http://example.com/ontology/retail#forecastQuantity
+:forecastQuantity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Forecast ;
+                  rdfs:range xsd:decimal ;
+                  rdfs:comment "Predicted demand quantity" ;
+                  rdfs:label "forecast Quantity" .
+
+
+###  http://example.com/ontology/retail#forecastType
+:forecastType rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Forecast ;
+              rdfs:range xsd:string ;
+              rdfs:comment "e.g., Statistical, Manual Override, Consensus" ;
+              rdfs:label "forecast Type" .
+
+
+###  http://example.com/ontology/retail#forecastVersion
+:forecastVersion rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Forecast ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Identifier for different forecast runs/versions" ;
+                 rdfs:label "forecast Version" .
+
+
+###  http://example.com/ontology/retail#generatedTimestamp
+:generatedTimestamp rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Forecast ;
+                    rdfs:range xsd:dateTime ;
+                    rdfs:comment "When the forecast was calculated" ;
+                    rdfs:label "generated Timestamp" .
+
+
+###  http://example.com/ontology/retail#height
+:height rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Item ;
+        rdfs:range xsd:decimal ;
+        rdfs:comment "Physical characteristics relevant for storage and logistics" ;
+        rdfs:label "height" .
+
+
+###  http://example.com/ontology/retail#hierarchyLevel1
+:hierarchyLevel1 rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Item ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Product category, department, class, subclass, etc" ;
+                 rdfs:label "hierarchy Level1" .
+
+
+###  http://example.com/ontology/retail#hierarchyLevelN
+:hierarchyLevelN rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Item ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Product category, department, class, subclass, etc" ;
+                 rdfs:label "hierarchy Level N" .
+
+
+###  http://example.com/ontology/retail#impactMagnitude
+:impactMagnitude rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :DemandInfluencingFactor ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Qualitative or quantitative measure of impact" ;
+                 rdfs:label "impact Magnitude" .
+
+
+###  http://example.com/ontology/retail#inventoryRecordID
+:inventoryRecordID rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :InventoryRecord ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Inventory record id" ;
+                   rdfs:label "inventory Record ID" .
+
+
+###  http://example.com/ontology/retail#inventoryUnitOfMeasure
+:inventoryUnitOfMeasure rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :InventoryRecord ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "(e.g., Each, Case) - should align with Item UOM or have conversion" ;
+                        rdfs:label "inventory Unit Of Measure" .
+
+
+###  http://example.com/ontology/retail#isAvailableForSale
+:isAvailableForSale rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :StockType ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:comment "Boolean indicating if stock can be sold/fulfilled" ;
+                    rdfs:label "is Available For Sale" .
+
+
+###  http://example.com/ontology/retail#isAvailableForTransfer
+:isAvailableForTransfer rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :StockType ;
+                        rdfs:range xsd:boolean ;
+                        rdfs:comment "Boolean indicating if stock can be moved internally" ;
+                        rdfs:label "is Available For Transfer" .
+
+
+###  http://example.com/ontology/retail#itemID
+:itemID rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Item ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Unique identifier for the item" ;
+        rdfs:label "item ID" .
+
+
+###  http://example.com/ontology/retail#itemLocationID
+:itemLocationID rdf:type owl:DatatypeProperty ;
+                rdfs:domain :ItemLocation ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Item location ID" ;
+                rdfs:label "item Location ID" .
+
+
+###  http://example.com/ontology/retail#lastCountTimestamp
+:lastCountTimestamp rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :InventoryRecord ;
+                    rdfs:range xsd:dateTime ;
+                    rdfs:comment "When this stock was last physically verified" ;
+                    rdfs:label "last Count Timestamp" .
+
+
+###  http://example.com/ontology/retail#lastName
+:lastName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Employee ;
+          rdfs:range xsd:string ;
+          rdfs:comment "last name of employee" ;
+          rdfs:label "last Name" .
+
+
+###  http://example.com/ontology/retail#lifecycleStatus
+:lifecycleStatus rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Item ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "e.g., Active, Discontinued, Seasonal" ;
+                 rdfs:label "lifecycle Status" .
+
+
+###  http://example.com/ontology/retail#lineStatus
+:lineStatus rdf:type owl:DatatypeProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :PurchaseOrderLine
+                                        :TransferOrderLine
+                                      )
+                        ] ;
+            rdfs:range xsd:string ;
+            rdfs:comment """Purchase order line: e.g., 'Open', 'Partially Received', 'Closed'
+Transfer order line: e.g., 'Open', 'Shipped', 'Received'""" ;
+            rdfs:label "line Status" .
+
+
+###  http://example.com/ontology/retail#locationCode
+:locationCode rdf:type owl:DatatypeProperty ;
+              rdfs:domain :StorageLocation ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Human-readable code (e.g., Aisle 01, Rack 02, Bin 03)" ;
+              rdfs:label "location Code" .
+
+
+###  http://example.com/ontology/retail#locationID
+:locationID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Location ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Unique identifier for the location" ;
+            rdfs:label "location ID" .
+
+
+###  http://example.com/ontology/retail#locationName
+:locationName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Location ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Name of the store or warehouse" ;
+              rdfs:label "location Name" .
+
+
+###  http://example.com/ontology/retail#locationType
+:locationType rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Location ;
+              rdfs:range xsd:string ;
+              rdfs:comment "e.g., 'Store', 'DistributionCenter', 'Depot'" ;
+              rdfs:label "location Type" .
+
+
+###  http://example.com/ontology/retail#lotNumber
+:lotNumber rdf:type owl:DatatypeProperty ;
+           rdfs:domain :InventoryRecord ;
+           rdfs:range xsd:string ;
+           rdfs:comment "If tracking batches/lots" ;
+           rdfs:label "lot Number" .
+
+
+###  http://example.com/ontology/retail#maxCapacity
+:maxCapacity rdf:type owl:DatatypeProperty ;
+             rdfs:domain :StorageLocation ;
+             rdfs:range xsd:decimal ;
+             rdfs:comment "storage capacity" ;
+             rdfs:label "max Capacity" .
+
+
+###  http://example.com/ontology/retail#minimumOrderQuantity
+:minimumOrderQuantity rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Supplier ;
+                      rdfs:range xsd:decimal ;
+                      rdfs:comment "ordering constraints" ;
+                      rdfs:label "minimum Order Quantity" .
+
+
+###  http://example.com/ontology/retail#minimumOrderValue
+:minimumOrderValue rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Supplier ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:comment "ordering constraints" ;
+                   rdfs:label "minimum Order Value" .
+
+
+###  http://example.com/ontology/retail#operationalStatus
+:operationalStatus rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Location ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "e.g., Open, Closed, Under Construction" ;
+                   rdfs:label "operational Status" .
+
+
+###  http://example.com/ontology/retail#orderDate
+:orderDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :PurchaseOrder ;
+           rdfs:range xsd:date ;
+           rdfs:comment "Date the order was created/placed" ;
+           rdfs:label "order Date" .
+
+
+###  http://example.com/ontology/retail#orderStatus
+:orderStatus rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PurchaseOrder ;
+             rdfs:range xsd:string ;
+             rdfs:comment "e.g., 'Planned', 'Submitted', 'Confirmed', 'Partially Received', 'Received', 'Cancelled'" ;
+             rdfs:label "order Status" .
+
+
+###  http://example.com/ontology/retail#orderUpToLevelQuantity
+:orderUpToLevelQuantity rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :ItemLocation ;
+                        rdfs:range xsd:decimal ;
+                        rdfs:comment "Target inventory level after replenishment" ;
+                        rdfs:label "order Up To Level Quantity" .
+
+
+###  http://example.com/ontology/retail#orderedQuantity
+:orderedQuantity rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :PurchaseOrderLine ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:comment "Quantity requested" ;
+                 rdfs:label "ordered Quantity" .
+
+
+###  http://example.com/ontology/retail#paymentTerms
+:paymentTerms rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Supplier ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Agreed payment terms" ;
+              rdfs:label "payment Terms" .
+
+
+###  http://example.com/ontology/retail#phoneNumber
+:phoneNumber rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Location ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Contact number" ;
+             rdfs:label "phone Number" .
+
+
+###  http://example.com/ontology/retail#pickSequence
+:pickSequence rdf:type owl:DatatypeProperty ;
+              rdfs:domain :StorageLocation ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "Order for picking optimization" ;
+              rdfs:label "pick Sequence" .
+
+
+###  http://example.com/ontology/retail#postalCode
+:postalCode rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Location ;
+            rdfs:range xsd:string ;
+            rdfs:comment "postal code for location address" ;
+            rdfs:label "postal Code" .
+
+
+###  http://example.com/ontology/retail#priority
+:priority rdf:type owl:DatatypeProperty ;
+          rdfs:domain :WarehouseTask ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "Task priority level" ;
+          rdfs:label "priority" .
+
+
+###  http://example.com/ontology/retail#purchaseOrderID
+:purchaseOrderID rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :PurchaseOrder ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "purchase order ID" ;
+                 rdfs:label "purchase Order ID" .
+
+
+###  http://example.com/ontology/retail#purchaseOrderLineID
+:purchaseOrderLineID rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :PurchaseOrderLine ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "purchase order line ID" ;
+                     rdfs:label "purchase Order Line ID" .
+
+
+###  http://example.com/ontology/retail#quantityAdjusted
+:quantityAdjusted rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :InventoryAdjustment ;
+                  rdfs:range xsd:decimal ;
+                  rdfs:comment "The change in quantity (+ve for gain, -ve for loss)" ;
+                  rdfs:label "quantity Adjusted" .
+
+
+###  http://example.com/ontology/retail#quantityOnHand
+:quantityOnHand rdf:type owl:DatatypeProperty ;
+                rdfs:domain :InventoryRecord ;
+                rdfs:range xsd:decimal ;
+                rdfs:comment "Current physical quantity" ;
+                rdfs:label "quantity On Hand" .
+
+
+###  http://example.com/ontology/retail#reasonCode
+:reasonCode rdf:type owl:DatatypeProperty ;
+            rdfs:domain :InventoryAdjustment ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Specific reason for the adjustment" ;
+            rdfs:label "reason Code" .
+
+
+###  http://example.com/ontology/retail#receiptDate
+:receiptDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :InventoryRecord ;
+             rdfs:range xsd:date ;
+             rdfs:comment "When this stock arrived" ;
+             rdfs:label "receipt Date" .
+
+
+###  http://example.com/ontology/retail#receivedQuantity
+:receivedQuantity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :PurchaseOrderLine
+                                              :TransferOrderLine
+                                            )
+                              ] ;
+                  rdfs:range xsd:decimal ;
+                  rdfs:comment "Quantity actually received against this line so far" ;
+                  rdfs:label "received Quantity" .
+
+
+###  http://example.com/ontology/retail#receivingDockCount
+:receivingDockCount rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Warehouse ;
+                    rdfs:range xsd:integer ;
+                    rdfs:comment "Number of receiving docks" ;
+                    rdfs:label "receiving Dock Count" .
+
+
+###  http://example.com/ontology/retail#recountTimestamp
+:recountTimestamp rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :PhysicalInventoryCountLine ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:comment "Time of recount" ;
+                  rdfs:label "recount Timestamp" .
+
+
+###  http://example.com/ontology/retail#recountedQuantity
+:recountedQuantity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :PhysicalInventoryCountLine ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:comment "Quantity from recount" ;
+                   rdfs:label "recounted Quantity" .
+
+
+###  http://example.com/ontology/retail#referenceDocumentIDValue
+:referenceDocumentIDValue rdf:type owl:DatatypeProperty ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( :InventoryAdjustment
+                                                      :WarehouseTask
+                                                    )
+                                      ] ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "Link to PO, SO, TO, CountID etc" ;
+                          rdfs:label "reference Document IDValue" .
+
+
+###  http://example.com/ontology/retail#reorderPointQuantity
+:reorderPointQuantity rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :ItemLocation ;
+                      rdfs:range xsd:decimal ;
+                      rdfs:comment "Inventory level triggering replenishment" ;
+                      rdfs:label "reorder Point Quantity" .
+
+
+###  http://example.com/ontology/retail#replenishmentModelType
+:replenishmentModelType rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :ItemLocation ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "e.g., ROP, Min/Max, Time-Phased" ;
+                        rdfs:label "replenishment Model Type" .
+
+
+###  http://example.com/ontology/retail#replenishmentStatus
+:replenishmentStatus rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :ItemLocation ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Active/Inactive for replenishment" ;
+                     rdfs:label "replenishment Status" .
+
+
+###  http://example.com/ontology/retail#requestedQuantity
+:requestedQuantity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :TransferOrderLine ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:comment "Quantity requested for transfer" ;
+                   rdfs:label "requested Quantity" .
+
+
+###  http://example.com/ontology/retail#requestedReceiptDate
+:requestedReceiptDate rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :TransferOrder ;
+                      rdfs:range xsd:date ;
+                      rdfs:comment "Target date requested for receipt" ;
+                      rdfs:label "requested Receipt Date" .
+
+
+###  http://example.com/ontology/retail#requestedShipDate
+:requestedShipDate rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :TransferOrder ;
+                   rdfs:range xsd:date ;
+                   rdfs:comment "Target date requested for shipping" ;
+                   rdfs:label "requested Ship Date" .
+
+
+###  http://example.com/ontology/retail#reviewFrequencyDays
+:reviewFrequencyDays rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :ItemLocation ;
+                     rdfs:range xsd:integer ;
+                     rdfs:comment "How often replenishment is reviewed" ;
+                     rdfs:label "review Frequency Days" .
+
+
+###  http://example.com/ontology/retail#role
+:role rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Employee ;
+      rdfs:range xsd:string ;
+      rdfs:comment "Job title or role (e.g., 'Warehouse Operator', 'Inventory Analyst', 'Manager'" ;
+      rdfs:label "role" .
+
+
+###  http://example.com/ontology/retail#safetyStockQuantity
+:safetyStockQuantity rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :ItemLocation ;
+                     rdfs:range xsd:decimal ;
+                     rdfs:comment "Buffer stock level" ;
+                     rdfs:label "safety Stock Quantity" .
+
+
+###  http://example.com/ontology/retail#salesPrice
+:salesPrice rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Item ;
+            rdfs:range xsd:decimal ;
+            rdfs:comment "Standard retail price" ;
+            rdfs:label "sales Price" .
+
+
+###  http://example.com/ontology/retail#shippedQuantity
+:shippedQuantity rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :TransferOrderLine ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:comment "Quantity actually shipped" ;
+                 rdfs:label "shipped Quantity" .
+
+
+###  http://example.com/ontology/retail#shippingDockCount
+:shippingDockCount rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Warehouse ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "Number of shipping docks" ;
+                   rdfs:label "shipping Dock Count" .
+
+
+###  http://example.com/ontology/retail#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :DemandInfluencingFactor ;
+           rdfs:range xsd:date ;
+           rdfs:comment "Period of influence" ;
+           rdfs:label "start Date" .
+
+
+###  http://example.com/ontology/retail#state
+:state rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Location ;
+       rdfs:range xsd:string ;
+       rdfs:comment "state code for location" ;
+       rdfs:label "state" .
+
+
+###  http://example.com/ontology/retail#stockTypeDescription
+:stockTypeDescription rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :StockType ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "e.g., 'Unrestricted', 'Quality Inspection', 'Blocked', 'Returns', 'In-Transit'" ;
+                      rdfs:label "stock Type Description" .
+
+
+###  http://example.com/ontology/retail#stockTypeID
+:stockTypeID rdf:type owl:DatatypeProperty ;
+             rdfs:domain :StockType ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Stock type ID" ;
+             rdfs:label "stock Type ID" .
+
+
+###  http://example.com/ontology/retail#storageLocationID
+:storageLocationID rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :StorageLocation ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Unique identifier for a specific bin, rack, or area within a warehouse" ;
+                   rdfs:label "storage Location ID" .
+
+
+###  http://example.com/ontology/retail#storageLocationType
+:storageLocationType rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :StorageLocation ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "e.g., 'BulkStorage', 'PickFace', 'ReceivingStaging', 'ShippingStaging', 'QualityInspection', 'DamagedGoodsArea', 'ReturnsArea'" ;
+                     rdfs:label "storage Location Type" .
+
+
+###  http://example.com/ontology/retail#supplierID
+:supplierID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Supplier ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Unique identifier for the supplier" ;
+            rdfs:label "supplier ID" .
+
+
+###  http://example.com/ontology/retail#supplierName
+:supplierName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Supplier ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Legal name of the supplier" ;
+              rdfs:label "supplier Name" .
+
+
+###  http://example.com/ontology/retail#systemQuantity
+:systemQuantity rdf:type owl:DatatypeProperty ;
+                rdfs:domain :PhysicalInventoryCountLine ;
+                rdfs:range xsd:decimal ;
+                rdfs:comment "Quantity expected according to system records at count start" ;
+                rdfs:label "system Quantity" .
+
+
+###  http://example.com/ontology/retail#targetInventoryValue
+:targetInventoryValue rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :ItemLocation ;
+                      rdfs:range xsd:decimal ;
+                      rdfs:comment "Strategic inventory target value" ;
+                      rdfs:label "target Inventory Value" .
+
+
+###  http://example.com/ontology/retail#taskID
+:taskID rdf:type owl:DatatypeProperty ;
+        rdfs:domain :WarehouseTask ;
+        rdfs:range xsd:string ;
+        rdfs:comment "warehouse task id" ;
+        rdfs:label "task ID" .
+
+
+###  http://example.com/ontology/retail#taskQuantity
+:taskQuantity rdf:type owl:DatatypeProperty ;
+              rdfs:domain :WarehouseTask ;
+              rdfs:range xsd:decimal ;
+              rdfs:comment "task quantity" ;
+              rdfs:label "task Quantity" .
+
+
+###  http://example.com/ontology/retail#taskStatus
+:taskStatus rdf:type owl:DatatypeProperty ;
+            rdfs:domain :WarehouseTask ;
+            rdfs:range xsd:string ;
+            rdfs:comment "'Pending', 'Assigned', 'InProgress', 'Completed', 'Cancelled'" ;
+            rdfs:label "task Status" .
+
+
+###  http://example.com/ontology/retail#taskType
+:taskType rdf:type owl:DatatypeProperty ;
+          rdfs:domain :WarehouseTask ;
+          rdfs:range xsd:string ;
+          rdfs:comment "'Putaway', 'Picking', 'Replenishment', 'CycleCount', 'StockTransfer', 'Packing', 'Loading'" ;
+          rdfs:label "task Type" .
+
+
+###  http://example.com/ontology/retail#temperatureZone
+:temperatureZone rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :StorageLocation ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Specific zone if applicable" ;
+                 rdfs:label "temperature Zone" .
+
+
+###  http://example.com/ontology/retail#temperatureZoneCapabilities
+:temperatureZoneCapabilities rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Warehouse ;
+                             rdfs:range xsd:string ;
+                             rdfs:comment "e.g., Ambient, Chilled, Frozen" ;
+                             rdfs:label "temperature Zone Capabilities" .
+
+
+###  http://example.com/ontology/retail#totalOrderAmount
+:totalOrderAmount rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :PurchaseOrder ;
+                  rdfs:range xsd:decimal ;
+                  rdfs:comment "Calculated total value" ;
+                  rdfs:label "total Order Amount" .
+
+
+###  http://example.com/ontology/retail#totalStorageCapacity
+:totalStorageCapacity rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Warehouse ;
+                      rdfs:range xsd:decimal ;
+                      rdfs:comment "Overall capacity" ;
+                      rdfs:label "total Storage Capacity" .
+
+
+###  http://example.com/ontology/retail#transferOrderID
+:transferOrderID rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :TransferOrder ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "transfer order ID" ;
+                 rdfs:label "transfer Order ID" .
+
+
+###  http://example.com/ontology/retail#transferOrderLineID
+:transferOrderLineID rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :TransferOrderLine ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "transfer order line ID" ;
+                     rdfs:label "transfer Order Line ID" .
+
+
+###  http://example.com/ontology/retail#transferOrderStatus
+:transferOrderStatus rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :TransferOrder ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "e.g., 'Planned', 'Released', 'In Transit', 'Received'" ;
+                     rdfs:label "transfer Order Status" .
+
+
+###  http://example.com/ontology/retail#transferReason
+:transferReason rdf:type owl:DatatypeProperty ;
+                rdfs:domain :TransferOrder ;
+                rdfs:range xsd:string ;
+                rdfs:comment "e.g., 'Stock Balancing', 'Store Replenishment'" ;
+                rdfs:label "transfer Reason" .
+
+
+###  http://example.com/ontology/retail#unitCost
+:unitCost rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PurchaseOrderLine ;
+          rdfs:range xsd:decimal ;
+          rdfs:comment "Agreed cost per unit for this order" ;
+          rdfs:label "unit Cost" .
+
+
+###  http://example.com/ontology/retail#unitOfMeasure
+:unitOfMeasure rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Item ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Base unit for inventory and ordering" ;
+               rdfs:label "unit Of Measure" .
+
+
+###  http://example.com/ontology/retail#weight
+:weight rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Item ;
+        rdfs:range xsd:decimal ;
+        rdfs:comment "Physical characteristics relevant for storage and logistics" ;
+        rdfs:label "weight" .
+
+
+###  http://example.com/ontology/retail#weightUOM
+:weightUOM rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Item ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Physical characteristics relevant for storage and logistics" ;
+           rdfs:label "weight UOM" .
+
+
+###  http://example.com/ontology/retail#width
+:width rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Item ;
+       rdfs:range xsd:decimal ;
+       rdfs:comment "Physical characteristics relevant for storage and logistics" ;
+       rdfs:label "width" .
+
+
+###  http://example.org/ontology/retail#hasAddress
+retail:hasAddress rdf:type owl:DatatypeProperty ;
+                  rdfs:domain retail:Location ,
+                              retail:Supplier ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "has address" .
+
+
+###  http://example.org/ontology/retail#hasCalculationTimestamp
+retail:hasCalculationTimestamp rdf:type owl:DatatypeProperty ;
+                               rdfs:domain retail:Forecast ,
+                                           retail:ReplenishmentRequirement ;
+                               rdfs:range xsd:dateTime ;
+                               rdfs:label "has calculation timestamp" .
+
+
+###  http://example.org/ontology/retail#hasContactInfo
+retail:hasContactInfo rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail:Supplier ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "has contact info" .
+
+
+###  http://example.org/ontology/retail#hasCreationTimestamp
+retail:hasCreationTimestamp rdf:type owl:DatatypeProperty ;
+                            rdfs:domain retail:OrderProposal ,
+                                        retail:PurchaseOrder ;
+                            rdfs:range xsd:dateTime ;
+                            rdfs:label "has creation timestamp" .
+
+
+###  http://example.org/ontology/retail#hasDIF_ID
+retail:hasDIF_ID rdf:type owl:DatatypeProperty ;
+                 rdfs:domain retail:DemandInfluencingFactor ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has DIF ID" .
+
+
+###  http://example.org/ontology/retail#hasDIF_Item_Location_ID
+retail:hasDIF_Item_Location_ID rdf:type owl:DatatypeProperty ;
+                               rdfs:domain retail:DIF_ItemLocationLink ;
+                               rdfs:range xsd:string ;
+                               rdfs:label "has DIF Item Location ID" .
+
+
+###  http://example.org/ontology/retail#hasDIF_Name
+retail:hasDIF_Name rdf:type owl:DatatypeProperty ;
+                   rdfs:domain retail:DemandInfluencingFactor ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "has DIF Name" .
+
+
+###  http://example.org/ontology/retail#hasDIF_Type
+retail:hasDIF_Type rdf:type owl:DatatypeProperty ;
+                   rdfs:domain retail:DemandInfluencingFactor ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "has DIF Type" .
+
+
+###  http://example.org/ontology/retail#hasDate
+retail:hasDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain retail:TimePeriod ;
+               rdfs:range xsd:date ;
+               rdfs:label "has date" .
+
+
+###  http://example.org/ontology/retail#hasDayOfWeek
+retail:hasDayOfWeek rdf:type owl:DatatypeProperty ;
+                    rdfs:domain retail:TimePeriod ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "has day of week" .
+
+
+###  http://example.org/ontology/retail#hasDefaultLeadTimeDays
+retail:hasDefaultLeadTimeDays rdf:type owl:DatatypeProperty ;
+                              rdfs:domain retail:Supplier ;
+                              rdfs:range xsd:integer ;
+                              rdfs:label "has default lead time days" .
+
+
+###  http://example.org/ontology/retail#hasDescription
+retail:hasDescription rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail:ExceptionLog ,
+                                  retail:Item ,
+                                  retail:ReplenishmentModel ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "has description" .
+
+
+###  http://example.org/ontology/retail#hasEffectiveEndDate
+retail:hasEffectiveEndDate rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail:DemandInfluencingFactor ,
+                                       retail:ForecastParameterSet ,
+                                       retail:ReplenishmentParameterSet ;
+                           rdfs:range xsd:date ;
+                           rdfs:label "has effective end date" .
+
+
+###  http://example.org/ontology/retail#hasEffectiveStartDate
+retail:hasEffectiveStartDate rdf:type owl:DatatypeProperty ;
+                             rdfs:domain retail:DemandInfluencingFactor ,
+                                         retail:ForecastParameterSet ,
+                                         retail:ReplenishmentParameterSet ;
+                             rdfs:range xsd:date ;
+                             rdfs:label "has effective start date" .
+
+
+###  http://example.org/ontology/retail#hasExceptionID
+retail:hasExceptionID rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail:ExceptionLog ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "has exception ID" .
+
+
+###  http://example.org/ontology/retail#hasExceptionTimestamp
+retail:hasExceptionTimestamp rdf:type owl:DatatypeProperty ;
+                             rdfs:domain retail:ExceptionLog ;
+                             rdfs:range xsd:dateTime ;
+                             rdfs:label "has exception timestamp" .
+
+
+###  http://example.org/ontology/retail#hasExceptionType
+retail:hasExceptionType rdf:type owl:DatatypeProperty ;
+                        rdfs:domain retail:ExceptionLog ;
+                        rdfs:range xsd:string ;
+                        rdfs:label "has exception type" .
+
+
+###  http://example.org/ontology/retail#hasExpectedDeliveryDate
+retail:hasExpectedDeliveryDate rdf:type owl:DatatypeProperty ;
+                               rdfs:domain retail:PurchaseOrder ;
+                               rdfs:range xsd:date ;
+                               rdfs:label "has expected delivery date" .
+
+
+###  http://example.org/ontology/retail#hasExpectedImpact
+retail:hasExpectedImpact rdf:type owl:DatatypeProperty ;
+                         rdfs:domain retail:DemandInfluencingFactor ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "has expected impact" .
+
+
+###  http://example.org/ontology/retail#hasForecastID
+retail:hasForecastID rdf:type owl:DatatypeProperty ;
+                     rdfs:domain retail:Forecast ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "has forecast ID" .
+
+
+###  http://example.org/ontology/retail#hasForecastModelUsed
+retail:hasForecastModelUsed rdf:type owl:DatatypeProperty ;
+                            rdfs:domain retail:Forecast ;
+                            rdfs:range xsd:string ;
+                            rdfs:label "has forecast model used" .
+
+
+###  http://example.org/ontology/retail#hasForecastParameterID
+retail:hasForecastParameterID rdf:type owl:DatatypeProperty ;
+                              rdfs:domain retail:ForecastParameterSet ;
+                              rdfs:range xsd:string ;
+                              rdfs:label "has forecast parameter ID" .
+
+
+###  http://example.org/ontology/retail#hasForecastQuantity
+retail:hasForecastQuantity rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail:Forecast ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:label "has forecast quantity" .
+
+
+###  http://example.org/ontology/retail#hasForecastType
+retail:hasForecastType rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail:Forecast ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "has forecast type" .
+
+
+###  http://example.org/ontology/retail#hasItemID
+retail:hasItemID rdf:type owl:DatatypeProperty ;
+                 rdfs:domain retail:Item ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has item ID" .
+
+
+###  http://example.org/ontology/retail#hasLeadTimeDays
+retail:hasLeadTimeDays rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail:ReplenishmentParameterSet ;
+                       rdfs:range xsd:integer ;
+                       rdfs:label "has lead time days" .
+
+
+###  http://example.org/ontology/retail#hasLifecyclePhase
+retail:hasLifecyclePhase rdf:type owl:DatatypeProperty ;
+                         rdfs:domain retail:Item ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "has lifecycle phase" .
+
+
+###  http://example.org/ontology/retail#hasLineStatus
+retail:hasLineStatus rdf:type owl:DatatypeProperty ;
+                     rdfs:domain retail:PurchaseOrderLine ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "has line status" .
+
+
+###  http://example.org/ontology/retail#hasLocationID
+retail:hasLocationID rdf:type owl:DatatypeProperty ;
+                     rdfs:domain retail:Location ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "has location ID" .
+
+
+###  http://example.org/ontology/retail#hasLocationName
+retail:hasLocationName rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail:Location ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "has location name" .
+
+
+###  http://example.org/ontology/retail#hasLocationType
+retail:hasLocationType rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail:Location ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "has location type" .
+
+
+###  http://example.org/ontology/retail#hasMinimumOrderQuantity
+retail:hasMinimumOrderQuantity rdf:type owl:DatatypeProperty ;
+                               rdfs:domain retail:ReplenishmentParameterSet ,
+                                           retail:Supplier ;
+                               rdfs:range xsd:decimal ;
+                               rdfs:label "has minimum order quantity" .
+
+
+###  http://example.org/ontology/retail#hasMinimumOrderValue
+retail:hasMinimumOrderValue rdf:type owl:DatatypeProperty ;
+                            rdfs:domain retail:Supplier ;
+                            rdfs:range xsd:decimal ;
+                            rdfs:label "has minimum order value" .
+
+
+###  http://example.org/ontology/retail#hasModelName
+retail:hasModelName rdf:type owl:DatatypeProperty ;
+                    rdfs:domain retail:ReplenishmentModel ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "has model name" .
+
+
+###  http://example.org/ontology/retail#hasModelType
+retail:hasModelType rdf:type owl:DatatypeProperty ;
+                    rdfs:domain retail:ReplenishmentModel ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "has model type" .
+
+
+###  http://example.org/ontology/retail#hasMonthOfYear
+retail:hasMonthOfYear rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail:TimePeriod ;
+                      rdfs:range xsd:integer ;
+                      rdfs:label "has month of year" .
+
+
+###  http://example.org/ontology/retail#hasOptimizedQuantity
+retail:hasOptimizedQuantity rdf:type owl:DatatypeProperty ;
+                            rdfs:domain retail:ReplenishmentRequirement ;
+                            rdfs:range xsd:decimal ;
+                            rdfs:label "has optimized quantity" .
+
+
+###  http://example.org/ontology/retail#hasOrderDate
+retail:hasOrderDate rdf:type owl:DatatypeProperty ;
+                    rdfs:domain retail:PurchaseOrder ;
+                    rdfs:range xsd:date ;
+                    rdfs:label "has order date" .
+
+
+###  http://example.org/ontology/retail#hasOrderMultipleQuantity
+retail:hasOrderMultipleQuantity rdf:type owl:DatatypeProperty ;
+                                rdfs:domain retail:ReplenishmentParameterSet ;
+                                rdfs:range xsd:decimal ;
+                                rdfs:label "has order multiple quantity" .
+
+
+###  http://example.org/ontology/retail#hasOrderProposalID
+retail:hasOrderProposalID rdf:type owl:DatatypeProperty ;
+                          rdfs:domain retail:OrderProposal ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "has order proposal ID" .
+
+
+###  http://example.org/ontology/retail#hasOrderUpToLevel
+retail:hasOrderUpToLevel rdf:type owl:DatatypeProperty ;
+                         rdfs:domain retail:ReplenishmentParameterSet ;
+                         rdfs:range xsd:decimal ;
+                         rdfs:label "has order up to level" .
+
+
+###  http://example.org/ontology/retail#hasOrderedQuantity
+retail:hasOrderedQuantity rdf:type owl:DatatypeProperty ;
+                          rdfs:domain retail:PurchaseOrderLine ;
+                          rdfs:range xsd:decimal ;
+                          rdfs:label "has ordered quantity" .
+
+
+###  http://example.org/ontology/retail#hasParameterName
+retail:hasParameterName rdf:type owl:DatatypeProperty ;
+                        rdfs:domain retail:ForecastParameterSet ;
+                        rdfs:range xsd:string ;
+                        rdfs:label "has parameter name" .
+
+
+###  http://example.org/ontology/retail#hasParameterValue
+retail:hasParameterValue rdf:type owl:DatatypeProperty ;
+                         rdfs:domain retail:ForecastParameterSet ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "has parameter value" .
+
+
+###  http://example.org/ontology/retail#hasProposedDeliveryDate
+retail:hasProposedDeliveryDate rdf:type owl:DatatypeProperty ;
+                               rdfs:domain retail:OrderProposal ;
+                               rdfs:range xsd:date ;
+                               rdfs:label "has proposed delivery date" .
+
+
+###  http://example.org/ontology/retail#hasProposedQuantity
+retail:hasProposedQuantity rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail:OrderProposal ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:label "has proposed quantity" .
+
+
+###  http://example.org/ontology/retail#hasPurchaseOrderID
+retail:hasPurchaseOrderID rdf:type owl:DatatypeProperty ;
+                          rdfs:domain retail:PurchaseOrder ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "has purchase order ID" .
+
+
+###  http://example.org/ontology/retail#hasPurchaseOrderLineID
+retail:hasPurchaseOrderLineID rdf:type owl:DatatypeProperty ;
+                              rdfs:domain retail:PurchaseOrderLine ;
+                              rdfs:range xsd:string ;
+                              rdfs:label "has purchase order line ID" .
+
+
+###  http://example.org/ontology/retail#hasReceivedQuantity
+retail:hasReceivedQuantity rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail:PurchaseOrderLine ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:label "has received quantity" .
+
+
+###  http://example.org/ontology/retail#hasReleaseTimestamp
+retail:hasReleaseTimestamp rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail:PurchaseOrder ;
+                           rdfs:range xsd:dateTime ;
+                           rdfs:label "has release timestamp" .
+
+
+###  http://example.org/ontology/retail#hasReorderPointQuantity
+retail:hasReorderPointQuantity rdf:type owl:DatatypeProperty ;
+                               rdfs:domain retail:ReplenishmentParameterSet ;
+                               rdfs:range xsd:decimal ;
+                               rdfs:label "has reorder point quantity" .
+
+
+###  http://example.org/ontology/retail#hasReplenishmentModelID
+retail:hasReplenishmentModelID rdf:type owl:DatatypeProperty ;
+                               rdfs:domain retail:ReplenishmentModel ;
+                               rdfs:range xsd:string ;
+                               rdfs:label "has replenishment model ID" .
+
+
+###  http://example.org/ontology/retail#hasReplenishmentParameterID
+retail:hasReplenishmentParameterID rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain retail:ReplenishmentParameterSet ;
+                                   rdfs:range xsd:string ;
+                                   rdfs:label "has replenishment parameter ID" .
+
+
+###  http://example.org/ontology/retail#hasRequiredQuantity
+retail:hasRequiredQuantity rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail:ReplenishmentRequirement ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:label "has required quantity" .
+
+
+###  http://example.org/ontology/retail#hasRequirementID
+retail:hasRequirementID rdf:type owl:DatatypeProperty ;
+                        rdfs:domain retail:ReplenishmentRequirement ;
+                        rdfs:range xsd:string ;
+                        rdfs:label "has requirement ID" .
+
+
+###  http://example.org/ontology/retail#hasRequirementSource
+retail:hasRequirementSource rdf:type owl:DatatypeProperty ;
+                            rdfs:domain retail:ReplenishmentRequirement ;
+                            rdfs:range xsd:string ;
+                            rdfs:label "has requirement source" .
+
+
+###  http://example.org/ontology/retail#hasResolutionNotes
+retail:hasResolutionNotes rdf:type owl:DatatypeProperty ;
+                          rdfs:domain retail:ExceptionLog ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "has resolution notes" .
+
+
+###  http://example.org/ontology/retail#hasReviewCycleDays
+retail:hasReviewCycleDays rdf:type owl:DatatypeProperty ;
+                          rdfs:domain retail:ReplenishmentParameterSet ;
+                          rdfs:range xsd:integer ;
+                          rdfs:label "has review cycle days" .
+
+
+###  http://example.org/ontology/retail#hasSafetyStockQuantity
+retail:hasSafetyStockQuantity rdf:type owl:DatatypeProperty ;
+                              rdfs:domain retail:ReplenishmentParameterSet ;
+                              rdfs:range xsd:decimal ;
+                              rdfs:label "has safety stock quantity" .
+
+
+###  http://example.org/ontology/retail#hasSeverity
+retail:hasSeverity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain retail:ExceptionLog ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "has severity" .
+
+
+###  http://example.org/ontology/retail#hasSpecificImpactAdjustment
+retail:hasSpecificImpactAdjustment rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain retail:DIF_ItemLocationLink ;
+                                   rdfs:range xsd:string ;
+                                   rdfs:label "has specific impact adjustment" .
+
+
+###  http://example.org/ontology/retail#hasStatus
+retail:hasStatus rdf:type owl:DatatypeProperty ;
+                 rdfs:domain retail:ExceptionLog ,
+                             retail:Item ,
+                             retail:OrderProposal ,
+                             retail:PurchaseOrder ,
+                             retail:ReplenishmentRequirement ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has status" .
+
+
+###  http://example.org/ontology/retail#hasSupplierID
+retail:hasSupplierID rdf:type owl:DatatypeProperty ;
+                     rdfs:domain retail:Supplier ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "has supplier ID" .
+
+
+###  http://example.org/ontology/retail#hasSupplierName
+retail:hasSupplierName rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail:Supplier ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "has supplier name" .
+
+
+###  http://example.org/ontology/retail#hasTimePeriodID
+retail:hasTimePeriodID rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail:TimePeriod ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "has time period ID" .
+
+
+###  http://example.org/ontology/retail#hasTotalOrderValue
+retail:hasTotalOrderValue rdf:type owl:DatatypeProperty ;
+                          rdfs:domain retail:PurchaseOrder ;
+                          rdfs:range xsd:decimal ;
+                          rdfs:label "has total order value" .
+
+
+###  http://example.org/ontology/retail#hasUOM
+retail:hasUOM rdf:type owl:DatatypeProperty ;
+              rdfs:domain retail:Item ;
+              rdfs:range xsd:string ;
+              rdfs:label "has UOM" .
+
+
+###  http://example.org/ontology/retail#hasUnitCost
+retail:hasUnitCost rdf:type owl:DatatypeProperty ;
+                   rdfs:domain retail:PurchaseOrderLine ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:label "has unit cost" .
+
+
+###  http://example.org/ontology/retail#hasUserID
+retail:hasUserID rdf:type owl:DatatypeProperty ;
+                 rdfs:domain retail:User ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has user ID" .
+
+
+###  http://example.org/ontology/retail#hasWeekOfYear
+retail:hasWeekOfYear rdf:type owl:DatatypeProperty ;
+                     rdfs:domain retail:TimePeriod ;
+                     rdfs:range xsd:integer ;
+                     rdfs:label "has week of year" .
+
+
+###  http://example.org/ontology/retail#hasYear
+retail:hasYear rdf:type owl:DatatypeProperty ;
+               rdfs:domain retail:TimePeriod ;
+               rdfs:range xsd:gYear ;
+               rdfs:label "has year" .
+
+
+###  http://example.org/ontology/retail#isForecastable
+retail:isForecastable rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail:Item ;
+                      rdfs:range xsd:boolean ;
+                      rdfs:label "is forecastable" .
+
+
+###  http://example.org/ontology/retail#isHoliday
+retail:isHoliday rdf:type owl:DatatypeProperty ;
+                 rdfs:domain retail:TimePeriod ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:label "is holiday" .
+
+
+###  http://example.org/ontology/retail#isReplenishable
+retail:isReplenishable rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail:Item ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:label "is replenishable" .
+
+
+###  http://example.org/ontology/retail/replenishment#appliesToProductHierarchyLevel
+retail1:appliesToProductHierarchyLevel rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain retail1:InventoryTarget ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:label "applies to product hierarchy level" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasAddress
+retail1:hasAddress rdf:type owl:DatatypeProperty ;
+                   rdfs:domain retail1:Location ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Physical address (Street, City, State, Postal Code, Country). Could be further structured." ;
+                   rdfs:label "has address" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasAlertThresholdID
+retail1:hasAlertThresholdID rdf:type owl:DatatypeProperty ;
+                            rdfs:domain retail1:AlertThreshold ;
+                            rdfs:range xsd:string ;
+                            rdfs:label "has alert threshold ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasAlertType
+retail1:hasAlertType rdf:type owl:DatatypeProperty ;
+                     rdfs:domain retail1:AlertThreshold ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "e.g., 'ProjectedStockOut', 'LowInventory', 'ExcessInventory'" ;
+                     rdfs:label "has alert type" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasCalculationDate
+retail1:hasCalculationDate rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail1:ReplenishmentPerformanceMetric ;
+                           rdfs:range xsd:date ;
+                           rdfs:label "has calculation date" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasDefaultLeadTime
+retail1:hasDefaultLeadTime rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail1:Supplier ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:comment "Typical lead time in days" ;
+                           rdfs:label "has default lead time" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasDefaultMinimumOrderQuantity
+retail1:hasDefaultMinimumOrderQuantity rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain retail1:Supplier ;
+                                       rdfs:range xsd:decimal ;
+                                       rdfs:label "has default minimum order quantity" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasDefaultUnitOfMeasure
+retail1:hasDefaultUnitOfMeasure rdf:type owl:DatatypeProperty ;
+                                rdfs:domain retail1:Item ;
+                                rdfs:range xsd:string ;
+                                rdfs:label "has default unit of measure" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasEffectiveDate
+retail1:hasEffectiveDate rdf:type owl:DatatypeProperty ;
+                         rdfs:domain retail1:InventoryTarget ;
+                         rdfs:range xsd:date ;
+                         rdfs:label "has effective date" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasEffectiveEndDate
+retail1:hasEffectiveEndDate rdf:type owl:DatatypeProperty ;
+                            rdfs:domain retail1:ReplenishmentParameter ;
+                            rdfs:range xsd:date ;
+                            rdfs:label "has effective end date" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasEffectiveStartDate
+retail1:hasEffectiveStartDate rdf:type owl:DatatypeProperty ;
+                              rdfs:domain retail1:ReplenishmentParameter ;
+                              rdfs:range xsd:date ;
+                              rdfs:label "has effective start date" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasGroupDescription
+retail1:hasGroupDescription rdf:type owl:DatatypeProperty ;
+                            rdfs:domain retail1:LocationGroup ;
+                            rdfs:range xsd:string ;
+                            rdfs:label "has group description" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasGroupName
+retail1:hasGroupName rdf:type owl:DatatypeProperty ;
+                     rdfs:domain retail1:LocationGroup ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "has group name" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasGroupType
+retail1:hasGroupType rdf:type owl:DatatypeProperty ;
+                     rdfs:domain retail1:LocationGroup ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "e.g., 'Store', 'Warehouse', 'Mixed', 'Region'" ;
+                     rdfs:label "has group type" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasItemDescription
+retail1:hasItemDescription rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail1:Item ;
+                           rdfs:range xsd:string ;
+                           rdfs:label "has item description" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasItemID
+retail1:hasItemID rdf:type owl:DatatypeProperty ;
+                  rdfs:domain retail1:Item ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "has item ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasLastUpdatedTimestamp
+retail1:hasLastUpdatedTimestamp rdf:type owl:DatatypeProperty ;
+                                rdfs:domain retail1:ReplenishmentParameter ;
+                                rdfs:range xsd:dateTime ;
+                                rdfs:label "has last updated timestamp" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasLastUpdatedUser
+retail1:hasLastUpdatedUser rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail1:ReplenishmentParameter ;
+                           rdfs:range xsd:string ;
+                           rdfs:label "has last updated user" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasLocationGroupDescription
+retail1:hasLocationGroupDescription rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain retail1:LocationGroup ;
+                                    rdfs:range xsd:string ;
+                                    rdfs:label "has location group description" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasLocationGroupID
+retail1:hasLocationGroupID rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail1:LocationGroup ;
+                           rdfs:range xsd:string ;
+                           rdfs:label "has location group ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasLocationID
+retail1:hasLocationID rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail1:Location ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "has location ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasLocationName
+retail1:hasLocationName rdf:type owl:DatatypeProperty ;
+                        rdfs:domain retail1:Location ;
+                        rdfs:range xsd:string ;
+                        rdfs:label "has location name" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasLocationType
+retail1:hasLocationType rdf:type owl:DatatypeProperty ;
+                        rdfs:domain retail1:Location ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "e.g., 'Store', 'Warehouse', 'DC'" ;
+                        rdfs:label "has location type" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasMetricID
+retail1:hasMetricID rdf:type owl:DatatypeProperty ;
+                    rdfs:domain retail1:ReplenishmentPerformanceMetric ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "has metric ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasMetricType
+retail1:hasMetricType rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail1:ReplenishmentPerformanceMetric ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "e.g., 'ActualServiceLevel', 'LostSalesUnits', 'InventoryTurnover'" ;
+                      rdfs:label "has metric type" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasMetricValue
+retail1:hasMetricValue rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail1:ReplenishmentPerformanceMetric ;
+                       rdfs:range xsd:decimal ;
+                       rdfs:label "has metric value" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasNotificationRule
+retail1:hasNotificationRule rdf:type owl:DatatypeProperty ;
+                            rdfs:domain retail1:AlertThreshold ;
+                            rdfs:range xsd:string ;
+                            rdfs:comment "Description of action/notification triggered" ;
+                            rdfs:label "has notification rule" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasParameterSetID
+retail1:hasParameterSetID rdf:type owl:DatatypeProperty ;
+                          rdfs:domain retail1:ReplenishmentParameter ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "has parameter set ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasParameterType
+retail1:hasParameterType rdf:type owl:DatatypeProperty ;
+                         rdfs:domain retail1:ReplenishmentParameter ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "e.g., 'SafetyStockDays', 'ReorderPointUnits', 'MaxStockLevel', 'ReviewCycleDays'" ;
+                         rdfs:label "has parameter type" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasParameterValue
+retail1:hasParameterValue rdf:type owl:DatatypeProperty ;
+                          rdfs:domain retail1:ReplenishmentParameter ;
+                          rdfs:range rdfs:Literal ;
+                          rdfs:comment "Value depends on parameter type (use appropriate xsd type, e.g., xsd:decimal, xsd:string, xsd:boolean)" ;
+                          rdfs:label "has parameter value" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasProductHierarchyLevel1
+retail1:hasProductHierarchyLevel1 rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain retail1:Item ;
+                                  rdfs:range xsd:string ;
+                                  rdfs:label "has product hierarchy level 1" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasProductHierarchyLevel2
+retail1:hasProductHierarchyLevel2 rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain retail1:Item ;
+                                  rdfs:range xsd:string ;
+                                  rdfs:label "has product hierarchy level 2" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasSellingAreaSize
+retail1:hasSellingAreaSize rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail1:Store ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:comment "Unit implied (e.g., sq ft, sq m)" ;
+                           rdfs:label "has selling area size" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasSeverity
+retail1:hasSeverity rdf:type owl:DatatypeProperty ;
+                    rdfs:domain retail1:AlertThreshold ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "e.g., 'High', 'Medium', 'Low', 'Informational'" ;
+                    rdfs:label "has severity" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasStatus
+retail1:hasStatus rdf:type owl:DatatypeProperty ;
+                  rdfs:domain retail1:ReplenishmentParameter ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "e.g., 'Active', 'Inactive', 'Suggested', 'Approved'" ;
+                  rdfs:label "has status" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasStorageCapacity
+retail1:hasStorageCapacity rdf:type owl:DatatypeProperty ;
+                           rdfs:domain retail1:Warehouse ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:comment "Unit implied (e.g., pallets, volume like cubic meters)" ;
+                           rdfs:label "has storage capacity" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasStoreFormat
+retail1:hasStoreFormat rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail1:Store ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "e.g., 'Supermarket', 'Convenience', 'Hypermarket', 'Specialty'" ;
+                       rdfs:label "has store format" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasStoreID
+retail1:hasStoreID rdf:type owl:DatatypeProperty ;
+                   rdfs:domain retail1:Store ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Typically the same value as hasLocationID for a store" ;
+                   rdfs:label "has store ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasSupplierID
+retail1:hasSupplierID rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail1:Supplier ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "has supplier ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasSupplierName
+retail1:hasSupplierName rdf:type owl:DatatypeProperty ;
+                        rdfs:domain retail1:Supplier ;
+                        rdfs:range xsd:string ;
+                        rdfs:label "has supplier name" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasTargetID
+retail1:hasTargetID rdf:type owl:DatatypeProperty ;
+                    rdfs:domain retail1:InventoryTarget ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "has target ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasTargetType
+retail1:hasTargetType rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail1:InventoryTarget ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "e.g., 'TargetWeeksOfSupply', 'TargetInventoryTurnover', 'TargetServiceLevel'" ;
+                      rdfs:label "has target type" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasTargetValue
+retail1:hasTargetValue rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail1:InventoryTarget ;
+                       rdfs:range xsd:decimal ;
+                       rdfs:label "has target value" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasThresholdValue
+retail1:hasThresholdValue rdf:type owl:DatatypeProperty ;
+                          rdfs:domain retail1:AlertThreshold ;
+                          rdfs:range rdfs:Literal ;
+                          rdfs:comment "Value depends on alert type (e.g., number of days for ProjectedStockOut, quantity for LowInventory)" ;
+                          rdfs:label "has threshold value" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasTimePeriod
+retail1:hasTimePeriod rdf:type owl:DatatypeProperty ;
+                      rdfs:domain retail1:InventoryTarget ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "e.g., 'Q1 2024', 'Week 15 2024'. Could be structured time interval." ;
+                      rdfs:label "has time period" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasTimePeriodCovered
+retail1:hasTimePeriodCovered rdf:type owl:DatatypeProperty ;
+                             rdfs:domain retail1:ReplenishmentPerformanceMetric ;
+                             rdfs:range xsd:string ;
+                             rdfs:comment "Period the metric refers to, e.g., '2024-03', 'W10-2024'" ;
+                             rdfs:label "has time period covered" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasWarehouseID
+retail1:hasWarehouseID rdf:type owl:DatatypeProperty ;
+                       rdfs:domain retail1:Warehouse ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Typically the same value as hasLocationID for a warehouse" ;
+                       rdfs:label "has warehouse ID" .
+
+
+###  http://example.org/ontology/retail/replenishment#hasWarehouseType
+retail1:hasWarehouseType rdf:type owl:DatatypeProperty ;
+                         rdfs:domain retail1:Warehouse ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "e.g., 'Central', 'Regional', 'Distribution Center', 'Cross-Dock'" ;
+                         rdfs:label "has warehouse type" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.com/ontology/retail#DemandInfluencingFactor
+:DemandInfluencingFactor rdf:type owl:Class ;
+                         rdfs:subClassOf :WarehouseOperations ;
+                         rdfs:label "Demand Influencing Factor" .
+
+
+###  http://example.com/ontology/retail#Employee
+:Employee rdf:type owl:Class ;
+          rdfs:subClassOf :Master ;
+          rdfs:label "Employee" .
+
+
+###  http://example.com/ontology/retail#Forecast
+:Forecast rdf:type owl:Class ;
+          rdfs:subClassOf :WarehouseOperations ;
+          rdfs:label "Forecast" .
+
+
+###  http://example.com/ontology/retail#ForecastingReplenishment
+:ForecastingReplenishment rdf:type owl:Class ;
+                          rdfs:subClassOf :MovePhase .
+
+
+###  http://example.com/ontology/retail#InventoryAdjustment
+:InventoryAdjustment rdf:type owl:Class ;
+                     rdfs:subClassOf :WarehouseOperations ;
+                     rdfs:label "Inventory Adjustment" .
+
+
+###  http://example.com/ontology/retail#InventoryRecord
+:InventoryRecord rdf:type owl:Class ;
+                 rdfs:subClassOf :WarehouseOperations ;
+                 rdfs:comment "Represents stock on hand" ;
+                 rdfs:label "Inventory Record" .
+
+
+###  http://example.com/ontology/retail#Item
+:Item rdf:type owl:Class ;
+      rdfs:subClassOf :Master ;
+      rdfs:label "Item" .
+
+
+###  http://example.com/ontology/retail#ItemLocation
+:ItemLocation rdf:type owl:Class ;
+              rdfs:subClassOf :WarehouseOperations ;
+              rdfs:comment "Associative entity linking Item and Location, holds location-specific data" ;
+              rdfs:label "Item Location" .
+
+
+###  http://example.com/ontology/retail#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf :Master ;
+          rdfs:comment "Corresponds to Retail location" ;
+          rdfs:label "Location" .
+
+
+###  http://example.com/ontology/retail#Master
+:Master rdf:type owl:Class ;
+        rdfs:subClassOf :MovePhase .
+
+
+###  http://example.com/ontology/retail#MovePhase
+:MovePhase rdf:type owl:Class .
+
+
+###  http://example.com/ontology/retail#PhysicalInventoryCount
+:PhysicalInventoryCount rdf:type owl:Class ;
+                        rdfs:subClassOf :WarehouseOperations ;
+                        rdfs:label "Physical Inventory Count" .
+
+
+###  http://example.com/ontology/retail#PhysicalInventoryCountLine
+:PhysicalInventoryCountLine rdf:type owl:Class ;
+                            rdfs:subClassOf :WarehouseOperations ;
+                            rdfs:label "Physical Inventory Count Line" .
+
+
+###  http://example.com/ontology/retail#PurchaseOrder
+:PurchaseOrder rdf:type owl:Class ;
+               rdfs:subClassOf :WarehouseOperations ;
+               rdfs:label "Purchase Order" .
+
+
+###  http://example.com/ontology/retail#PurchaseOrderLine
+:PurchaseOrderLine rdf:type owl:Class ;
+                   rdfs:subClassOf :WarehouseOperations ;
+                   rdfs:label "Purchase Order Line" .
+
+
+###  http://example.com/ontology/retail#ReplenishmentOptimization
+:ReplenishmentOptimization rdf:type owl:Class ;
+                           rdfs:subClassOf :MovePhase .
+
+
+###  http://example.com/ontology/retail#StockType
+:StockType rdf:type owl:Class ;
+           rdfs:subClassOf :WarehouseOperations ;
+           rdfs:comment "Defines the status/usability of inventory" ;
+           rdfs:label "Stock Type" .
+
+
+###  http://example.com/ontology/retail#StorageLocation
+:StorageLocation rdf:type owl:Class ;
+                 rdfs:subClassOf :WarehouseOperations ;
+                 rdfs:comment "Storage location within a warehouse" ;
+                 rdfs:label "Storage Location" .
+
+
+###  http://example.com/ontology/retail#Supplier
+:Supplier rdf:type owl:Class ;
+          rdfs:subClassOf :Master ;
+          rdfs:label "Supplier" .
+
+
+###  http://example.com/ontology/retail#TransferOrder
+:TransferOrder rdf:type owl:Class ;
+               rdfs:subClassOf :WarehouseOperations ;
+               rdfs:label "Transfer Order" .
+
+
+###  http://example.com/ontology/retail#TransferOrderLine
+:TransferOrderLine rdf:type owl:Class ;
+                   rdfs:subClassOf :WarehouseOperations ;
+                   rdfs:label "Transfer Order Line" .
+
+
+###  http://example.com/ontology/retail#Warehouse
+:Warehouse rdf:type owl:Class ;
+           rdfs:subClassOf :Location ;
+           rdfs:comment "Warehouse - Specialization / type of location" ;
+           rdfs:label "Warehouse" .
+
+
+###  http://example.com/ontology/retail#WarehouseOperations
+:WarehouseOperations rdf:type owl:Class ;
+                     rdfs:subClassOf :MovePhase .
+
+
+###  http://example.com/ontology/retail#WarehouseTask
+:WarehouseTask rdf:type owl:Class ;
+               rdfs:subClassOf :WarehouseOperations ;
+               rdfs:comment "Represents a specific instruction for warehouse staff" ;
+               rdfs:label "Warehouse Task" .
+
+
+###  http://example.org/ontology/retail#CannibalizationEvent
+retail:CannibalizationEvent rdf:type owl:Class ;
+                            rdfs:subClassOf retail:DemandInfluencingFactor ;
+                            rdfs:comment "A DIF related to the expected impact of one item's sales on another." ;
+                            rdfs:label "Cannibalization Event" .
+
+
+###  http://example.org/ontology/retail#DIF_ItemLocationLink
+retail:DIF_ItemLocationLink rdf:type owl:Class ;
+                            rdfs:subClassOf :ForecastingReplenishment ;
+                            rdfs:comment "An association class linking a Demand Influencing Factor to the specific Items and Locations it affects, potentially with specific adjustments." ;
+                            rdfs:label "DIF Item Location Link" .
+
+
+###  http://example.org/ontology/retail#DemandInfluencingFactor
+retail:DemandInfluencingFactor rdf:type owl:Class ;
+                               rdfs:subClassOf :ForecastingReplenishment ;
+                               rdfs:comment "Represents an event, condition, or activity expected to impact demand (e.g., promotion, holiday, weather)" ;
+                               rdfs:label "Demand Influencing Factor" .
+
+
+###  http://example.org/ontology/retail#DistributionCenter
+retail:DistributionCenter rdf:type owl:Class ;
+                          rdfs:subClassOf retail:Location ;
+                          rdfs:comment "A type of Location primarily used for storing and distributing goods to other locations (like stores)." ;
+                          rdfs:label "Distribution Center" .
+
+
+###  http://example.org/ontology/retail#ExceptionLog
+retail:ExceptionLog rdf:type owl:Class ;
+                    rdfs:subClassOf :ForecastingReplenishment ;
+                    rdfs:comment "Represents a record of an exceptional event or condition detected during the forecasting or replenishment processes." ;
+                    rdfs:label "Exception Log" .
+
+
+###  http://example.org/ontology/retail#Forecast
+retail:Forecast rdf:type owl:Class ;
+                rdfs:subClassOf :ForecastingReplenishment ;
+                rdfs:comment "Represents a prediction of future demand for an item at a specific location over a given time period." ;
+                rdfs:label "Forecast" .
+
+
+###  http://example.org/ontology/retail#ForecastException
+retail:ForecastException rdf:type owl:Class ;
+                         rdfs:subClassOf retail:ExceptionLog ;
+                         rdfs:comment "An ExceptionLog entry specifically related to forecasting issues." ;
+                         rdfs:label "Forecast Exception" .
+
+
+###  http://example.org/ontology/retail#ForecastParameterSet
+retail:ForecastParameterSet rdf:type owl:Class ;
+                            rdfs:subClassOf :ForecastingReplenishment ;
+                            rdfs:comment "Represents a collection of parameters used by a forecasting model for a specific item, location, or combination thereof." ;
+                            rdfs:label "Forecast Parameter Set" .
+
+
+###  http://example.org/ontology/retail#HierarchyNode
+retail:HierarchyNode rdf:type owl:Class ;
+                     rdfs:subClassOf :ForecastingReplenishment ;
+                     rdfs:comment "A generic node in a hierarchical structure (e.g., Product, Location)." ;
+                     rdfs:label "Hierarchy Node" .
+
+
+###  http://example.org/ontology/retail#Holiday
+retail:Holiday rdf:type owl:Class ;
+               rdfs:subClassOf retail:DemandInfluencingFactor ;
+               rdfs:comment "A DIF related to public or local holidays." ;
+               rdfs:label "Holiday" .
+
+
+###  http://example.org/ontology/retail#Item
+retail:Item rdf:type owl:Class ;
+            rdfs:subClassOf :ForecastingReplenishment ;
+            rdfs:comment "Represents a distinct article, product, or service that can be forecasted, ordered, stocked, and sold." ;
+            rdfs:label "Item" .
+
+
+###  http://example.org/ontology/retail#Location
+retail:Location rdf:type owl:Class ;
+                rdfs:subClassOf :ForecastingReplenishment ;
+                rdfs:comment "Represents a physical or logical place within the retail organization, such as a store or distribution center." ;
+                rdfs:label "Location" .
+
+
+###  http://example.org/ontology/retail#LocationHierarchyNode
+retail:LocationHierarchyNode rdf:type owl:Class ;
+                             rdfs:subClassOf retail:HierarchyNode ;
+                             rdfs:comment "A node within the organizational location hierarchy (e.g., Region, District)." ;
+                             rdfs:label "Location Hierarchy Node" .
+
+
+###  http://example.org/ontology/retail#MarketingCampaign
+retail:MarketingCampaign rdf:type owl:Class ;
+                         rdfs:subClassOf retail:DemandInfluencingFactor ;
+                         rdfs:comment "A DIF related to broader marketing efforts." ;
+                         rdfs:label "Marketing Campaign" .
+
+
+###  http://example.org/ontology/retail#OrderProposal
+retail:OrderProposal rdf:type owl:Class ;
+                     rdfs:subClassOf :ForecastingReplenishment ;
+                     rdfs:comment "Represents a suggested order (planned order) generated by the replenishment system, pending review and release." ;
+                     rdfs:label "Order Proposal" .
+
+
+###  http://example.org/ontology/retail#OtherDIF
+retail:OtherDIF rdf:type owl:Class ;
+                rdfs:subClassOf retail:DemandInfluencingFactor ;
+                rdfs:comment "Other types of Demand Influencing Factors." ;
+                rdfs:label "Other DIF" .
+
+
+###  http://example.org/ontology/retail#PriceChange
+retail:PriceChange rdf:type owl:Class ;
+                   rdfs:subClassOf retail:DemandInfluencingFactor ;
+                   rdfs:comment "A DIF related to changes in item pricing." ;
+                   rdfs:label "Price Change" .
+
+
+###  http://example.org/ontology/retail#ProductHierarchyNode
+retail:ProductHierarchyNode rdf:type owl:Class ;
+                            rdfs:subClassOf retail:HierarchyNode ;
+                            rdfs:comment "A node within the product classification hierarchy (e.g., Department, Category, SubCategory)." ;
+                            rdfs:label "Product Hierarchy Node" .
+
+
+###  http://example.org/ontology/retail#Promotion
+retail:Promotion rdf:type owl:Class ;
+                 rdfs:subClassOf retail:DemandInfluencingFactor ;
+                 rdfs:comment "A DIF related to promotional activities." ;
+                 rdfs:label "Promotion" .
+
+
+###  http://example.org/ontology/retail#PurchaseOrder
+retail:PurchaseOrder rdf:type owl:Class ;
+                     rdfs:subClassOf :ForecastingReplenishment ;
+                     rdfs:comment "Represents a formal order placed with a supplier for goods or services" ;
+                     rdfs:label "Purchase Order" .
+
+
+###  http://example.org/ontology/retail#PurchaseOrderLine
+retail:PurchaseOrderLine rdf:type owl:Class ;
+                         rdfs:subClassOf :ForecastingReplenishment ;
+                         rdfs:comment "Represents a specific item and quantity line within a Purchase Order." ;
+                         rdfs:label "Purchase Order Line" .
+
+
+###  http://example.org/ontology/retail#ReplenishmentException
+retail:ReplenishmentException rdf:type owl:Class ;
+                              rdfs:subClassOf retail:ExceptionLog ;
+                              rdfs:comment "An ExceptionLog entry specifically related to replenishment issues (requirements, orders, POs)." ;
+                              rdfs:label "Replenishment Exception" .
+
+
+###  http://example.org/ontology/retail#ReplenishmentModel
+retail:ReplenishmentModel rdf:type owl:Class ;
+                          rdfs:subClassOf :ForecastingReplenishment ;
+                          rdfs:comment "Represents a specific methodology or algorithm used to calculate replenishment requirements (e.g., Min/Max, EOQ)." ;
+                          rdfs:label "Replenishment Model" .
+
+
+###  http://example.org/ontology/retail#ReplenishmentParameterSet
+retail:ReplenishmentParameterSet rdf:type owl:Class ;
+                                 rdfs:subClassOf :ForecastingReplenishment ;
+                                 rdfs:comment "Represents a collection of parameters governing the replenishment process for an item at a specific location." ;
+                                 rdfs:label "Replenishment Parameter Set" .
+
+
+###  http://example.org/ontology/retail#ReplenishmentRequirement
+retail:ReplenishmentRequirement rdf:type owl:Class ;
+                                rdfs:subClassOf :ForecastingReplenishment ;
+                                rdfs:comment "Represents the calculated need to replenish stock for an item at a location for a specific period, before final optimization or ordering." ;
+                                rdfs:label "Replenishment Requirement" .
+
+
+###  http://example.org/ontology/retail#Store
+retail:Store rdf:type owl:Class ;
+             rdfs:subClassOf retail:Location ;
+             rdfs:comment "A type of Location where goods are sold to end consumers." ;
+             rdfs:label "Store" .
+
+
+###  http://example.org/ontology/retail#Supplier
+retail:Supplier rdf:type owl:Class ;
+                rdfs:subClassOf retail:DIF_ItemLocationLink ;
+                rdfs:comment "Represents a business partner entity from whom goods or services are procured. Corresponds to ARTS BusinessPartner with role 'Supplier'." ;
+                rdfs:label "Supplier" .
+
+
+###  http://example.org/ontology/retail#TimePeriod
+retail:TimePeriod rdf:type owl:Class ;
+                  rdfs:subClassOf :ForecastingReplenishment ;
+                  rdfs:comment "Represents a specific point or interval in time (e.g., day, week, month) relevant for forecasting, replenishment, and analysis. Often implemented as a Date Dimension." ;
+                  rdfs:label "Time Period" .
+
+
+###  http://example.org/ontology/retail#User
+retail:User rdf:type owl:Class ;
+            rdfs:subClassOf :ForecastingReplenishment ;
+            rdfs:comment "Represents a user interacting with the system, particularly for managing exceptions or overrides." ;
+            rdfs:label "User" .
+
+
+###  http://example.org/ontology/retail#Warehouse
+retail:Warehouse rdf:type owl:Class ;
+                 rdfs:subClassOf retail:Location ;
+                 rdfs:comment "A type of Location used for storage, potentially synonymous with DistributionCenter or a distinct type." ;
+                 rdfs:label "Warehouse" .
+
+
+###  http://example.org/ontology/retail#WeatherEvent
+retail:WeatherEvent rdf:type owl:Class ;
+                    rdfs:subClassOf retail:DemandInfluencingFactor ;
+                    rdfs:comment "A DIF related to significant weather conditions." ;
+                    rdfs:label "Weather Event" .
+
+
+###  http://example.org/ontology/retail/replenishment#AlertThreshold
+retail1:AlertThreshold rdf:type owl:Class ;
+                       rdfs:subClassOf :ReplenishmentOptimization ;
+                       rdfs:comment "Represents a predefined limit or condition that triggers a notification regarding inventory status or replenishment performance." ;
+                       rdfs:label "Alert Threshold" .
+
+
+###  http://example.org/ontology/retail/replenishment#InventoryTarget
+retail1:InventoryTarget rdf:type owl:Class ;
+                        rdfs:subClassOf :ReplenishmentOptimization ;
+                        rdfs:comment "Represents a strategic goal or desired level for inventory metrics (e.g., weeks of supply, turnover)." ;
+                        rdfs:label "Inventory Target" .
+
+
+###  http://example.org/ontology/retail/replenishment#Item
+retail1:Item rdf:type owl:Class ;
+             rdfs:subClassOf :ReplenishmentOptimization ;
+             rdfs:comment "Represents a product or SKU that is managed and replenished within the retail system. Synonyms: Product, SKU" ;
+             rdfs:label "Item" .
+
+
+###  http://example.org/ontology/retail/replenishment#Location
+retail1:Location rdf:type owl:Class ;
+                 rdfs:subClassOf :ReplenishmentOptimization ;
+                 rdfs:comment "Represents a physical or logical place where inventory is held, managed, or sold." ;
+                 rdfs:label "Location" .
+
+
+###  http://example.org/ontology/retail/replenishment#LocationGroup
+retail1:LocationGroup rdf:type owl:Class ;
+                      rdfs:subClassOf :ReplenishmentOptimization ;
+                      rdfs:comment "Represents a logical grouping of Locations (Stores or Warehouses) for collective management, analysis, or parameter application. Synonyms: Store Group, Warehouse Group, Subgrouping" ;
+                      rdfs:label "Location Group" .
+
+
+###  http://example.org/ontology/retail/replenishment#ReplenishmentParameter
+retail1:ReplenishmentParameter rdf:type owl:Class ;
+                               rdfs:subClassOf :ReplenishmentOptimization ;
+                               rdfs:comment "Represents a specific rule, setting, or configuration used to control the automated replenishment process for an item at a location, potentially considering a specific supplier or group. Synonyms: Replenishment Settings, Item Replenishment Attributes, Supplier Replenishment Attributes" ;
+                               rdfs:label "Replenishment Parameter" .
+
+
+###  http://example.org/ontology/retail/replenishment#ReplenishmentPerformanceMetric
+retail1:ReplenishmentPerformanceMetric rdf:type owl:Class ;
+                                       rdfs:subClassOf :ReplenishmentOptimization ;
+                                       rdfs:comment "Represents a measured value quantifying the effectiveness or outcome of the replenishment process over a specific period." ;
+                                       rdfs:label "Replenishment Performance Metric" .
+
+
+###  http://example.org/ontology/retail/replenishment#Store
+retail1:Store rdf:type owl:Class ;
+              rdfs:subClassOf retail1:Location ;
+              rdfs:comment "A specific type of Location primarily focused on selling goods to end consumers." ;
+              rdfs:label "Store" .
+
+
+###  http://example.org/ontology/retail/replenishment#Supplier
+retail1:Supplier rdf:type owl:Class ;
+                 rdfs:subClassOf :ReplenishmentOptimization ;
+                 rdfs:comment "Represents an external entity that provides items to the retailer." ;
+                 rdfs:label "Supplier" .
+
+
+###  http://example.org/ontology/retail/replenishment#Warehouse
+retail1:Warehouse rdf:type owl:Class ;
+                  rdfs:subClassOf retail1:Location ;
+                  rdfs:comment "A specific type of Location primarily used for storing inventory and potentially distributing it to other locations (e.g., Stores). Includes Distribution Centers (DCs)." ;
+                  rdfs:label "Warehouse" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.com/ontology/retail#emp_1
+:emp_1 rdf:type owl:NamedIndividual ,
+                :Employee ;
+       :worksAt :loc_wh_1 ;
+       :employeeID "E1001" ;
+       :firstName "Alice" ;
+       :lastName "Smith" ;
+       :role "Warehouse Operator" .
+
+
+###  http://example.com/ontology/retail#emp_2
+:emp_2 rdf:type owl:NamedIndividual ,
+                :Employee ;
+       :employeeID "E1002" ;
+       :firstName "Bob" ;
+       :lastName "Jones" ;
+       :role "Purchasing Manager" .
+
+
+###  http://example.com/ontology/retail#invrec_1
+:invrec_1 rdf:type owl:NamedIndividual ,
+                   :InventoryRecord ;
+          :hasStockType :st_unrestricted ;
+          :inventoryAtLocation :loc_wh_1 ;
+          :inventoryInStorageLocation :sl_wh1_a1 ;
+          :inventoryOfItem :item_101 ;
+          :inventoryRecordID "INVREC001" ;
+          :inventoryUnitOfMeasure "EA" ;
+          :lastCountTimestamp "2024-01-15T10:00:00+00:00"^^xsd:dateTime ;
+          :quantityOnHand 100.0 ;
+          :receiptDate "2024-01-10"^^xsd:date .
+
+
+###  http://example.com/ontology/retail#invrec_2
+:invrec_2 rdf:type owl:NamedIndividual ,
+                   :InventoryRecord ;
+          :hasStockType :st_unrestricted ;
+          :inventoryAtLocation :loc_store_5 ;
+          :inventoryOfItem :item_202 ;
+          :inventoryRecordID "INVREC002" ;
+          :inventoryUnitOfMeasure "EA" ;
+          :quantityOnHand 50.0 ;
+          :receiptDate "2024-01-20"^^xsd:date .
+
+
+###  http://example.com/ontology/retail#item_101
+:item_101 rdf:type owl:NamedIndividual ,
+                   :Item ;
+          :hasItemLocationParameters :itemloc_101_wh1 ;
+          :brandName "WidgetCorp" ;
+          :costPrice 10.50 ;
+          :description "Premium Widget" ;
+          :itemID "SKU101" ;
+          :salesPrice 24.99 ;
+          :unitOfMeasure "EA" .
+
+
+###  http://example.com/ontology/retail#item_202
+:item_202 rdf:type owl:NamedIndividual ,
+                   :Item ;
+          :hasItemLocationParameters :itemloc_202_store5 ;
+          :brandName "Gizmo Inc." ;
+          :costPrice 5.00 ;
+          :description "Standard Gizmo" ;
+          :itemID "SKU202" ;
+          :salesPrice 12.99 ;
+          :unitOfMeasure "EA" .
+
+
+###  http://example.com/ontology/retail#itemloc_101_wh1
+:itemloc_101_wh1 rdf:type owl:NamedIndividual ,
+                          :ItemLocation ;
+                 :appliesToItem :item_101 ;
+                 :appliesToLocation :loc_wh_1 ;
+                 :itemLocationID "ITEMLOC_101_WH1" ;
+                 :reorderPointQuantity 50.0 ;
+                 :replenishmentModelType "ROP" ;
+                 :safetyStockQuantity 20.0 .
+
+
+###  http://example.com/ontology/retail#itemloc_202_store5
+:itemloc_202_store5 rdf:type owl:NamedIndividual ,
+                             :ItemLocation ;
+                    :appliesToItem :item_202 ;
+                    :appliesToLocation :loc_store_5 ;
+                    :alertThresholdMin 10.0 ;
+                    :itemLocationID "ITEMLOC_202_ST5" ;
+                    :orderUpToLevelQuantity 60.0 ;
+                    :replenishmentModelType "MinMax" .
+
+
+###  http://example.com/ontology/retail#loc_store_5
+:loc_store_5 rdf:type owl:NamedIndividual ,
+                      :Location ;
+             :hasItemLocationParameters :itemloc_202_store5 ;
+             :addressLine1 "123 Main St" ;
+             :city "Anytown" ;
+             :country "USA" ;
+             :locationID "STORE005" ;
+             :locationName "Downtown Store" ;
+             :locationType "Store" ;
+             :operationalStatus "Open" ;
+             :postalCode "90210" ;
+             :state "CA" .
+
+
+###  http://example.com/ontology/retail#loc_wh_1
+:loc_wh_1 rdf:type owl:NamedIndividual ,
+                   :Warehouse ;
+          :hasItemLocationParameters :itemloc_101_wh1 ;
+          :hasStorageLocation :sl_wh1_a1 ,
+                              :sl_wh1_b2 ;
+          :addressLine1 "1 Industrial Way" ;
+          :city "Big City" ;
+          :country "USA" ;
+          :locationID "WH001" ;
+          :locationName "Central Distribution Center" ;
+          :locationType "DistributionCenter" ;
+          :operationalStatus "Open" ;
+          :postalCode "10001" ;
+          :receivingDockCount 10 ;
+          :shippingDockCount 15 ;
+          :state "NY" .
+
+
+###  http://example.com/ontology/retail#po_001
+:po_001 rdf:type owl:NamedIndividual ,
+                 :PurchaseOrder ;
+        :createdBy :emp_2 ;
+        :hasLineItem :pol_001_1 ;
+        :hasSupplier :supp_acme ;
+        :shipsTo :loc_wh_1 ;
+        :expectedDeliveryDate "2024-02-01"^^xsd:date ;
+        :orderDate "2024-01-18"^^xsd:date ;
+        :orderStatus "Open" ;
+        :purchaseOrderID "PO0001" .
+
+
+###  http://example.com/ontology/retail#pol_001_1
+:pol_001_1 rdf:type owl:NamedIndividual ,
+                    :PurchaseOrderLine ;
+           :lineItemOf :po_001 ;
+           :referencesItem :item_101 ;
+           :lineStatus "Open" ;
+           :orderedQuantity 500.0 ;
+           :purchaseOrderLineID "POL0001-1" ;
+           :unitCost 10.00 .
+
+
+###  http://example.com/ontology/retail#sl_wh1_a1
+:sl_wh1_a1 rdf:type owl:NamedIndividual ,
+                    :StorageLocation ;
+           :isLocatedWithinWarehouse :loc_wh_1 ;
+           :capacityUOM "EA" ;
+           :locationCode "Aisle A, Rack 1" ;
+           :maxCapacity 150.0 ;
+           :storageLocationID "WH1-A1" ;
+           :storageLocationType "PickFace" .
+
+
+###  http://example.com/ontology/retail#sl_wh1_b2
+:sl_wh1_b2 rdf:type owl:NamedIndividual ,
+                    :StorageLocation ;
+           :isLocatedWithinWarehouse :loc_wh_1 ;
+           :locationCode "Aisle B, Rack 2" ;
+           :storageLocationID "WH1-B2" ;
+           :storageLocationType "BulkStorage" .
+
+
+###  http://example.com/ontology/retail#st_blocked
+:st_blocked rdf:type owl:NamedIndividual ,
+                     :StockType ;
+            :isAvailableForSale "false"^^xsd:boolean ;
+            :isAvailableForTransfer "false"^^xsd:boolean ;
+            :stockTypeDescription "Blocked Stock" ;
+            :stockTypeID "BLOCKED" .
+
+
+###  http://example.com/ontology/retail#st_unrestricted
+:st_unrestricted rdf:type owl:NamedIndividual ,
+                          :StockType ;
+                 :isAvailableForSale "true"^^xsd:boolean ;
+                 :isAvailableForTransfer "true"^^xsd:boolean ;
+                 :stockTypeDescription "Unrestricted Use" ;
+                 :stockTypeID "UNRESTRICTED" .
+
+
+###  http://example.com/ontology/retail#supp_acme
+:supp_acme rdf:type owl:NamedIndividual ,
+                    :Supplier ;
+           :isSupplierFor :po_001 ;
+           :address "1 Supply Rd, Supplier City, NV 89001" ;
+           :defaultLeadTimeDays 14 ;
+           :paymentTerms "Net 30" ;
+           :supplierID "SUPP-ACME" ;
+           :supplierName "ACME Corporation" .
+
+
+###  http://example.com/ontology/retail#task_pick_1
+:task_pick_1 rdf:type owl:NamedIndividual ,
+                      :WarehouseTask ;
+             :assignedTo :emp_1 ;
+             :taskForItem :item_101 ;
+             :taskFromLocation :sl_wh1_a1 ;
+             :taskInWarehouse :loc_wh_1 ;
+             :creationTimestamp "2024-01-25T08:00:00+00:00"^^xsd:dateTime ;
+             :priority 1 ;
+             :taskID "TASKP001" ;
+             :taskQuantity 10.0 ;
+             :taskStatus "Open" ;
+             :taskType "Picking" .
+
+
+###  http://example.org/ontology/retail#dc_1
+retail:dc_1 rdf:type owl:NamedIndividual ,
+                     retail:DistributionCenter ;
+            retail:hasAddress "1 Warehouse Way, Big City, NY 10001" ;
+            retail:hasLocationID "DC001" ;
+            retail:hasLocationName "Central Distribution Center" ;
+            retail:hasLocationType "DistributionCenter" .
+
+
+###  http://example.org/ontology/retail#exception_001
+retail:exception_001 rdf:type owl:NamedIndividual ,
+                              retail:ForecastException ;
+                     retail:exceptionRelatedToForecast retail:forecast_item123_storeA_w10 ;
+                     retail:exceptionRelatedToItem retail:item_123 ;
+                     retail:exceptionRelatedToLocation retail:store_A ;
+                     retail:handledByUser retail:user_analyst1 ;
+                     retail:hasDescription "Forecast deviates significantly from historical sales for week 10." ;
+                     retail:hasExceptionID "EXC001" ;
+                     retail:hasExceptionTimestamp "2024-03-01T10:00:00+00:00"^^xsd:dateTime ;
+                     retail:hasExceptionType "Forecast Deviation" ;
+                     retail:hasResolutionNotes "Reviewed by analyst, adjusted forecast based on upcoming local event." ;
+                     retail:hasSeverity "High" ;
+                     retail:hasStatus "Resolved" .
+
+
+###  http://example.org/ontology/retail#forecast_item123_storeA_w10
+retail:forecast_item123_storeA_w10 rdf:type owl:NamedIndividual ,
+                                            retail:Forecast ;
+                                   retail:forecastAppliesToLocation retail:store_A ;
+                                   retail:forecastForTimePeriod retail:period_2024_W10 ;
+                                   retail:forecastsItem retail:item_123 ;
+                                   retail:hasCalculationTimestamp "2024-02-28T14:30:00+00:00"^^xsd:dateTime ;
+                                   retail:hasForecastID "FCT_123_A_W10" ;
+                                   retail:hasForecastModelUsed "Exponential Smoothing" ;
+                                   retail:hasForecastQuantity 150.0 ;
+                                   retail:hasForecastType "Baseline" .
+
+
+###  http://example.org/ontology/retail#item_123
+retail:item_123 rdf:type owl:NamedIndividual ,
+                         retail:Item ;
+                retail:belongsToProductHierarchy retail:ph_cat_dairy ;
+                retail:hasDescription "Organic Milk, 1 Gallon" ;
+                retail:hasItemID "SKU12345" ;
+                retail:hasLifecyclePhase "Active" ;
+                retail:hasStatus "Active" ;
+                retail:hasUOM "Gallon" ;
+                retail:isForecastable "true"^^xsd:boolean ;
+                retail:isReplenishable "true"^^xsd:boolean .
+
+
+###  http://example.org/ontology/retail#lh_region_east
+retail:lh_region_east rdf:type owl:NamedIndividual ,
+                               retail:LocationHierarchyNode ;
+                      rdfs:label "East Region Node" .
+
+
+###  http://example.org/ontology/retail#period_2024_W10
+retail:period_2024_W10 rdf:type owl:NamedIndividual ,
+                                retail:TimePeriod ;
+                       retail:hasDate "2024-03-04"^^xsd:date ;
+                       retail:hasDayOfWeek "Monday" ;
+                       retail:hasMonthOfYear 3 ;
+                       retail:hasTimePeriodID "2024-W10" ;
+                       retail:hasWeekOfYear 10 ;
+                       retail:hasYear "2024"^^xsd:gYear ;
+                       retail:isHoliday "false"^^xsd:boolean .
+
+
+###  http://example.org/ontology/retail#ph_cat_dairy
+retail:ph_cat_dairy rdf:type owl:NamedIndividual ,
+                             retail:ProductHierarchyNode ;
+                    rdfs:label "Dairy Category Node" .
+
+
+###  http://example.org/ontology/retail#po_987
+retail:po_987 rdf:type owl:NamedIndividual ,
+                       retail:PurchaseOrder ;
+              retail:hasLineItem retail:pol_987_1 ;
+              retail:orderedFromSupplier retail:supplier_X ;
+              retail:shipsToLocation retail:dc_1 ;
+              retail:hasCreationTimestamp "2024-03-05T09:00:00+00:00"^^xsd:dateTime ;
+              retail:hasExpectedDeliveryDate "2024-03-20"^^xsd:date ;
+              retail:hasOrderDate "2024-03-05"^^xsd:date ;
+              retail:hasPurchaseOrderID "PO98765" ;
+              retail:hasStatus "Submitted" ;
+              retail:hasTotalOrderValue 1200.00 .
+
+
+###  http://example.org/ontology/retail#pol_987_1
+retail:pol_987_1 rdf:type owl:NamedIndividual ,
+                          retail:PurchaseOrderLine ;
+                 retail:isPartOfPurchaseOrder retail:po_987 ;
+                 retail:ordersItem retail:item_123 ;
+                 retail:hasLineStatus "Open" ;
+                 retail:hasOrderedQuantity 100.0 ;
+                 retail:hasPurchaseOrderLineID "PO98765-1" ;
+                 retail:hasReceivedQuantity 0.0 ;
+                 retail:hasUnitCost 12.00 .
+
+
+###  http://example.org/ontology/retail#store_A
+retail:store_A rdf:type owl:NamedIndividual ,
+                        retail:Store ;
+               retail:belongsToLocationHierarchy retail:lh_region_east ;
+               retail:hasAddress "1 Main Street, Anytown, CA 90210" ;
+               retail:hasLocationID "STORE00A" ;
+               retail:hasLocationName "Downtown East Store" ;
+               retail:hasLocationType "Store" .
+
+
+###  http://example.org/ontology/retail#supplier_X
+retail:supplier_X rdf:type owl:NamedIndividual ,
+                           retail:Supplier ;
+                  retail:hasAddress "1 Dairy Lane, Farmville, CA 90211" ;
+                  retail:hasContactInfo "John Doe - 555-1234" ;
+                  retail:hasDefaultLeadTimeDays 7 ;
+                  retail:hasMinimumOrderQuantity 50.0 ;
+                  retail:hasSupplierID "SUPP-X" ;
+                  retail:hasSupplierName "Dairy Farms Inc." .
+
+
+###  http://example.org/ontology/retail#user_analyst1
+retail:user_analyst1 rdf:type owl:NamedIndividual ,
+                              retail:User ;
+                     retail:hasUserID "analyst01" .
+
+
+###  http://example.org/ontology/retail/replenishment#alert_low_stock_milk_store101
+retail1:alert_low_stock_milk_store101 rdf:type owl:NamedIndividual ,
+                                               retail1:AlertThreshold ;
+                                      retail1:appliesToItem retail1:item_milk_gallon ;
+                                      retail1:appliesToLocation retail1:loc_store_101 ;
+                                      retail1:hasAlertThresholdID "ALERT_LS_MILKG_S101" ;
+                                      retail1:hasAlertType "LowInventoryUnits" ;
+                                      retail1:hasNotificationRule "Email store manager when stock < 10 units" ;
+                                      retail1:hasSeverity "Medium" ;
+                                      retail1:hasThresholdValue 10.0 .
+
+
+###  http://example.org/ontology/retail/replenishment#item_bread_wholewheat
+retail1:item_bread_wholewheat rdf:type owl:NamedIndividual ,
+                                       retail1:Item ;
+                              retail1:isSuppliedBy retail1:supplier_bakery_co ;
+                              retail1:hasDefaultUnitOfMeasure "Loaf" ;
+                              retail1:hasItemDescription "Whole Wheat Bread Loaf" ;
+                              retail1:hasItemID "SKU54321" ;
+                              retail1:hasProductHierarchyLevel1 "Bakery" ;
+                              retail1:hasProductHierarchyLevel2 "Bread" .
+
+
+###  http://example.org/ontology/retail/replenishment#item_milk_gallon
+retail1:item_milk_gallon rdf:type owl:NamedIndividual ,
+                                  retail1:Item ;
+                         retail1:isSuppliedBy retail1:supplier_dairy_inc ;
+                         retail1:hasDefaultUnitOfMeasure "Gallon" ;
+                         retail1:hasItemDescription "Organic Milk 1 Gallon" ;
+                         retail1:hasItemID "SKU12345" ;
+                         retail1:hasProductHierarchyLevel1 "Dairy" ;
+                         retail1:hasProductHierarchyLevel2 "Milk" .
+
+
+###  http://example.org/ontology/retail/replenishment#loc_group_east_stores
+retail1:loc_group_east_stores rdf:type owl:NamedIndividual ,
+                                       retail1:LocationGroup ;
+                              retail1:containsLocation retail1:loc_store_101 ;
+                              retail1:hasGroupDescription "All stores in the Eastern region" ;
+                              retail1:hasGroupName "East Region Stores" ;
+                              retail1:hasGroupType "Store" ;
+                              retail1:hasLocationGroupID "GRP_EAST_STORES" .
+
+
+###  http://example.org/ontology/retail/replenishment#loc_store_101
+retail1:loc_store_101 rdf:type owl:NamedIndividual ,
+                               retail1:Store ;
+                      retail1:isMemberOfGroup retail1:loc_group_east_stores ;
+                      retail1:hasAddress "101 Retail Row, Anytown, NY 12345, USA" ;
+                      retail1:hasLocationID "STORE101" ;
+                      retail1:hasLocationName "Anytown East Store" ;
+                      retail1:hasLocationType "Store" ;
+                      retail1:hasSellingAreaSize 15000.5 ;
+                      retail1:hasStoreFormat "Supermarket" ;
+                      retail1:hasStoreID "STORE101" .
+
+
+###  http://example.org/ontology/retail/replenishment#loc_warehouse_main
+retail1:loc_warehouse_main rdf:type owl:NamedIndividual ,
+                                    retail1:Warehouse ;
+                           retail1:hasAddress "500 Industrial Park, Big City, NY 10001, USA" ;
+                           retail1:hasLocationID "WH001" ;
+                           retail1:hasLocationName "Main Distribution Center" ;
+                           retail1:hasLocationType "DC" ;
+                           retail1:hasStorageCapacity 50000.0 ;
+                           retail1:hasWarehouseID "WH001" ;
+                           retail1:hasWarehouseType "Central" .
+
+
+###  http://example.org/ontology/retail/replenishment#metric_service_level_milk_store101_w10
+retail1:metric_service_level_milk_store101_w10 rdf:type owl:NamedIndividual ,
+                                                        retail1:ReplenishmentPerformanceMetric ;
+                                               retail1:appliesToItem retail1:item_milk_gallon ;
+                                               retail1:appliesToLocation retail1:loc_store_101 ;
+                                               retail1:specifiedBySupplier retail1:supplier_dairy_inc ;
+                                               retail1:hasCalculationDate "2024-03-11"^^xsd:date ;
+                                               retail1:hasMetricID "METRIC_SL_MILKG_S101_W10" ;
+                                               retail1:hasMetricType "ActualServiceLevelPercent" ;
+                                               retail1:hasMetricValue 98.5 ;
+                                               retail1:hasTimePeriodCovered "W10-2024" .
+
+
+###  http://example.org/ontology/retail/replenishment#param_reorderpoint_bread_wh001
+retail1:param_reorderpoint_bread_wh001 rdf:type owl:NamedIndividual ,
+                                                retail1:ReplenishmentParameter ;
+                                       retail1:appliesToItem retail1:item_bread_wholewheat ;
+                                       retail1:appliesToLocation retail1:loc_warehouse_main ;
+                                       retail1:hasEffectiveStartDate "2024-01-01"^^xsd:date ;
+                                       retail1:hasParameterSetID "PARAM_BREADW_WH1_ROP" ;
+                                       retail1:hasParameterType "ReorderPointUnits" ;
+                                       retail1:hasParameterValue 200.0 ;
+                                       retail1:hasStatus "Active" .
+
+
+###  http://example.org/ontology/retail/replenishment#param_safetystock_milk_store101
+retail1:param_safetystock_milk_store101 rdf:type owl:NamedIndividual ,
+                                                 retail1:ReplenishmentParameter ;
+                                        retail1:appliesToItem retail1:item_milk_gallon ;
+                                        retail1:appliesToLocation retail1:loc_store_101 ;
+                                        retail1:specifiedBySupplier retail1:supplier_dairy_inc ;
+                                        retail1:hasEffectiveStartDate "2024-01-01"^^xsd:date ;
+                                        retail1:hasLastUpdatedTimestamp "2023-12-15T10:00:00+00:00"^^xsd:dateTime ;
+                                        retail1:hasLastUpdatedUser "PlannerBot" ;
+                                        retail1:hasParameterSetID "PARAM_MILKG_S101_SAFETY" ;
+                                        retail1:hasParameterType "SafetyStockUnits" ;
+                                        retail1:hasParameterValue 12.0 ;
+                                        retail1:hasStatus "Active" .
+
+
+###  http://example.org/ontology/retail/replenishment#supplier_bakery_co
+retail1:supplier_bakery_co rdf:type owl:NamedIndividual ,
+                                    retail1:Supplier ;
+                           retail1:suppliesItem retail1:item_bread_wholewheat ;
+                           retail1:hasDefaultLeadTime 5.0 ;
+                           retail1:hasDefaultMinimumOrderQuantity 50.0 ;
+                           retail1:hasSupplierID "SUPP_BAKECO" ;
+                           retail1:hasSupplierName "Bakery Co." .
+
+
+###  http://example.org/ontology/retail/replenishment#supplier_dairy_inc
+retail1:supplier_dairy_inc rdf:type owl:NamedIndividual ,
+                                    retail1:Supplier ;
+                           retail1:suppliesItem retail1:item_milk_gallon ;
+                           retail1:hasDefaultLeadTime 2.0 ;
+                           retail1:hasDefaultMinimumOrderQuantity 100.0 ;
+                           retail1:hasSupplierID "SUPP_DAIRYINC" ;
+                           retail1:hasSupplierName "Dairy Inc." .
+
+
+###  http://example.org/ontology/retail/replenishment#target_wos_dairy_east_q2
+retail1:target_wos_dairy_east_q2 rdf:type owl:NamedIndividual ,
+                                          retail1:InventoryTarget ;
+                                 retail1:appliesToLocationGroup retail1:loc_group_east_stores ;
+                                 retail1:appliesToProductHierarchyLevel "Dairy" ;
+                                 retail1:hasEffectiveDate "2024-04-01"^^xsd:date ;
+                                 retail1:hasTargetID "TARGET_WOS_DAIRY_EAST_Q2" ;
+                                 retail1:hasTargetType "TargetWeeksOfSupply" ;
+                                 retail1:hasTargetValue 2.5 ;
+                                 retail1:hasTimePeriod "Q2 2024" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
