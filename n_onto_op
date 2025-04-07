@@ -1,0 +1,5773 @@
+{
+  "nodes": {
+    "StoreOpeningClosing": {
+      "inherits_from": [
+        "StoreOps"
+      ],
+      "properties": []
+    },
+    "PromotionalPrice": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": []
+    },
+    "OrderEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "StoreManager": {
+      "inherits_from": [
+        "Persona"
+      ],
+      "properties": []
+    },
+    "CashierTillActivity": {
+      "inherits_from": [
+        "StoreOps"
+      ],
+      "properties": []
+    },
+    "PageVisit": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": [
+        "scrollDepth",
+        "timeOnPage"
+      ]
+    },
+    "RefundProcessedEvent": {
+      "inherits_from": [
+        "ReturnExchangeEvent"
+      ],
+      "properties": []
+    },
+    "ReorderPoint": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "reorderPointQty"
+      ]
+    },
+    "SupplierTier": {
+      "inherits_from": [
+        "SupplierClassification"
+      ],
+      "properties": []
+    },
+    "DiscountAppliedEvent": {
+      "inherits_from": [
+        "PricingEvent"
+      ],
+      "properties": []
+    },
+    "Category": {
+      "inherits_from": [
+        "SubDepartment"
+      ],
+      "properties": [
+        "categoryCode",
+        "categoryName"
+      ]
+    },
+    "ForecastMethod": {
+      "inherits_from": [
+        "DemandForecasting"
+      ],
+      "properties": [
+        "forecastMethodCode"
+      ]
+    },
+    "PurchaseOrder": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "poNumber",
+        "purchaseOrderDate",
+        "purchaseOrderStatus",
+        "purchaseOrderTotalAmount"
+      ]
+    },
+    "Offer": {
+      "inherits_from": [
+        "MarketingAndPromotion"
+      ],
+      "properties": [
+        "offerCode"
+      ]
+    },
+    "PersonalityType": {
+      "inherits_from": [
+        "CustomerProfile"
+      ],
+      "properties": []
+    },
+    "Advertising": {
+      "inherits_from": [
+        "MarketingAndPromotion"
+      ],
+      "properties": []
+    },
+    "ShipmentCreatedEvent": {
+      "inherits_from": [
+        "FulfillmentEvent"
+      ],
+      "properties": []
+    },
+    "BackOrder": {
+      "inherits_from": [
+        "Order"
+      ],
+      "properties": []
+    },
+    "ShippingRule": {
+      "inherits_from": [
+        "ValidationRules"
+      ],
+      "properties": []
+    },
+    "Division": {
+      "inherits_from": [
+        "Store"
+      ],
+      "properties": [
+        "divisionCode"
+      ]
+    },
+    "OrderPickingStartedEvent": {
+      "inherits_from": [
+        "FulfillmentEvent"
+      ],
+      "properties": []
+    },
+    "ReturnsAndExchanges": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "InboundShipment": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": []
+    },
+    "ForecastGranularity": {
+      "inherits_from": [
+        "DemandForecasting"
+      ],
+      "properties": [
+        "forecastGranularityLevel"
+      ]
+    },
+    "Size": {
+      "inherits_from": [
+        "ProductCharacteristics"
+      ],
+      "properties": [
+        "sizeCode",
+        "sizeLabel"
+      ]
+    },
+    "PromotionStartedEvent": {
+      "inherits_from": [
+        "PricingEvent"
+      ],
+      "properties": []
+    },
+    "InventoryCheck": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "ChannelRule": {
+      "inherits_from": [
+        "ValidationRules"
+      ],
+      "properties": []
+    },
+    "ShipmentDispatchedEvent": {
+      "inherits_from": [
+        "FulfillmentEvent"
+      ],
+      "properties": []
+    },
+    "TillClosedEvent": {
+      "inherits_from": [
+        "StoreOpsEvent"
+      ],
+      "properties": []
+    },
+    "DailyStoreOperations": {
+      "inherits_from": [
+        "StoreOps"
+      ],
+      "properties": []
+    },
+    "CustomerBrowsing": {
+      "inherits_from": [
+        "CustomerInteraction"
+      ],
+      "properties": []
+    },
+    "PromotionType": {
+      "inherits_from": [
+        "MarketingAndPromotion",
+        "SellPhaseConcept"
+      ],
+      "properties": [
+        "promotionTypeCode"
+      ]
+    },
+    "SLA": {
+      "inherits_from": [
+        "Supplier"
+      ],
+      "properties": [
+        "slaCode"
+      ]
+    },
+    "ItemScannedEvent": {
+      "inherits_from": [
+        "SalesEvent"
+      ],
+      "properties": []
+    },
+    "PricingEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "CustomerSocialInteraction": {
+      "inherits_from": [
+        "CustomerInteraction"
+      ],
+      "properties": []
+    },
+    "LogisticsPartner": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "logisticsPartnerCode"
+      ]
+    },
+    "ComplexPackProduct": {
+      "inherits_from": [
+        "Product"
+      ],
+      "properties": []
+    },
+    "CustomerDevice": {
+      "inherits_from": [
+        "CustomerProfile"
+      ],
+      "properties": []
+    },
+    "MarketTrend": {
+      "inherits_from": [
+        "MarketingAnalysis"
+      ],
+      "properties": [
+        "marketTrendName"
+      ]
+    },
+    "OrderHeldEvent": {
+      "inherits_from": [
+        "OrderEvent"
+      ],
+      "properties": []
+    },
+    "GrossMarginReturnOnInventory": {
+      "inherits_from": [
+        "MerchandisingAnalysis"
+      ],
+      "properties": [
+        "grossMarginROI"
+      ]
+    },
+    "PriceStrategy": {
+      "inherits_from": [
+        "PriceConcept"
+      ],
+      "properties": [
+        "strategyDescription",
+        "strategyName"
+      ]
+    },
+    "InventoryThreshold": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "inventoryThresholdQty"
+      ]
+    },
+    "StoreClosedEvent": {
+      "inherits_from": [
+        "StoreOpsEvent"
+      ],
+      "properties": []
+    },
+    "PriceConcept": {
+      "inherits_from": [
+        "BuyPhaseConcept"
+      ],
+      "properties": []
+    },
+    "Cashier": {
+      "inherits_from": [
+        "Persona"
+      ],
+      "properties": []
+    },
+    "NonPeakPeriod": {
+      "inherits_from": [
+        "TimePeriodType"
+      ],
+      "properties": []
+    },
+    "POStatus": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "poStatus"
+      ]
+    },
+    "SalesPerformanceAnalysis": {
+      "inherits_from": [
+        "SalesAnalysis"
+      ],
+      "properties": []
+    },
+    "PriceType": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "priceTypeCode"
+      ]
+    },
+    "AssortmentPlan": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "assortmentPlanID"
+      ]
+    },
+    "MarketingManager": {
+      "inherits_from": [
+        "Persona"
+      ],
+      "properties": []
+    },
+    "OrderPlacedEvent": {
+      "inherits_from": [
+        "OrderEvent"
+      ],
+      "properties": []
+    },
+    "ContractLine": {
+      "inherits_from": [
+        "Supplier"
+      ],
+      "properties": [
+        "contractLineID"
+      ]
+    },
+    "CustomerInteraction": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": [
+        "interactionTimestamp"
+      ]
+    },
+    "CartRule": {
+      "inherits_from": [
+        "ValidationRules"
+      ],
+      "properties": []
+    },
+    "CheckoutStartedEvent": {
+      "inherits_from": [
+        "CheckoutEvent"
+      ],
+      "properties": []
+    },
+    "CartAbandonmentEvent": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": []
+    },
+    "PreOrderTransaction": {
+      "inherits_from": [
+        "SalesTransaction"
+      ],
+      "properties": []
+    },
+    "OrderModifiedEvent": {
+      "inherits_from": [
+        "OrderEvent"
+      ],
+      "properties": []
+    },
+    "ManualCostChange": {
+      "inherits_from": [
+        "SupplierCostChange"
+      ],
+      "properties": []
+    },
+    "Invoice": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "invoiceAmount",
+        "invoiceNumber"
+      ]
+    },
+    "ExchangeInitiatedEvent": {
+      "inherits_from": [
+        "ReturnExchangeEvent"
+      ],
+      "properties": []
+    },
+    "Location": {
+      "inherits_from": [
+        "Store"
+      ],
+      "properties": [
+        "locationCode"
+      ]
+    },
+    "ProductChannelPerformance": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "averageSellingPrice",
+        "channelSpecificInventoryTurn",
+        "lastSaleTimestampInChannel",
+        "numberOfTransactionsInvolvingProduct",
+        "numberOfUniqueCustomersPurchasing",
+        "rankByValue",
+        "rankByVolume",
+        "summaryPeriodEndDate",
+        "summaryPeriodStartDate",
+        "totalQuantitySold",
+        "totalValueSold"
+      ]
+    },
+    "InboundTracking": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "inboundTrackingID"
+      ]
+    },
+    "ChurnAnalysis": {
+      "inherits_from": [
+        "SalesAnalysis"
+      ],
+      "properties": [
+        "hasChurnRiskScore"
+      ]
+    },
+    "OrderConfirmedEvent": {
+      "inherits_from": [
+        "OrderEvent"
+      ],
+      "properties": []
+    },
+    "PricingRule": {
+      "inherits_from": [
+        "ValidationRules"
+      ],
+      "properties": []
+    },
+    "CategoryManager": {
+      "inherits_from": [
+        "Persona"
+      ],
+      "properties": []
+    },
+    "SentimentScore": {
+      "inherits_from": [
+        "CustomerExperience"
+      ],
+      "properties": []
+    },
+    "Planogram": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "planogramCode"
+      ]
+    },
+    "LegalEntity": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "countryOfRegistration",
+        "entityType",
+        "incorporationDate",
+        "isInternal",
+        "legalEntityID",
+        "legalEntityName",
+        "registeredAddress",
+        "taxID"
+      ]
+    },
+    "CustomerSegment": {
+      "inherits_from": [
+        "CustomerProfile"
+      ],
+      "properties": []
+    },
+    "CustomerInteractionRule": {
+      "inherits_from": [
+        "ValidationRules"
+      ],
+      "properties": []
+    },
+    "PaymentMethodSelectedEvent": {
+      "inherits_from": [
+        "CheckoutEvent"
+      ],
+      "properties": []
+    },
+    "OrderShipping": {
+      "inherits_from": [
+        "OrderFulfillment"
+      ],
+      "properties": []
+    },
+    "PricingThreshold": {
+      "inherits_from": [
+        "PriceConcept"
+      ],
+      "properties": [
+        "thresholdAmount"
+      ]
+    },
+    "MerchandisingAnalysis": {
+      "inherits_from": [
+        "MarketingAnalytics"
+      ],
+      "properties": []
+    },
+    "Supplier": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "supplierAddress",
+        "supplierContact",
+        "supplierID",
+        "supplierLocation",
+        "supplierName",
+        "supplierPerformanceScore",
+        "supplierRegion"
+      ]
+    },
+    "MarketingAnalytics": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "ChurnPredictionResult": {
+      "inherits_from": [
+        "SalesAnalysis"
+      ],
+      "properties": [
+        "hasChurnScore"
+      ]
+    },
+    "ChannelPrice": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": []
+    },
+    "SocialCommerceChannel": {
+      "inherits_from": [
+        "Channel"
+      ],
+      "properties": []
+    },
+    "PriceRule": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "priceRuleCode"
+      ]
+    },
+    "ReturnPolicy": {
+      "inherits_from": [
+        "ValidationRules"
+      ],
+      "properties": []
+    },
+    "SupplierCostChange": {
+      "inherits_from": [
+        "Supplier"
+      ],
+      "properties": [
+        "costChangeID",
+        "costChangeType",
+        "costEffectiveDate"
+      ]
+    },
+    "DemandForecasting": {
+      "inherits_from": [
+        "ForecastingProcurementLogistics"
+      ],
+      "properties": []
+    },
+    "SimplePackProduct": {
+      "inherits_from": [
+        "Product"
+      ],
+      "properties": []
+    },
+    "Brand": {
+      "inherits_from": [
+        "ProductCharacteristics"
+      ],
+      "properties": [
+        "brandCode",
+        "brandName"
+      ]
+    },
+    "OrderStatusChangedEvent": {
+      "inherits_from": [
+        "OrderEvent"
+      ],
+      "properties": []
+    },
+    "ReturnReason": {
+      "inherits_from": [
+        "ReturnsAndExchanges"
+      ],
+      "properties": []
+    },
+    "Scenario": {
+      "inherits_from": [
+        "ForecastingProcurementLogistics"
+      ],
+      "properties": [
+        "scenarioName",
+        "scenarioObjective"
+      ]
+    },
+    "PriceChange": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "newPrice",
+        "priceChangeDate"
+      ]
+    },
+    "Product": {
+      "inherits_from": [
+        "SubCategory"
+      ],
+      "properties": [
+        "barcode",
+        "discontinueDate",
+        "isActive",
+        "isCatchweight",
+        "isTransformable",
+        "launchDate",
+        "productBarcode",
+        "productBrand",
+        "productCategory",
+        "productColor",
+        "productDescription",
+        "productID",
+        "productLifecycle",
+        "productName",
+        "productPrice",
+        "productSKU",
+        "productSize",
+        "productWeight",
+        "uom"
+      ]
+    },
+    "SearchTerm": {
+      "inherits_from": [
+        "CustomerInteraction"
+      ],
+      "properties": []
+    },
+    "OrderFulfillment": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "CashDropEvent": {
+      "inherits_from": [
+        "StoreOpsEvent"
+      ],
+      "properties": []
+    },
+    "CustomerServiceRep": {
+      "inherits_from": [
+        "Persona"
+      ],
+      "properties": []
+    },
+    "CustomerDemographics": {
+      "inherits_from": [
+        "CustomerProfile"
+      ],
+      "properties": []
+    },
+    "PaymentMethod": {
+      "inherits_from": [
+        "Payment"
+      ],
+      "properties": []
+    },
+    "AddToCartEvent": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": []
+    },
+    "TransactionInitiationEvent": {
+      "inherits_from": [
+        "SalesEvent"
+      ],
+      "properties": []
+    },
+    "ASN": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "asnNumber"
+      ]
+    },
+    "DeliveryMethod": {
+      "inherits_from": [
+        "OrderFulfillment"
+      ],
+      "properties": []
+    },
+    "FitnessProfile": {
+      "inherits_from": [
+        "CustomerProfile"
+      ],
+      "properties": []
+    },
+    "Forecast": {
+      "inherits_from": [
+        "DemandForecasting"
+      ],
+      "properties": [
+        "forecastID",
+        "forecastPeriodEnd",
+        "forecastPeriodStart",
+        "forecastQuantity"
+      ]
+    },
+    "OrderReleasedEvent": {
+      "inherits_from": [
+        "OrderEvent"
+      ],
+      "properties": []
+    },
+    "BuyingOffice": {
+      "inherits_from": [
+        "OrganizationalHierarchy"
+      ],
+      "properties": [
+        "buyingOfficeCode"
+      ]
+    },
+    "SalesOrder": {
+      "inherits_from": [
+        "Order"
+      ],
+      "properties": []
+    },
+    "InStoreSaleTransaction": {
+      "inherits_from": [
+        "SalesTransaction"
+      ],
+      "properties": []
+    },
+    "PlanogramAnalysis": {
+      "inherits_from": [
+        "MerchandisingAnalysis"
+      ],
+      "properties": [
+        "planogramCompliancePct"
+      ]
+    },
+    "CampaignPerformance": {
+      "inherits_from": [
+        "MarketingAnalysis"
+      ],
+      "properties": [
+        "campaignPerformanceScore"
+      ]
+    },
+    "POApprovedEvent": {
+      "inherits_from": [
+        "BuyingEvent"
+      ],
+      "properties": [
+        "approvalStatus",
+        "approvalTimestamp",
+        "approverID",
+        "poApprovalID"
+      ]
+    },
+    "SubDepartment": {
+      "inherits_from": [
+        "Department"
+      ],
+      "properties": []
+    },
+    "CatchweightProduct": {
+      "inherits_from": [
+        "Product"
+      ],
+      "properties": []
+    },
+    "POSRestartedEvent": {
+      "inherits_from": [
+        "StoreOpsEvent"
+      ],
+      "properties": []
+    },
+    "MerchandisingPerformance": {
+      "inherits_from": [
+        "MerchandisingAnalysis"
+      ],
+      "properties": [
+        "merchandisingPerformanceScore"
+      ]
+    },
+    "ProductViewedEvent": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": []
+    },
+    "OrderRule": {
+      "inherits_from": [
+        "ValidationRules"
+      ],
+      "properties": []
+    },
+    "OnlineSaleTransaction": {
+      "inherits_from": [
+        "SalesTransaction"
+      ],
+      "properties": []
+    },
+    "CustomerShipment": {
+      "inherits_from": [
+        "OrderFulfillment"
+      ],
+      "properties": [
+        "shipmentID"
+      ]
+    },
+    "CallCenterChannel": {
+      "inherits_from": [
+        "Channel"
+      ],
+      "properties": []
+    },
+    "MarketingAndPromotion": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "MultichannelCustomerSegment": {
+      "inherits_from": [
+        "BehavioralSegment"
+      ],
+      "properties": [
+        "analysisTimeframeDefinition",
+        "avgSpendMultiplierVsSingleChannel",
+        "crossChannelJourneyFrequency",
+        "dominantChannel",
+        "lastActivityDate",
+        "maxChannelsUsed",
+        "minChannelsUsed",
+        "secondaryChannelCount",
+        "segmentEntryDate",
+        "segmentID",
+        "segmentName"
+      ]
+    },
+    "CustomerSearchInteraction": {
+      "inherits_from": [
+        "CustomerInteraction"
+      ],
+      "properties": []
+    },
+    "FulfillmentEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "OrderPicking": {
+      "inherits_from": [
+        "OrderFulfillment"
+      ],
+      "properties": []
+    },
+    "SalesAttribution": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "attributionWeight",
+        "contributionScore"
+      ]
+    },
+    "ReturnApprovedEvent": {
+      "inherits_from": [
+        "ReturnExchangeEvent"
+      ],
+      "properties": []
+    },
+    "TargetAudience": {
+      "inherits_from": [
+        "MarketingAndPromotion"
+      ],
+      "properties": [
+        "targetAudienceSegment"
+      ]
+    },
+    "ReturnInitiatedEvent": {
+      "inherits_from": [
+        "ReturnExchangeEvent"
+      ],
+      "properties": []
+    },
+    "SupplierType": {
+      "inherits_from": [
+        "SupplierClassification"
+      ],
+      "properties": []
+    },
+    "SellEvents": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "MerchandisePlanning": {
+      "inherits_from": [
+        "ForecastingProcurementLogistics"
+      ],
+      "properties": []
+    },
+    "ClickAndCollectTransaction": {
+      "inherits_from": [
+        "SalesTransaction"
+      ],
+      "properties": []
+    },
+    "ProductInquiry": {
+      "inherits_from": [
+        "CustomerInteraction"
+      ],
+      "properties": []
+    },
+    "MerchandiseEntity": {
+      "inherits_from": [
+        "MerchandiseHierarchy"
+      ],
+      "properties": [
+        "merchandiseEntityCode"
+      ]
+    },
+    "ProductInquiryEvent": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": []
+    },
+    "ProductCharacteristics": {
+      "inherits_from": [
+        "MerchandiseHierarchy"
+      ],
+      "properties": []
+    },
+    "AllocationPlan": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "allocationPlanID"
+      ]
+    },
+    "TransformableProduct": {
+      "inherits_from": [
+        "Product"
+      ],
+      "properties": []
+    },
+    "WishlistItemAddedEvent": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": []
+    },
+    "Household": {
+      "inherits_from": [
+        "CustomerProfile"
+      ],
+      "properties": []
+    },
+    "MobileAppChannel": {
+      "inherits_from": [
+        "Channel"
+      ],
+      "properties": []
+    },
+    "CustomerProfile": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "numberOfChannelsUsedInPeriod"
+      ]
+    },
+    "MarkdownAppliedEvent": {
+      "inherits_from": [
+        "PricingEvent"
+      ],
+      "properties": []
+    },
+    "SalesEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "Spend": {
+      "inherits_from": [
+        "MerchandiseFinancialPlan"
+      ],
+      "properties": [
+        "amount",
+        "spendAmount"
+      ]
+    },
+    "PriceGuide": {
+      "inherits_from": [
+        "PriceConcept"
+      ],
+      "properties": [
+        "guideName"
+      ]
+    },
+    "CustomerSeasonalSummary": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "seasonalInteractionCount",
+        "seasonalTransactionCount",
+        "totalSeasonalSpend"
+      ]
+    },
+    "ForecastVariance": {
+      "inherits_from": [
+        "DemandForecasting"
+      ],
+      "properties": [
+        "forecastVariancePct",
+        "isMaterial",
+        "varianceAmount"
+      ]
+    },
+    "LoyaltyPointsEarnedEvent": {
+      "inherits_from": [
+        "SalesEvent"
+      ],
+      "properties": []
+    },
+    "Inventory": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "inventoryQuantity"
+      ]
+    },
+    "InventoryLevel": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "inventoryLevelStatus",
+        "inventoryQuantity",
+        "inventoryStatus"
+      ]
+    },
+    "Persona": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "OrganizationalHierarchy": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": []
+    },
+    "LoyaltyPointsAppliedEvent": {
+      "inherits_from": [
+        "SalesEvent"
+      ],
+      "properties": []
+    },
+    "Channel": {
+      "inherits_from": [
+        "FoundationConcept",
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "channelCode"
+      ]
+    },
+    "ClickAndCollectPickedUpEvent": {
+      "inherits_from": [
+        "FulfillmentEvent"
+      ],
+      "properties": []
+    },
+    "Contract": {
+      "inherits_from": [
+        "Supplier"
+      ],
+      "properties": [
+        "contractEndDate",
+        "contractID",
+        "contractStartDate",
+        "paymentTerms"
+      ]
+    },
+    "OrderPackedEvent": {
+      "inherits_from": [
+        "FulfillmentEvent"
+      ],
+      "properties": []
+    },
+    "Material": {
+      "inherits_from": [
+        "ProductCharacteristics"
+      ],
+      "properties": [
+        "materialCode",
+        "materialType"
+      ]
+    },
+    "SalesAssociate": {
+      "inherits_from": [
+        "Persona"
+      ],
+      "properties": []
+    },
+    "CustomerWebSession": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": [
+        "isConversion",
+        "sessionDuration"
+      ]
+    },
+    "SaleVoidedEvent": {
+      "inherits_from": [
+        "SalesEvent"
+      ],
+      "properties": []
+    },
+    "SearchInteraction": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": []
+    },
+    "Budget": {
+      "inherits_from": [
+        "MerchandiseFinancialPlan"
+      ],
+      "properties": [
+        "budgetAmount"
+      ]
+    },
+    "StoreOpsEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "CompetitorPriceComparison": {
+      "inherits_from": [
+        "MarketingAnalysis"
+      ],
+      "properties": [
+        "comparedCompetitor",
+        "comparisonDate",
+        "priceDifference"
+      ]
+    },
+    "ReturnExchangeEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "OnlineChannel": {
+      "inherits_from": [
+        "Channel"
+      ],
+      "properties": []
+    },
+    "OrderLine": {
+      "inherits_from": [
+        "TransactionLine"
+      ],
+      "properties": [
+        "orderLineNumber",
+        "orderLineQuantity"
+      ]
+    },
+    "EDICostChange": {
+      "inherits_from": [
+        "SupplierCostChange"
+      ],
+      "properties": []
+    },
+    "ProductVariant": {
+      "inherits_from": [
+        "ProductCharacteristics"
+      ],
+      "properties": [
+        "variantCode",
+        "variantDescription"
+      ]
+    },
+    "RefundMethod": {
+      "inherits_from": [
+        "ReturnsAndExchanges"
+      ],
+      "properties": []
+    },
+    "ValidationRules": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "FulfillmentTeamMember": {
+      "inherits_from": [
+        "Persona"
+      ],
+      "properties": []
+    },
+    "CheckoutAbandonedEvent": {
+      "inherits_from": [
+        "CheckoutEvent"
+      ],
+      "properties": []
+    },
+    "InvoiceReceivedEvent": {
+      "inherits_from": [
+        "BuyingEvent"
+      ],
+      "properties": [
+        "invoiceAmount",
+        "invoiceID",
+        "invoiceMatchFlag",
+        "invoiceStatus"
+      ]
+    },
+    "StyleColor": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "styleColorCode"
+      ]
+    },
+    "PeakPeriod": {
+      "inherits_from": [
+        "TimePeriodType"
+      ],
+      "properties": []
+    },
+    "Style": {
+      "inherits_from": [
+        "ProductCharacteristics"
+      ],
+      "properties": [
+        "styleCode",
+        "styleName"
+      ]
+    },
+    "ForecastHorizon": {
+      "inherits_from": [
+        "DemandForecasting"
+      ],
+      "properties": [
+        "forecastHorizonWeeks"
+      ]
+    },
+    "LoyaltyCustomer": {
+      "inherits_from": [
+        "CustomerProfile"
+      ],
+      "properties": []
+    },
+    "ProductPresentation": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "Week": {
+      "inherits_from": [
+        "PlanningCalendar"
+      ],
+      "properties": [
+        "weekEndDate",
+        "weekNumber",
+        "weekStartDate"
+      ]
+    },
+    "CustomerSearchEvent": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": []
+    },
+    "ExchangeDetails": {
+      "inherits_from": [
+        "ReturnsAndExchanges"
+      ],
+      "properties": []
+    },
+    "Order": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": [
+        "orderDate",
+        "orderID"
+      ]
+    },
+    "OrderPickedEvent": {
+      "inherits_from": [
+        "FulfillmentEvent"
+      ],
+      "properties": []
+    },
+    "PersonalizedRecommendation": {
+      "inherits_from": [
+        "CustomerInteraction"
+      ],
+      "properties": []
+    },
+    "CustomerJourney": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "isConversion"
+      ]
+    },
+    "SellEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "Assortment": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "assortmentID",
+        "assortmentName",
+        "assortmentType"
+      ]
+    },
+    "PlanningSeason": {
+      "inherits_from": [
+        "PlanningCalendar"
+      ],
+      "properties": [
+        "planningSeasonName"
+      ]
+    },
+    "LoyaltyRule": {
+      "inherits_from": [
+        "ValidationRules"
+      ],
+      "properties": []
+    },
+    "SystemEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "SizeCurve": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "sizeCurveType"
+      ]
+    },
+    "FinancialPlanVariance": {
+      "inherits_from": [
+        "MerchandiseFinancialPlan"
+      ],
+      "properties": [
+        "financialPlanVariancePct"
+      ]
+    },
+    "ForecastVersion": {
+      "inherits_from": [
+        "DemandForecasting"
+      ],
+      "properties": [
+        "forecastVersionCode"
+      ]
+    },
+    "Payment": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "BehavioralSegment": {
+      "inherits_from": [
+        "CustomerSegment"
+      ],
+      "properties": []
+    },
+    "FinancialPlanVersion": {
+      "inherits_from": [
+        "MerchandiseFinancialPlan"
+      ],
+      "properties": [
+        "financialPlanVersionNumber"
+      ]
+    },
+    "ReceiptLine": {
+      "inherits_from": [
+        "Receipt"
+      ],
+      "properties": [
+        "receiptLineNumber"
+      ]
+    },
+    "BasketAnalysisResult": {
+      "inherits_from": [
+        "MarketBasketAnalysis"
+      ],
+      "properties": [
+        "basketAnalysisResultNote"
+      ]
+    },
+    "MarketBasketAnalysis": {
+      "inherits_from": [
+        "MarketingAnalytics"
+      ],
+      "properties": [
+        "marketBasketID"
+      ]
+    },
+    "PurchaseOrderLine": {
+      "inherits_from": [
+        "PurchaseOrder"
+      ],
+      "properties": [
+        "poLineNumber",
+        "purchaseOrderLineDescription",
+        "purchaseOrderLinePrice",
+        "purchaseOrderLineQuantity"
+      ]
+    },
+    "ForecastVarianceEvent": {
+      "inherits_from": [
+        "BuyingEvent"
+      ],
+      "properties": [
+        "forecastMissAmount",
+        "forecastMissDirection",
+        "isMaterialMiss"
+      ]
+    },
+    "FinancialPlan": {
+      "inherits_from": [
+        "MerchandiseFinancialPlan"
+      ],
+      "properties": [
+        "financialPlanID"
+      ]
+    },
+    "SeasonCode": {
+      "inherits_from": [
+        "ProductLifeCycle"
+      ],
+      "properties": [
+        "seasonCode"
+      ]
+    },
+    "ClickAndCollectFulfillment": {
+      "inherits_from": [
+        "OrderFulfillment"
+      ],
+      "properties": []
+    },
+    "PromotionAnalysis": {
+      "inherits_from": [
+        "SalesAnalysis"
+      ],
+      "properties": [
+        "hasConversionRate"
+      ]
+    },
+    "CheckoutProcess": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "Assignment": {
+      "inherits_from": [
+        "OrganizationalHierarchy"
+      ],
+      "properties": [
+        "assignmentID"
+      ]
+    },
+    "MarketingAnalysis": {
+      "inherits_from": [
+        "MarketingAnalytics"
+      ],
+      "properties": [
+        "analysisNotes"
+      ]
+    },
+    "SafetyStock": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "safetyStockQty"
+      ]
+    },
+    "CustomerInteractionEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "TillOpenedEvent": {
+      "inherits_from": [
+        "StoreOpsEvent"
+      ],
+      "properties": []
+    },
+    "BasketPattern": {
+      "inherits_from": [
+        "MarketBasketAnalysis"
+      ],
+      "properties": [
+        "basketPatternCode"
+      ]
+    },
+    "DeliveryTerm": {
+      "inherits_from": [
+        "CommercialTerms"
+      ],
+      "properties": [
+        "deliveryMode",
+        "deliveryRegion",
+        "deliveryTermCode",
+        "deliveryWindowEnd",
+        "deliveryWindowStart",
+        "isPreferred",
+        "leadTimeDays"
+      ]
+    },
+    "Customer": {
+      "inherits_from": [
+        "CustomerProfile"
+      ],
+      "properties": []
+    },
+    "BuyerGroup": {
+      "inherits_from": [
+        "OrganizationalHierarchy"
+      ],
+      "properties": [
+        "buyerGroupCode"
+      ]
+    },
+    "StoreComplianceTask": {
+      "inherits_from": [
+        "StoreOps"
+      ],
+      "properties": []
+    },
+    "Campaign": {
+      "inherits_from": [
+        "MarketingAndPromotion"
+      ],
+      "properties": [
+        "campaignID"
+      ]
+    },
+    "DeliveredToCustomerEvent": {
+      "inherits_from": [
+        "FulfillmentEvent"
+      ],
+      "properties": []
+    },
+    "CustomerFeedback": {
+      "inherits_from": [
+        "CustomerExperience"
+      ],
+      "properties": []
+    },
+    "Competitor": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": []
+    },
+    "StockTurn": {
+      "inherits_from": [
+        "MerchandisingAnalysis"
+      ],
+      "properties": [
+        "stockTurnRatio"
+      ]
+    },
+    "ItemInductionEvent": {
+      "inherits_from": [
+        "BuyingEvent"
+      ],
+      "properties": [
+        "inductionInitiatedBy",
+        "inductionMethod"
+      ]
+    },
+    "PlanningPeriod": {
+      "inherits_from": [
+        "PlanningCalendar"
+      ],
+      "properties": [
+        "planningPeriodCode"
+      ]
+    },
+    "LoyaltyTier": {
+      "inherits_from": [
+        "LoyaltyProgram"
+      ],
+      "properties": []
+    },
+    "PriceOverrideEvent": {
+      "inherits_from": [
+        "PricingEvent"
+      ],
+      "properties": []
+    },
+    "Price": {
+      "inherits_from": [
+        "PriceConcept"
+      ],
+      "properties": [
+        "basePrice",
+        "priceID"
+      ]
+    },
+    "ForecastingProcurementLogistics": {
+      "inherits_from": [
+        "BuyPhaseConcept"
+      ],
+      "properties": []
+    },
+    "CustomerBehaviorAnalysis": {
+      "inherits_from": [
+        "SalesAnalysis"
+      ],
+      "properties": [
+        "hasSearchConversionRate"
+      ]
+    },
+    "PriceZone": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "priceZoneCode"
+      ]
+    },
+    "LoyaltyProgram": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "ProcurementAndLogistics": {
+      "inherits_from": [
+        "ForecastingProcurementLogistics"
+      ],
+      "properties": []
+    },
+    "SalesBasket": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "basketCategoryMix",
+        "basketSize",
+        "basketValue",
+        "hasOnlySaleItems"
+      ]
+    },
+    "SubCategory": {
+      "inherits_from": [
+        "Category"
+      ],
+      "properties": []
+    },
+    "LeadTime": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "leadTimeDays"
+      ]
+    },
+    "Role": {
+      "inherits_from": [
+        "OrganizationalHierarchy"
+      ],
+      "properties": [
+        "roleName"
+      ]
+    },
+    "MarkdownPlan": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "markdownEndDate",
+        "markdownPercent",
+        "markdownStartDate"
+      ]
+    },
+    "Receiving": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "receivedAt",
+        "receivingNumber"
+      ]
+    },
+    "POSMaintenance": {
+      "inherits_from": [
+        "StoreOps"
+      ],
+      "properties": []
+    },
+    "ReceivingLine": {
+      "inherits_from": [
+        "Receiving"
+      ],
+      "properties": [
+        "receivingLineNumber"
+      ]
+    },
+    "BundlePrice": {
+      "inherits_from": [
+        "ProductPresentation"
+      ],
+      "properties": []
+    },
+    "ExchangeTransaction": {
+      "inherits_from": [
+        "SalesTransaction"
+      ],
+      "properties": []
+    },
+    "LoyaltyPrice": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": []
+    },
+    "ReturnOrder": {
+      "inherits_from": [
+        "Order"
+      ],
+      "properties": []
+    },
+    "ReturnTransaction": {
+      "inherits_from": [
+        "SalesTransaction"
+      ],
+      "properties": []
+    },
+    "BuyingEvent": {
+      "inherits_from": [
+        "BuyPhaseConcept"
+      ],
+      "properties": [
+        "eventComment",
+        "eventID",
+        "eventSourceSystem",
+        "eventTimestamp",
+        "eventTriggeredBy"
+      ]
+    },
+    "SupplierClassification": {
+      "inherits_from": [
+        "Supplier"
+      ],
+      "properties": [
+        "supplierTier",
+        "supplierType"
+      ]
+    },
+    "GoodsReceivedEvent": {
+      "inherits_from": [
+        "BuyingEvent"
+      ],
+      "properties": [
+        "expectedQuantity",
+        "receivedQuantity",
+        "receivingDelayDays",
+        "receivingStatus"
+      ]
+    },
+    "Time": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": []
+    },
+    "StoreOpenedEvent": {
+      "inherits_from": [
+        "StoreOpsEvent"
+      ],
+      "properties": []
+    },
+    "ItemReceivedBackEvent": {
+      "inherits_from": [
+        "ReturnExchangeEvent"
+      ],
+      "properties": []
+    },
+    "DeliveryScheduledEvent": {
+      "inherits_from": [
+        "FulfillmentEvent"
+      ],
+      "properties": []
+    },
+    "PriceList": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "priceListCode"
+      ]
+    },
+    "StoreOps": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "SalesAnalysis": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "Season": {
+      "inherits_from": [
+        "ProductLifeCycle"
+      ],
+      "properties": [
+        "seasonName"
+      ]
+    },
+    "MerchandiseHierarchy": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": []
+    },
+    "SaleCompletedEvent": {
+      "inherits_from": [
+        "SalesEvent"
+      ],
+      "properties": []
+    },
+    "FiscalPeriod": {
+      "inherits_from": [
+        "PlanningCalendar"
+      ],
+      "properties": [
+        "fiscalPeriodCode"
+      ]
+    },
+    "MerchandiseFinancialPlan": {
+      "inherits_from": [
+        "ForecastingProcurementLogistics"
+      ],
+      "properties": []
+    },
+    "CustomerFeedbackSubmittedEvent": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": []
+    },
+    "PlanningReactionEvent": {
+      "inherits_from": [
+        "BuyingEvent"
+      ],
+      "properties": [
+        "reactionImpactScore",
+        "reactionReason",
+        "reactionType"
+      ]
+    },
+    "Manufacturer": {
+      "inherits_from": [
+        "Supplier"
+      ],
+      "properties": [
+        "manufacturerCode"
+      ]
+    },
+    "ProductInformation": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "CompetitorPrice": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "competitorPriceAmount"
+      ]
+    },
+    "SalesTransaction": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": [
+        "isConversion",
+        "transactionTimestamp"
+      ]
+    },
+    "CustomerLoginEvent": {
+      "inherits_from": [
+        "CustomerInteractionEvent"
+      ],
+      "properties": []
+    },
+    "LifecycleStage": {
+      "inherits_from": [
+        "ProductLifeCycle"
+      ],
+      "properties": [
+        "lifecycleStageCode",
+        "lifecycleStageName"
+      ]
+    },
+    "ProductPrice": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": []
+    },
+    "InboundDelivery": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": []
+    },
+    "ReceivingDocument": {
+      "inherits_from": [
+        "Receiving"
+      ],
+      "properties": [
+        "receivingDocumentID"
+      ]
+    },
+    "Promotion": {
+      "inherits_from": [
+        "MarketingAndPromotion"
+      ],
+      "properties": [
+        "discountPercentage",
+        "promotionEndDate",
+        "promotionID",
+        "promotionStartDate"
+      ]
+    },
+    "PhysicalStoreChannel": {
+      "inherits_from": [
+        "Channel"
+      ],
+      "properties": []
+    },
+    "CustomerPreferences": {
+      "inherits_from": [
+        "CustomerProfile"
+      ],
+      "properties": []
+    },
+    "CartInteraction": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "CustomerDelivery": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": [
+        "deliveryDate"
+      ]
+    },
+    "StoreCluster": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "storeClusterCode"
+      ]
+    },
+    "ClickAndCollectReadyEvent": {
+      "inherits_from": [
+        "FulfillmentEvent"
+      ],
+      "properties": []
+    },
+    "SimulationPlan": {
+      "inherits_from": [
+        "Scenario"
+      ],
+      "properties": [
+        "simulationModel",
+        "simulationOutput"
+      ]
+    },
+    "InvoiceLine": {
+      "inherits_from": [
+        "Invoice"
+      ],
+      "properties": [
+        "invoiceLineNumber"
+      ]
+    },
+    "StaffScheduling": {
+      "inherits_from": [
+        "StoreOps"
+      ],
+      "properties": []
+    },
+    "CostCenter": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "budgetLimit",
+        "costCenterCode",
+        "costCenterName",
+        "department",
+        "isActive",
+        "location"
+      ]
+    },
+    "TransactionLine": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "POS": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "CheckoutEvent": {
+      "inherits_from": [
+        "SellEvents"
+      ],
+      "properties": []
+    },
+    "Receipt": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "receiptNumber"
+      ]
+    },
+    "ExchangeOrder": {
+      "inherits_from": [
+        "Order"
+      ],
+      "properties": []
+    },
+    "OrderDelivery": {
+      "inherits_from": [
+        "OrderFulfillment"
+      ],
+      "properties": []
+    },
+    "OrderValidatedEvent": {
+      "inherits_from": [
+        "OrderEvent"
+      ],
+      "properties": []
+    },
+    "PriceChangedEvent": {
+      "inherits_from": [
+        "PricingEvent"
+      ],
+      "properties": []
+    },
+    "OrderPacking": {
+      "inherits_from": [
+        "OrderFulfillment"
+      ],
+      "properties": []
+    },
+    "Buyer": {
+      "inherits_from": [
+        "OrganizationalHierarchy"
+      ],
+      "properties": [
+        "buyerID",
+        "buyerName"
+      ]
+    },
+    "SupplierEntity": {
+      "inherits_from": [
+        "Supplier"
+      ],
+      "properties": [
+        "supplierID",
+        "supplierName",
+        "supplierPerformanceScore"
+      ]
+    },
+    "TimePeriodType": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "isPeakPeriod",
+        "periodDefinitionRule",
+        "periodEndDate",
+        "periodStartDate",
+        "periodTypeName"
+      ]
+    },
+    "CompetitorAnalysis": {
+      "inherits_from": [
+        "MarketingAnalysis"
+      ],
+      "properties": [
+        "competitorID",
+        "competitorPerformanceScore"
+      ]
+    },
+    "Cost": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "costAmount"
+      ]
+    },
+    "POIssuedEvent": {
+      "inherits_from": [
+        "BuyingEvent"
+      ],
+      "properties": [
+        "isEmergencyOrder",
+        "issueTimestamp",
+        "issuedBy",
+        "poIssueID"
+      ]
+    },
+    "ReceivingStatus": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "receivingStatusCode"
+      ]
+    },
+    "ForecastAccuracy": {
+      "inherits_from": [
+        "DemandForecasting"
+      ],
+      "properties": [
+        "forecastAccuracy"
+      ]
+    },
+    "PaymentRule": {
+      "inherits_from": [
+        "ValidationRules"
+      ],
+      "properties": []
+    },
+    "OpenToBuy": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "openToBuyAmount"
+      ]
+    },
+    "UnitOfMeasure": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "unitOfMeasure"
+      ]
+    },
+    "ProductBundle": {
+      "inherits_from": [
+        "ProductPresentation"
+      ],
+      "properties": []
+    },
+    "Region": {
+      "inherits_from": [
+        "Store"
+      ],
+      "properties": [
+        "regionCode"
+      ]
+    },
+    "PromotionDeactivatedEvent": {
+      "inherits_from": [
+        "PricingEvent"
+      ],
+      "properties": []
+    },
+    "SalesTransactionLine": {
+      "inherits_from": [
+        "TransactionLine"
+      ],
+      "properties": []
+    },
+    "ReceiptGeneratedEvent": {
+      "inherits_from": [
+        "SalesEvent"
+      ],
+      "properties": []
+    },
+    "Store": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": [
+        "storeID",
+        "storeLocation",
+        "storeManager",
+        "storeName",
+        "storeOpeningDate",
+        "storeSize"
+      ]
+    },
+    "CommercialTerms": {
+      "inherits_from": [
+        "FoundationConcept"
+      ],
+      "properties": []
+    },
+    "Color": {
+      "inherits_from": [
+        "ProductCharacteristics"
+      ],
+      "properties": [
+        "colorCode",
+        "colorName"
+      ]
+    },
+    "StoreFormat": {
+      "inherits_from": [
+        "Store"
+      ],
+      "properties": [
+        "storeFormatCode"
+      ]
+    },
+    "InteractionOutcome": {
+      "inherits_from": [
+        "SellEvent"
+      ],
+      "properties": [
+        "isConversion"
+      ]
+    },
+    "PaymentTerm": {
+      "inherits_from": [
+        "CommercialTerms"
+      ],
+      "properties": [
+        "currency",
+        "earlyPayDiscountPct",
+        "isStandard",
+        "paymentDueDays",
+        "paymentTermCode",
+        "paymentType"
+      ]
+    },
+    "Carrier": {
+      "inherits_from": [
+        "ProcurementAndLogistics"
+      ],
+      "properties": [
+        "carrierCode"
+      ]
+    },
+    "PricingLinkCode": {
+      "inherits_from": [
+        "PriceConcept"
+      ],
+      "properties": [
+        "linkCode"
+      ]
+    },
+    "PromotionRule": {
+      "inherits_from": [
+        "MarketingAndPromotion",
+        "SellPhaseConcept"
+      ],
+      "properties": [
+        "promotionRuleCode"
+      ]
+    },
+    "StoreLocation": {
+      "inherits_from": [
+        "StoreOps"
+      ],
+      "properties": []
+    },
+    "Cluster": {
+      "inherits_from": [
+        "MerchandisePlanning"
+      ],
+      "properties": [
+        "clusterCode"
+      ]
+    },
+    "ExchangeCompletedEvent": {
+      "inherits_from": [
+        "ReturnExchangeEvent"
+      ],
+      "properties": []
+    },
+    "SellThroughRate": {
+      "inherits_from": [
+        "MerchandisingAnalysis"
+      ],
+      "properties": [
+        "sellThroughRate"
+      ]
+    },
+    "CustomerExperience": {
+      "inherits_from": [
+        "SellPhaseConcept"
+      ],
+      "properties": []
+    },
+    "ProductLifeCycle": {
+      "inherits_from": [
+        "ProductCharacteristics"
+      ],
+      "properties": [
+        "expectedLifecycleStage",
+        "productStatus"
+      ]
+    },
+    "PaymentProcessedEvent": {
+      "inherits_from": [
+        "SalesEvent"
+      ],
+      "properties": []
+    },
+    "FulfillmentLocation": {
+      "inherits_from": [
+        "OrderFulfillment"
+      ],
+      "properties": []
+    },
+    "PlanningCalendar": {
+      "inherits_from": [
+        "ForecastingProcurementLogistics"
+      ],
+      "properties": [
+        "calendarYear"
+      ]
+    },
+    "ForecastAdjustment": {
+      "inherits_from": [
+        "DemandForecasting"
+      ],
+      "properties": [
+        "forecastAdjustmentNote"
+      ]
+    },
+    "ShippingOptionSelectedEvent": {
+      "inherits_from": [
+        "CheckoutEvent"
+      ],
+      "properties": []
+    },
+    "OrderCancelledEvent": {
+      "inherits_from": [
+        "OrderEvent"
+      ],
+      "properties": []
+    },
+    "Department": {
+      "inherits_from": [
+        "MerchandiseEntity"
+      ],
+      "properties": [
+        "departmentCode",
+        "departmentName"
+      ]
+    },
+    "CampaignInteraction": {
+      "inherits_from": [
+        "CustomerInteraction"
+      ],
+      "properties": [
+        "utmCampaign",
+        "utmContent",
+        "utmMedium",
+        "utmSource",
+        "utmTerm"
+      ]
+    },
+    "EffectivePeriod": {
+      "inherits_from": [
+        "Price"
+      ],
+      "properties": [
+        "priceEndDate",
+        "priceStartDate"
+      ]
+    }
+  },
+  "relationships": {
+    "includesOrderLine": {
+      "start_node_labels": [
+        "Order"
+      ],
+      "end_node_labels": [
+        "OrderLine"
+      ]
+    },
+    "assignedToCashier": {
+      "start_node_labels": [
+        "POS"
+      ],
+      "end_node_labels": [
+        "Cashier"
+      ]
+    },
+    "relatedPOEvent": {
+      "start_node_labels": [
+        "ForecastVariance"
+      ],
+      "end_node_labels": [
+        "POIssuedEvent"
+      ]
+    },
+    "belongsToDivision": {
+      "start_node_labels": [
+        "Store"
+      ],
+      "end_node_labels": [
+        "Division"
+      ]
+    },
+    "measuresKPI": {
+      "start_node_labels": null,
+      "end_node_labels": null
+    },
+    "hasLifecycleStage": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "LifecycleStage"
+      ]
+    },
+    "performedByStaff": {
+      "start_node_labels": [
+        "OrderPacking",
+        "OrderPicking"
+      ],
+      "end_node_labels": [
+        "FulfillmentTeamMember"
+      ]
+    },
+    "orderedBy": {
+      "start_node_labels": [
+        "Order"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "hasPromotionType": {
+      "start_node_labels": [
+        "Promotion"
+      ],
+      "end_node_labels": [
+        "PromotionType"
+      ]
+    },
+    "lineLevelPromotion": {
+      "start_node_labels": [
+        "TransactionLine"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "hasPurchaseOrderLine": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "PurchaseOrderLine"
+      ]
+    },
+    "basedIn": {
+      "start_node_labels": [
+        "Buyer"
+      ],
+      "end_node_labels": [
+        "BuyingOffice"
+      ]
+    },
+    "basedOnSales": {
+      "start_node_labels": [
+        "Forecast"
+      ],
+      "end_node_labels": null
+    },
+    "generatedEvent": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "StoreOpsEvent"
+      ]
+    },
+    "hasChurnScore": {
+      "start_node_labels": [
+        "ChurnPredictionResult"
+      ],
+      "end_node_labels": [
+        "decimal"
+      ]
+    },
+    "hasTillActivity": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "CashierTillActivity"
+      ]
+    },
+    "hasSeason": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "Season"
+      ]
+    },
+    "influencesExperience": {
+      "start_node_labels": [
+        "CustomerFeedback"
+      ],
+      "end_node_labels": [
+        "CustomerExperience"
+      ]
+    },
+    "hasSentiment": {
+      "start_node_labels": [
+        "CustomerExperience"
+      ],
+      "end_node_labels": [
+        "SentimentScore"
+      ]
+    },
+    "isReceivingFor": {
+      "start_node_labels": [
+        "Receiving"
+      ],
+      "end_node_labels": [
+        "PurchaseOrder"
+      ]
+    },
+    "voidedTransaction": {
+      "start_node_labels": [
+        "SaleVoidedEvent"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "responsibleFor": {
+      "start_node_labels": [
+        "Persona"
+      ],
+      "end_node_labels": [
+        "StoreOps"
+      ]
+    },
+    "receivesPOOrderLine": {
+      "start_node_labels": [
+        "ReceiptLine"
+      ],
+      "end_node_labels": [
+        "PurchaseOrderLine"
+      ]
+    },
+    "behaviorChannelAnalysis": {
+      "start_node_labels": [
+        "CustomerBehaviorAnalysis"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "hasReceivingLine": {
+      "start_node_labels": [
+        "Receiving"
+      ],
+      "end_node_labels": [
+        "ReceivingLine"
+      ]
+    },
+    "enrolledCustomer": {
+      "start_node_labels": [
+        "LoyaltyProgram"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "authorizedOpeningClosing": {
+      "start_node_labels": [
+        "StoreManager"
+      ],
+      "end_node_labels": [
+        "StoreOpeningClosing"
+      ]
+    },
+    "hasPlanningPeriod": {
+      "start_node_labels": [
+        "PlanningCalendar"
+      ],
+      "end_node_labels": [
+        "PlanningPeriod"
+      ]
+    },
+    "hasSizeCurve": {
+      "start_node_labels": [
+        "AssortmentPlan"
+      ],
+      "end_node_labels": [
+        "SizeCurve"
+      ]
+    },
+    "loyaltyProgramBehavior": {
+      "start_node_labels": [
+        "CustomerBehaviorAnalysis"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "isPaymentFor": {
+      "start_node_labels": [
+        "Payment"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "createdShipment": {
+      "start_node_labels": [
+        "ShipmentCreatedEvent"
+      ],
+      "end_node_labels": [
+        "CustomerShipment"
+      ]
+    },
+    "hasCostCenter": {
+      "start_node_labels": [
+        "BuyerGroup"
+      ],
+      "end_node_labels": [
+        "CostCenter"
+      ]
+    },
+    "belongsToBehavioralSegment": {
+      "start_node_labels": [
+        "CustomerProfile"
+      ],
+      "end_node_labels": [
+        "BehavioralSegment"
+      ]
+    },
+    "includesSearch": {
+      "start_node_labels": [
+        "CustomerWebSession"
+      ],
+      "end_node_labels": [
+        "SearchInteraction"
+      ]
+    },
+    "usedDevice": {
+      "start_node_labels": [
+        "CustomerWebSession"
+      ],
+      "end_node_labels": [
+        "CustomerDevice"
+      ]
+    },
+    "hasRefundMethod": {
+      "start_node_labels": [
+        "ReturnsAndExchanges"
+      ],
+      "end_node_labels": [
+        "RefundMethod"
+      ]
+    },
+    "ofType": {
+      "start_node_labels": [
+        "Price"
+      ],
+      "end_node_labels": [
+        "PriceType"
+      ]
+    },
+    "relatedTransaction": {
+      "start_node_labels": [
+        "Payment"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "confirmedOrder": {
+      "start_node_labels": [
+        "OrderConfirmedEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "productAnalysis": {
+      "start_node_labels": [
+        "SalesPerformanceAnalysis"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "processedRefund": {
+      "start_node_labels": [
+        "RefundProcessedEvent"
+      ],
+      "end_node_labels": [
+        "RefundMethod"
+      ]
+    },
+    "shipmentOfShipping": {
+      "start_node_labels": [
+        "CustomerShipment"
+      ],
+      "end_node_labels": [
+        "OrderShipping"
+      ]
+    },
+    "approvedInventoryCheck": {
+      "start_node_labels": [
+        "StoreManager"
+      ],
+      "end_node_labels": [
+        "InventoryCheck"
+      ]
+    },
+    "refundedThrough": {
+      "start_node_labels": [
+        "Payment"
+      ],
+      "end_node_labels": [
+        "RefundMethod"
+      ]
+    },
+    "facilitatesCheckout": {
+      "start_node_labels": [
+        "Channel"
+      ],
+      "end_node_labels": null
+    },
+    "returnedProduct": {
+      "start_node_labels": [
+        "ReturnsAndExchanges"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasReceivingDoc": {
+      "start_node_labels": [
+        "Receiving"
+      ],
+      "end_node_labels": [
+        "ReceivingDocument"
+      ]
+    },
+    "enrolledInProgram": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "hasWebSession": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "CustomerWebSession"
+      ]
+    },
+    "fulfillsOrder": {
+      "start_node_labels": [
+        "OrderFulfillment"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "occurredAtLocation": {
+      "start_node_labels": [
+        "OrderPacking",
+        "OrderPicking",
+        "SellEvent"
+      ],
+      "end_node_labels": [
+        "FulfillmentLocation",
+        "Location"
+      ]
+    },
+    "hasFiscalPeriod": {
+      "start_node_labels": [
+        "PlanningCalendar"
+      ],
+      "end_node_labels": [
+        "FiscalPeriod"
+      ]
+    },
+    "partOfTransaction": {
+      "start_node_labels": [
+        "SalesTransactionLine",
+        "SellEvent",
+        "TransactionLine"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "handledTransaction": {
+      "start_node_labels": [
+        "Persona"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "influencedByInteraction": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "usesRule": {
+      "start_node_labels": [
+        "Promotion"
+      ],
+      "end_node_labels": [
+        "PromotionRule"
+      ]
+    },
+    "hasRole": {
+      "start_node_labels": [
+        "Buyer"
+      ],
+      "end_node_labels": [
+        "Role"
+      ]
+    },
+    "analyzesTargetedSegment": {
+      "start_node_labels": [
+        "PromotionAnalysis"
+      ],
+      "end_node_labels": [
+        "CustomerSegment"
+      ]
+    },
+    "deliveredShipment": {
+      "start_node_labels": [
+        "DeliveredToCustomerEvent"
+      ],
+      "end_node_labels": [
+        "CustomerShipment"
+      ]
+    },
+    "involvedPOS": {
+      "start_node_labels": [
+        "StoreOpsEvent"
+      ],
+      "end_node_labels": [
+        "POS"
+      ]
+    },
+    "refersToProduct": {
+      "start_node_labels": [
+        "OrderLine"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "evaluatesPerformance": {
+      "start_node_labels": [
+        "MerchandisingPerformance"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "behaviorProductAnalysis": {
+      "start_node_labels": [
+        "CustomerBehaviorAnalysis"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "occurredViaChannel": {
+      "start_node_labels": [
+        "CustomerInteraction",
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "hasStoreCluster": {
+      "start_node_labels": [
+        "AssortmentPlan"
+      ],
+      "end_node_labels": [
+        "StoreCluster"
+      ]
+    },
+    "initiatedTransaction": {
+      "start_node_labels": [
+        "TransactionInitiationEvent"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "completedTransaction": {
+      "start_node_labels": [
+        "SaleCompletedEvent"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "resultedInTransaction": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "contractCovers": {
+      "start_node_labels": [
+        "Contract"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasForecastHorizon": {
+      "start_node_labels": [
+        "Forecast"
+      ],
+      "end_node_labels": [
+        "ForecastHorizon"
+      ]
+    },
+    "relatedToTransaction": {
+      "start_node_labels": [
+        "CustomerExperience",
+        "SystemEvent"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "hasInteraction": {
+      "start_node_labels": [
+        "CustomerWebSession"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "hasDemographics": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "CustomerDemographics"
+      ]
+    },
+    "relatedToOrder": {
+      "start_node_labels": [
+        "SystemEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "usesStyleColor": {
+      "start_node_labels": [
+        "Assortment"
+      ],
+      "end_node_labels": [
+        "StyleColor"
+      ]
+    },
+    "occurredAtTime": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "Time"
+      ]
+    },
+    "hasBudget": {
+      "start_node_labels": [
+        "BuyerGroup"
+      ],
+      "end_node_labels": [
+        "Budget"
+      ]
+    },
+    "replacedProduct": {
+      "start_node_labels": [
+        "ExchangeOrder"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasCartInteraction": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "CartInteraction"
+      ]
+    },
+    "startedCheckout": {
+      "start_node_labels": [
+        "CheckoutStartedEvent"
+      ],
+      "end_node_labels": [
+        "CheckoutProcess"
+      ]
+    },
+    "triggeredFromCheckout": {
+      "start_node_labels": [
+        "SellEvents"
+      ],
+      "end_node_labels": null
+    },
+    "hasPOSMaintenance": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "POSMaintenance"
+      ]
+    },
+    "hasPurchaseHistory": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "engagedIn": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "visibleInChannel": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "includesPageVisit": {
+      "start_node_labels": [
+        "CustomerWebSession"
+      ],
+      "end_node_labels": [
+        "PageVisit"
+      ]
+    },
+    "fulfilledBy": {
+      "start_node_labels": [
+        "Order",
+        "OrderFulfillment"
+      ],
+      "end_node_labels": [
+        "OrderFulfillment",
+        "Persona"
+      ]
+    },
+    "itemReceivedInReturn": {
+      "start_node_labels": [
+        "ItemReceivedBackEvent"
+      ],
+      "end_node_labels": [
+        "ReturnOrder"
+      ]
+    },
+    "triggeredCartAbandonment": {
+      "start_node_labels": [
+        "CartAbandonmentEvent"
+      ],
+      "end_node_labels": [
+        "CartInteraction"
+      ]
+    },
+    "inquiredProduct": {
+      "start_node_labels": [
+        "ProductInquiryEvent"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasCart": {
+      "start_node_labels": [
+        "CustomerWebSession"
+      ],
+      "end_node_labels": [
+        "CartInteraction"
+      ]
+    },
+    "pickingStarted": {
+      "start_node_labels": [
+        "OrderPickingStartedEvent"
+      ],
+      "end_node_labels": [
+        "OrderPicking"
+      ]
+    },
+    "productOfOrderLine": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "OrderLine"
+      ]
+    },
+    "cancelledOrder": {
+      "start_node_labels": [
+        "OrderCancelledEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "targetsChannel": {
+      "start_node_labels": [
+        "AssortmentPlan"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "scheduledDeliveryOrder": {
+      "start_node_labels": [
+        "DeliveryScheduledEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "forecastFor": {
+      "start_node_labels": [
+        "Forecast"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "analyzesChurnRisk": {
+      "start_node_labels": [
+        "ChurnAnalysis"
+      ],
+      "end_node_labels": [
+        "CustomerSegment"
+      ]
+    },
+    "partOfBundle": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "ProductBundle"
+      ]
+    },
+    "abandonedCheckout": {
+      "start_node_labels": [
+        "CheckoutAbandonedEvent"
+      ],
+      "end_node_labels": [
+        "CheckoutProcess"
+      ]
+    },
+    "completedExchangeOrder": {
+      "start_node_labels": [
+        "ExchangeCompletedEvent"
+      ],
+      "end_node_labels": [
+        "ExchangeOrder"
+      ]
+    },
+    "handlesTransaction": {
+      "start_node_labels": [
+        "Channel"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "offersPromotion": {
+      "start_node_labels": [
+        "LoyaltyProgram"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "collectsFeedback": {
+      "start_node_labels": [
+        "Channel"
+      ],
+      "end_node_labels": [
+        "CustomerFeedback"
+      ]
+    },
+    "linkedCustomer": {
+      "start_node_labels": [
+        "LoyaltyProgram"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "performanceInChannel": {
+      "start_node_labels": [
+        "ProductChannelPerformance"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "hasLoyaltyTier": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "LoyaltyTier"
+      ]
+    },
+    "includesPicking": {
+      "start_node_labels": [
+        "OrderFulfillment"
+      ],
+      "end_node_labels": [
+        "OrderPicking"
+      ]
+    },
+    "promotionChannelAnalysis": {
+      "start_node_labels": [
+        "PromotionAnalysis"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "hasPriceType": {
+      "start_node_labels": [
+        "Price"
+      ],
+      "end_node_labels": [
+        "PriceType"
+      ]
+    },
+    "fulfillsFromLocation": {
+      "start_node_labels": [
+        "FulfillmentLocation"
+      ],
+      "end_node_labels": [
+        "OrderFulfillment"
+      ]
+    },
+    "releasedOrder": {
+      "start_node_labels": [
+        "OrderReleasedEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "processedPayment": {
+      "start_node_labels": [
+        "Channel",
+        "PaymentProcessedEvent"
+      ],
+      "end_node_labels": [
+        "Payment",
+        "SalesTransaction"
+      ]
+    },
+    "hasSLA": {
+      "start_node_labels": [
+        "Contract"
+      ],
+      "end_node_labels": [
+        "SLA"
+      ]
+    },
+    "hasSalesPerformanceAnalysis": {
+      "start_node_labels": [
+        "SalesAnalysis"
+      ],
+      "end_node_labels": [
+        "SalesPerformanceAnalysis"
+      ]
+    },
+    "analyzesTargetedProduct": {
+      "start_node_labels": [
+        "PromotionAnalysis"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "concernsProduct": {
+      "start_node_labels": [
+        "CustomerExperience"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "belongsToPlanningCalendar": {
+      "start_node_labels": [
+        "AssortmentPlan",
+        "FinancialPlan",
+        "Forecast"
+      ],
+      "end_node_labels": [
+        "PlanningCalendar"
+      ]
+    },
+    "partneredWith": {
+      "start_node_labels": [
+        "CustomerShipment",
+        "Supplier"
+      ],
+      "end_node_labels": [
+        "LogisticsPartner",
+        "Manufacturer"
+      ]
+    },
+    "attributesSale": {
+      "start_node_labels": [
+        "SalesAttribution"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "hasPromoPrice": {
+      "start_node_labels": null,
+      "end_node_labels": [
+        "PromotionalPrice"
+      ]
+    },
+    "isPartOfOrder": {
+      "start_node_labels": [
+        "CustomerShipment",
+        "Product"
+      ],
+      "end_node_labels": [
+        "Order",
+        "PurchaseOrder"
+      ]
+    },
+    "includesLineItem": {
+      "start_node_labels": [
+        "SalesBasket"
+      ],
+      "end_node_labels": [
+        "SalesTransactionLine"
+      ]
+    },
+    "hasReceivingStatus": {
+      "start_node_labels": [
+        "Receiving"
+      ],
+      "end_node_labels": [
+        "ReceivingStatus"
+      ]
+    },
+    "hasPreferences": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "CustomerPreferences"
+      ]
+    },
+    "appliesTo": {
+      "start_node_labels": [
+        "Offer"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "lineEarnedLoyalty": {
+      "start_node_labels": [
+        "TransactionLine"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "performedTillActivity": {
+      "start_node_labels": [
+        "Cashier"
+      ],
+      "end_node_labels": [
+        "CashierTillActivity"
+      ]
+    },
+    "selectedShippingOption": {
+      "start_node_labels": [
+        "ShippingOptionSelectedEvent"
+      ],
+      "end_node_labels": [
+        "DeliveryMethod"
+      ]
+    },
+    "performsPOSMaintenance": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "POSMaintenance"
+      ]
+    },
+    "includesShipment": {
+      "start_node_labels": [
+        "Order",
+        "OrderFulfillment"
+      ],
+      "end_node_labels": [
+        "CustomerShipment"
+      ]
+    },
+    "ledToOrder": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "hasPlanningSeason": {
+      "start_node_labels": [
+        "PlanningCalendar"
+      ],
+      "end_node_labels": [
+        "PlanningSeason"
+      ]
+    },
+    "predictionForCustomer": {
+      "start_node_labels": [
+        "ChurnPredictionResult"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "resultedInOutcome": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "InteractionOutcome"
+      ]
+    },
+    "shippedBy": {
+      "start_node_labels": [
+        "CustomerShipment"
+      ],
+      "end_node_labels": [
+        "Carrier"
+      ]
+    },
+    "earnsLoyaltyPointsFrom": {
+      "start_node_labels": [
+        "Payment"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "containsOrderLine": {
+      "start_node_labels": [
+        "CustomerShipment"
+      ],
+      "end_node_labels": [
+        "OrderLine"
+      ]
+    },
+    "hasDeliveryTerm": {
+      "start_node_labels": [
+        "Contract"
+      ],
+      "end_node_labels": [
+        "DeliveryTerm"
+      ]
+    },
+    "dispatchedShipment": {
+      "start_node_labels": [
+        "ShipmentDispatchedEvent"
+      ],
+      "end_node_labels": [
+        "CustomerShipment"
+      ]
+    },
+    "analyzesBasketPattern": {
+      "start_node_labels": [
+        "MarketBasketAnalysis"
+      ],
+      "end_node_labels": [
+        "BasketPattern"
+      ]
+    },
+    "acceptedPaymentMethod": {
+      "start_node_labels": [
+        "POS"
+      ],
+      "end_node_labels": [
+        "PaymentMethod"
+      ]
+    },
+    "interactedWith": {
+      "start_node_labels": [
+        "Persona"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "processedTransaction": {
+      "start_node_labels": [
+        "POS",
+        "Persona",
+        "SalesAssociate"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "resultsInOrder": {
+      "start_node_labels": null,
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "involvedSearchTerm": {
+      "start_node_labels": [
+        "SearchInteraction"
+      ],
+      "end_node_labels": [
+        "SearchTerm"
+      ]
+    },
+    "hasPrimarySupplier": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "SupplierEntity"
+      ]
+    },
+    "influencedByFeedback": {
+      "start_node_labels": [
+        "CustomerExperience"
+      ],
+      "end_node_labels": [
+        "CustomerFeedback"
+      ]
+    },
+    "viewedProduct": {
+      "start_node_labels": [
+        "PageVisit",
+        "ProductViewedEvent"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "isFulfilledBy": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "SupplierEntity"
+      ]
+    },
+    "receives": {
+      "start_node_labels": [
+        "Store"
+      ],
+      "end_node_labels": [
+        "Receiving"
+      ]
+    },
+    "appliesPromotion": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "restartedPOS": {
+      "start_node_labels": [
+        "POSRestartedEvent"
+      ],
+      "end_node_labels": [
+        "POS"
+      ]
+    },
+    "hasSalesPerformance": {
+      "start_node_labels": [
+        "Store"
+      ],
+      "end_node_labels": null
+    },
+    "hasVersion": {
+      "start_node_labels": [
+        "FinancialPlan"
+      ],
+      "end_node_labels": [
+        "FinancialPlanVersion"
+      ]
+    },
+    "influencedByCampaign": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "Campaign"
+      ]
+    },
+    "usedSearchTerm": {
+      "start_node_labels": [
+        "SearchInteraction"
+      ],
+      "end_node_labels": [
+        "SearchTerm"
+      ]
+    },
+    "hasBuyer": {
+      "start_node_labels": [
+        "BuyerGroup"
+      ],
+      "end_node_labels": [
+        "Buyer"
+      ]
+    },
+    "summaryForSeason": {
+      "start_node_labels": [
+        "CustomerSeasonalSummary"
+      ],
+      "end_node_labels": [
+        "TimePeriodType"
+      ]
+    },
+    "hasCost": {
+      "start_node_labels": [
+        "Price"
+      ],
+      "end_node_labels": [
+        "Cost"
+      ]
+    },
+    "hasChurnAnalysis": {
+      "start_node_labels": [
+        "SalesAnalysis"
+      ],
+      "end_node_labels": [
+        "ChurnAnalysis"
+      ]
+    },
+    "hasCustomer": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "displaysPromotion": {
+      "start_node_labels": [
+        "Channel"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "hasPromotionAnalysis": {
+      "start_node_labels": [
+        "SalesAnalysis"
+      ],
+      "end_node_labels": [
+        "PromotionAnalysis"
+      ]
+    },
+    "submittedFeedback": {
+      "start_node_labels": [
+        "CustomerFeedbackSubmittedEvent"
+      ],
+      "end_node_labels": [
+        "CustomerFeedback"
+      ]
+    },
+    "partOfOrder": {
+      "start_node_labels": [
+        "SellEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "hasPackType": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "resultsInShipment": {
+      "start_node_labels": [
+        "OrderShipping"
+      ],
+      "end_node_labels": [
+        "CustomerShipment"
+      ]
+    },
+    "relatedToProduct": {
+      "start_node_labels": [
+        "CustomerExperience"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "interactionBehaviorAnalysis": {
+      "start_node_labels": [
+        "CustomerBehaviorAnalysis"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "readyForPickupOrder": {
+      "start_node_labels": [
+        "ClickAndCollectReadyEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "assignedToCluster": {
+      "start_node_labels": [
+        "Store"
+      ],
+      "end_node_labels": [
+        "Cluster"
+      ]
+    },
+    "usesPaymentMethod": {
+      "start_node_labels": [
+        "Payment"
+      ],
+      "end_node_labels": [
+        "PaymentMethod"
+      ]
+    },
+    "belongsToBuyerGroup": {
+      "start_node_labels": [
+        "Buyer"
+      ],
+      "end_node_labels": [
+        "BuyerGroup"
+      ]
+    },
+    "hasForecast": {
+      "start_node_labels": [
+        "Store"
+      ],
+      "end_node_labels": [
+        "Forecast"
+      ]
+    },
+    "hasTransactionLine": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "TransactionLine"
+      ]
+    },
+    "hasASN": {
+      "start_node_labels": [
+        "PurchaseOrder",
+        "Receiving"
+      ],
+      "end_node_labels": [
+        "ASN"
+      ]
+    },
+    "handlesOpeningClosing": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "StoreOpeningClosing"
+      ]
+    },
+    "basedOnSearchTerm": {
+      "start_node_labels": [
+        "CustomerBehaviorAnalysis"
+      ],
+      "end_node_labels": [
+        "SearchTerm"
+      ]
+    },
+    "storeClosed": {
+      "start_node_labels": [
+        "StoreClosedEvent"
+      ],
+      "end_node_labels": [
+        "StoreLocation"
+      ]
+    },
+    "belongsToCustomer": {
+      "start_node_labels": [
+        "CustomerExperience"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "invoicedFor": {
+      "start_node_labels": [
+        "InvoiceLine"
+      ],
+      "end_node_labels": [
+        "PurchaseOrderLine"
+      ]
+    },
+    "storeAnalysis": {
+      "start_node_labels": [
+        "SalesPerformanceAnalysis"
+      ],
+      "end_node_labels": [
+        "StoreLocation"
+      ]
+    },
+    "manufactures": {
+      "start_node_labels": [
+        "Manufacturer"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "transactionAnalysis": {
+      "start_node_labels": [
+        "SalesPerformanceAnalysis"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "hasType": {
+      "start_node_labels": [
+        "Promotion"
+      ],
+      "end_node_labels": [
+        "PromotionType"
+      ]
+    },
+    "occurredAt": {
+      "start_node_labels": [
+        "StoreOpsEvent"
+      ],
+      "end_node_labels": [
+        "StoreLocation"
+      ]
+    },
+    "generatedReceipt": {
+      "start_node_labels": [
+        "ReceiptGeneratedEvent"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "involvesPO": {
+      "start_node_labels": [
+        "BuyingEvent"
+      ],
+      "end_node_labels": [
+        "PurchaseOrder"
+      ]
+    },
+    "includesProduct": {
+      "start_node_labels": [
+        "ProductBundle"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "basedOnTransaction": {
+      "start_node_labels": [
+        "ReturnsAndExchanges"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "hasMarkdownPlan": {
+      "start_node_labels": [
+        "Price",
+        "Product"
+      ],
+      "end_node_labels": [
+        "MarkdownPlan"
+      ]
+    },
+    "scannedProduct": {
+      "start_node_labels": [
+        "ItemScannedEvent"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasChannelPrice": {
+      "start_node_labels": null,
+      "end_node_labels": [
+        "ChannelPrice"
+      ]
+    },
+    "capturedSearchEvent": {
+      "start_node_labels": [
+        "CustomerSearchEvent"
+      ],
+      "end_node_labels": [
+        "SearchInteraction"
+      ]
+    },
+    "hasProduct": {
+      "start_node_labels": [
+        "CartInteraction",
+        "ReceiptLine"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "belongsToCategory": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "Category"
+      ]
+    },
+    "customerBehaviorAnalysis": {
+      "start_node_labels": [
+        "CustomerBehaviorAnalysis"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "belongsToSegment": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "CustomerSegment"
+      ]
+    },
+    "madeTransaction": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "instanceOfExchangeOrder": {
+      "start_node_labels": [
+        "Order"
+      ],
+      "end_node_labels": [
+        "ExchangeOrder"
+      ]
+    },
+    "tillOpened": {
+      "start_node_labels": [
+        "TillOpenedEvent"
+      ],
+      "end_node_labels": [
+        "CashierTillActivity"
+      ]
+    },
+    "executedBy": {
+      "start_node_labels": [
+        "BuyingEvent"
+      ],
+      "end_node_labels": [
+        "Buyer"
+      ]
+    },
+    "targetedByCampaign": {
+      "start_node_labels": [
+        "CustomerSegment"
+      ],
+      "end_node_labels": [
+        "Campaign"
+      ]
+    },
+    "instanceOfReturnOrder": {
+      "start_node_labels": [
+        "Order"
+      ],
+      "end_node_labels": [
+        "ReturnOrder"
+      ]
+    },
+    "locatedIn": {
+      "start_node_labels": [
+        "Store"
+      ],
+      "end_node_labels": [
+        "Region"
+      ]
+    },
+    "hasSecondarySupplier": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "SupplierEntity"
+      ]
+    },
+    "appliesToProduct": {
+      "start_node_labels": [
+        "LoyaltyProgram",
+        "Promotion"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "approvedSchedule": {
+      "start_node_labels": [
+        "StoreManager"
+      ],
+      "end_node_labels": [
+        "StaffScheduling"
+      ]
+    },
+    "suppliesProduct": {
+      "start_node_labels": [
+        "Supplier"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasInventory": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "InventoryLevel"
+      ]
+    },
+    "churnTimePeriod": {
+      "start_node_labels": [
+        "ChurnAnalysis"
+      ],
+      "end_node_labels": [
+        "Time"
+      ]
+    },
+    "hasFeedback": {
+      "start_node_labels": [
+        "Customer",
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "CustomerFeedback"
+      ]
+    },
+    "hasInvoiceLine": {
+      "start_node_labels": [
+        "Invoice"
+      ],
+      "end_node_labels": [
+        "InvoiceLine"
+      ]
+    },
+    "managedBy": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "CategoryManager"
+      ]
+    },
+    "hasContract": {
+      "start_node_labels": [
+        "Supplier"
+      ],
+      "end_node_labels": [
+        "Contract"
+      ]
+    },
+    "hasSupplierType": {
+      "start_node_labels": [
+        "SupplierEntity"
+      ],
+      "end_node_labels": [
+        "SupplierType"
+      ]
+    },
+    "runsInChannel": {
+      "start_node_labels": [
+        "Campaign"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "hasConversionRate": {
+      "start_node_labels": [
+        "PromotionAnalysis"
+      ],
+      "end_node_labels": [
+        "decimal"
+      ]
+    },
+    "pickedOrder": {
+      "start_node_labels": [
+        "OrderPickedEvent"
+      ],
+      "end_node_labels": [
+        "OrderPicking"
+      ]
+    },
+    "usesMethod": {
+      "start_node_labels": [
+        "Payment"
+      ],
+      "end_node_labels": [
+        "PaymentMethod"
+      ]
+    },
+    "hasStoreFormat": {
+      "start_node_labels": [
+        "Store"
+      ],
+      "end_node_labels": [
+        "StoreFormat"
+      ]
+    },
+    "usedByPayment": {
+      "start_node_labels": [
+        "PaymentMethod"
+      ],
+      "end_node_labels": [
+        "Payment"
+      ]
+    },
+    "affectedByPromotion": {
+      "start_node_labels": [
+        "CustomerExperience"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "forFiscalPeriod": {
+      "start_node_labels": [
+        "ForecastVariance",
+        "POIssuedEvent"
+      ],
+      "end_node_labels": [
+        "FiscalPeriod"
+      ]
+    },
+    "influencedTransaction": {
+      "start_node_labels": [
+        "PromotionAnalysis"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "churnSegmentAnalysis": {
+      "start_node_labels": [
+        "ChurnAnalysis"
+      ],
+      "end_node_labels": [
+        "CustomerSegment"
+      ]
+    },
+    "partOfCampaign": {
+      "start_node_labels": [
+        "Promotion"
+      ],
+      "end_node_labels": [
+        "Campaign"
+      ]
+    },
+    "packedOrder": {
+      "start_node_labels": [
+        "OrderPackedEvent"
+      ],
+      "end_node_labels": [
+        "OrderPacking"
+      ]
+    },
+    "triggersEvent": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "SellEvents"
+      ]
+    },
+    "deliveredTo": {
+      "start_node_labels": [
+        "CustomerShipment"
+      ],
+      "end_node_labels": [
+        "Receiving"
+      ]
+    },
+    "confirmsReceiptFor": {
+      "start_node_labels": null,
+      "end_node_labels": null
+    },
+    "hasPriceChange": {
+      "start_node_labels": [
+        "Price",
+        "Product"
+      ],
+      "end_node_labels": [
+        "PriceChange"
+      ]
+    },
+    "tillClosed": {
+      "start_node_labels": [
+        "TillClosedEvent"
+      ],
+      "end_node_labels": [
+        "CashierTillActivity"
+      ]
+    },
+    "isCustomerFor": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "focusPromotion": {
+      "start_node_labels": [
+        "PromotionAnalysis"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "recordsTransaction": {
+      "start_node_labels": null,
+      "end_node_labels": null
+    },
+    "fulfilledAt": {
+      "start_node_labels": [
+        "Order"
+      ],
+      "end_node_labels": [
+        "FulfillmentLocation"
+      ]
+    },
+    "hasUnitOfMeasure": {
+      "start_node_labels": [
+        "Price"
+      ],
+      "end_node_labels": [
+        "UnitOfMeasure"
+      ]
+    },
+    "accessedViaChannel": {
+      "start_node_labels": [
+        "PageVisit"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "selectedPaymentMethod": {
+      "start_node_labels": [
+        "PaymentMethodSelectedEvent"
+      ],
+      "end_node_labels": [
+        "PaymentMethod"
+      ]
+    },
+    "hasPresentation": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "ProductPresentation"
+      ]
+    },
+    "hasReturnReason": {
+      "start_node_labels": [
+        "ReturnsAndExchanges"
+      ],
+      "end_node_labels": [
+        "ReturnReason"
+      ]
+    },
+    "includesPacking": {
+      "start_node_labels": [
+        "OrderFulfillment"
+      ],
+      "end_node_labels": [
+        "OrderPacking"
+      ]
+    },
+    "validatedOrder": {
+      "start_node_labels": [
+        "OrderValidatedEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "curatesProduct": {
+      "start_node_labels": [
+        "Persona"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "createsEvent": {
+      "start_node_labels": [
+        "Order"
+      ],
+      "end_node_labels": [
+        "SellEvents"
+      ]
+    },
+    "hasPayment": {
+      "start_node_labels": [
+        "Order",
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "Payment"
+      ]
+    },
+    "enabledRefundMethod": {
+      "start_node_labels": [
+        "POS"
+      ],
+      "end_node_labels": [
+        "RefundMethod"
+      ]
+    },
+    "hasCheckout": {
+      "start_node_labels": [
+        "CustomerWebSession"
+      ],
+      "end_node_labels": null
+    },
+    "hasLoyaltyProgram": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "managesOpeningClosing": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "StoreOpeningClosing"
+      ]
+    },
+    "loggedInCustomer": {
+      "start_node_labels": [
+        "CustomerLoginEvent"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "belongsToPriceList": {
+      "start_node_labels": [
+        "Price"
+      ],
+      "end_node_labels": [
+        "PriceList"
+      ]
+    },
+    "hasPromotionRule": {
+      "start_node_labels": [
+        "Promotion"
+      ],
+      "end_node_labels": [
+        "PromotionRule"
+      ]
+    },
+    "shippedAgainst": {
+      "start_node_labels": [
+        "ASN"
+      ],
+      "end_node_labels": [
+        "PurchaseOrder"
+      ]
+    },
+    "picksOrderLine": {
+      "start_node_labels": [
+        "OrderPicking"
+      ],
+      "end_node_labels": [
+        "OrderLine"
+      ]
+    },
+    "viewedProductInPageVisit": {
+      "start_node_labels": [
+        "PageVisit"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "forProduct": {
+      "start_node_labels": [
+        "ForecastVariance"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasForecastAdjustment": {
+      "start_node_labels": [
+        "Forecast"
+      ],
+      "end_node_labels": [
+        "ForecastAdjustment"
+      ]
+    },
+    "hasPaymentTerm": {
+      "start_node_labels": [
+        "Contract"
+      ],
+      "end_node_labels": [
+        "PaymentTerm"
+      ]
+    },
+    "appliedInTransaction": {
+      "start_node_labels": [
+        "Promotion"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "originatedFrom": {
+      "start_node_labels": [
+        "Channel"
+      ],
+      "end_node_labels": [
+        "CartInteraction"
+      ]
+    },
+    "supportsInteraction": {
+      "start_node_labels": [
+        "Channel"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "includesPromotion": {
+      "start_node_labels": [
+        "Campaign",
+        "Product"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "pickupOrder": {
+      "start_node_labels": [
+        "ClickAndCollectPickedUpEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "usedInTransaction": {
+      "start_node_labels": [
+        "LoyaltyProgram"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "hasPromotion": {
+      "start_node_labels": [
+        "Campaign",
+        "Product"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "hasSpend": {
+      "start_node_labels": [
+        "BuyerGroup"
+      ],
+      "end_node_labels": [
+        "Spend"
+      ]
+    },
+    "includesCustomer": {
+      "start_node_labels": [
+        "CustomerSegment"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "approvedReturn": {
+      "start_node_labels": [
+        "ReturnApprovedEvent"
+      ],
+      "end_node_labels": [
+        "ReturnOrder"
+      ]
+    },
+    "hasVendorClassification": {
+      "start_node_labels": [
+        "SupplierEntity"
+      ],
+      "end_node_labels": [
+        "SupplierClassification"
+      ]
+    },
+    "summaryForCustomer": {
+      "start_node_labels": [
+        "CustomerSeasonalSummary"
+      ],
+      "end_node_labels": [
+        "CustomerProfile"
+      ]
+    },
+    "hasForecastMethod": {
+      "start_node_labels": [
+        "Forecast"
+      ],
+      "end_node_labels": [
+        "ForecastMethod"
+      ]
+    },
+    "involvesSupplier": {
+      "start_node_labels": [
+        "BuyingEvent"
+      ],
+      "end_node_labels": [
+        "Supplier"
+      ]
+    },
+    "locatedAtStore": {
+      "start_node_labels": [
+        "POS"
+      ],
+      "end_node_labels": [
+        "StoreLocation"
+      ]
+    },
+    "usesLoyaltyProgram": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "hasFinancialPlan": {
+      "start_node_labels": [
+        "BuyerGroup"
+      ],
+      "end_node_labels": [
+        "FinancialPlan"
+      ]
+    },
+    "generatedForecastVersion": {
+      "start_node_labels": [
+        "Forecast"
+      ],
+      "end_node_labels": [
+        "ForecastVersion"
+      ]
+    },
+    "hasChurnRiskScore": {
+      "start_node_labels": [
+        "ChurnAnalysis"
+      ],
+      "end_node_labels": [
+        "decimal"
+      ]
+    },
+    "summarizesPerformanceFor": {
+      "start_node_labels": [
+        "ProductChannelPerformance"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "earnedLoyaltyPoints": {
+      "start_node_labels": [
+        "LoyaltyPointsEarnedEvent"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "instanceOfSalesOrder": {
+      "start_node_labels": [
+        "Order"
+      ],
+      "end_node_labels": [
+        "SalesOrder"
+      ]
+    },
+    "heldOrder": {
+      "start_node_labels": [
+        "OrderHeldEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "appliedToTransaction": {
+      "start_node_labels": [
+        "Promotion"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "channelAnalysis": {
+      "start_node_labels": [
+        "SalesPerformanceAnalysis"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "managesCampaign": {
+      "start_node_labels": [
+        "Persona"
+      ],
+      "end_node_labels": [
+        "Campaign"
+      ]
+    },
+    "appliesDuring": {
+      "start_node_labels": [
+        "PriceChange"
+      ],
+      "end_node_labels": [
+        "EffectivePeriod"
+      ]
+    },
+    "hasLegalEntity": {
+      "start_node_labels": [
+        "Contract"
+      ],
+      "end_node_labels": [
+        "LegalEntity"
+      ]
+    },
+    "pickedOrderEvent": {
+      "start_node_labels": [
+        "OrderPickedEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "targetsSegment": {
+      "start_node_labels": [
+        "LoyaltyProgram"
+      ],
+      "end_node_labels": [
+        "CustomerSegment"
+      ]
+    },
+    "affectsProduct": {
+      "start_node_labels": [
+        "BuyingEvent"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasWeek": {
+      "start_node_labels": [
+        "PlanningCalendar"
+      ],
+      "end_node_labels": [
+        "Week"
+      ]
+    },
+    "refundedVia": {
+      "start_node_labels": [
+        "TransactionLine"
+      ],
+      "end_node_labels": [
+        "RefundMethod"
+      ]
+    },
+    "assignedRole": {
+      "start_node_labels": [
+        "Assignment"
+      ],
+      "end_node_labels": [
+        "Role"
+      ]
+    },
+    "triggeredAddToCart": {
+      "start_node_labels": [
+        "AddToCartEvent"
+      ],
+      "end_node_labels": [
+        "CartInteraction"
+      ]
+    },
+    "linkedPromotion": {
+      "start_node_labels": [
+        "LoyaltyProgram"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "hasCurrency": {
+      "start_node_labels": [
+        "Price"
+      ],
+      "end_node_labels": null
+    },
+    "shippedVia": {
+      "start_node_labels": [
+        "CustomerShipment"
+      ],
+      "end_node_labels": [
+        "DeliveryMethod"
+      ]
+    },
+    "inboundTrackedBy": {
+      "start_node_labels": [
+        "CustomerShipment"
+      ],
+      "end_node_labels": [
+        "InboundTracking"
+      ]
+    },
+    "providedFeedback": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "CustomerFeedback"
+      ]
+    },
+    "predictsChurnForCustomer": {
+      "start_node_labels": [
+        "ChurnAnalysis"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "refundsPayment": {
+      "start_node_labels": [
+        "RefundMethod"
+      ],
+      "end_node_labels": [
+        "Payment"
+      ]
+    },
+    "partOfProgram": {
+      "start_node_labels": [
+        "LoyaltyTier"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "initiatedByManager": {
+      "start_node_labels": [
+        "StoreOpsEvent"
+      ],
+      "end_node_labels": [
+        "StoreManager"
+      ]
+    },
+    "hasPurchaseOrder": {
+      "start_node_labels": [
+        "Buyer"
+      ],
+      "end_node_labels": [
+        "PurchaseOrder"
+      ]
+    },
+    "belongsToPlanogram": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "Planogram"
+      ]
+    },
+    "occurredAtStore": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "Store"
+      ]
+    },
+    "partOfJourney": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "CustomerJourney"
+      ]
+    },
+    "inventoryAtLocation": {
+      "start_node_labels": [
+        "InventoryLevel"
+      ],
+      "end_node_labels": [
+        "Location"
+      ]
+    },
+    "placedOrder": {
+      "start_node_labels": [
+        "Customer",
+        "OrderPlacedEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "targetedAt": {
+      "start_node_labels": [
+        "Campaign"
+      ],
+      "end_node_labels": null
+    },
+    "initiatedFromChannel": {
+      "start_node_labels": [
+        "Payment"
+      ],
+      "end_node_labels": [
+        "Channel"
+      ]
+    },
+    "basedOnInteraction": {
+      "start_node_labels": [
+        "CustomerExperience"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "followsInteraction": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "representsProduct": {
+      "start_node_labels": [
+        "TransactionLine"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "summarizesHistory": {
+      "start_node_labels": null,
+      "end_node_labels": null
+    },
+    "conductedOnDevice": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "CustomerDevice"
+      ]
+    },
+    "promotionImpactTransaction": {
+      "start_node_labels": [
+        "PromotionAnalysis"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "forPeriod": {
+      "start_node_labels": [
+        "Spend"
+      ],
+      "end_node_labels": [
+        "FiscalPeriod"
+      ]
+    },
+    "hasPOOrderLine": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "PurchaseOrderLine"
+      ]
+    },
+    "initiatedCheckout": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": null
+    },
+    "cashDropped": {
+      "start_node_labels": [
+        "CashDropEvent"
+      ],
+      "end_node_labels": [
+        "CashierTillActivity"
+      ]
+    },
+    "occursDuringPeriodType": {
+      "start_node_labels": [
+        "CustomerInteraction",
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "TimePeriodType"
+      ]
+    },
+    "hasSupplierTier": {
+      "start_node_labels": [
+        "SupplierEntity"
+      ],
+      "end_node_labels": [
+        "SupplierTier"
+      ]
+    },
+    "initiatedBy": {
+      "start_node_labels": [
+        "SellEvents"
+      ],
+      "end_node_labels": [
+        "Persona"
+      ]
+    },
+    "hasReorderPoint": {
+      "start_node_labels": [
+        "Inventory"
+      ],
+      "end_node_labels": [
+        "ReorderPoint"
+      ]
+    },
+    "hasInvoice": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "Invoice"
+      ]
+    },
+    "referencesReceivingDocument": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "ReceivingDocument"
+      ]
+    },
+    "hasLoyaltyPrice": {
+      "start_node_labels": null,
+      "end_node_labels": [
+        "LoyaltyPrice"
+      ]
+    },
+    "hasStaffSchedule": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "StaffScheduling"
+      ]
+    },
+    "hasEffectivePeriod": {
+      "start_node_labels": [
+        "Price"
+      ],
+      "end_node_labels": [
+        "EffectivePeriod"
+      ]
+    },
+    "hasSupplier": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "SupplierEntity"
+      ]
+    },
+    "includesShipping": {
+      "start_node_labels": [
+        "OrderFulfillment"
+      ],
+      "end_node_labels": [
+        "OrderShipping"
+      ]
+    },
+    "deliveredBy": {
+      "start_node_labels": [
+        "CustomerShipment"
+      ],
+      "end_node_labels": [
+        "LogisticsPartner"
+      ]
+    },
+    "accruedLoyalty": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "promotionAnalysis": {
+      "start_node_labels": [
+        "PromotionAnalysis"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "precedesInteraction": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "hasCustomerBehaviorAnalysis": {
+      "start_node_labels": [
+        "SalesAnalysis"
+      ],
+      "end_node_labels": [
+        "CustomerBehaviorAnalysis"
+      ]
+    },
+    "foundPattern": {
+      "start_node_labels": [
+        "BasketAnalysisResult"
+      ],
+      "end_node_labels": [
+        "BasketPattern"
+      ]
+    },
+    "packsOrderLine": {
+      "start_node_labels": [
+        "OrderPacking"
+      ],
+      "end_node_labels": [
+        "OrderLine"
+      ]
+    },
+    "triggeredBy": {
+      "start_node_labels": [
+        "BuyingEvent"
+      ],
+      "end_node_labels": [
+        "ForecastVarianceEvent"
+      ]
+    },
+    "logsSystemEvent": {
+      "start_node_labels": [
+        "SellEvents"
+      ],
+      "end_node_labels": [
+        "SystemEvent"
+      ]
+    },
+    "originatedFromTransaction": {
+      "start_node_labels": [
+        "ReturnOrder"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "forPlanningSeason": {
+      "start_node_labels": [
+        "ForecastVariance"
+      ],
+      "end_node_labels": [
+        "PlanningSeason"
+      ]
+    },
+    "modifiedOrder": {
+      "start_node_labels": [
+        "OrderModifiedEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "initiatedReturnOrder": {
+      "start_node_labels": [
+        "ReturnInitiatedEvent"
+      ],
+      "end_node_labels": [
+        "ReturnOrder"
+      ]
+    },
+    "hasPriceZone": {
+      "start_node_labels": [
+        "Price"
+      ],
+      "end_node_labels": [
+        "PriceZone"
+      ]
+    },
+    "appliedLoyaltyPoints": {
+      "start_node_labels": [
+        "LoyaltyPointsAppliedEvent"
+      ],
+      "end_node_labels": [
+        "LoyaltyProgram"
+      ]
+    },
+    "hasOrderLine": {
+      "start_node_labels": [
+        "Order",
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "OrderLine",
+        "PurchaseOrderLine"
+      ]
+    },
+    "hasHouseholdMember": {
+      "start_node_labels": [
+        "Household"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "partOfAssortment": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "Assortment"
+      ]
+    },
+    "searchedProduct": {
+      "start_node_labels": [
+        "SearchInteraction"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "targetsProduct": {
+      "start_node_labels": [
+        "Campaign"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasForecastGranularity": {
+      "start_node_labels": [
+        "Forecast"
+      ],
+      "end_node_labels": [
+        "ForecastGranularity"
+      ]
+    },
+    "hasSafetyStock": {
+      "start_node_labels": [
+        "Inventory"
+      ],
+      "end_node_labels": [
+        "SafetyStock"
+      ]
+    },
+    "churnProductRelation": {
+      "start_node_labels": [
+        "ChurnAnalysis"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "belongsToTransaction": {
+      "start_node_labels": [
+        "Payment"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "initiatedByPersona": {
+      "start_node_labels": [
+        "SystemEvent"
+      ],
+      "end_node_labels": [
+        "Persona"
+      ]
+    },
+    "processedBy": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "Persona",
+        "SalesAssociate"
+      ]
+    },
+    "churnAnalysis": {
+      "start_node_labels": [
+        "ChurnAnalysis"
+      ],
+      "end_node_labels": [
+        "Customer"
+      ]
+    },
+    "hasInventoryThreshold": {
+      "start_node_labels": [
+        "Inventory"
+      ],
+      "end_node_labels": [
+        "InventoryThreshold"
+      ]
+    },
+    "hasAssignment": {
+      "start_node_labels": [
+        "BuyerGroup"
+      ],
+      "end_node_labels": [
+        "Assignment"
+      ]
+    },
+    "derivedFromInteraction": {
+      "start_node_labels": [
+        "CustomerExperience"
+      ],
+      "end_node_labels": [
+        "CustomerInteraction"
+      ]
+    },
+    "identifiedBy": {
+      "start_node_labels": [
+        "ForecastVariance"
+      ],
+      "end_node_labels": [
+        "Buyer"
+      ]
+    },
+    "assignedTo": {
+      "start_node_labels": [
+        "Buyer"
+      ],
+      "end_node_labels": [
+        "Assignment"
+      ]
+    },
+    "hasProductPrice": {
+      "start_node_labels": null,
+      "end_node_labels": [
+        "ProductPrice"
+      ]
+    },
+    "isBasedOnForecast": {
+      "start_node_labels": [
+        "ForecastVariance"
+      ],
+      "end_node_labels": [
+        "Forecast"
+      ]
+    },
+    "comparedWithPromotion": {
+      "start_node_labels": [
+        "PromotionAnalysis"
+      ],
+      "end_node_labels": [
+        "Promotion"
+      ]
+    },
+    "statusChangedOrder": {
+      "start_node_labels": [
+        "OrderStatusChangedEvent"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "memberOfSegment": {
+      "start_node_labels": [
+        "CustomerProfile"
+      ],
+      "end_node_labels": [
+        "MultichannelCustomerSegment"
+      ]
+    },
+    "delivers": {
+      "start_node_labels": [
+        "LogisticsPartner"
+      ],
+      "end_node_labels": [
+        "CustomerShipment"
+      ]
+    },
+    "contributesToSale": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "SalesAttribution"
+      ]
+    },
+    "initiatedExchangeOrder": {
+      "start_node_labels": [
+        "ExchangeInitiatedEvent"
+      ],
+      "end_node_labels": [
+        "ExchangeOrder"
+      ]
+    },
+    "fulfilledFrom": {
+      "start_node_labels": [
+        "OrderFulfillment"
+      ],
+      "end_node_labels": [
+        "FulfillmentLocation"
+      ]
+    },
+    "resultsInReturn": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "ReturnsAndExchanges"
+      ]
+    },
+    "wishlistProduct": {
+      "start_node_labels": [
+        "WishlistItemAddedEvent"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "includesItem": {
+      "start_node_labels": null,
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "containsAffinityProduct": {
+      "start_node_labels": [
+        "BasketPattern"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasBasket": {
+      "start_node_labels": [
+        "SalesTransaction"
+      ],
+      "end_node_labels": [
+        "SalesBasket"
+      ]
+    },
+    "usesDeliveryMethod": {
+      "start_node_labels": [
+        "OrderFulfillment"
+      ],
+      "end_node_labels": [
+        "DeliveryMethod"
+      ]
+    },
+    "definedByPriceRule": {
+      "start_node_labels": [
+        "Price"
+      ],
+      "end_node_labels": [
+        "PriceRule"
+      ]
+    },
+    "hasVariance": {
+      "start_node_labels": [
+        "FinancialPlan"
+      ],
+      "end_node_labels": [
+        "FinancialPlanVariance"
+      ]
+    },
+    "hasAllocationPlan": {
+      "start_node_labels": [
+        "Cluster"
+      ],
+      "end_node_labels": [
+        "AllocationPlan"
+      ]
+    },
+    "analyzesPlanogram": {
+      "start_node_labels": [
+        "PlanogramAnalysis"
+      ],
+      "end_node_labels": [
+        "Planogram"
+      ]
+    },
+    "hasReceiving": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "Receiving"
+      ]
+    },
+    "relatedOrder": {
+      "start_node_labels": [
+        "ReturnsAndExchanges"
+      ],
+      "end_node_labels": [
+        "Order"
+      ]
+    },
+    "timePeriodAnalysis": {
+      "start_node_labels": [
+        "SalesPerformanceAnalysis"
+      ],
+      "end_node_labels": [
+        "Time"
+      ]
+    },
+    "managesTillActivity": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "CashierTillActivity"
+      ]
+    },
+    "plannedIn": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "AssortmentPlan"
+      ]
+    },
+    "performsInventoryCheck": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "InventoryCheck"
+      ]
+    },
+    "storeOpened": {
+      "start_node_labels": [
+        "StoreOpenedEvent"
+      ],
+      "end_node_labels": [
+        "StoreLocation"
+      ]
+    },
+    "hasShipment": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "CustomerShipment"
+      ]
+    },
+    "involvedStaff": {
+      "start_node_labels": [
+        "StoreOpsEvent"
+      ],
+      "end_node_labels": [
+        "SalesAssociate"
+      ]
+    },
+    "isDeliveredBy": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "LogisticsPartner"
+      ]
+    },
+    "belongsToHousehold": {
+      "start_node_labels": [
+        "Customer"
+      ],
+      "end_node_labels": [
+        "Household"
+      ]
+    },
+    "relatedEvent": {
+      "start_node_labels": [
+        "CustomerInteraction"
+      ],
+      "end_node_labels": [
+        "SellEvents"
+      ]
+    },
+    "managesStaffSchedule": {
+      "start_node_labels": [
+        "StoreOps"
+      ],
+      "end_node_labels": [
+        "StaffScheduling"
+      ]
+    },
+    "ordersProduct": {
+      "start_node_labels": [
+        "PurchaseOrderLine"
+      ],
+      "end_node_labels": [
+        "Product"
+      ]
+    },
+    "hasPrice": {
+      "start_node_labels": [
+        "Product"
+      ],
+      "end_node_labels": [
+        "Price"
+      ]
+    },
+    "hasPredictionResult": {
+      "start_node_labels": [
+        "ChurnAnalysis"
+      ],
+      "end_node_labels": [
+        "ChurnPredictionResult"
+      ]
+    },
+    "ledToTransaction": {
+      "start_node_labels": [
+        "CustomerBehaviorAnalysis"
+      ],
+      "end_node_labels": [
+        "SalesTransaction"
+      ]
+    },
+    "hasPOStatus": {
+      "start_node_labels": [
+        "PurchaseOrder"
+      ],
+      "end_node_labels": [
+        "POStatus"
+      ]
+    },
+    "hasReceiptLine": {
+      "start_node_labels": [
+        "Receipt"
+      ],
+      "end_node_labels": [
+        "ReceiptLine"
+      ]
+    },
+    "isPartOfFulfillment": {
+      "start_node_labels": [
+        "CustomerShipment"
+      ],
+      "end_node_labels": [
+        "OrderFulfillment"
+      ]
+    },
+    "hasSearchConversionRate": {
+      "start_node_labels": [
+        "CustomerBehaviorAnalysis"
+      ],
+      "end_node_labels": [
+        "decimal"
+      ]
+    },
+    "initiatedByParticipant": {
+      "start_node_labels": [
+        "SellEvent"
+      ],
+      "end_node_labels": [
+        "Persona"
+      ]
+    }
+  }
+}

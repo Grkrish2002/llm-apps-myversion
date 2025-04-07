@@ -1,0 +1,288 @@
+import rdflib
+from rdflib import URIRef, Literal, BNode
+from rdflib.namespace import RDF, RDFS, OWL
+import argparse
+import pandas as pd
+import json
+import os
+
+class TTLParser:
+    """
+    Parses a Turtle (TTL) file and extracts RDF elements into a structured format,
+    allowing output as CSV or JSON.
+    """
+    # Define standard column order for consistency
+    COLUMN_ORDER = [
+        "Element Type", "URI/Identifier", "Label", "Comment",
+        "Detail Type", "Detail Value", "Detail Label", "Detail Comment"
+    ]
+
+    def __init__(self, ttl_file_path):
+        """
+        Initializes the parser with the path to the TTL file.
+
+        Args:
+            ttl_file_path (str): The path to the Turtle (.ttl) file.
+        """
+        if not os.path.exists(ttl_file_path):
+            raise FileNotFoundError(f"Input TTL file not found: {ttl_file_path}")
+        self.ttl_file_path = ttl_file_path
+        self.graph = rdflib.Graph()
+        self._parsed = False
+        self._structured_data = [] # Cache for extracted data
+
+    def parse(self):
+        """
+        Parses the TTL file into the internal RDF graph.
+        Must be called before extracting data.
+        """
+        if self._parsed:
+            print("Graph already parsed.")
+            return True
+        try:
+            print(f"Attempting to parse TTL file: {self.ttl_file_path}")
+            self.graph.parse(self.ttl_file_path, format="turtle")
+            self._parsed = True
+            print(f"Successfully parsed {len(self.graph)} triples.")
+            return True
+        except Exception as e:
+            print(f"Error parsing TTL file: {e}")
+            self._parsed = False
+            return False
+
+    def _get_label_comment(self, subject):
+        """Helper method to get label and comment for a subject."""
+        if not isinstance(subject, (URIRef, BNode)): # Can only get details for resources
+            return "", ""
+        label = self.graph.value(subject=subject, predicate=RDFS.label)
+        comment = self.graph.value(subject=subject, predicate=RDFS.comment)
+        return str(label) if label else "", str(comment) if comment else ""
+
+    def _extract_classes(self):
+        """Extracts class definitions."""
+        data = []
+        classes = set(self.graph.subjects(predicate=RDF.type, object=OWL.Class))
+        classes.update(self.graph.subjects(predicate=RDF.type, object=RDFS.Class))
+        for cls in classes:
+            if isinstance(cls, URIRef): # Focus on named classes
+                label, comment = self._get_label_comment(cls)
+                data.append({
+                    "Element Type": "Class", "URI/Identifier": str(cls),
+                    "Label": label, "Comment": comment, "Detail Type": "",
+                    "Detail Value": "", "Detail Label": "", "Detail Comment": ""
+                })
+        return data
+
+    def _extract_subclass_relationships(self):
+        """Extracts rdfs:subClassOf relationships."""
+        data = []
+        for sub, sup in self.graph.subject_objects(predicate=RDFS.subClassOf):
+            if isinstance(sub, (URIRef, BNode)) and isinstance(sup, (URIRef, BNode)):
+               sub_label, sub_comment = self._get_label_comment(sub)
+               sup_label, sup_comment = self._get_label_comment(sup)
+               data.append({
+                    "Element Type": "Subclass Relationship", "URI/Identifier": str(sub),
+                    "Label": sub_label, "Comment": sub_comment,
+                    "Detail Type": "rdfs:subClassOf", "Detail Value": str(sup),
+                    "Detail Label": sup_label, "Detail Comment": sup_comment
+               })
+        return data
+
+    def _extract_properties(self, property_type, element_type_prefix):
+        """Generic method to extract Object or Data properties and their details."""
+        data = []
+        properties = set(self.graph.subjects(predicate=RDF.type, object=property_type))
+        for prop in properties:
+            if isinstance(prop, URIRef):
+                label, comment = self._get_label_comment(prop)
+                # Basic Property Definition Row
+                data.append({
+                    "Element Type": f"{element_type_prefix} Property", "URI/Identifier": str(prop),
+                    "Label": label, "Comment": comment, "Detail Type": "",
+                    "Detail Value": "", "Detail Label": "", "Detail Comment": ""
+                })
+                # Add separate rows for domain and range
+                for domain in self.graph.objects(subject=prop, predicate=RDFS.domain):
+                     if isinstance(domain, (URIRef, BNode)):
+                         dom_label, dom_comment = self._get_label_comment(domain)
+                         data.append({
+                            "Element Type": f"{element_type_prefix} Property Detail", "URI/Identifier": str(prop),
+                            "Label": label, "Comment": comment,
+                            "Detail Type": "rdfs:domain", "Detail Value": str(domain),
+                            "Detail Label": dom_label, "Detail Comment": dom_comment
+                         })
+                for range_val in self.graph.objects(subject=prop, predicate=RDFS.range):
+                     if isinstance(range_val, (URIRef, BNode)): # Range can be Class (ObjectProp) or Datatype (DataProp)
+                         rng_label, rng_comment = self._get_label_comment(range_val)
+                         data.append({
+                            "Element Type": f"{element_type_prefix} Property Detail", "URI/Identifier": str(prop),
+                            "Label": label, "Comment": comment,
+                            "Detail Type": "rdfs:range", "Detail Value": str(range_val),
+                            "Detail Label": rng_label, "Detail Comment": rng_comment
+                         })
+        return data
+
+    def _extract_ontology_annotations(self):
+        """Extracts annotations attached to the owl:Ontology declaration."""
+        data = []
+        ontologies = set(self.graph.subjects(predicate=RDF.type, object=OWL.Ontology))
+        for ont in ontologies:
+            ont_uri = str(ont) if isinstance(ont, URIRef) else "_:Ontology" # Handle blank node ontology declarations
+            ont_label, ont_comment = self._get_label_comment(ont)
+
+            # Add base ontology label/comment if present
+            if ont_label or ont_comment:
+                data.append({
+                    "Element Type": "Ontology Annotation", "URI/Identifier": ont_uri,
+                    "Label": ont_label, "Comment": ont_comment, "Detail Type": "",
+                    "Detail Value": "", "Detail Label": "", "Detail Comment": ""
+                })
+
+            # Extract specific annotations like owl:versionInfo
+            version_info = self.graph.value(subject=ont, predicate=OWL.versionInfo)
+            if version_info:
+                data.append({
+                    "Element Type": "Ontology Annotation", "URI/Identifier": ont_uri,
+                    "Label": ont_label, "Comment": ont_comment, # Repeat context
+                    "Detail Type": "owl:versionInfo", "Detail Value": str(version_info),
+                    "Detail Label": "", "Detail Comment": ""
+                })
+            # Can add more common annotation properties here (e.g., dc:creator, etc.)
+        return data
+
+    def get_structured_data(self):
+        """
+        Extracts all relevant RDF elements from the parsed graph.
+
+        Returns:
+            list: A list of dictionaries representing the extracted data,
+                  or an empty list if parsing failed or hasn't occurred.
+        """
+        if not self._parsed:
+            print("Error: TTL file not successfully parsed. Call parse() first.")
+            return []
+
+        # Use cached data if available
+        if self._structured_data:
+            return self._structured_data
+
+        print("Extracting data from graph...")
+        self._structured_data.extend(self._extract_classes())
+        self._structured_data.extend(self._extract_subclass_relationships())
+        self._structured_data.extend(self._extract_properties(OWL.ObjectProperty, "Object"))
+        self._structured_data.extend(self._extract_properties(OWL.DatatypeProperty, "Data"))
+        self._structured_data.extend(self._extract_ontology_annotations())
+        print(f"Finished extraction. Found {len(self._structured_data)} granular details.")
+
+        # Ensure all dictionaries have the same keys for consistent output
+        for row in self._structured_data:
+            for col in self.COLUMN_ORDER:
+                row.setdefault(col, "") # Add missing keys with empty string
+
+        return self._structured_data
+
+    def get_dataframe(self):
+        """
+        Returns the extracted data as a Pandas DataFrame.
+
+        Returns:
+            pandas.DataFrame: DataFrame containing the structured data,
+                             or None if data extraction failed.
+        """
+        data = self.get_structured_data()
+        if not data:
+            return None
+        df = pd.DataFrame(data)
+        # Reorder columns for clarity and consistency
+        df = df[self.COLUMN_ORDER]
+        return df
+
+    def save_as_csv(self, output_path):
+        """Saves the extracted data to a CSV file."""
+        df = self.get_dataframe()
+        if df is None:
+            print("Error: Cannot save CSV, no data extracted.")
+            return False
+        try:
+            df.to_csv(output_path, index=False, encoding='utf-8')
+            print(f"Successfully saved data to CSV: {output_path}")
+            return True
+        except Exception as e:
+            print(f"Error saving data to CSV: {e}")
+            return False
+
+    def save_as_json(self, output_path):
+        """Saves the extracted data to a JSON file."""
+        data = self.get_structured_data()
+        if not data:
+            print("Error: Cannot save JSON, no data extracted.")
+            return False
+        try:
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+            print(f"Successfully saved data to JSON: {output_path}")
+            return True
+        except Exception as e:
+            print(f"Error saving data to JSON: {e}")
+            return False
+
+    def print_to_console(self):
+        """Prints the extracted data to the console using Pandas."""
+        df = self.get_dataframe()
+        if df is None:
+            print("No data to print.")
+            return
+        print("\n--- Extracted Data Table ---")
+        pd.set_option('display.max_rows', None)
+        pd.set_option('display.max_columns', None)
+        pd.set_option('display.width', 1000)
+        pd.set_option('display.max_colwidth', None) # Show full content
+        print(df.to_string(index=False))
+
+
+# --- Main execution block ---
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Parse a TTL file using OOP and output RDF elements as CSV or JSON.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    parser.add_argument("ttl_file", help="Path to the input Turtle (.ttl) file.")
+    parser.add_argument("-o", "--output",
+                        help="Path to save the output file. Required if --format is specified.")
+    parser.add_argument("-f", "--format", choices=['csv', 'json'],
+                        help="Format for the output file (csv or json). If omitted, prints to console.")
+
+    args = parser.parse_args()
+
+    # Validate arguments
+    if args.format and not args.output:
+        parser.error("--output OUTPUT is required when specifying --format")
+
+    try:
+        # 1. Instantiate the parser
+        parser_instance = TTLParser(args.ttl_file)
+
+        # 2. Parse the file
+        if not parser_instance.parse():
+            exit(1) # Exit if parsing failed
+
+        # 3. Process based on arguments
+        if args.format == 'csv':
+            parser_instance.save_as_csv(args.output)
+        elif args.format == 'json':
+            parser_instance.save_as_json(args.output)
+        else:
+            # If no format/output specified, print to console
+            parser_instance.print_to_console()
+
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+        exit(1)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        exit(1)
+        
+
+#Usage
+# python TTL_JSON.py -o new_RetailOntologyv4.csv -f csv new_RetailOntologyv4.ttl
+# python TTL_JSON.py -o new_RetailOntologyv4.json -f json new_RetailOntologyv4.ttl

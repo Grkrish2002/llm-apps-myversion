@@ -1,0 +1,88 @@
+import json
+from neo4j import GraphDatabase
+
+# === CONFIGURATION ===
+NEO4J_URI = "bolt://localhost:7687"
+NEO4J_USER = "neo4j"
+NEO4J_PASSWORD = "please add"  # Change if needed
+ONTOLOGY_JSON = "neo4j_ontology_output.json"  # Make sure this file exists in your folder
+
+# === CONNECT TO NEO4J ===
+driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
+
+# === LOAD JSON ===
+with open(ONTOLOGY_JSON, "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+nodes = data["nodes"]
+relationships = data["relationships"]
+
+# === HELPER: Generate realistic sample values ===
+def get_realistic_value(prop):
+    pname = prop.lower()
+    if "date" in pname:
+        return "2024-01-01"
+    elif "price" in pname:
+        return 99.99
+    elif "id" in pname or "code" in pname:
+        return "ID1234"
+    elif "qty" in pname or "quantity" in pname:
+        return 10
+    elif "name" in pname:
+        return "Sample Name"
+    elif "desc" in pname:
+        return "Sample description"
+    else:
+        return "sample_value"
+
+# === CREATE NODE FUNCTION ===
+def create_node(tx, label, properties):
+    query = f"""
+    MERGE (n:{label} {{name: $label}})
+    SET n += $props
+    """
+    props = {prop: get_realistic_value(prop) for prop in properties}
+    tx.run(query, label=label, props=props)
+
+# === CREATE INHERITANCE RELATIONSHIP ===
+def create_inheritance(tx, child, parent):
+    query = """
+    MATCH (c {name: $child}), (p {name: $parent})
+    MERGE (c)-[:IS_A]->(p)
+    """
+    tx.run(query, child=child, parent=parent)
+
+# === CREATE DOMAIN-RANGE RELATIONSHIP ===
+def create_relationship(tx, rel_type, starts, ends):
+    if not starts or not ends:
+        return
+    for start in starts:
+        for end in ends:
+            query = f"""
+            MATCH (a {{name: $start}}), (b {{name: $end}})
+            MERGE (a)-[r:{rel_type}]->(b)
+            """
+            tx.run(query, start=start, end=end)
+
+# === MAIN EXECUTION ===
+with driver.session() as session:
+    print("Creating nodes...")
+    for node_label, details in nodes.items():
+        session.execute_write(create_node, node_label, details.get("properties", []))
+
+    print("Creating inheritance relationships...")
+    for child, details in nodes.items():
+        for parent in details.get("inherits_from", []):
+            session.execute_write(create_inheritance, child, parent)
+
+    print("Creating object property relationships...")
+    for rel_type, rel_data in relationships.items():
+        session.execute_write(
+            create_relationship,
+            rel_type,
+            rel_data.get("start_node_labels"),
+            rel_data.get("end_node_labels")
+        )
+
+driver.close()
+print("✅ Import complete.")
