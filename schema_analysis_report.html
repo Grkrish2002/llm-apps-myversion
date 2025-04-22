@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo4j Schema Analysis Report</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        h1 { color: #333; }
+        h2 { color: #555; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        ul { list-style-type: disc; margin-left: 20px; }
+        li { margin-bottom: 5px; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        .node-list li { margin-bottom: 8px; }
+        .node-list ul { margin-top: 5px; margin-left: 30px; list-style-type: circle;}
+    </style>
+</head>
+<body>
+    <h1>Neo4j Schema Analysis Report</h1>
+<h2>1. Nodes with Zero Data Properties</h2>
+<ul>
+    <li><code>AddToCartEvent</code></li>
+    <li><code>Advertising</code></li>
+    <li><code>BackOrder</code></li>
+    <li><code>BehavioralSegment</code></li>
+    <li><code>BundlePrice</code></li>
+    <li><code>CallCenterChannel</code></li>
+    <li><code>CartAbandonmentEvent</code></li>
+    <li><code>CartInteraction</code></li>
+    <li><code>CartRule</code></li>
+    <li><code>CashDropEvent</code></li>
+    <li><code>Cashier</code></li>
+    <li><code>CashierTillActivity</code></li>
+    <li><code>CatchweightProduct</code></li>
+    <li><code>CategoryManager</code></li>
+    <li><code>ChannelPrice</code></li>
+    <li><code>ChannelRule</code></li>
+    <li><code>CheckoutAbandonedEvent</code></li>
+    <li><code>CheckoutEvent</code></li>
+    <li><code>CheckoutProcess</code></li>
+    <li><code>CheckoutStartedEvent</code></li>
+    <li><code>ClickAndCollectFulfillment</code></li>
+    <li><code>ClickAndCollectPickedUpEvent</code></li>
+    <li><code>ClickAndCollectReadyEvent</code></li>
+    <li><code>ClickAndCollectTransaction</code></li>
+    <li><code>CommercialTerms</code></li>
+    <li><code>Competitor</code></li>
+    <li><code>ComplexPackProduct</code></li>
+    <li><code>Customer</code></li>
+    <li><code>CustomerBrowsing</code></li>
+    <li><code>CustomerDemographics</code></li>
+    <li><code>CustomerDevice</code></li>
+    <li><code>CustomerExperience</code></li>
+    <li><code>CustomerFeedback</code></li>
+    <li><code>CustomerFeedbackSubmittedEvent</code></li>
+    <li><code>CustomerInteractionEvent</code></li>
+    <li><code>CustomerInteractionRule</code></li>
+    <li><code>CustomerLoginEvent</code></li>
+    <li><code>CustomerPreferences</code></li>
+    <li><code>CustomerSearchEvent</code></li>
+    <li><code>CustomerSearchInteraction</code></li>
+    <li><code>CustomerSegment</code></li>
+    <li><code>CustomerServiceRep</code></li>
+    <li><code>CustomerSocialInteraction</code></li>
+    <li><code>DailyStoreOperations</code></li>
+    <li><code>DeliveredToCustomerEvent</code></li>
+    <li><code>DeliveryMethod</code></li>
+    <li><code>DeliveryScheduledEvent</code></li>
+    <li><code>DemandForecasting</code></li>
+    <li><code>DiscountAppliedEvent</code></li>
+    <li><code>EDICostChange</code></li>
+    <li><code>ExchangeCompletedEvent</code></li>
+    <li><code>ExchangeDetails</code></li>
+    <li><code>ExchangeInitiatedEvent</code></li>
+    <li><code>ExchangeOrder</code></li>
+    <li><code>ExchangeTransaction</code></li>
+    <li><code>FitnessProfile</code></li>
+    <li><code>ForecastingProcurementLogistics</code></li>
+    <li><code>FulfillmentEvent</code></li>
+    <li><code>FulfillmentLocation</code></li>
+    <li><code>FulfillmentTeamMember</code></li>
+    <li><code>Household</code></li>
+    <li><code>InStoreSaleTransaction</code></li>
+    <li><code>InboundDelivery</code></li>
+    <li><code>InboundShipment</code></li>
+    <li><code>InventoryCheck</code></li>
+    <li><code>ItemReceivedBackEvent</code></li>
+    <li><code>ItemScannedEvent</code></li>
+    <li><code>LoyaltyCustomer</code></li>
+    <li><code>LoyaltyPointsAppliedEvent</code></li>
+    <li><code>LoyaltyPointsEarnedEvent</code></li>
+    <li><code>LoyaltyPrice</code></li>
+    <li><code>LoyaltyProgram</code></li>
+    <li><code>LoyaltyRule</code></li>
+    <li><code>LoyaltyTier</code></li>
+    <li><code>ManualCostChange</code></li>
+    <li><code>MarkdownAppliedEvent</code></li>
+    <li><code>MarketingAnalytics</code></li>
+    <li><code>MarketingAndPromotion</code></li>
+    <li><code>MarketingManager</code></li>
+    <li><code>MerchandiseFinancialPlan</code></li>
+    <li><code>MerchandiseHierarchy</code></li>
+    <li><code>MerchandisePlanning</code></li>
+    <li><code>MerchandisingAnalysis</code></li>
+    <li><code>MobileAppChannel</code></li>
+    <li><code>NonPeakPeriod</code></li>
+    <li><code>OnlineChannel</code></li>
+    <li><code>OnlineSaleTransaction</code></li>
+    <li><code>OrderCancelledEvent</code></li>
+    <li><code>OrderConfirmedEvent</code></li>
+    <li><code>OrderDelivery</code></li>
+    <li><code>OrderEvent</code></li>
+    <li><code>OrderFulfillment</code></li>
+    <li><code>OrderHeldEvent</code></li>
+    <li><code>OrderModifiedEvent</code></li>
+    <li><code>OrderPackedEvent</code></li>
+    <li><code>OrderPacking</code></li>
+    <li><code>OrderPickedEvent</code></li>
+    <li><code>OrderPicking</code></li>
+    <li><code>OrderPickingStartedEvent</code></li>
+    <li><code>OrderPlacedEvent</code></li>
+    <li><code>OrderReleasedEvent</code></li>
+    <li><code>OrderRule</code></li>
+    <li><code>OrderShipping</code></li>
+    <li><code>OrderStatusChangedEvent</code></li>
+    <li><code>OrderValidatedEvent</code></li>
+    <li><code>OrganizationalHierarchy</code></li>
+    <li><code>POS</code></li>
+    <li><code>POSMaintenance</code></li>
+    <li><code>POSRestartedEvent</code></li>
+    <li><code>Payment</code></li>
+    <li><code>PaymentMethod</code></li>
+    <li><code>PaymentMethodSelectedEvent</code></li>
+    <li><code>PaymentProcessedEvent</code></li>
+    <li><code>PaymentRule</code></li>
+    <li><code>PeakPeriod</code></li>
+    <li><code>Persona</code></li>
+    <li><code>PersonalityType</code></li>
+    <li><code>PersonalizedRecommendation</code></li>
+    <li><code>PhysicalStoreChannel</code></li>
+    <li><code>PreOrderTransaction</code></li>
+    <li><code>PriceChangedEvent</code></li>
+    <li><code>PriceConcept</code></li>
+    <li><code>PriceOverrideEvent</code></li>
+    <li><code>PricingEvent</code></li>
+    <li><code>PricingRule</code></li>
+    <li><code>ProcurementAndLogistics</code></li>
+    <li><code>ProductBundle</code></li>
+    <li><code>ProductCharacteristics</code></li>
+    <li><code>ProductInformation</code></li>
+    <li><code>ProductInquiry</code></li>
+    <li><code>ProductInquiryEvent</code></li>
+    <li><code>ProductPresentation</code></li>
+    <li><code>ProductPrice</code></li>
+    <li><code>ProductViewedEvent</code></li>
+    <li><code>PromotionDeactivatedEvent</code></li>
+    <li><code>PromotionStartedEvent</code></li>
+    <li><code>PromotionalPrice</code></li>
+    <li><code>ReceiptGeneratedEvent</code></li>
+    <li><code>RefundMethod</code></li>
+    <li><code>RefundProcessedEvent</code></li>
+    <li><code>ReturnApprovedEvent</code></li>
+    <li><code>ReturnExchangeEvent</code></li>
+    <li><code>ReturnInitiatedEvent</code></li>
+    <li><code>ReturnPolicy</code></li>
+    <li><code>ReturnReason</code></li>
+    <li><code>ReturnTransaction</code></li>
+    <li><code>ReturnsAndExchanges</code></li>
+    <li><code>SaleCompletedEvent</code></li>
+    <li><code>SaleVoidedEvent</code></li>
+    <li><code>SalesAnalysis</code></li>
+    <li><code>SalesAssociate</code></li>
+    <li><code>SalesEvent</code></li>
+    <li><code>SalesOrder</code></li>
+    <li><code>SalesPerformanceAnalysis</code></li>
+    <li><code>SalesTransactionLine</code></li>
+    <li><code>SearchInteraction</code></li>
+    <li><code>SearchTerm</code></li>
+    <li><code>SellEvent</code></li>
+    <li><code>SellEvents</code></li>
+    <li><code>SentimentScore</code></li>
+    <li><code>ShipmentCreatedEvent</code></li>
+    <li><code>ShipmentDispatchedEvent</code></li>
+    <li><code>ShippingOptionSelectedEvent</code></li>
+    <li><code>ShippingRule</code></li>
+    <li><code>SimplePackProduct</code></li>
+    <li><code>SocialCommerceChannel</code></li>
+    <li><code>StaffScheduling</code></li>
+    <li><code>StoreClosedEvent</code></li>
+    <li><code>StoreComplianceTask</code></li>
+    <li><code>StoreLocation</code></li>
+    <li><code>StoreManager</code></li>
+    <li><code>StoreOpenedEvent</code></li>
+    <li><code>StoreOpeningClosing</code></li>
+    <li><code>StoreOps</code></li>
+    <li><code>StoreOpsEvent</code></li>
+    <li><code>SubCategory</code></li>
+    <li><code>SubDepartment</code></li>
+    <li><code>SupplierTier</code></li>
+    <li><code>SupplierType</code></li>
+    <li><code>SystemEvent</code></li>
+    <li><code>TillClosedEvent</code></li>
+    <li><code>TillOpenedEvent</code></li>
+    <li><code>Time</code></li>
+    <li><code>TransactionInitiationEvent</code></li>
+    <li><code>TransactionLine</code></li>
+    <li><code>TransformableProduct</code></li>
+    <li><code>ValidationRules</code></li>
+    <li><code>WishlistItemAddedEvent</code></li>
+</ul>
+<h2>2. Relationships Missing Start or End Node Labels</h2>
+<ul>
+    <li><code>basedOnSales</code></li>
+    <li><code>confirmsReceiptFor</code></li>
+    <li><code>facilitatesCheckout</code></li>
+    <li><code>hasChannelPrice</code></li>
+    <li><code>hasCheckout</code></li>
+    <li><code>hasCurrency</code></li>
+    <li><code>hasLoyaltyPrice</code></li>
+    <li><code>hasProductPrice</code></li>
+    <li><code>hasPromoPrice</code></li>
+    <li><code>hasSalesPerformance</code></li>
+    <li><code>includesItem</code></li>
+    <li><code>initiatedCheckout</code></li>
+    <li><code>measuresKPI</code></li>
+    <li><code>recordsTransaction</code></li>
+    <li><code>resultsInOrder</code></li>
+    <li><code>summarizesHistory</code></li>
+    <li><code>targetedAt</code></li>
+    <li><code>triggeredFromCheckout</code></li>
+</ul>
+<h2>3. Nodes with Exactly One Data Property</h2>
+<ul>
+    <li><code>ASN</code></li>
+    <li><code>AllocationPlan</code></li>
+    <li><code>Assignment</code></li>
+    <li><code>AssortmentPlan</code></li>
+    <li><code>BasketAnalysisResult</code></li>
+    <li><code>BasketPattern</code></li>
+    <li><code>Budget</code></li>
+    <li><code>BuyerGroup</code></li>
+    <li><code>BuyingOffice</code></li>
+    <li><code>Campaign</code></li>
+    <li><code>CampaignPerformance</code></li>
+    <li><code>Carrier</code></li>
+    <li><code>Channel</code></li>
+    <li><code>ChurnAnalysis</code></li>
+    <li><code>ChurnPredictionResult</code></li>
+    <li><code>Cluster</code></li>
+    <li><code>CompetitorPrice</code></li>
+    <li><code>ContractLine</code></li>
+    <li><code>Cost</code></li>
+    <li><code>CustomerBehaviorAnalysis</code></li>
+    <li><code>CustomerDelivery</code></li>
+    <li><code>CustomerInteraction</code></li>
+    <li><code>CustomerJourney</code></li>
+    <li><code>CustomerShipment</code></li>
+    <li><code>Division</code></li>
+    <li><code>FinancialPlan</code></li>
+    <li><code>FinancialPlanVariance</code></li>
+    <li><code>FinancialPlanVersion</code></li>
+    <li><code>FiscalPeriod</code></li>
+    <li><code>ForecastAccuracy</code></li>
+    <li><code>ForecastAdjustment</code></li>
+    <li><code>ForecastGranularity</code></li>
+    <li><code>ForecastHorizon</code></li>
+    <li><code>ForecastMethod</code></li>
+    <li><code>ForecastVersion</code></li>
+    <li><code>GrossMarginReturnOnInventory</code></li>
+    <li><code>InboundTracking</code></li>
+    <li><code>InteractionOutcome</code></li>
+    <li><code>Inventory</code></li>
+    <li><code>InventoryThreshold</code></li>
+    <li><code>InvoiceLine</code></li>
+    <li><code>LeadTime</code></li>
+    <li><code>Location</code></li>
+    <li><code>LogisticsPartner</code></li>
+    <li><code>Manufacturer</code></li>
+    <li><code>MarketBasketAnalysis</code></li>
+    <li><code>MarketTrend</code></li>
+    <li><code>MarketingAnalysis</code></li>
+    <li><code>MerchandiseEntity</code></li>
+    <li><code>MerchandisingPerformance</code></li>
+    <li><code>Offer</code></li>
+    <li><code>OpenToBuy</code></li>
+    <li><code>POStatus</code></li>
+    <li><code>PlanningCalendar</code></li>
+    <li><code>PlanningPeriod</code></li>
+    <li><code>PlanningSeason</code></li>
+    <li><code>Planogram</code></li>
+    <li><code>PlanogramAnalysis</code></li>
+    <li><code>PriceGuide</code></li>
+    <li><code>PriceList</code></li>
+    <li><code>PriceRule</code></li>
+    <li><code>PriceType</code></li>
+    <li><code>PriceZone</code></li>
+    <li><code>PricingLinkCode</code></li>
+    <li><code>PricingThreshold</code></li>
+    <li><code>PromotionAnalysis</code></li>
+    <li><code>PromotionRule</code></li>
+    <li><code>PromotionType</code></li>
+    <li><code>Receipt</code></li>
+    <li><code>ReceiptLine</code></li>
+    <li><code>ReceivingDocument</code></li>
+    <li><code>ReceivingLine</code></li>
+    <li><code>ReceivingStatus</code></li>
+    <li><code>Region</code></li>
+    <li><code>ReorderPoint</code></li>
+    <li><code>ReturnOrder</code></li>
+    <li><code>Role</code></li>
+    <li><code>SLA</code></li>
+    <li><code>SafetyStock</code></li>
+    <li><code>Season</code></li>
+    <li><code>SeasonCode</code></li>
+    <li><code>SellThroughRate</code></li>
+    <li><code>SizeCurve</code></li>
+    <li><code>StockTurn</code></li>
+    <li><code>StoreCluster</code></li>
+    <li><code>StoreFormat</code></li>
+    <li><code>StyleColor</code></li>
+    <li><code>TargetAudience</code></li>
+    <li><code>UnitOfMeasure</code></li>
+</ul>
+<h2>4. Likely ID Properties per Node</h2>
+<ul class='node-list'>
+    <li><code>ASN</code>:
+        <ul>
+            <li><code>asnNumber</code></li>
+        </ul>
+    </li>
+    <li><code>AllocationPlan</code>:
+        <ul>
+            <li><code>allocationPlanID</code></li>
+        </ul>
+    </li>
+    <li><code>Assignment</code>:
+        <ul>
+            <li><code>assignmentID</code></li>
+        </ul>
+    </li>
+    <li><code>Assortment</code>:
+        <ul>
+            <li><code>assortmentID</code></li>
+        </ul>
+    </li>
+    <li><code>AssortmentPlan</code>:
+        <ul>
+            <li><code>assortmentPlanID</code></li>
+        </ul>
+    </li>
+    <li><code>BasketPattern</code>:
+        <ul>
+            <li><code>basketPatternCode</code></li>
+        </ul>
+    </li>
+    <li><code>Brand</code>:
+        <ul>
+            <li><code>brandCode</code></li>
+        </ul>
+    </li>
+    <li><code>Buyer</code>:
+        <ul>
+            <li><code>buyerID</code></li>
+        </ul>
+    </li>
+    <li><code>BuyerGroup</code>:
+        <ul>
+            <li><code>buyerGroupCode</code></li>
+        </ul>
+    </li>
+    <li><code>BuyingEvent</code>:
+        <ul>
+            <li><code>eventID</code></li>
+        </ul>
+    </li>
+    <li><code>BuyingOffice</code>:
+        <ul>
+            <li><code>buyingOfficeCode</code></li>
+        </ul>
+    </li>
+    <li><code>Campaign</code>:
+        <ul>
+            <li><code>campaignID</code></li>
+        </ul>
+    </li>
+    <li><code>Carrier</code>:
+        <ul>
+            <li><code>carrierCode</code></li>
+        </ul>
+    </li>
+    <li><code>Category</code>:
+        <ul>
+            <li><code>categoryCode</code></li>
+        </ul>
+    </li>
+    <li><code>Channel</code>:
+        <ul>
+            <li><code>channelCode</code></li>
+        </ul>
+    </li>
+    <li><code>Cluster</code>:
+        <ul>
+            <li><code>clusterCode</code></li>
+        </ul>
+    </li>
+    <li><code>Color</code>:
+        <ul>
+            <li><code>colorCode</code></li>
+        </ul>
+    </li>
+    <li><code>CompetitorAnalysis</code>:
+        <ul>
+            <li><code>competitorID</code></li>
+        </ul>
+    </li>
+    <li><code>Contract</code>:
+        <ul>
+            <li><code>contractID</code></li>
+        </ul>
+    </li>
+    <li><code>ContractLine</code>:
+        <ul>
+            <li><code>contractLineID</code></li>
+        </ul>
+    </li>
+    <li><code>CostCenter</code>:
+        <ul>
+            <li><code>costCenterCode</code></li>
+        </ul>
+    </li>
+    <li><code>Country</code>:
+        <ul>
+            <li><code>countryCode</code></li>
+        </ul>
+    </li>
+    <li><code>CustomerShipment</code>:
+        <ul>
+            <li><code>shipmentID</code></li>
+        </ul>
+    </li>
+    <li><code>DeliveryTerm</code>:
+        <ul>
+            <li><code>deliveryTermCode</code></li>
+        </ul>
+    </li>
+    <li><code>Department</code>:
+        <ul>
+            <li><code>departmentCode</code></li>
+        </ul>
+    </li>
+    <li><code>Division</code>:
+        <ul>
+            <li><code>divisionCode</code></li>
+        </ul>
+    </li>
+    <li><code>FinancialPlan</code>:
+        <ul>
+            <li><code>financialPlanID</code></li>
+        </ul>
+    </li>
+    <li><code>FinancialPlanVersion</code>:
+        <ul>
+            <li><code>financialPlanVersionNumber</code></li>
+        </ul>
+    </li>
+    <li><code>FiscalCountry</code>:
+        <ul>
+            <li><code>fiscalCountryCode</code></li>
+        </ul>
+    </li>
+    <li><code>FiscalPeriod</code>:
+        <ul>
+            <li><code>fiscalPeriodCode</code></li>
+        </ul>
+    </li>
+    <li><code>Forecast</code>:
+        <ul>
+            <li><code>forecastID</code></li>
+        </ul>
+    </li>
+    <li><code>ForecastMethod</code>:
+        <ul>
+            <li><code>forecastMethodCode</code></li>
+        </ul>
+    </li>
+    <li><code>ForecastVersion</code>:
+        <ul>
+            <li><code>forecastVersionCode</code></li>
+        </ul>
+    </li>
+    <li><code>InboundTracking</code>:
+        <ul>
+            <li><code>inboundTrackingID</code></li>
+        </ul>
+    </li>
+    <li><code>Invoice</code>:
+        <ul>
+            <li><code>invoiceNumber</code></li>
+        </ul>
+    </li>
+    <li><code>InvoiceLine</code>:
+        <ul>
+            <li><code>invoiceLineNumber</code></li>
+        </ul>
+    </li>
+    <li><code>InvoiceReceivedEvent</code>:
+        <ul>
+            <li><code>invoiceID</code></li>
+        </ul>
+    </li>
+    <li><code>LegalEntity</code>:
+        <ul>
+            <li><code>legalEntityID</code></li>
+            <li><code>taxID</code></li>
+        </ul>
+    </li>
+    <li><code>LifecycleStage</code>:
+        <ul>
+            <li><code>lifecycleStageCode</code></li>
+        </ul>
+    </li>
+    <li><code>Location</code>:
+        <ul>
+            <li><code>locationCode</code></li>
+        </ul>
+    </li>
+    <li><code>LogisticsPartner</code>:
+        <ul>
+            <li><code>logisticsPartnerCode</code></li>
+        </ul>
+    </li>
+    <li><code>Manufacturer</code>:
+        <ul>
+            <li><code>manufacturerCode</code></li>
+        </ul>
+    </li>
+    <li><code>MarketBasketAnalysis</code>:
+        <ul>
+            <li><code>marketBasketID</code></li>
+        </ul>
+    </li>
+    <li><code>Material</code>:
+        <ul>
+            <li><code>materialCode</code></li>
+        </ul>
+    </li>
+    <li><code>MerchandiseEntity</code>:
+        <ul>
+            <li><code>merchandiseEntityCode</code></li>
+        </ul>
+    </li>
+    <li><code>MultichannelCustomerSegment</code>:
+        <ul>
+            <li><code>segmentID</code></li>
+        </ul>
+    </li>
+    <li><code>Offer</code>:
+        <ul>
+            <li><code>offerCode</code></li>
+        </ul>
+    </li>
+    <li><code>Order</code>:
+        <ul>
+            <li><code>orderID</code></li>
+        </ul>
+    </li>
+    <li><code>OrderLine</code>:
+        <ul>
+            <li><code>orderLineNumber</code></li>
+        </ul>
+    </li>
+    <li><code>POApprovedEvent</code>:
+        <ul>
+            <li><code>approverID</code></li>
+            <li><code>poApprovalID</code></li>
+        </ul>
+    </li>
+    <li><code>POIssuedEvent</code>:
+        <ul>
+            <li><code>poIssueID</code></li>
+        </ul>
+    </li>
+    <li><code>PaymentTerm</code>:
+        <ul>
+            <li><code>paymentTermCode</code></li>
+        </ul>
+    </li>
+    <li><code>PlanningMarket</code>:
+        <ul>
+            <li><code>planningMarketCode</code></li>
+        </ul>
+    </li>
+    <li><code>PlanningPeriod</code>:
+        <ul>
+            <li><code>planningPeriodCode</code></li>
+        </ul>
+    </li>
+    <li><code>Planogram</code>:
+        <ul>
+            <li><code>planogramCode</code></li>
+        </ul>
+    </li>
+    <li><code>Price</code>:
+        <ul>
+            <li><code>priceID</code></li>
+        </ul>
+    </li>
+    <li><code>PriceList</code>:
+        <ul>
+            <li><code>priceListCode</code></li>
+        </ul>
+    </li>
+    <li><code>PriceRule</code>:
+        <ul>
+            <li><code>priceRuleCode</code></li>
+        </ul>
+    </li>
+    <li><code>PriceType</code>:
+        <ul>
+            <li><code>priceTypeCode</code></li>
+        </ul>
+    </li>
+    <li><code>PriceZone</code>:
+        <ul>
+            <li><code>priceZoneCode</code></li>
+        </ul>
+    </li>
+    <li><code>PricingLinkCode</code>:
+        <ul>
+            <li><code>linkCode</code></li>
+        </ul>
+    </li>
+    <li><code>Product</code>:
+        <ul>
+            <li><code>barcode</code></li>
+            <li><code>productBarcode</code></li>
+            <li><code>productID</code></li>
+        </ul>
+    </li>
+    <li><code>ProductVariant</code>:
+        <ul>
+            <li><code>variantCode</code></li>
+        </ul>
+    </li>
+    <li><code>Promotion</code>:
+        <ul>
+            <li><code>promotionID</code></li>
+        </ul>
+    </li>
+    <li><code>PromotionRule</code>:
+        <ul>
+            <li><code>promotionRuleCode</code></li>
+        </ul>
+    </li>
+    <li><code>PromotionType</code>:
+        <ul>
+            <li><code>promotionTypeCode</code></li>
+        </ul>
+    </li>
+    <li><code>PurchaseOrder</code>:
+        <ul>
+            <li><code>poNumber</code></li>
+        </ul>
+    </li>
+    <li><code>PurchaseOrderLine</code>:
+        <ul>
+            <li><code>poLineNumber</code></li>
+        </ul>
+    </li>
+    <li><code>Receipt</code>:
+        <ul>
+            <li><code>receiptNumber</code></li>
+        </ul>
+    </li>
+    <li><code>ReceiptLine</code>:
+        <ul>
+            <li><code>receiptLineNumber</code></li>
+        </ul>
+    </li>
+    <li><code>Receiving</code>:
+        <ul>
+            <li><code>receivingNumber</code></li>
+        </ul>
+    </li>
+    <li><code>ReceivingDocument</code>:
+        <ul>
+            <li><code>receivingDocumentID</code></li>
+        </ul>
+    </li>
+    <li><code>ReceivingLine</code>:
+        <ul>
+            <li><code>receivingLineNumber</code></li>
+        </ul>
+    </li>
+    <li><code>ReceivingStatus</code>:
+        <ul>
+            <li><code>receivingStatusCode</code></li>
+        </ul>
+    </li>
+    <li><code>Region</code>:
+        <ul>
+            <li><code>regionCode</code></li>
+        </ul>
+    </li>
+    <li><code>SLA</code>:
+        <ul>
+            <li><code>slaCode</code></li>
+        </ul>
+    </li>
+    <li><code>SeasonCode</code>:
+        <ul>
+            <li><code>seasonCode</code></li>
+        </ul>
+    </li>
+    <li><code>Size</code>:
+        <ul>
+            <li><code>sizeCode</code></li>
+        </ul>
+    </li>
+    <li><code>Store</code>:
+        <ul>
+            <li><code>storeID</code></li>
+        </ul>
+    </li>
+    <li><code>StoreCluster</code>:
+        <ul>
+            <li><code>storeClusterCode</code></li>
+        </ul>
+    </li>
+    <li><code>StoreFormat</code>:
+        <ul>
+            <li><code>storeFormatCode</code></li>
+        </ul>
+    </li>
+    <li><code>StoreTrafficRecord</code>:
+        <ul>
+            <li><code>entranceID</code></li>
+            <li><code>relatedStoreID</code></li>
+            <li><code>storeTrafficRecordID</code></li>
+        </ul>
+    </li>
+    <li><code>Style</code>:
+        <ul>
+            <li><code>styleCode</code></li>
+        </ul>
+    </li>
+    <li><code>StyleColor</code>:
+        <ul>
+            <li><code>styleColorCode</code></li>
+        </ul>
+    </li>
+    <li><code>SubstitutionEvent</code>:
+        <ul>
+            <li><code>relatedFulfillmentID</code></li>
+            <li><code>substitutingPersonnelID</code></li>
+            <li><code>substitutionEventID</code></li>
+            <li><code>substitutionReasonCode</code></li>
+        </ul>
+    </li>
+    <li><code>Supplier</code>:
+        <ul>
+            <li><code>supplierID</code></li>
+        </ul>
+    </li>
+    <li><code>SupplierCostChange</code>:
+        <ul>
+            <li><code>costChangeID</code></li>
+        </ul>
+    </li>
+    <li><code>SupplierEntity</code>:
+        <ul>
+            <li><code>supplierID</code></li>
+        </ul>
+    </li>
+    <li><code>Week</code>:
+        <ul>
+            <li><code>weekNumber</code></li>
+        </ul>
+    </li>
+</ul>
+<h2>5. Nodes Using 'inherits_from'</h2>
+<ul class='node-list'>
+    <li><code>ASN</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>AddToCartEvent</code> inherits from: <code>CustomerInteractionEvent</code></li>
+    <li><code>Advertising</code> inherits from: <code>MarketingAndPromotion</code></li>
+    <li><code>AllocationPlan</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>Assignment</code> inherits from: <code>OrganizationalHierarchy</code></li>
+    <li><code>Assortment</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>AssortmentPlan</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>BackOrder</code> inherits from: <code>Order</code></li>
+    <li><code>BasketAnalysisResult</code> inherits from: <code>MarketBasketAnalysis</code></li>
+    <li><code>BasketPattern</code> inherits from: <code>MarketBasketAnalysis</code></li>
+    <li><code>BehavioralSegment</code> inherits from: <code>CustomerSegment</code></li>
+    <li><code>Brand</code> inherits from: <code>ProductCharacteristics</code></li>
+    <li><code>Budget</code> inherits from: <code>MerchandiseFinancialPlan</code></li>
+    <li><code>BundlePrice</code> inherits from: <code>ProductPresentation</code></li>
+    <li><code>Buyer</code> inherits from: <code>OrganizationalHierarchy</code></li>
+    <li><code>BuyerGroup</code> inherits from: <code>OrganizationalHierarchy</code></li>
+    <li><code>BuyingEvent</code> inherits from: <code>BuyPhaseConcept</code></li>
+    <li><code>BuyingOffice</code> inherits from: <code>OrganizationalHierarchy</code></li>
+    <li><code>CallCenterChannel</code> inherits from: <code>Channel</code></li>
+    <li><code>Campaign</code> inherits from: <code>MarketingAndPromotion</code></li>
+    <li><code>CampaignInteraction</code> inherits from: <code>CustomerInteraction</code></li>
+    <li><code>CampaignPerformance</code> inherits from: <code>MarketingAnalysis</code></li>
+    <li><code>Carrier</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>CartAbandonmentEvent</code> inherits from: <code>CustomerInteractionEvent</code></li>
+    <li><code>CartInteraction</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>CartRule</code> inherits from: <code>ValidationRules</code></li>
+    <li><code>CashDropEvent</code> inherits from: <code>StoreOpsEvent</code></li>
+    <li><code>Cashier</code> inherits from: <code>Persona</code></li>
+    <li><code>CashierTillActivity</code> inherits from: <code>StoreOps</code></li>
+    <li><code>CatchweightProduct</code> inherits from: <code>Product</code></li>
+    <li><code>Category</code> inherits from: <code>SubDepartment</code></li>
+    <li><code>CategoryManager</code> inherits from: <code>Persona</code></li>
+    <li><code>Channel</code> inherits from: <code>FoundationConcept</code>, <code>MerchandisePlanning</code></li>
+    <li><code>ChannelPrice</code> inherits from: <code>Price</code></li>
+    <li><code>ChannelRule</code> inherits from: <code>ValidationRules</code></li>
+    <li><code>CheckoutAbandonedEvent</code> inherits from: <code>CheckoutEvent</code></li>
+    <li><code>CheckoutEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>CheckoutProcess</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>CheckoutStartedEvent</code> inherits from: <code>CheckoutEvent</code></li>
+    <li><code>ChurnAnalysis</code> inherits from: <code>SalesAnalysis</code></li>
+    <li><code>ChurnPredictionResult</code> inherits from: <code>SalesAnalysis</code></li>
+    <li><code>ClickAndCollectFulfillment</code> inherits from: <code>OrderFulfillment</code></li>
+    <li><code>ClickAndCollectPickedUpEvent</code> inherits from: <code>FulfillmentEvent</code></li>
+    <li><code>ClickAndCollectReadyEvent</code> inherits from: <code>FulfillmentEvent</code></li>
+    <li><code>ClickAndCollectTransaction</code> inherits from: <code>SalesTransaction</code></li>
+    <li><code>Cluster</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>Color</code> inherits from: <code>ProductCharacteristics</code></li>
+    <li><code>CommercialTerms</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>Competitor</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>CompetitorAnalysis</code> inherits from: <code>MarketingAnalysis</code></li>
+    <li><code>CompetitorPrice</code> inherits from: <code>Price</code></li>
+    <li><code>CompetitorPriceComparison</code> inherits from: <code>MarketingAnalysis</code></li>
+    <li><code>ComplexPackProduct</code> inherits from: <code>Product</code></li>
+    <li><code>Contract</code> inherits from: <code>Supplier</code></li>
+    <li><code>ContractLine</code> inherits from: <code>Supplier</code></li>
+    <li><code>Cost</code> inherits from: <code>Price</code></li>
+    <li><code>CostCenter</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>Country</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>Customer</code> inherits from: <code>CustomerProfile</code></li>
+    <li><code>CustomerBehaviorAnalysis</code> inherits from: <code>SalesAnalysis</code></li>
+    <li><code>CustomerBrowsing</code> inherits from: <code>CustomerInteraction</code></li>
+    <li><code>CustomerDelivery</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>CustomerDemographics</code> inherits from: <code>CustomerProfile</code></li>
+    <li><code>CustomerDevice</code> inherits from: <code>CustomerProfile</code></li>
+    <li><code>CustomerExperience</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>CustomerFeedback</code> inherits from: <code>CustomerExperience</code></li>
+    <li><code>CustomerFeedbackSubmittedEvent</code> inherits from: <code>CustomerInteractionEvent</code></li>
+    <li><code>CustomerInteraction</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>CustomerInteractionEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>CustomerInteractionRule</code> inherits from: <code>ValidationRules</code></li>
+    <li><code>CustomerJourney</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>CustomerLoginEvent</code> inherits from: <code>CustomerInteractionEvent</code></li>
+    <li><code>CustomerPreferences</code> inherits from: <code>CustomerProfile</code></li>
+    <li><code>CustomerProfile</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>CustomerSearchEvent</code> inherits from: <code>CustomerInteractionEvent</code></li>
+    <li><code>CustomerSearchInteraction</code> inherits from: <code>CustomerInteraction</code></li>
+    <li><code>CustomerSeasonalSummary</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>CustomerSegment</code> inherits from: <code>CustomerProfile</code></li>
+    <li><code>CustomerServiceRep</code> inherits from: <code>Persona</code></li>
+    <li><code>CustomerShipment</code> inherits from: <code>OrderFulfillment</code></li>
+    <li><code>CustomerSocialInteraction</code> inherits from: <code>CustomerInteraction</code></li>
+    <li><code>CustomerWebSession</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>DailyStoreOperations</code> inherits from: <code>StoreOps</code></li>
+    <li><code>DeliveredToCustomerEvent</code> inherits from: <code>FulfillmentEvent</code></li>
+    <li><code>DeliveryMethod</code> inherits from: <code>OrderFulfillment</code></li>
+    <li><code>DeliveryScheduledEvent</code> inherits from: <code>FulfillmentEvent</code></li>
+    <li><code>DeliveryTerm</code> inherits from: <code>CommercialTerms</code></li>
+    <li><code>DemandForecasting</code> inherits from: <code>ForecastingProcurementLogistics</code></li>
+    <li><code>Department</code> inherits from: <code>MerchandiseEntity</code></li>
+    <li><code>DiscountAppliedEvent</code> inherits from: <code>PricingEvent</code></li>
+    <li><code>Division</code> inherits from: <code>Store</code></li>
+    <li><code>EDICostChange</code> inherits from: <code>SupplierCostChange</code></li>
+    <li><code>EffectivePeriod</code> inherits from: <code>Price</code></li>
+    <li><code>ExchangeCompletedEvent</code> inherits from: <code>ReturnExchangeEvent</code></li>
+    <li><code>ExchangeDetails</code> inherits from: <code>ReturnsAndExchanges</code></li>
+    <li><code>ExchangeInitiatedEvent</code> inherits from: <code>ReturnExchangeEvent</code></li>
+    <li><code>ExchangeOrder</code> inherits from: <code>Order</code></li>
+    <li><code>ExchangeTransaction</code> inherits from: <code>SalesTransaction</code></li>
+    <li><code>FinancialPlan</code> inherits from: <code>MerchandiseFinancialPlan</code></li>
+    <li><code>FinancialPlanVariance</code> inherits from: <code>MerchandiseFinancialPlan</code></li>
+    <li><code>FinancialPlanVersion</code> inherits from: <code>MerchandiseFinancialPlan</code></li>
+    <li><code>FiscalCountry</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>FiscalPeriod</code> inherits from: <code>PlanningCalendar</code></li>
+    <li><code>FitnessProfile</code> inherits from: <code>CustomerProfile</code></li>
+    <li><code>Forecast</code> inherits from: <code>DemandForecasting</code></li>
+    <li><code>ForecastAccuracy</code> inherits from: <code>DemandForecasting</code></li>
+    <li><code>ForecastAdjustment</code> inherits from: <code>DemandForecasting</code></li>
+    <li><code>ForecastGranularity</code> inherits from: <code>DemandForecasting</code></li>
+    <li><code>ForecastHorizon</code> inherits from: <code>DemandForecasting</code></li>
+    <li><code>ForecastMethod</code> inherits from: <code>DemandForecasting</code></li>
+    <li><code>ForecastVariance</code> inherits from: <code>DemandForecasting</code></li>
+    <li><code>ForecastVarianceEvent</code> inherits from: <code>BuyingEvent</code></li>
+    <li><code>ForecastVersion</code> inherits from: <code>DemandForecasting</code></li>
+    <li><code>ForecastingProcurementLogistics</code> inherits from: <code>BuyPhaseConcept</code></li>
+    <li><code>FulfillmentEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>FulfillmentLocation</code> inherits from: <code>OrderFulfillment</code></li>
+    <li><code>FulfillmentTeamMember</code> inherits from: <code>Persona</code></li>
+    <li><code>GoodsReceivedEvent</code> inherits from: <code>BuyingEvent</code></li>
+    <li><code>GrossMarginReturnOnInventory</code> inherits from: <code>MerchandisingAnalysis</code></li>
+    <li><code>Household</code> inherits from: <code>CustomerProfile</code></li>
+    <li><code>InStoreSaleTransaction</code> inherits from: <code>SalesTransaction</code></li>
+    <li><code>InboundDelivery</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>InboundShipment</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>InboundTracking</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>InteractionOutcome</code> inherits from: <code>SellEvent</code></li>
+    <li><code>Inventory</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>InventoryCheck</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>InventoryLevel</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>InventoryThreshold</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>Invoice</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>InvoiceLine</code> inherits from: <code>Invoice</code></li>
+    <li><code>InvoiceReceivedEvent</code> inherits from: <code>BuyingEvent</code></li>
+    <li><code>ItemInductionEvent</code> inherits from: <code>BuyingEvent</code></li>
+    <li><code>ItemReceivedBackEvent</code> inherits from: <code>ReturnExchangeEvent</code></li>
+    <li><code>ItemScannedEvent</code> inherits from: <code>SalesEvent</code></li>
+    <li><code>LeadTime</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>LegalEntity</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>LifecycleStage</code> inherits from: <code>ProductLifeCycle</code></li>
+    <li><code>Location</code> inherits from: <code>Store</code></li>
+    <li><code>LogisticsPartner</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>LoyaltyCustomer</code> inherits from: <code>CustomerProfile</code></li>
+    <li><code>LoyaltyPointsAppliedEvent</code> inherits from: <code>SalesEvent</code></li>
+    <li><code>LoyaltyPointsEarnedEvent</code> inherits from: <code>SalesEvent</code></li>
+    <li><code>LoyaltyPrice</code> inherits from: <code>Price</code></li>
+    <li><code>LoyaltyProgram</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>LoyaltyRule</code> inherits from: <code>ValidationRules</code></li>
+    <li><code>LoyaltyTier</code> inherits from: <code>LoyaltyProgram</code></li>
+    <li><code>ManualCostChange</code> inherits from: <code>SupplierCostChange</code></li>
+    <li><code>Manufacturer</code> inherits from: <code>Supplier</code></li>
+    <li><code>MarkdownAppliedEvent</code> inherits from: <code>PricingEvent</code></li>
+    <li><code>MarkdownPlan</code> inherits from: <code>Price</code></li>
+    <li><code>MarketBasketAnalysis</code> inherits from: <code>MarketingAnalytics</code></li>
+    <li><code>MarketTrend</code> inherits from: <code>MarketingAnalysis</code></li>
+    <li><code>MarketingAnalysis</code> inherits from: <code>MarketingAnalytics</code></li>
+    <li><code>MarketingAnalytics</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>MarketingAndPromotion</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>MarketingManager</code> inherits from: <code>Persona</code></li>
+    <li><code>Material</code> inherits from: <code>ProductCharacteristics</code></li>
+    <li><code>MerchandiseEntity</code> inherits from: <code>MerchandiseHierarchy</code></li>
+    <li><code>MerchandiseFinancialPlan</code> inherits from: <code>ForecastingProcurementLogistics</code></li>
+    <li><code>MerchandiseHierarchy</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>MerchandisePlanning</code> inherits from: <code>ForecastingProcurementLogistics</code></li>
+    <li><code>MerchandisingAnalysis</code> inherits from: <code>MarketingAnalytics</code></li>
+    <li><code>MerchandisingPerformance</code> inherits from: <code>MerchandisingAnalysis</code></li>
+    <li><code>MobileAppChannel</code> inherits from: <code>Channel</code></li>
+    <li><code>MultichannelCustomerSegment</code> inherits from: <code>BehavioralSegment</code></li>
+    <li><code>NonPeakPeriod</code> inherits from: <code>TimePeriodType</code></li>
+    <li><code>Offer</code> inherits from: <code>MarketingAndPromotion</code></li>
+    <li><code>OnlineChannel</code> inherits from: <code>Channel</code></li>
+    <li><code>OnlineSaleTransaction</code> inherits from: <code>SalesTransaction</code></li>
+    <li><code>OpenToBuy</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>Order</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>OrderCancelledEvent</code> inherits from: <code>OrderEvent</code></li>
+    <li><code>OrderConfirmedEvent</code> inherits from: <code>OrderEvent</code></li>
+    <li><code>OrderDelivery</code> inherits from: <code>OrderFulfillment</code></li>
+    <li><code>OrderEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>OrderFulfillment</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>OrderHeldEvent</code> inherits from: <code>OrderEvent</code></li>
+    <li><code>OrderLine</code> inherits from: <code>TransactionLine</code></li>
+    <li><code>OrderModifiedEvent</code> inherits from: <code>OrderEvent</code></li>
+    <li><code>OrderPackedEvent</code> inherits from: <code>FulfillmentEvent</code></li>
+    <li><code>OrderPacking</code> inherits from: <code>OrderFulfillment</code></li>
+    <li><code>OrderPickedEvent</code> inherits from: <code>FulfillmentEvent</code></li>
+    <li><code>OrderPicking</code> inherits from: <code>OrderFulfillment</code></li>
+    <li><code>OrderPickingStartedEvent</code> inherits from: <code>FulfillmentEvent</code></li>
+    <li><code>OrderPlacedEvent</code> inherits from: <code>OrderEvent</code></li>
+    <li><code>OrderReleasedEvent</code> inherits from: <code>OrderEvent</code></li>
+    <li><code>OrderRule</code> inherits from: <code>ValidationRules</code></li>
+    <li><code>OrderShipping</code> inherits from: <code>OrderFulfillment</code></li>
+    <li><code>OrderStatusChangedEvent</code> inherits from: <code>OrderEvent</code></li>
+    <li><code>OrderValidatedEvent</code> inherits from: <code>OrderEvent</code></li>
+    <li><code>OrganizationalHierarchy</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>POApprovedEvent</code> inherits from: <code>BuyingEvent</code></li>
+    <li><code>POIssuedEvent</code> inherits from: <code>BuyingEvent</code></li>
+    <li><code>POS</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>POSMaintenance</code> inherits from: <code>StoreOps</code></li>
+    <li><code>POSRestartedEvent</code> inherits from: <code>StoreOpsEvent</code></li>
+    <li><code>POStatus</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>PageVisit</code> inherits from: <code>CustomerInteractionEvent</code></li>
+    <li><code>Payment</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>PaymentMethod</code> inherits from: <code>Payment</code></li>
+    <li><code>PaymentMethodSelectedEvent</code> inherits from: <code>CheckoutEvent</code></li>
+    <li><code>PaymentProcessedEvent</code> inherits from: <code>SalesEvent</code></li>
+    <li><code>PaymentRule</code> inherits from: <code>ValidationRules</code></li>
+    <li><code>PaymentTerm</code> inherits from: <code>CommercialTerms</code></li>
+    <li><code>PeakPeriod</code> inherits from: <code>TimePeriodType</code></li>
+    <li><code>Persona</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>PersonalityType</code> inherits from: <code>CustomerProfile</code></li>
+    <li><code>PersonalizedRecommendation</code> inherits from: <code>CustomerInteraction</code></li>
+    <li><code>PhysicalStoreChannel</code> inherits from: <code>Channel</code></li>
+    <li><code>PlanningCalendar</code> inherits from: <code>ForecastingProcurementLogistics</code></li>
+    <li><code>PlanningMarket</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>PlanningPeriod</code> inherits from: <code>PlanningCalendar</code></li>
+    <li><code>PlanningReactionEvent</code> inherits from: <code>BuyingEvent</code></li>
+    <li><code>PlanningSeason</code> inherits from: <code>PlanningCalendar</code></li>
+    <li><code>Planogram</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>PlanogramAnalysis</code> inherits from: <code>MerchandisingAnalysis</code></li>
+    <li><code>PreOrderTransaction</code> inherits from: <code>SalesTransaction</code></li>
+    <li><code>Price</code> inherits from: <code>PriceConcept</code></li>
+    <li><code>PriceChange</code> inherits from: <code>Price</code></li>
+    <li><code>PriceChangedEvent</code> inherits from: <code>PricingEvent</code></li>
+    <li><code>PriceConcept</code> inherits from: <code>BuyPhaseConcept</code></li>
+    <li><code>PriceGuide</code> inherits from: <code>PriceConcept</code></li>
+    <li><code>PriceList</code> inherits from: <code>Price</code></li>
+    <li><code>PriceOverrideEvent</code> inherits from: <code>PricingEvent</code></li>
+    <li><code>PriceRule</code> inherits from: <code>Price</code></li>
+    <li><code>PriceStrategy</code> inherits from: <code>PriceConcept</code></li>
+    <li><code>PriceType</code> inherits from: <code>Price</code></li>
+    <li><code>PriceZone</code> inherits from: <code>Price</code></li>
+    <li><code>PricingEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>PricingLinkCode</code> inherits from: <code>PriceConcept</code></li>
+    <li><code>PricingRule</code> inherits from: <code>ValidationRules</code></li>
+    <li><code>PricingThreshold</code> inherits from: <code>PriceConcept</code></li>
+    <li><code>ProcurementAndLogistics</code> inherits from: <code>ForecastingProcurementLogistics</code></li>
+    <li><code>Product</code> inherits from: <code>SubCategory</code></li>
+    <li><code>ProductBundle</code> inherits from: <code>ProductPresentation</code></li>
+    <li><code>ProductChannelPerformance</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>ProductCharacteristics</code> inherits from: <code>MerchandiseHierarchy</code></li>
+    <li><code>ProductInformation</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>ProductInquiry</code> inherits from: <code>CustomerInteraction</code></li>
+    <li><code>ProductInquiryEvent</code> inherits from: <code>CustomerInteractionEvent</code></li>
+    <li><code>ProductLifeCycle</code> inherits from: <code>ProductCharacteristics</code></li>
+    <li><code>ProductPresentation</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>ProductPrice</code> inherits from: <code>Price</code></li>
+    <li><code>ProductVariant</code> inherits from: <code>ProductCharacteristics</code></li>
+    <li><code>ProductViewedEvent</code> inherits from: <code>CustomerInteractionEvent</code></li>
+    <li><code>Promotion</code> inherits from: <code>MarketingAndPromotion</code></li>
+    <li><code>PromotionAnalysis</code> inherits from: <code>SalesAnalysis</code></li>
+    <li><code>PromotionDeactivatedEvent</code> inherits from: <code>PricingEvent</code></li>
+    <li><code>PromotionRule</code> inherits from: <code>MarketingAndPromotion</code>, <code>SellPhaseConcept</code></li>
+    <li><code>PromotionStartedEvent</code> inherits from: <code>PricingEvent</code></li>
+    <li><code>PromotionType</code> inherits from: <code>MarketingAndPromotion</code>, <code>SellPhaseConcept</code></li>
+    <li><code>PromotionalPrice</code> inherits from: <code>Price</code></li>
+    <li><code>PurchaseOrder</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>PurchaseOrderLine</code> inherits from: <code>PurchaseOrder</code></li>
+    <li><code>Receipt</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>ReceiptGeneratedEvent</code> inherits from: <code>SalesEvent</code></li>
+    <li><code>ReceiptLine</code> inherits from: <code>Receipt</code></li>
+    <li><code>Receiving</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>ReceivingDocument</code> inherits from: <code>Receiving</code></li>
+    <li><code>ReceivingLine</code> inherits from: <code>Receiving</code></li>
+    <li><code>ReceivingStatus</code> inherits from: <code>ProcurementAndLogistics</code></li>
+    <li><code>RefundMethod</code> inherits from: <code>ReturnsAndExchanges</code></li>
+    <li><code>RefundProcessedEvent</code> inherits from: <code>ReturnExchangeEvent</code></li>
+    <li><code>Region</code> inherits from: <code>Store</code></li>
+    <li><code>ReorderPoint</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>ReturnApprovedEvent</code> inherits from: <code>ReturnExchangeEvent</code></li>
+    <li><code>ReturnExchangeEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>ReturnInitiatedEvent</code> inherits from: <code>ReturnExchangeEvent</code></li>
+    <li><code>ReturnOrder</code> inherits from: <code>Order</code></li>
+    <li><code>ReturnPolicy</code> inherits from: <code>ValidationRules</code></li>
+    <li><code>ReturnReason</code> inherits from: <code>ReturnsAndExchanges</code></li>
+    <li><code>ReturnTransaction</code> inherits from: <code>SalesTransaction</code></li>
+    <li><code>ReturnsAndExchanges</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>Role</code> inherits from: <code>OrganizationalHierarchy</code></li>
+    <li><code>SLA</code> inherits from: <code>Supplier</code></li>
+    <li><code>SafetyStock</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>SaleCompletedEvent</code> inherits from: <code>SalesEvent</code></li>
+    <li><code>SaleVoidedEvent</code> inherits from: <code>SalesEvent</code></li>
+    <li><code>SalesAnalysis</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>SalesAssociate</code> inherits from: <code>Persona</code></li>
+    <li><code>SalesAttribution</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>SalesBasket</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>SalesEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>SalesOrder</code> inherits from: <code>Order</code></li>
+    <li><code>SalesPerformanceAnalysis</code> inherits from: <code>SalesAnalysis</code></li>
+    <li><code>SalesTransaction</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>SalesTransactionLine</code> inherits from: <code>TransactionLine</code></li>
+    <li><code>Scenario</code> inherits from: <code>ForecastingProcurementLogistics</code></li>
+    <li><code>SearchInteraction</code> inherits from: <code>CustomerInteractionEvent</code></li>
+    <li><code>SearchTerm</code> inherits from: <code>CustomerInteraction</code></li>
+    <li><code>Season</code> inherits from: <code>ProductLifeCycle</code></li>
+    <li><code>SeasonCode</code> inherits from: <code>ProductLifeCycle</code></li>
+    <li><code>SellEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>SellEvents</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>SellThroughRate</code> inherits from: <code>MerchandisingAnalysis</code></li>
+    <li><code>SentimentScore</code> inherits from: <code>CustomerExperience</code></li>
+    <li><code>ShipmentCreatedEvent</code> inherits from: <code>FulfillmentEvent</code></li>
+    <li><code>ShipmentDispatchedEvent</code> inherits from: <code>FulfillmentEvent</code></li>
+    <li><code>ShippingOptionSelectedEvent</code> inherits from: <code>CheckoutEvent</code></li>
+    <li><code>ShippingRule</code> inherits from: <code>ValidationRules</code></li>
+    <li><code>SimplePackProduct</code> inherits from: <code>Product</code></li>
+    <li><code>SimulationPlan</code> inherits from: <code>Scenario</code></li>
+    <li><code>Size</code> inherits from: <code>ProductCharacteristics</code></li>
+    <li><code>SizeCurve</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>SocialCommerceChannel</code> inherits from: <code>Channel</code></li>
+    <li><code>Spend</code> inherits from: <code>MerchandiseFinancialPlan</code></li>
+    <li><code>StaffScheduling</code> inherits from: <code>StoreOps</code></li>
+    <li><code>StockTurn</code> inherits from: <code>MerchandisingAnalysis</code></li>
+    <li><code>Store</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>StoreClosedEvent</code> inherits from: <code>StoreOpsEvent</code></li>
+    <li><code>StoreCluster</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>StoreComplianceTask</code> inherits from: <code>StoreOps</code></li>
+    <li><code>StoreFormat</code> inherits from: <code>Store</code></li>
+    <li><code>StoreLocation</code> inherits from: <code>StoreOps</code></li>
+    <li><code>StoreManager</code> inherits from: <code>Persona</code></li>
+    <li><code>StoreOpenedEvent</code> inherits from: <code>StoreOpsEvent</code></li>
+    <li><code>StoreOpeningClosing</code> inherits from: <code>StoreOps</code></li>
+    <li><code>StoreOps</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>StoreOpsEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>StoreTrafficRecord</code> inherits from: <code>StoreOps</code></li>
+    <li><code>Style</code> inherits from: <code>ProductCharacteristics</code></li>
+    <li><code>StyleColor</code> inherits from: <code>MerchandisePlanning</code></li>
+    <li><code>SubCategory</code> inherits from: <code>Category</code></li>
+    <li><code>SubDepartment</code> inherits from: <code>Department</code></li>
+    <li><code>SubstitutionEvent</code> inherits from: <code>SellEvent</code>, <code>SellEvents</code></li>
+    <li><code>Supplier</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>SupplierClassification</code> inherits from: <code>Supplier</code></li>
+    <li><code>SupplierCostChange</code> inherits from: <code>Supplier</code></li>
+    <li><code>SupplierEntity</code> inherits from: <code>Supplier</code></li>
+    <li><code>SupplierTier</code> inherits from: <code>SupplierClassification</code></li>
+    <li><code>SupplierType</code> inherits from: <code>SupplierClassification</code></li>
+    <li><code>SystemEvent</code> inherits from: <code>SellEvents</code></li>
+    <li><code>TargetAudience</code> inherits from: <code>MarketingAndPromotion</code></li>
+    <li><code>TillClosedEvent</code> inherits from: <code>StoreOpsEvent</code></li>
+    <li><code>TillOpenedEvent</code> inherits from: <code>StoreOpsEvent</code></li>
+    <li><code>Time</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>TimePeriodType</code> inherits from: <code>FoundationConcept</code></li>
+    <li><code>TransactionInitiationEvent</code> inherits from: <code>SalesEvent</code></li>
+    <li><code>TransactionLine</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>TransformableProduct</code> inherits from: <code>Product</code></li>
+    <li><code>UnitOfMeasure</code> inherits from: <code>Price</code></li>
+    <li><code>ValidationRules</code> inherits from: <code>SellPhaseConcept</code></li>
+    <li><code>Week</code> inherits from: <code>PlanningCalendar</code></li>
+    <li><code>WishlistItemAddedEvent</code> inherits from: <code>CustomerInteractionEvent</code></li>
+</ul>
+
+</body>
+</html>
