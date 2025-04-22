@@ -1,0 +1,543 @@
+Warning: Rel 'restartedPOS' from 'POSRestartedEvent' to 'POS' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'approvedReturn' from 'ReturnApprovedEvent' to 'ReturnOrder' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'pickupOrder' from 'ClickAndCollectPickedUpEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'forPlanningSeason' from 'ForecastVariance' to 'PlanningSeason' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasDemographics' from 'Customer' to 'CustomerDemographics' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'orderedBy' from 'Order' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.       
+
+Warning: Rel 'belongsToSegment' from 'Customer' to 'CustomerSegment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'behaviorChannelAnalysis' from 'CustomerBehaviorAnalysis' to 'Channel' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'involvedSearchTerm' from 'SearchInteraction' to 'SearchTerm' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasSafetyStock' from 'Inventory' to 'SafetyStock' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'comparedWithPromotion' from 'PromotionAnalysis' to 'Promotion' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'completedExchangeOrder' from 'ExchangeCompletedEvent' to 'ExchangeOrder' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'accessedViaChannel' from 'PageVisit' to 'Channel' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'modifiedOrder' from 'OrderModifiedEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasWeek' from 'PlanningCalendar' to 'Week' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.  
+
+Warning: Rel 'hasTillActivity' from 'StoreOps' to 'CashierTillActivity' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasPOOrderLine' from 'PurchaseOrder' to 'PurchaseOrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasInventoryThreshold' from 'Inventory' to 'InventoryThreshold' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'isPaymentFor' from 'Payment' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'resultsInShipment' from 'OrderShipping' to 'CustomerShipment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasSupplierType' from 'SupplierEntity' to 'SupplierType' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasReorderPoint' from 'Inventory' to 'ReorderPoint' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'targetsSegment' from 'LoyaltyProgram' to 'CustomerSegment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'includesCustomer' from 'CustomerSegment' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'performsInventoryCheck' from 'StoreOps' to 'InventoryCheck' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'isCustomerFor' from 'Customer' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'precedesInteraction' from 'CustomerInteraction' to 'CustomerInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'scheduledDeliveryOrder' from 'DeliveryScheduledEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'abandonedCheckout' from 'CheckoutAbandonedEvent' to 'CheckoutProcess' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'forFiscalPeriod' from 'ForecastVariance' to 'FiscalPeriod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'loyaltyProgramBehavior' from 'CustomerBehaviorAnalysis' to 'LoyaltyProgram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasRefundMethod' from 'ReturnsAndExchanges' to 'RefundMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'tillOpened' from 'TillOpenedEvent' to 'CashierTillActivity' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'earnsLoyaltyPointsFrom' from 'Payment' to 'LoyaltyProgram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredViaChannel' from 'CustomerInteraction' to 'Channel' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredViaChannel' from 'SalesTransaction' to 'Channel' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'isPartOfFulfillment' from 'CustomerShipment' to 'OrderFulfillment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'involvedPOS' from 'StoreOpsEvent' to 'POS' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.  
+
+Warning: Rel 'hasCustomerBehaviorAnalysis' from 'SalesAnalysis' to 'CustomerBehaviorAnalysis' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'invoicedFor' from 'InvoiceLine' to 'PurchaseOrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'performsPOSMaintenance' from 'StoreOps' to 'POSMaintenance' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasSizeCurve' from 'AssortmentPlan' to 'SizeCurve' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'performanceInChannel' from 'ProductChannelPerformance' to 'Channel' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'searchedProduct' from 'SearchInteraction' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'managesCampaign' from 'Persona' to 'Campaign' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasCartInteraction' from 'Customer' to 'CartInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'relatedToOrder' from 'SystemEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'managedBy' from 'Product' to 'CategoryManager' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasPayment' from 'Order' to 'Payment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.       
+
+Warning: Rel 'hasPayment' from 'SalesTransaction' to 'Payment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'enabledRefundMethod' from 'POS' to 'RefundMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'processedBy' from 'SalesTransaction' to 'Persona' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'processedBy' from 'SalesTransaction' to 'SalesAssociate' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'cancelledOrder' from 'OrderCancelledEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'handlesOpeningClosing' from 'StoreOps' to 'StoreOpeningClosing' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'lineEarnedLoyalty' from 'TransactionLine' to 'LoyaltyProgram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasCustomer' from 'SalesTransaction' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'authorizedOpeningClosing' from 'StoreManager' to 'StoreOpeningClosing' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'packedOrder' from 'OrderPackedEvent' to 'OrderPacking' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'releasedOrder' from 'OrderReleasedEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasInventory' from 'Product' to 'InventoryLevel' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'usesDeliveryMethod' from 'OrderFulfillment' to 'DeliveryMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'includesSearch' from 'CustomerWebSession' to 'SearchInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'conductedOnDevice' from 'CustomerInteraction' to 'CustomerDevice' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'influencesExperience' from 'CustomerFeedback' to 'CustomerExperience' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'initiatedReturnOrder' from 'ReturnInitiatedEvent' to 'ReturnOrder' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'loggedInCustomer' from 'CustomerLoginEvent' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'triggersEvent' from 'SalesTransaction' to 'SellEvents' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'fulfilledFrom' from 'OrderFulfillment' to 'FulfillmentLocation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'relatedTransaction' from 'Payment' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'returnedProduct' from 'ReturnsAndExchanges' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'basedOnTransaction' from 'ReturnsAndExchanges' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasCart' from 'CustomerWebSession' to 'CartInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'itemReceivedInReturn' from 'ItemReceivedBackEvent' to 'ReturnOrder' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'predictsChurnForCustomer' from 'ChurnAnalysis' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'voidedTransaction' from 'SaleVoidedEvent' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'shippedVia' from 'CustomerShipment' to 'DeliveryMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'includesPicking' from 'OrderFulfillment' to 'OrderPicking' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'scannedProduct' from 'ItemScannedEvent' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'refundedVia' from 'TransactionLine' to 'RefundMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'interactionBehaviorAnalysis' from 'CustomerBehaviorAnalysis' to 'CustomerInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'locatedAtStore' from 'POS' to 'StoreLocation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasForecastHorizon' from 'Forecast' to 'ForecastHorizon' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'includesOrderLine' from 'Order' to 'OrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'promotionChannelAnalysis' from 'PromotionAnalysis' to 'Channel' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasSentiment' from 'CustomerExperience' to 'SentimentScore' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'viewedProduct' from 'PageVisit' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'viewedProduct' from 'ProductViewedEvent' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'basedOnSearchTerm' from 'CustomerBehaviorAnalysis' to 'SearchTerm' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'originatedFromTransaction' from 'ReturnOrder' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'usesLoyaltyProgram' from 'SalesTransaction' to 'LoyaltyProgram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'enrolledInProgram' from 'Customer' to 'LoyaltyProgram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'involvedStaff' from 'StoreOpsEvent' to 'SalesAssociate' involves nodes without a defined 
+id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'isBasedOnForecast' from 'ForecastVariance' to 'Forecast' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'summaryForCustomer' from 'CustomerSeasonalSummary' to 'CustomerProfile' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasHouseholdMember' from 'Household' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'capturedSearchEvent' from 'CustomerSearchEvent' to 'SearchInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'instanceOfSalesOrder' from 'Order' to 'SalesOrder' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'placedOrder' from 'Customer' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.     
+
+Warning: Rel 'placedOrder' from 'OrderPlacedEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'includesShipment' from 'OrderFulfillment' to 'CustomerShipment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasReceivingLine' from 'Receiving' to 'ReceivingLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasEffectivePeriod' from 'Price' to 'EffectivePeriod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'analyzesTargetedSegment' from 'PromotionAnalysis' to 'CustomerSegment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'startedCheckout' from 'CheckoutStartedEvent' to 'CheckoutProcess' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'managesOpeningClosing' from 'StoreOps' to 'StoreOpeningClosing' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'usesPaymentMethod' from 'Payment' to 'PaymentMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'inventoryAtLocation' from 'InventoryLevel' to 'Location' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredAtStore' from 'SalesTransaction' to 'Store' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasVariance' from 'FinancialPlan' to 'FinancialPlanVariance' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasLoyaltyProgram' from 'Customer' to 'LoyaltyProgram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'includesPageVisit' from 'CustomerWebSession' to 'PageVisit' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasPreferences' from 'Customer' to 'CustomerPreferences' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'triggeredAddToCart' from 'AddToCartEvent' to 'CartInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'includesShipping' from 'OrderFulfillment' to 'OrderShipping' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasOrderLine' from 'Order' to 'OrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.   
+
+Warning: Rel 'hasOrderLine' from 'Order' to 'PurchaseOrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasOrderLine' from 'PurchaseOrder' to 'OrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasOrderLine' from 'PurchaseOrder' to 'PurchaseOrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'initiatedFromChannel' from 'Payment' to 'Channel' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'pickedOrder' from 'OrderPickedEvent' to 'OrderPicking' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'summarizesPerformanceFor' from 'ProductChannelPerformance' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'inquiredProduct' from 'ProductInquiryEvent' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredAt' from 'StoreOpsEvent' to 'StoreLocation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'appliedLoyaltyPoints' from 'LoyaltyPointsAppliedEvent' to 'LoyaltyProgram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'fulfillsFromLocation' from 'FulfillmentLocation' to 'OrderFulfillment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'handledTransaction' from 'Persona' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'analyzesTargetedProduct' from 'PromotionAnalysis' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'refundsPayment' from 'RefundMethod' to 'Payment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasForecastGranularity' from 'Forecast' to 'ForecastGranularity' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'curatesProduct' from 'Persona' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety. 
+
+Warning: Rel 'picksOrderLine' from 'OrderPicking' to 'OrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'storeClosed' from 'StoreClosedEvent' to 'StoreLocation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'selectedShippingOption' from 'ShippingOptionSelectedEvent' to 'DeliveryMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredAtLocation' from 'OrderPacking' to 'FulfillmentLocation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredAtLocation' from 'OrderPacking' to 'Location' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredAtLocation' from 'OrderPicking' to 'FulfillmentLocation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredAtLocation' from 'OrderPicking' to 'Location' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredAtLocation' from 'SellEvent' to 'FulfillmentLocation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredAtLocation' from 'SellEvent' to 'Location' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'fulfillsOrder' from 'OrderFulfillment' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'appliesPromotion' from 'SalesTransaction' to 'Promotion' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'earnedLoyaltyPoints' from 'LoyaltyPointsEarnedEvent' to 'LoyaltyProgram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'handlesTransaction' from 'Channel' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'fulfilledBy' from 'Order' to 'OrderFulfillment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'fulfilledBy' from 'Order' to 'Persona' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.      
+
+Warning: Rel 'fulfilledBy' from 'OrderFulfillment' to 'OrderFulfillment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'fulfilledBy' from 'OrderFulfillment' to 'Persona' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'performedTillActivity' from 'Cashier' to 'CashierTillActivity' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'belongsToBehavioralSegment' from 'CustomerProfile' to 'BehavioralSegment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'partOfTransaction' from 'SalesTransactionLine' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'partOfTransaction' from 'SellEvent' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'partOfTransaction' from 'TransactionLine' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'viewedProductInPageVisit' from 'PageVisit' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'createsEvent' from 'Order' to 'SellEvents' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.  
+
+Warning: Rel 'hasPriceChange' from 'Price' to 'PriceChange' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasPriceChange' from 'Product' to 'PriceChange' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasSupplierTier' from 'SupplierEntity' to 'SupplierTier' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'pickingStarted' from 'OrderPickingStartedEvent' to 'OrderPicking' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasBudget' from 'BuyerGroup' to 'Budget' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.    
+
+Warning: Rel 'offersPromotion' from 'LoyaltyProgram' to 'Promotion' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occurredAtTime' from 'CustomerInteraction' to 'Time' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasBasket' from 'SalesTransaction' to 'SalesBasket' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'heldOrder' from 'OrderHeldEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety. 
+
+Warning: Rel 'promotionImpactTransaction' from 'PromotionAnalysis' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'storeAnalysis' from 'SalesPerformanceAnalysis' to 'StoreLocation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasPredictionResult' from 'ChurnAnalysis' to 'ChurnPredictionResult' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occursDuringPeriodType' from 'CustomerInteraction' to 'TimePeriodType' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'occursDuringPeriodType' from 'SalesTransaction' to 'TimePeriodType' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'churnSegmentAnalysis' from 'ChurnAnalysis' to 'CustomerSegment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'refundedThrough' from 'Payment' to 'RefundMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'belongsToTransaction' from 'Payment' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'approvedInventoryCheck' from 'StoreManager' to 'InventoryCheck' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'belongsToCustomer' from 'CustomerExperience' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'replacedProduct' from 'ExchangeOrder' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'usesMethod' from 'Payment' to 'PaymentMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'evaluatesPerformance' from 'MerchandisingPerformance' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'supportsInteraction' from 'Channel' to 'CustomerInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'analyzesPlanogram' from 'PlanogramAnalysis' to 'Planogram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'initiatedByParticipant' from 'SellEvent' to 'Persona' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'influencedTransaction' from 'PromotionAnalysis' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'behaviorProductAnalysis' from 'CustomerBehaviorAnalysis' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'selectedPaymentMethod' from 'PaymentMethodSelectedEvent' to 'PaymentMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'approvedSchedule' from 'StoreManager' to 'StaffScheduling' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'usedSearchTerm' from 'SearchInteraction' to 'SearchTerm' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'dispatchedShipment' from 'ShipmentDispatchedEvent' to 'CustomerShipment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'managesStaffSchedule' from 'StoreOps' to 'StaffScheduling' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'ordersProduct' from 'PurchaseOrderLine' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'triggeredCartAbandonment' from 'CartAbandonmentEvent' to 'CartInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'usedInTransaction' from 'LoyaltyProgram' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasPurchaseHistory' from 'Customer' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasInvoiceLine' from 'Invoice' to 'InvoiceLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'completedTransaction' from 'SaleCompletedEvent' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'attributesSale' from 'SalesAttribution' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasTransactionLine' from 'SalesTransaction' to 'TransactionLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasPromotionAnalysis' from 'SalesAnalysis' to 'PromotionAnalysis' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'refersToProduct' from 'OrderLine' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'initiatedExchangeOrder' from 'ExchangeInitiatedEvent' to 'ExchangeOrder' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasInteraction' from 'CustomerWebSession' to 'CustomerInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'pickedOrderEvent' from 'OrderPickedEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasPresentation' from 'Product' to 'ProductPresentation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'identifiedBy' from 'ForecastVariance' to 'Buyer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasReceiptLine' from 'Receipt' to 'ReceiptLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'influencedByInteraction' from 'SalesTransaction' to 'CustomerInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'affectedByPromotion' from 'CustomerExperience' to 'Promotion' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'accruedLoyalty' from 'SalesTransaction' to 'LoyaltyProgram' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'focusPromotion' from 'PromotionAnalysis' to 'Promotion' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'usedDevice' from 'CustomerWebSession' to 'CustomerDevice' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasVendorClassification' from 'SupplierEntity' to 'SupplierClassification' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'processedPayment' from 'Channel' to 'Payment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'processedPayment' from 'Channel' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'processedPayment' from 'PaymentProcessedEvent' to 'Payment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'processedPayment' from 'PaymentProcessedEvent' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'promotionAnalysis' from 'PromotionAnalysis' to 'Promotion' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasProduct' from 'CartInteraction' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasProduct' from 'ReceiptLine' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety. 
+
+Warning: Rel 'appliesToProduct' from 'LoyaltyProgram' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'confirmedOrder' from 'OrderConfirmedEvent' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'ledToOrder' from 'CustomerInteraction' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasPurchaseOrderLine' from 'PurchaseOrder' to 'PurchaseOrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'representsProduct' from 'TransactionLine' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'productAnalysis' from 'SalesPerformanceAnalysis' to 'Product' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'customerBehaviorAnalysis' from 'CustomerBehaviorAnalysis' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'providedFeedback' from 'Customer' to 'CustomerFeedback' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'appliedInTransaction' from 'Promotion' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasWebSession' from 'Customer' to 'CustomerWebSession' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'originatedFrom' from 'Channel' to 'CartInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'memberOfSegment' from 'CustomerProfile' to 'MultichannelCustomerSegment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'processedTransaction' from 'POS' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'processedTransaction' from 'Persona' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'processedTransaction' from 'SalesAssociate' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'madeTransaction' from 'Customer' to 'SalesTransaction' involves nodes without a defined id_property. 
+MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasSalesPerformanceAnalysis' from 'SalesAnalysis' to 'SalesPerformanceAnalysis' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'interactedWith' from 'Persona' to 'CustomerInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'relatedOrderLine' from 'SubstitutionEvent' to 'OrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'generatedReceipt' from 'ReceiptGeneratedEvent' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'storeOpened' from 'StoreOpenedEvent' to 'StoreLocation' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'includesPacking' from 'OrderFulfillment' to 'OrderPacking' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'initiatedByManager' from 'StoreOpsEvent' to 'StoreManager' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasChurnAnalysis' from 'SalesAnalysis' to 'ChurnAnalysis' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'relatedPOEvent' from 'ForecastVariance' to 'POIssuedEvent' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'generatedEvent' from 'StoreOps' to 'StoreOpsEvent' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'targetedByCampaign' from 'CustomerSegment' to 'Campaign' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'packsOrderLine' from 'OrderPacking' to 'OrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'resultedInTransaction' from 'CustomerInteraction' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'appliesDuring' from 'PriceChange' to 'EffectivePeriod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'createdShipment' from 'ShipmentCreatedEvent' to 'CustomerShipment' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'includesLineItem' from 'SalesBasket' to 'SalesTransactionLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'partOfBundle' from 'Product' to 'ProductBundle' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'relatedOrder' from 'ReturnsAndExchanges' to 'Order' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'initiatedByPersona' from 'SystemEvent' to 'Persona' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasCost' from 'Price' to 'Cost' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'appliedToTransaction' from 'Promotion' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'lineLevelPromotion' from 'TransactionLine' to 'Promotion' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'transactionAnalysis' from 'SalesPerformanceAnalysis' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'containsOrderLine' from 'CustomerShipment' to 'OrderLine' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'enrolledCustomer' from 'LoyaltyProgram' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'partOfJourney' from 'CustomerInteraction' to 'CustomerJourney' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'followsInteraction' from 'CustomerInteraction' to 'CustomerInteraction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'acceptedPaymentMethod' from 'POS' to 'PaymentMethod' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'linkedCustomer' from 'LoyaltyProgram' to 'Customer' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'submittedFeedback' from 'CustomerFeedbackSubmittedEvent' to 'CustomerFeedback' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'hasReturnReason' from 'ReturnsAndExchanges' to 'ReturnReason' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'instanceOfReturnOrder' from 'Order' to 'ReturnOrder' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'instanceOfExchangeOrder' from 'Order' to 'ExchangeOrder' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'relatedToTransaction' from 'CustomerExperience' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'relatedToTransaction' from 'SystemEvent' to 'SalesTransaction' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'tillClosed' from 'TillClosedEvent' to 'CashierTillActivity' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'belongsToHousehold' from 'Customer' to 'Household' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'resultedInOutcome' from 'CustomerInteraction' to 'InteractionOutcome' involves nodes without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
+
+Warning: Rel 'contributesToSale' from 'CustomerInteraction' to 'SalesAttribution' involves es es without a defined id_property. MATCH based relationship creation might fail or be inaccurate. Skipping for safety.
