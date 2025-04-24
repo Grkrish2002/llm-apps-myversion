@@ -1,0 +1,62 @@
+Question: Which were the top 10 product categories by revenue across January to March 2023 — and how did they perform each month?
+Cypher Query: 
+MATCH (ol:OrderLine)-[:refersToProduct]->(p:Product)-[:BELONGS_TO_CATEGORY]->(c:Category) MATCH (o:Order)-[:includesOrderLine]->(ol) WHERE o.orderDate >= date("2023-01-01") AND o.orderDate < date("2023-04-01") WITH c.categoryName AS categoryName,o.orderDate.month AS month,SUM(ol.orderLineQuantity) AS totalUnits,SUM(ol.totalAmount) AS totalRevenue WITH categoryName,SUM(CASE WHEN month = 1 THEN totalUnits ELSE 0 END) AS Jan_Units,SUM(CASE WHEN month = 1 THEN totalRevenue ELSE 0 END) AS Jan_Revenue,SUM(CASE WHEN month = 2 THEN totalUnits ELSE 0 END) AS Feb_Units,SUM(CASE WHEN month = 2 THEN totalRevenue ELSE 0 END) AS Feb_Revenue,SUM(CASE WHEN month = 3 THEN totalUnits ELSE 0 END) AS Mar_Units,SUM(CASE WHEN month = 3 THEN totalRevenue ELSE 0 END) AS Mar_Revenue RETURN categoryName,Jan_Units, ROUND(Jan_Revenue, 2) AS Jan_Revenue,Feb_Units,ROUND(Feb_Revenue, 2) AS Feb_Revenue,Mar_Units,ROUND(Mar_Revenue, 2) AS Mar_Revenue ORDER BY Jan_Revenue + Feb_Revenue + Mar_Revenue DESC LIMIT 10;
+
+Question: Which products in each category had the highest sales in March 2023 at the Store Stockholm?
+Cypher Query: 
+MATCH (s:Store {storeName: "Store Stockholm"}) MATCH (s)<-[:PLACED_AT]-(o:Order) WHERE o.orderDate >= date("2023-03-01") AND o.orderDate < date("2023-04-01") MATCH (o)-[:includesOrderLine]->(ol:OrderLine)-[:refersToProduct]->(p:Product) MATCH (p)-[:BELONGS_TO_CATEGORY]->(c:Category) WITH c.categoryName AS category,p.productId AS productId,p.productName AS productName,SUM(ol.totalAmount) AS totalSales ORDER BY category, totalSales DESC WITH category, collect({productId: productId, productName: productName, totalSales: totalSales})[0..1] AS topProducts UNWIND topProducts AS product RETURN category, product.productId AS productId,product.productName AS productName,  product.totalSales AS totalSales ORDER BY category, totalSales DESC;
+
+Question: Which are the bottom 10 product categories at the Uppsala Store with the highest amount of unsold inventory during September 2023?
+Cypher Query: 
+MATCH (s:Store {storeName: "Store Uppsala"})-[:HAS_INVENTORY]->(inv:Inventory)-[:TRACKS_PRODUCT]->(p:Product) MATCH (p)-[:BELONGS_TO_CATEGORY]->(c:Category) WITH   c.categoryName AS categoryName,SUM(inv.initialStock - inv.finalStock) AS soldQty,SUM(inv.initialStock) AS stockedQty,SUM(inv.finalStock) AS remainingQty RETURN categoryName, stockedQty,soldQty,remainingQty,ROUND(100.0 * remainingQty / CASE WHEN stockedQty = 0 THEN 1 ELSE stockedQty END, 2) AS unsoldPercent ORDER BY remainingQty DESC LIMIT 10;
+
+Question: Who are my top 5 customers in the age group of 35–44 for the Gothenburg Store during Q2 of 2023?
+Cypher Query: 
+MATCH (c:Customer {ageGroup: "35-44"})<-[:orderedBy]-(o:Order)-[:PLACED_AT]->(s:Store {storeName: "Store Gothenburg"}) WHERE o.orderDate >= date("2023-04-01") AND o.orderDate < date("2023-07-01") MATCH (o)-[:includesOrderLine]->(ol:OrderLine) WITH c.customerId AS customerId,c.name AS customerName,SUM(ol.totalAmount) AS totalSales RETURN customerId, customerName,totalSales ORDER BY totalSales DESC LIMIT 5;
+
+Question: Who are my top 10 customers for Q2 2023, based on the customer segments of gender, income level, and age group?
+Cypher Query: 
+MATCH (c:Customer)<-[:orderedBy]-(o:Order) WHERE o.orderDate >= date("2023-04-01") AND o.orderDate < date("2023-07-01") MATCH (o)-[:includesOrderLine]->(ol:OrderLine) WITH c.customerId AS customerId,c.name AS customerName,c.gender AS gender,c.incomeLevel AS incomeLevel,c.ageGroup AS ageGroup,SUM(ol.totalAmount) AS totalSales RETURN customerId,customerName,gender,incomeLevel,ageGroup,totalSales ORDER BY totalSales DESC LIMIT 10;
+
+Question: Which customer age group generated the most revenue in Store Malmö in February 2023, for which categories — and what were the top 5 products purchased in each category?
+Cypher Query: 
+MATCH (c:Customer)<-[:orderedBy]-(o:Order)-[:PLACED_AT]->(s:Store {storeName: "Store Malmö"}) WHERE o.orderDate >= date("2023-02-01") AND o.orderDate < date("2023-03-01") MATCH (o)-[:includesOrderLine]->(ol:OrderLine)-[:refersToProduct]->(p:Product)-[:BELONGS_TO_CATEGORY]->(cat:Category) WITH c.ageGroup AS ageGroup,cat.categoryName AS category,p.productName AS productName,SUM(ol.totalAmount) AS productRevenue ORDER BY productRevenue DESC WITH ageGroup,category,SUM(productRevenue) AS totalRevenue, COLLECT(productName)[0..5] AS top5Products RETURN ageGroup,category,totalRevenue,top5Products ORDER BY totalRevenue DESC LIMIT 10;
+
+Question: Which product categories delivered the highest GMROI in Store Örebro?
+Cypher Query: 
+MATCH (s:Store {storeName: "Store Örebro"})-[:HAS_INVENTORY]->(inv:Inventory)-[:TRACKS_PRODUCT]->(p:Product)-[:BELONGS_TO_CATEGORY]->(c:Category) WITH s.storeName AS storeName,c.categoryName AS category,AVG(inv.gmroi) AS avgGmroi RETURN storeName,category,ROUND(avgGmroi, 2) AS averageGMROI ORDER BY averageGMROI DESC LIMIT 10;
+
+Question: Which planograms used by Store Malmö were active from August to October in 2023?
+Cypher Query: 
+MATCH (s:Store {storeName: "Store Malmö"})-[:USES_PLANOGRAM]->(pg:Planogram) WHERE pg.effectiveDate >= date("2023-08-01") AND pg.effectiveDate < date("2023-10-30") RETURN s.storeName AS storeName,pg.planogramId AS planogramId,pg.layoutType as layoutType,pg.effectiveDate ORDER BY pg.effectiveDate;
+
+Question: Which products were included in each assortment plan created for Spring of 2023?
+Cypher Query: 
+MATCH (a:AssortmentPlan {season: "Spring"})-[:INCLUDES]->(p:Product) WITH   a.planId AS assortmentPlanId,a.season AS season, COLLECT(p.productName) AS products RETURN assortmentPlanId,season,products ORDER BY assortmentPlanId;
+
+Question: Show me the top 10 promotions that ran in Q1 and Q2 of 2023 at Store Örebro which led to the highest order quantities?
+Cypher Query: 
+MATCH (s:Store {storeName: "Store Örebro"})<-[:PLACED_AT]-(o:Order)-[:HAS_PROMOTION]->(promo:Promotion) WHERE o.orderDate >= date("2023-01-01") AND o.orderDate < date("2023-07-01") MATCH (o)-[:includesOrderLine]->(ol:OrderLine)-[:refersToProduct]->(p:Product)-[:BELONGS_TO_CATEGORY]->(c:Category) WITH promo.promoId AS promotionId, promo.name AS promotionName,c.categoryName AS category,CASE WHEN o.orderDate.month IN [1, 2, 3] THEN "Q1" WHEN o.orderDate.month IN [4, 5, 6] THEN "Q2" END AS quarter, p.productName AS productName,SUM(ol.orderLineQuantity) AS productQty ORDER BY productQty DESC WITH promotionId,promotionName,category,quarter,SUM(productQty) AS totalOrderQuantity,COLLECT(productName)[0..5] AS topProducts RETURN promotionId,promotionName,category,quarter,totalOrderQuantity,topProducts ORDER BY totalOrderQuantity DESC LIMIT 10;
+
+Question: Who are the top 5 suppliers whose products were sold in Store Stockholm during Q1 2023 — and how do they rank based on supplier rating and lead time?
+MATCH (s:Store {storeName: "Store Stockholm"})<-[:PLACED_AT]-(o:Order) WHERE o.orderDate >= date("2023-01-01") AND o.orderDate < date("2023-04-01") MATCH (o)-[:includesOrderLine]->(:OrderLine)-[:refersToProduct]->(p:Product)<-[:SUPPLIES]-(sup:Supplier) WITH sup.supplierId AS supplierId,sup.name AS supplierName,sup.rating AS rating,sup.leadTimeDays AS leadTimeDays,COUNT(DISTINCT p.productId) AS productsSold RETURN supplierId,supplierName,rating,leadTimeDays,productsSold ORDER BY rating DESC, leadTimeDays ASC LIMIT 20;
+
+Question: Which are my top 50 products by sell-through rate for the Gothenburg Store during September 2023?
+Cypher Query:
+MATCH (s:Store {storeName: "Store Gothenburg"})-[:HAS_INVENTORY]->(inv:Inventory)-[:TRACKS_PRODUCT]->(p:Product) OPTIONAL MATCH (o:Order)-[:PLACED_AT]->(s) WHERE o.orderDate >= date("2023-09-01") AND o.orderDate < date("2023-09-30") OPTIONAL MATCH (o)-[:includesOrderLine]->(ol:OrderLine)-[:refersToProduct]->(p) WITH s.storeId AS storeId,s.storeName AS storeName,p.productId AS productId,p.productName AS productName,SUM(DISTINCT inv.initialStock) AS initialStock,  SUM(ol.orderLineQuantity) AS soldQty RETURN storeId,storeName,productId,productName,initialStock,soldQty,ROUND(100.0 * COALESCE(soldQty, 0) / CASE WHEN initialStock = 0 THEN 1 ELSE initialStock END, 2) AS sellThroughRate ORDER BY sellThroughRate DESC LIMIT 50;
+
+Question: For the month of September, which 10 products consistently showed the lowest sell-through across multiple stores?"
+Cypher Query:
+MATCH (s:Store)-[:HAS_INVENTORY]->(inv:Inventory)-[:TRACKS_PRODUCT]->(p:Product) OPTIONAL MATCH (o:Order)-[:PLACED_AT]->(s) WHERE o.orderDate >= date("2023-09-01") AND o.orderDate < date("2023-09-30") OPTIONAL MATCH (o)-[:includesOrderLine]->(ol:OrderLine)-[:refersToProduct]->(p) WITH s.storeId AS storeId, p.productId AS productId, p.productName AS productName, SUM(DISTINCT inv.initialStock) AS initialStock,SUM(ol.orderLineQuantity) AS soldQty WITH productId, productName, COUNT(DISTINCT storeId) AS totalStores, COUNT(CASE WHEN initialStock > 0 AND (toFloat(soldQty)/initialStock) < 0.2 THEN 1 END) AS lowPerformanceStores WHERE totalStores >= 3 AND lowPerformanceStores >= 2 RETURN productId,productName,totalStores,lowPerformanceStores,  ROUND(100.0 * toFloat(lowPerformanceStores) / totalStores, 2) AS percentStoresUnderperforming ORDER BY percentStoresUnderperforming DESC LIMIT 10;
+
+Question: Are there any stores where products with high inventory are not selling well — show me the top 20 poor performers?
+Cypher Query:
+MATCH (s:Store)-[:HAS_INVENTORY]->(inv:Inventory)-[:TRACKS_PRODUCT]->(p:Product) OPTIONAL MATCH (o:Order)-[:PLACED_AT]->(s) OPTIONAL MATCH (o)-[:includesOrderLine]->(ol:OrderLine)-[:refersToProduct]->(p) WITH s.storeId AS storeId,s.storeName AS storeName,p.productId AS productId,p.productName AS productName,SUM(DISTINCT inv.initialStock) AS initialStock,SUM(ol.orderLineQuantity) AS soldQty WITH storeId, storeName, productId, productName, initialStock, soldQty, ROUND(100.0 * COALESCE(soldQty, 0) / CASE WHEN initialStock = 0 THEN 1 ELSE initialStock END, 2) AS sellThroughRate WHERE initialStock > 100 AND sellThroughRate < 20 RETURN storeId,storeName,productId,productName,  initialStock,soldQty,sellThroughRate ORDER BY sellThroughRate ASC LIMIT 20;
+
+Question: Which planograms in Store Stockholm are achieving the highest sell-through rates — and which ones are underperforming?
+Cypher Query:
+MATCH (s:Store {storeName: "Store Stockholm"}) MATCH (s)-[:USES_PLANOGRAM]->(pg:Planogram)-[:DISPLAYS]->(p:Product) MATCH (s)-[:HAS_INVENTORY]->(inv:Inventory)-[:TRACKS_PRODUCT]->(p) OPTIONAL MATCH (o:Order)-[:PLACED_AT]->(s) OPTIONAL MATCH (o)-[:includesOrderLine]->(ol:OrderLine)-[:refersToProduct]->(p) WITH pg.planogramId AS planogramId,s.storeName AS storeName,COUNT(DISTINCT p) AS numProducts,SUM(DISTINCT inv.initialStock) AS totalStock,SUM(ol.orderLineQuantity) AS totalSold WITH planogramId,storeName,totalStock,totalSold,ROUND(100.0 * COALESCE(totalSold, 0) / CASE WHEN totalStock = 0 THEN 1 ELSE totalStock END, 2) AS sellThroughRate RETURN planogramId,storeName,totalStock,totalSold,sellThroughRate ORDER BY sellThroughRate DESC LIMIT 25;
+
+Question: How accurate were our product-level forecasts across stores in February 2023 — and which 25 products showed the greatest forecast variance?
+Cypher Query:
+MATCH (s:Store)-[:FORECASTED_FOR]->(f:Forecast) MATCH (p:Product {productId: f.productId})  OPTIONAL MATCH (o:Order)-[:PLACED_AT]->(s) WHERE o.orderDate >= date("2023-02-01") AND o.orderDate < date("2023-03-01") OPTIONAL MATCH (o)-[:includesOrderLine]->(ol:OrderLine)-[:refersToProduct]->(p) WITH  s.storeId AS storeId,s.storeName AS storeName, p.productId AS productId,p.productName AS productName,SUM(f.forecastQty) AS forecastedQty,SUM(ol.orderLineQuantity) AS actualSoldQty WITH storeId,storeName,productId,productName,forecastedQty,actualSoldQty,forecastedQty - actualSoldQty AS delta,ROUND(100.0 * COALESCE(actualSoldQty, 0) / CASE WHEN forecastedQty = 0 THEN 1 ELSE forecastedQty END, 2) AS forecastAccuracyPercent,CASE WHEN actualSoldQty > forecastedQty THEN 'Under-Forecasted' WHEN actualSoldQty < forecastedQty THEN 'Over-Forecasted' ELSE 'Accurate'END AS forecastType RETURN storeId,storeName, productId, productName, forecastedQty,actualSoldQty,delta,forecastAccuracyPercent,forecastType ORDER BY forecastAccuracyPercent ASC LIMIT 25;
