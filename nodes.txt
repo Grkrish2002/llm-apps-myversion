@@ -1,0 +1,165 @@
+node_property_definition = {
+  "Store": ["location", "storeId", "storeName"],
+  "Category": ["categoryName"],
+  "Product": ["brand", "category", "color", "productId", "productName", "size"],
+  "Promotion": ["endDate", "name", "promoId", "startDate"],
+  "Customer": ["location", "name", "accuracy", "ageGroup", "customerId", "educationLevel", "familySize", "gender", "incomeLevel", "interests", "lifeStage", "lifestyle", "loyaltyTier", "occupation", "segment", "traits"],
+  "Order": ["holiday", "orderDate", "orderId", "season", "trafficPeriod"],
+  "OrderLine": ["orderLineId", "orderLineQuantity", "productPrice", "totalAmount"],
+  "Supplier": ["name", "contractCost", "leadTimeDays", "rating", "supplierId"],
+  "AssortmentPlan": ["season", "createdBy", "date", "planId"],
+  "Planogram": ["effectiveDate", "layoutType", "planogramId"],
+  "Inventory": ["finalStock", "gmroi", "initialStock", "inventoryId"],
+  "Forecast": ["productId", "forecastId", "forecastQty", "variance"],
+  "Return": ["quantity", "reason", "refundAmount", "returnDate", "returnId"]
+}
+
+full_neo4j_schema = {
+    "description": "Schema definition for the Neo4j graph database. The nodes_and_properties contains Nodes and corresponding Properties. The relationships contain the relationships between nodes",
+    "nodes_and_properties": node_property_definition, 
+    "relationships": [
+      {
+        "relationship_name": "HAS_INVENTORY",
+        "start_node": "Store",
+        "end_node": "Inventory",
+        "cypher": "(Store)-[:HAS_INVENTORY]->(Inventory)"
+      },
+      {
+        "relationship_name": "USES_PLANOGRAM",
+        "start_node": "Store",
+        "end_node": "Planogram",
+        "cypher": "(Store)-[:USES_PLANOGRAM]->(Planogram)"
+      },
+      {
+        "relationship_name": "FORECASTED_FOR",
+        "start_node": "Store",
+        "end_node": "Forecast",
+        "cypher": "(Store)-[:FORECASTED_FOR]->(Forecast)"
+      },
+      {
+        "relationship_name": "BELONGS_TO_CATEGORY",
+        "start_node": "Product",
+        "end_node": "Category",
+        "cypher": "(Product)-[:BELONGS_TO_CATEGORY]->(Category)"
+      },
+      {
+        "relationship_name": "HAS_FORECAST",
+        "start_node": "Product",
+        "end_node": "Forecast",
+        "cypher": "(Product)-[:HAS_FORECAST]->(Forecast)"
+      },
+      {
+        "relationship_name": "orderedBy",
+        "start_node": "Order",
+        "end_node": "Customer",
+        "cypher": "(Order)-[:orderedBy]->(Customer)"
+      },
+      {
+        "relationship_name": "PLACED_AT",
+        "start_node": "Order",
+        "end_node": "Store",
+        "cypher": "(Order)-[:PLACED_AT]->(Store)"
+      },
+      {
+        "relationship_name": "includesOrderLine",
+        "start_node": "Order",
+        "end_node": "OrderLine",
+        "cypher": "(Order)-[:includesOrderLine]->(OrderLine)"
+      },
+      {
+        "relationship_name": "refersToProduct",
+        "start_node": "OrderLine",
+        "end_node": "Product",
+        "cypher": "(OrderLine)-[:refersToProduct]->(Product)"
+      },
+      {
+        "relationship_name": "HAS_PROMOTION",
+        "start_node": "Order",
+        "end_node": "Promotion",
+        "cypher": "(Order)-[:HAS_PROMOTION]->(Promotion)"
+      },
+      {
+        "relationship_name": "SUPPLIES",
+        "start_node": "Supplier",
+        "end_node": "Product",
+        "cypher": "(Supplier)-[:SUPPLIES]->(Product)"
+      },
+      {
+        "relationship_name": "INCLUDES",
+        "start_node": "AssortmentPlan",
+        "end_node": "Product",
+        "cypher": "(AssortmentPlan)-[:INCLUDES]->(Product)"
+      },
+      {
+        "relationship_name": "TARGETS_CATEGORY",
+        "start_node": "AssortmentPlan",
+        "end_node": "Category",
+        "cypher": "(AssortmentPlan)-[:TARGETS_CATEGORY]->(Category)"
+      },
+      {
+        "relationship_name": "DISPLAYS",
+        "start_node": "Planogram",
+        "end_node": "Product",
+        "cypher": "(Planogram)-[:DISPLAYS]->(Product)"
+      },
+      {
+        "relationship_name": "TRACKS_PRODUCT",
+        "start_node": "Inventory",
+        "end_node": "Product",
+        "cypher": "(Inventory)-[:TRACKS_PRODUCT]->(Product)"
+      },
+      {
+        "relationship_name": "FORECASTS_PRODUCT",
+        "start_node": "Forecast",
+        "end_node": "Product",
+        "cypher": "(Forecast)-[:FORECASTS_PRODUCT]->(Product)"
+      },
+      {
+        "relationship_name": "RETURNED_LINE",
+        "start_node": "Return",
+        "end_node": "OrderLine",
+        "cypher": "(Return)-[:RETURNED_LINE]->(OrderLine)"
+      },
+      {
+        "relationship_name": "RETURNED_FROM",
+        "start_node": "Return",
+        "end_node": "Order",
+        "cypher": "(Return)-[:RETURNED_FROM]->(Order)"
+      },
+      {
+        "relationship_name": "RETURNED_BY",
+        "start_node": "Return",
+        "end_node": "Customer",
+        "cypher": "(Return)-[:RETURNED_BY]->(Customer)"
+      },
+      {
+        "relationship_name": "PROCESSED_AT",
+        "start_node": "Return",
+        "end_node": "Store",
+        "cypher": "(Return)-[:PROCESSED_AT]->(Store)"
+      }
+    ]
+  }
+
+property_values = {
+  "Product.brand": ["H&M", "& Other Stories", "COS", "Weekday", "Monki"],
+  "Product.color": ["Red", "Blue", "Black", "White", "Green", "Yellow", "Pink", "Gray"],
+  "Store.location": ["Stockholm", "Gothenburg", "Malmö", "Uppsala", "Örebro"],
+  "Store.storeName": ["Gothenburg", "Malmö", "Stockholm", "Uppsala", "Örebro"],
+  "Order.holiday": ["Midsummer", "Walpurgis Night", "Lucia", "Christmas", "Easter"],
+  "Order.season": ["Spring", "Summer", "Autumn", "Winter"],
+  "Order.trafficPeriod": ["High", "Medium", "Low"],
+  "Customer.gender": ["Male", "Female", "Non-binary"],
+  "Customer.location": ["Urban", "Suburban", "Rural"],
+  "Customer.incomeLevel": ["Low", "Medium", "High"],
+  "Customer.educationLevel": ["High School", "Bachelor", "Master", "PhD"],
+  "Customer.occupation": ["Student", "Professional", "Retired", "Homemaker"],
+  "Customer.familySize": [1, 2, 3, 4, 5, 6],
+  "Customer.lifestyle": ["Active", "Casual", "Formal", "Trendy"],
+  "Customer.traits": ["Eco-conscious", "Budget-conscious", "Luxury-seeker"],
+  "Customer.interests": ["Sports", "Music", "Fashion", "Tech", "Travel"],
+  "Customer.lifeStage": ["Teen", "Young Adult", "Adult", "Senior"],
+  "Customer.ageGroup": ["<18", "18-24", "25-34", "35-44", "45-54", "55+"],
+  "Customer.loyaltyTier": ["Bronze", "Silver", "Gold", "Platinum"],
+  "Return.reason ": ["Changed Mind", "Defective", "Found Cheaper Elsewhere", "Not as Described", "Too Large", "Too Small", "Wrong Item Delivered"]
+}
