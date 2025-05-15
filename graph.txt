@@ -1,0 +1,11 @@
+CALL gds.graph.project(
+  'product-copurchase-graph',         // Reuse the same name
+  'Product',                          // Node label
+  {
+    CO_PURCHASED_WITH: {
+      type: 'CO_PURCHASED_WITH',
+      orientation: 'UNDIRECTED',
+      properties: ['weight']
+    }
+  }
+)

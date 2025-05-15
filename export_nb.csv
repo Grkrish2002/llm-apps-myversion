@@ -1,0 +1,14 @@
+﻿MATCH (c:Customer {customerId: "CUST000"}) SET c.name = "Alex Marin";
+MATCH (c:Customer {customerId: "CUST003"}) SET c.name = "Nico Weber";
+MATCH (c:Customer {customerId: "CUST005"}) SET c.name = "Sasha Novak";
+MATCH (c:Customer {customerId: "CUST007"}) SET c.name = "Robin Petrov";
+MATCH (c:Customer {customerId: "CUST012"}) SET c.name = "Samir Laurent";
+MATCH (c:Customer {customerId: "CUST016"}) SET c.name = "Milan Horvath";
+MATCH (c:Customer {customerId: "CUST019"}) SET c.name = "Casey Olsen";
+MATCH (c:Customer {customerId: "CUST024"}) SET c.name = "Jamie Costa";
+MATCH (c:Customer {customerId: "CUST026"}) SET c.name = "Dani Popa";
+MATCH (c:Customer {customerId: "CUST027"}) SET c.name = "Riley Schmidt";
+MATCH (c:Customer {customerId: "CUST037"}) SET c.name = "Quinn Anders";
+MATCH (c:Customer {customerId: "CUST039"}) SET c.name = "Elliot Jansson";
+MATCH (c:Customer {customerId: "CUST041"}) SET c.name = "Noa Baumann";
+MATCH (c:Customer {customerId: "CUST042"}) SET c.name = "Taylor Muller";
