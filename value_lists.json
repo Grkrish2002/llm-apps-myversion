@@ -923,6 +923,82 @@
       "Confirmation Received",
       "Closed",
       "Voided"
+    ],
+    "invoiceID": [
+      "INVOICE_ID_001",
+      "INVOICE_ID_002",
+      "INVOICE_ID_003",
+      "INVOICE_ID_004",
+      "INVOICE_ID_005",
+      "INVOICE_ID_006",
+      "INVOICE_ID_007",
+      "INVOICE_ID_008",
+      "INVOICE_ID_009",
+      "INVOICE_ID_010",
+      "INVOICE_ID_011",
+      "INVOICE_ID_012",
+      "INVOICE_ID_013",
+      "INVOICE_ID_014",
+      "INVOICE_ID_015",
+      "INVOICE_ID_016",
+      "INVOICE_ID_017",
+      "INVOICE_ID_018",
+      "INVOICE_ID_019",
+      "INVOICE_ID_020",
+      "INVOICE_ID_021",
+      "INVOICE_ID_022",
+      "INVOICE_ID_023",
+      "INVOICE_ID_024",
+      "INVOICE_ID_025",
+      "INVOICE_ID_026",
+      "INVOICE_ID_027",
+      "INVOICE_ID_028",
+      "INVOICE_ID_029",
+      "INVOICE_ID_030",
+      "INVOICE_ID_031",
+      "INVOICE_ID_032",
+      "INVOICE_ID_033",
+      "INVOICE_ID_034",
+      "INVOICE_ID_035"      
+    ]
+  },
+  "PricingLinkCode": {
+    "linkCode": [
+      "LINK_CODE_001",
+      "LINK_CODE_002",
+      "LINK_CODE_003",
+      "LINK_CODE_004",
+      "LINK_CODE_005",
+      "LINK_CODE_006",
+      "LINK_CODE_007",
+      "LINK_CODE_008",
+      "LINK_CODE_009",
+      "LINK_CODE_010",
+      "LINK_CODE_011",
+      "LINK_CODE_012",
+      "LINK_CODE_013",
+      "LINK_CODE_014",
+      "LINK_CODE_015",
+      "LINK_CODE_016",
+      "LINK_CODE_017",
+      "LINK_CODE_018",
+      "LINK_CODE_019",
+      "LINK_CODE_020",
+      "LINK_CODE_021",
+      "LINK_CODE_022",
+      "LINK_CODE_023",
+      "LINK_CODE_024",
+      "LINK_CODE_025",
+      "LINK_CODE_026",
+      "LINK_CODE_027",
+      "LINK_CODE_028",
+      "LINK_CODE_029",
+      "LINK_CODE_030",
+      "LINK_CODE_031",
+      "LINK_CODE_032",
+      "LINK_CODE_033",
+      "LINK_CODE_034",
+      "LINK_CODE_035"
     ]
   },
   "Season": {
@@ -1434,6 +1510,15 @@
       "CHURN_SWE_2024_034",
       "CHURN_SWE_2024_035"
     ],
+    "customerAgeGroup": [
+      "<18",
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54",
+      "55-64",
+      "65+"
+    ],
     "customerEducationLevel": [
      "High School", 
      "Bachelor", 
@@ -1917,7 +2002,7 @@
       },
       {
         "planningMarketCode": "SE-GTB-W",
-        "planningMarketName": "Gothenburg Western Archipelago"
+        "planningMarketName": "Gothenburg Western Market"
       },      
       {
         "planningMarketCode": "SE-UPP-L",
@@ -2144,35 +2229,7 @@
       "2025",
       "2026",
       "2027",
-      "2028",
-      "CY2022",
-      "CY2023",
-      "CY2024",
-      "CY2025",
-      "CY2026",
-      "CY2027",
-      "CY2028",
-      "FY2022/23",
-      "FY2023/24",
-      "FY2024/25",
-      "FY2025/26",
-      "FY2026/27",
-      "FY2027/28",
-      "2022",
-      "2023",
-      "2024",
-      "2025",
-      "2026",
-      "2027",
-      "CY2023",
-      "CY2024",
-      "CY2025",
-      "FY2023/24",
-      "FY2024/25",
-      "FY2025/26",
-      "2024",
-      "2025",
-      "2026"
+      "2028"
     ]
   },
   "Promotion": {
@@ -2368,44 +2425,7 @@
       "OutletClearance_SummerGoods_Q324_Sweden"
     ]
   },
-  "ReturnOrder": {
-    "refundAmount": [
-      "199.00 SEK",
-      "499.50 SEK",
-      "79.90 SEK",
-      "1250.00 SEK",
-      "349.00 SEK",
-      "99.00 SEK",
-      "675.25 SEK",
-      "220.00 SEK",
-      "1500.00 SEK",
-      "89.70 SEK",
-      "45.00 SEK",
-      "729.00 SEK",
-      "19.90 SEK",
-      "2300.50 SEK",
-      "599.00 SEK",
-      "129.00 SEK",
-      "850.90 SEK",
-      "370.00 SEK",
-      "1800.00 SEK",
-      "69.50 SEK",
-      "30.00 SEK",
-      "999.99 SEK",
-      "175.00 SEK",
-      "25.00 SEK",
-      "420.00 SEK",
-      "110.00 SEK",
-      "550.75 SEK",
-      "600.00 SEK",
-      "12.50 SEK",
-      "1399.00 SEK",
-      "279.00 SEK",
-      "88.80 SEK",
-      "1650.20 SEK",
-      "449.50 SEK",
-      "59.00 SEK"
-    ],
+  "ReturnOrder": {    
     "returnReason": [
       "The size did not fit",
       "Received the wrong color",
@@ -2416,15 +2436,12 @@
       "The material felt cheap/uncomfortable",
       "The fit was disproportionate",
       "Found a similar product at a better price",
-      "The delivery took too long",
-      "Gift that the recipient did not want/did not fit",
+      "The delivery took too long",      
       "Looks different in reality than on the website",
       "Too small in size",
       "Too large in size",
       "Disliked the style/design of the garment",
-      "Poor quality, broke quickly",
       "Wrong item delivered by mistake",
-      "No longer needed the item upon delivery",
       "Accidentally made a double order",
       "The material was too transparent",
       "The item had a strong chemical smell",
@@ -2432,16 +2449,13 @@
       "The seam tore on first use",
       "The color bled in the wash",
       "Shrank significantly despite following washing instructions",
-      "Suspicion that the item is not genuine",
-      "The model was too short for me",
-      "The model was too long for me",
+      "Suspicion that the item is not genuine",      
       "The color shade did not match expectations",
       "Had an allergic reaction to the material",
       "Outer packaging damaged, suspected damage to item",
       "Did not fit my body shape as expected",
       "Uncomfortable to wear for extended periods",
-      "The price did not feel justified for the quality",
-      "Return according to terms for a specific campaign"
+      "The price did not feel justified for the quality"     
     ]
   },
   "Buyer": {
@@ -2473,7 +2487,6 @@
       "Olivia Lindgren",
       "William Persson",
       "Linna Forsberg",
-      "Charlie Lindqvist (Unisex Name)",
       "Stella Wallin",
       "Melvin Olofsson",
       "Signe Hedman",
@@ -2724,8 +2737,6 @@
       "Monitor Closely",
       "Action Recommended",
       "Stable Customer",
-      "Increased Risk Q3",
-      "Decreased Risk Q3",
       "Previously Churned - Reengaged",
       "Potential Churner",
       "Likely to Retain",
@@ -2735,7 +2746,6 @@
       "At-Risk Segment B",
       "Loyal - Low Churn Probability",
       "Infrequent Buyer - Medium Risk",
-      "High Value - Monitor",
       "Seasonal Buyer - Varies",
       "Score Unavailable",
       "Recently Interacted - Low Risk",
@@ -2812,8 +2822,6 @@
       "Promotional Stock: 20% extra for campaign items",
       "Replenishment Trigger: <3 units per SKU",
       "Max Stock per Store: 50 units/SKU",
-      "Phased Delivery: Weeks 1, 3, 5",
-      "Cross-Channel Pool: 15% for flexibility",
       "Outlet Allocation: Post-season transfer",
       "Pre-Order Stock: Based on initial demand",
       "New Store Opening Package: 5000 units",
@@ -2823,7 +2831,6 @@
       "Dynamic Allocation: Based on real-time sales",
       "Tiered Allocation: Based on store sales volume",
       "Seasonal Peak Inventory: +30% for core items",
-      "End-of-Life: Consolidate to outlets",
       "Minimum Display Quantity: 3 units/size",
       "Consignment Stock: 100 units for partner stores"
     ]
@@ -2950,41 +2957,18 @@
   },
   "Channel": {
     "channelCode": [
-      "WEB_SE_DESKTOP",
-      "WEB_SE_MOBILE",
-      "APP_SE_IOS",
-      "APP_SE_ANDROID",
-      "STORE_STHLM_CITY",
-      "STORE_MALMO_TRIANGELN",
-      "STORE_GBG_NORDSTAN",
-      "STORE_UPPSALA_GRANBY",
-      "STORE_LINKOPING_TORNET",
-      "SOCIAL_IG_SWEDEN_MAIN",
-      "SOCIAL_FB_SWEDEN_PAGE",
-      "SOCIAL_PINTEREST_SE",
-      "SOCIAL_TIKTOK_SE",
-      "EMAIL_NEWSLETTER_SE_WEEKLY",
-      "EMAIL_PROMO_FLASH_SE",
-      "EMAIL_MEMBERS_EXCLUSIVE_SE",
-      "AFFILIATE_FASHIONBLOG_A_SE",
-      "AFFILIATE_VOUCHERSITE_B_SE",
-      "MARKETPLACE_Z_SE",
-      "MARKETPLACE_A_SE",
-      "KIOSK_STHLM_CENTRAL",
-      "POPUP_SUMMER_GOTLAND",
-      "PARTNER_ONLINE_MAG_X",
-      "STORE_STHLM_GALLERIAN",
-      "STORE_MALMO_EMPORIA",
-      "STORE_GBG_FREDSGATAN",
-      "WEB_OUTLET_SE",
-      "APP_TABLET_SE",
-      "SOCIAL_YOUTUBE_SE_BRAND",
-      "EMAIL_REACTIVATION_SE",
-      "AFFILIATE_CASHBACK_C_SE",
-      "MARKETPLACE_TRADERA_SE",
-      "STORE_OREBRO_MARIEBERG",
-      "POPUP_WINTER_ARE",
-      "SMS_ALERTS_SE"
+      "WEB_DESKTOP",
+      "WEB_MOBILE",
+      "APP_IOS",
+      "APP_ANDROID",
+      "STORE",
+      "SOCIAL_INSTAGRAM",
+      "SOCIAL_FACEBOOK",
+      "SOCIAL_PINTEREST",
+      "EMAIL_PROMO",
+      "AFFILIATE_SITE",
+      "MARKETPLACE",
+      "KIOSK"
     ],
     "marketingChannel": [
       "Telemarketing",
@@ -3008,22 +2992,22 @@
   "Store": {
     "_value_groups_": [
       {
-        "storeName": "Modehuset City",
+        "storeName": "Fashion House City Core",
         "storeLocation": "Drottninggatan 56, 111 21 Stockholm, Sweden",
         "storeManager": "Astrid Blom"
       },
       {
-        "storeName": "Trend Gallerian Liljeholmen",
+        "storeName": "Trend Gallery Liljeholmen",
         "storeLocation": "Liljeholmstorget 7, 117 61 Stockholm, Sweden",
         "storeManager": "Erik Bergman"
       },
       {
-        "storeName": "Kldval Femman",
+        "storeName": "Clothing Choice",
         "storeLocation": "Postgatan 26-32, 411 05 Gteborg, Sweden",
         "storeManager": "Sofia Lindstrm"
       },
       {
-        "storeName": "Stil Centralen Malm",
+        "storeName": "Style Central Malmö",
         "storeLocation": "Skeppsbron 1, 211 20 Malm, Sweden",
         "storeManager": "Lars Persson"
       },
@@ -3038,12 +3022,12 @@
         "storeManager": "Anders Eklund"
       },
       {
-        "storeName": "Htorgs Mode",
+        "storeName": "Haymarket Fashion",
         "storeLocation": "Htorget 5, 111 57 Stockholm, Sweden",
         "storeManager": "Karin Dahl"
       },
       {
-        "storeName": "Vla Centrum Klder",
+        "storeName": "Väla Centrum Clothing",
         "storeLocation": "Marknadsvgen 9, 254 69 Helsingborg, Sweden",
         "storeManager": "Johan Isaksson"
       },
@@ -3073,12 +3057,12 @@
         "storeManager": "Eva Samuelsson"
       },
       {
-        "storeName": "Marieberg Galleria Mode",
+        "storeName": "Marieberg Gallery Fashion",
         "storeLocation": "Sgen 1, 702 36 rebro, Sweden",
         "storeManager": "Per Lindqvist"
       },
       {
-        "storeName": "Mirum Galleria Stil",
+        "storeName": "City center Galleria",
         "storeLocation": "Lidaleden 8, 603 59 Norrkping, Sweden",
         "storeManager": "Camilla Jansson"
       },
@@ -3088,7 +3072,7 @@
         "storeManager": "Henrik Berg"
       },
       {
-        "storeName": "Tuna Park Kldshop",
+        "storeName": "Tuna Park Clothing Shop",
         "storeLocation": "Tuna Park 3, 632 22 Eskilstuna, Sweden",
         "storeManager": "Ulrika Strm"
       },
@@ -3108,32 +3092,32 @@
         "storeManager": "Stefan Olsson"
       },
       {
-        "storeName": "Nacka Forum Klder",
+        "storeName": "Nacka Forum Clothing",
         "storeLocation": "Forumvgen 14, 131 53 Nacka, Sweden",
         "storeManager": "Jenny Andersson"
       },
       {
-        "storeName": "Skrholmen Centrum Mode",
+        "storeName": "Skärholmen Centrum Fashion",
         "storeLocation": "Storholmsgatan 18, 127 48 Skrholmen, Sweden",
         "storeManager": "Robert Svensson"
       },
       {
-        "storeName": "Mobilia Shopping Klder",
+        "storeName": "Mobilia Shopping Clothing",
         "storeLocation": "Per Albin Hanssons vg 30, 214 32 Malm, Sweden",
         "storeManager": "Susanne Lundgren"
       },
       {
-        "storeName": "Frlunda Torg Fashion",
+        "storeName": "Frölunda Torg Fashion",
         "storeLocation": "Frlunda Torg, 421 42 Vstra Frlunda, Sweden",
         "storeManager": "Niklas Karlsson"
       },
       {
-        "storeName": "Allum Partille Stil",
+        "storeName": "Allum Partille Style",
         "storeLocation": "Nils Henrikssons Vg 3, 433 35 Partille, Sweden",
         "storeManager": "Therese Bjrk"
       },
       {
-        "storeName": "Citykompaniet Skellefte",
+        "storeName": "Citykompaniet Skellefteå",
         "storeLocation": "Nygatan 50, 931 30 Skellefte, Sweden",
         "storeManager": "Daniel Hedlund"
       },
@@ -3143,12 +3127,12 @@
         "storeManager": "Ida Larsson"
       },
       {
-        "storeName": "Mittpunkten stersund",
+        "storeName": "Mittpunkten Östersund",
         "storeLocation": "Prstgatan 31A, 831 31 stersund, Sweden",
         "storeManager": "Jonas Wallin"
       },
       {
-        "storeName": "Valbo Kpcentrum Mode",
+        "storeName": "Valbo Shopping Center Fashion",
         "storeLocation": "Valbovgen 307-309, 818 32 Valbo, Sweden",
         "storeManager": "Emma Pettersson"
       },
@@ -3158,12 +3142,12 @@
         "storeManager": "Andreas Jonsson"
       },
       {
-        "storeName": "Bergvik Kpcenter Karlstad",
+        "storeName": "Bergvik Shopping Center Karlstad",
         "storeLocation": "Frykmansvgen 1, 653 46 Karlstad, Sweden",
         "storeManager": "Malin Sundberg"
       },
       {
-        "storeName": "Hansacompagniet Malm",
+        "storeName": "Hansacompagniet Malmö",
         "storeLocation": "Stora Nygatan 50-54, 211 37 Malm, Sweden",
         "storeManager": "Oscar Flink"
       },
@@ -3173,12 +3157,12 @@
         "storeManager": "Clara Nyberg"
       },
       {
-        "storeName": "IKEA Hubben Mode",
+        "storeName": "IKEA Hub Fashion",
         "storeLocation": "lmhultsvgen 1, 343 36 lmhult, Sweden",
         "storeManager": "Viktor Kampradsson"
       },
       {
-        "storeName": "Visby Innerstad Butik",
+        "storeName": "Visby City Center Store",
         "storeLocation": "Adelsgatan 10, 621 57 Visby, Sweden",
         "storeManager": "Sara Lind"
       }
@@ -3198,28 +3182,19 @@
       "Quarterly, first week of new quarter",
       "Specific product group, ongoing",
       "End of each season (Feb, May, Aug, Nov)",
-      "Sista 2 veckorna i augusti",
       "First week in December",
       "All public holidays during spring",
       "The period between Christmas and New Year",
       "October month, focus on outerwear",
       "March month, focus on spring news",
-      "Vecka 28 till vecka 31",
       "One week after payday each month",
       "From Black Friday to Cyber Monday",
-      "Januari och Juli",
       "The entire Easter week",
       "All weekends in December until Christmas",
       "First 10 days in September",
-      "Week 6-7 (Winter Sports Break South)",
-      "Week 8-9 (Winter Sports Break Central)",
-      "Week 10-11 (Winter Sports Break North)",
       "First two weeks in June",
       "Last two weeks in October",
-      "Mors dag helgen",
-      "Fars dag helgen",
       "Valentine's Day week",
-      "Walpurgis Night and May 1st",
       "Ascension Day weekend"
     ],
     "periodTypeName": [
@@ -3248,15 +3223,11 @@
       "Easter Offers",
       "Advent Weekends",
       "September Fashion Weeks",
-      "Winter Sports Break Bargains Southern Region",
-      "Winter Sports Break Bargains Central Region",
-      "Winter Sports Break Bargains Northern Region",
       "Early Summer Offers",
       "Autumn Break Deals",
       "Mother's Day Special",
       "Father's Day Gift Ideas",
       "Valentine's Week",
-      "Walpurgis & May Offer",
       "Long Weekend Campaign"
     ]
   },
@@ -3264,10 +3235,8 @@
     "marketTrendName": [
       "Sustainable & Ethical Fashion",
       "Recycled & Innovative Materials",
-      "Skandinavisk Minimalism",
       "Maximalism & Bold Patterns",
       "Oversized & Comfortable Silhouettes",
-      "90-tals & Y2K Nostalgi",
       "Functional & Technical Outerwear",
       "Digital & Abstract Prints",
       "Monochromatic & Tone-on-Tone Looks",
@@ -3277,42 +3246,34 @@
       "Natural Color Palettes",
       "Handmade & Unique Expression",
       "Classic Garments With a Modern Twist",
-      "Gender-Neutrala Kollektioner",
       "Modular & Versatile Fashion",
       "Vintage & Second Hand Influences",
       "Return of Party & Glamour",
       "Workleisure & The Hybrid Wardrobe",
-      "Digital Mode & NFTs",
-      "Hyperlokal Produktion",
       "Comfort Above All",
-      "Personifiering & Customization",
       "Dark Romance & Gothic Influences",
       "Utility & Workwear Details",
       "Pastel Colors & Soft Shades",
       "Shiny & Metallic Materials",
       "Circular Fashion & Reuse",
-      "Influencer-drivna Mikrotrender",
-      "Preppy & Akademisk Stil",
-      "Bohemian & Festival-Inspired Look",
-      "Outdoor & Naturinfluenser",
-      "Knitted & Crocheted Crafts",
-      "Seamless & Technical Underwear"
+      "Preppy & Academic style",
+      "Outdoor & Nature Influencer"      
     ]
   },
   "Supplier": {
     "_value_groups_": [
       {
-        "supplierName": "Svenska Textilfabriken AB",
+        "supplierName": "Swedish Textile Factory Ltd.",
         "supplierAddress": "Textilgatan 1, 503 38 Bors, Sverige",
         "supplierLocation": "Bors, Sverige",
-        "supplierRegion": "Norden",
+        "supplierRegion": "Nordic",
         "supplierContact": "Erik Svensson (erik.s@svenskatextil.se)",
         "supplierType": "Fabric Producer",
         "supplierTier": "Tier 1",
         "contractCost": "2,500,000 SEK"
       },
       {
-        "supplierName": "EcoDenim Europa SP Zoo",
+        "supplierName": "EcoDenim Europe SP Zoo",
         "supplierAddress": "Ulica Fabryczna 15, 90-325, Polen",
         "supplierLocation": "Polen",
         "supplierRegion": "Europe",
@@ -3322,20 +3283,20 @@
         "contractCost": "1,800,000 EUR"
       },
       {
-        "supplierName": "Baltic Knits SIA",
+        "supplierName": "Baltic Knits Ltd.",
         "supplierAddress": "Krasta iela 88, Riga, LV-1019, Lettland",
         "supplierLocation": "Riga, Lettland",
-        "supplierRegion": "Baltikum",
+        "supplierRegion": "Baltics",
         "supplierContact": "Janis Berzins (janis.b@balticknits.lv)",
         "supplierType": "Knitwear Fashion",
         "supplierTier": "Tier 2",
         "contractCost": "750,000 EUR"
       },
       {
-        "supplierName": "Portugal Prints Lda",
+        "supplierName": "Portugal Prints Ltd.",
         "supplierAddress": "Rua da Indastria 123, 4750-000 Barcelos, Portugal",
         "supplierLocation": "Barcelos, Portugal",
-        "supplierRegion": "Vsteuropa",
+        "supplierRegion": "Southern Europe",
         "supplierContact": "Sofia Costa (sofia.c@portugalprints.pt)",
         "supplierType": "Printing & Garment Manufacturing",
         "supplierTier": "Tier 1",
@@ -3348,308 +3309,308 @@
         "supplierRegion": "Mellanstern",
         "supplierContact": "Mehmet Yilmaz (mehmet.y@anatolianweavers.tr)",
         "supplierType": "Weaving & Finishing",
-        "supplierTier": "Strategisk Partner",
+        "supplierTier": "Strategic Partner",
         "contractCost": "3,000,000 EUR"
       },
       {
         "supplierName": "Nordic Organic Cotton",
         "supplierAddress": "Spinderigade 11, 7100 Vejle, Danmark",
         "supplierLocation": "Vejle, Danmark",
-        "supplierRegion": "Norden",
+        "supplierRegion": "Nordic",
         "supplierContact": "Lars Jensen (lars.j@nordicorganic.dk)",
         "supplierType": "Organic Cotton",
         "supplierTier": "Tier 2",
-        "contractCost": "950,000 DKK/\u00e5r"
+        "contractCost": "950,000 DKK"
       },
       {
-        "supplierName": "Finnish Outerwear Solutions Oy",
-        "supplierAddress": "Teollisuustie 5, 60100 Sein\u00e4joki, Finland",
-        "supplierLocation": "Sein\u00e4joki, Finland",
-        "supplierRegion": "Norden",
+        "supplierName": "Finnish Outerwear Solutions",
+        "supplierAddress": "Teollisuustie 5, 60100 Seinjoki, Finland",
+        "supplierLocation": "Seinjoki, Finland",
+        "supplierRegion": "Nordic",
         "supplierContact": "Hanna Virtanen (hanna.v@finnishouterwear.fi)",
         "supplierType": "Outerwear Manufacturer",
         "supplierTier": "Tier 1",
-        "contractCost": "1,500,000 EUR/\u00e5r"
+        "contractCost": "1,500,000 EUR"
       },
       {
-        "supplierName": "Estonian Stitch Masters O\u00dc",
+        "supplierName": "Estonian Stitch Masters",
         "supplierAddress": "Peterburi tee 2, 11415 Tallinn, Estland",
         "supplierLocation": "Tallinn, Estland",
-        "supplierRegion": "Baltikum",
+        "supplierRegion": "Baltics",
         "supplierContact": "Eva Kallas (eva.k@estonianstitch.ee)",
         "supplierType": "Sewing Factory",
         "supplierTier": "Tier 2",
-        "contractCost": "600,000 EUR/\u00e5r"
+        "contractCost": "600,000 EUR"
       },
       {
-        "supplierName": "Italian Silk Creations S.R.L.",
+        "supplierName": "Italian Silk Creations",
         "supplierAddress": "Via Como 22, 22070 Appiano Gentile, Italien",
         "supplierLocation": "Como, Italien",
-        "supplierRegion": "Sydeuropa",
+        "supplierRegion": "Southern Europe",
         "supplierContact": "Giovanni Rossi (giovanni.r@italiansilk.it)",
         "supplierType": "Silk Manufacturer",
-        "supplierTier": "Prefererad Leverant\u00f6r",
-        "contractCost": "900,000 EUR/\u00e5r"
+        "supplierTier": "Tier 1",
+        "contractCost": "900,000 EUR"
       },
       {
         "supplierName": "German Precision Fasteners GmbH",
-        "supplierAddress": "Industriestra\u00dfe 7, 42277 Wuppertal, Tyskland",
+        "supplierAddress": "Industriestra, 42277 Wuppertal, Tyskland",
         "supplierLocation": "Wuppertal, Tyskland",
-        "supplierRegion": "V\u00e4steuropa",
+        "supplierRegion": "Western Europe",
         "supplierContact": "Klaus Schneider (klaus.s@germanfasteners.de)",
         "supplierType": "Buttons & Zippers",
         "supplierTier": "Tier 3",
-        "contractCost": "300,000 EUR/\u00e5r"
+        "contractCost": "300,000 EUR"
       },
       {
-        "supplierName": "Romanian Garment Factory SRL",
-        "supplierAddress": "Bulevardul Muncii 18, Cluj-Napoca 400267, Rum\u00e4nien",
-        "supplierLocation": "Cluj-Napoca, Rum\u00e4nien",
-        "supplierRegion": "\u00d6steuropa",
+        "supplierName": "Romanian Garment Factory",
+        "supplierAddress": "Bulevardul Muncii 18, Cluj-Napoca 400267, Rumnien",
+        "supplierLocation": "Cluj-Napoca, Rumnien",
+        "supplierRegion": "Eastern Europe",
         "supplierContact": "Elena Popescu (elena.p@romaniangarment.ro)",
         "supplierType": "Garment Factory",
         "supplierTier": "Tier 1",
-        "contractCost": "1,100,000 EUR/\u00e5r"
+        "contractCost": "1,100,000 EUR"
       },
       {
         "supplierName": "Swedish Leather Goods AB",
         "supplierAddress": "Garvaregatan 5, 782 34 Malung, Sverige",
         "supplierLocation": "Malung, Sverige",
-        "supplierRegion": "Norden",
+        "supplierRegion": "Nordics",
         "supplierContact": "Olle Jansson (olle.j@swedishleather.se)",
         "supplierType": "Leather Goods",
         "supplierTier": "Tier 2",
-        "contractCost": "850,000 SEK/\u00e5r"
+        "contractCost": "850,000 SEK"
       },
       {
         "supplierName": "Dutch Denim Innovators B.V.",
-        "supplierAddress": "Printerstraat 10, 1013 AP Amsterdam, Nederl\u00e4nderna",
-        "supplierLocation": "Amsterdam, Nederl\u00e4nderna",
-        "supplierRegion": "V\u00e4steuropa",
+        "supplierAddress": "Printerstraat 10, 1013 AP Amsterdam, Nederlnderna",
+        "supplierLocation": "Amsterdam, Nederlderna",
+        "supplierRegion": "Western Europe",
         "supplierContact": "Annelies de Vries (annelies.dv@dutchdenim.nl)",
         "supplierType": "Denim Specialist",
-        "supplierTier": "Strategisk Partner",
-        "contractCost": "2,200,000 EUR/\u00e5r"
+        "supplierTier": "Strategic Partner",
+        "contractCost": "2,200,000 EUR"
       },
       {
-        "supplierName": "Belgian Lace Atelier SPRL",
+        "supplierName": "Belgian Lace Atelier",
         "supplierAddress": "Rue de la Dentelle 4, 1000 Bryssel, Belgien",
         "supplierLocation": "Bryssel, Belgien",
-        "supplierRegion": "V\u00e4steuropa",
+        "supplierRegion": "Western Europe",
         "supplierContact": "Sophie Dubois (sophie.d@belgianlace.be)",
         "supplierType": "Lace Manufacturer",
-        "supplierTier": "Nischleverant\u00f6r",
-        "contractCost": "450,000 EUR/\u00e5r"
+        "supplierTier": "Niche provider",
+        "contractCost": "450,000 EUR"
       },
       {
-        "supplierName": "Spanish Footwear Artisans S.L.",
+        "supplierName": "Spanish Footwear Artisans",
         "supplierAddress": "Avenida de la Palmera 20, 03203 Elche, Spanien",
         "supplierLocation": "Elche, Spanien",
-        "supplierRegion": "Sydeuropa",
+        "supplierRegion": "Southern Europe",
         "supplierContact": "Carlos Gomez (carlos.g@spanishfootwear.es)",
         "supplierType": "Shoe Manufacturer",
         "supplierTier": "Tier 1",
-        "contractCost": "1,900,000 EUR/\u00e5r"
+        "contractCost": "1,900,000 EUR"
       },
       {
-        "supplierName": "Czech Crystal Embellishments s.r.o.",
-        "supplierAddress": "Skl\u00e1\u0159sk\u00e1 3, 466 01 Jablonec nad Nisou, Tjeckien",
+        "supplierName": "Czech Crystal Embellishments",
+        "supplierAddress": "Sklsk3, 466 01 Jablonec nad Nisou, Tjeckien",
         "supplierLocation": "Jablonec, Tjeckien",
-        "supplierRegion": "\u00d6steuropa",
+        "supplierRegion": "Southeast Europe",
         "supplierContact": "Petra Novakova (petra.n@czechcrystal.cz)",
         "supplierType": "Accessory Components",
         "supplierTier": "Tier 3",
-        "contractCost": "250,000 EUR/\u00e5r"
+        "contractCost": "250,000 EUR"
       },
       {
         "supplierName": "UK Woolen Mills Ltd.",
         "supplierAddress": "Mill Street, Hawick, TD9 9EF, Storbritannien",
         "supplierLocation": "Hawick, Storbritannien",
-        "supplierRegion": "V\u00e4steuropa (UK)",
+        "supplierRegion": "United Kingdom",
         "supplierContact": "David Smith (david.s@ukwoolenmills.co.uk)",
         "supplierType": "Wool Producer",
         "supplierTier": "Tier 2",
-        "contractCost": "900,000 GBP/\u00e5r"
+        "contractCost": "900,000 GBP"
       },
       {
         "supplierName": "Greek Organic Linens Co.",
         "supplierAddress": "Odos Ermou 50, 105 63 Aten, Grekland",
         "supplierLocation": "Aten, Grekland",
-        "supplierRegion": "Sydeuropa",
+        "supplierRegion": "Southern Europe",
         "supplierContact": "Eleni Papadopoulos (eleni.p@greeklinens.gr)",
         "supplierType": "Linen Weaving Mill",
         "supplierTier": "Tier 2",
-        "contractCost": "550,000 EUR/\u00e5r"
+        "contractCost": "550,000 EUR"
       },
       {
-        "supplierName": "Lithuanian Apparel Assembly UAB",
-        "supplierAddress": "Pramon\u0117s pr. 16, Kaunas 50348, Litauen",
+        "supplierName": "Lithuanian Apparel Assembly",
+        "supplierAddress": "Pramons pr. 16, Kaunas 50348, Litauen",
         "supplierLocation": "Kaunas, Litauen",
-        "supplierRegion": "Baltikum",
+        "supplierRegion": "Baltics",
         "supplierContact": "Linas Kazlauskas (linas.k@lithuanianapparel.lt)",
         "supplierType": "Assembly & Packing",
         "supplierTier": "Tier 2",
-        "contractCost": "700,000 EUR/\u00e5r"
+        "contractCost": "700,000 EUR"
       },
       {
         "supplierName": "French Luxury Buttons SAS",
-        "supplierAddress": "25 Rue du Faubourg Saint-Honor\u00e9, 75008 Paris, Frankrike",
+        "supplierAddress": "25 Rue du Faubourg Saint-Honor, 75008 Paris, Frankrike",
         "supplierLocation": "Paris, Frankrike",
-        "supplierRegion": "V\u00e4steuropa",
+        "supplierRegion": "Western Europe",
         "supplierContact": "Antoine Dubois (antoine.d@frenchbuttons.fr)",
         "supplierType": "Luxury Buttons",
-        "supplierTier": "Nischleverant\u00f6r",
-        "contractCost": "600,000 EUR/\u00e5r"
+        "supplierTier": "NNiche provider",
+        "contractCost": "600,000 EUR"
       },
       {
         "supplierName": "Bangladesh Weaving Corp.",
         "supplierAddress": "Plot 123, Tejgaon I/A, Dhaka 1208, Bangladesh",
         "supplierLocation": "Dhaka, Bangladesh",
-        "supplierRegion": "Sydasien",
+        "supplierRegion": "South Asia",
         "supplierContact": "Fatima Ahmed (fahmed@bwc.com.bd)",
         "supplierType": "Large-Scale Weaving",
-        "supplierTier": "Niv\u00e5 1 Volym",
-        "contractCost": "5,000,000 USD/\u00e5r"
+        "supplierTier": "Tier 2",
+        "contractCost": "5,000,000 USD"
       },
       {
         "supplierName": "Vietnam Stitching Solutions",
         "supplierAddress": "Lot B2, Tan Thuan EPZ, District 7, Ho Chi Minh City, Vietnam",
         "supplierLocation": "Ho Chi Minh City, Vietnam",
-        "supplierRegion": "Sydostasien",
+        "supplierRegion": "Southeast Asia",
         "supplierContact": "Nguyen Van Minh (minh.nv@vss.com.vn)",
         "supplierType": "Garment Factory",
-        "supplierTier": "Niv\u00e5 1 Volym",
-        "contractCost": "4,500,000 USD/\u00e5r"
+        "supplierTier": "Tier 2",
+        "contractCost": "4,500,000 USD"
       },
       {
         "supplierName": "India Organic Dyes Pvt. Ltd.",
         "supplierAddress": "15 Textile Market, Tiruppur, Tamil Nadu 641604, Indien",
-        "supplierLocation": "Tiruppur, Indien",
-        "supplierRegion": "Sydasien",
+        "supplierLocation": "Tiruppur, India",
+        "supplierRegion": "South Asia",
         "supplierContact": "Priya Sharma (priya.s@iod.co.in)",
         "supplierType": "Organic Dyeing",
-        "supplierTier": "Strategisk Partner",
-        "contractCost": "1,200,000 USD/\u00e5r"
+        "supplierTier": "Strategic Partner",
+        "contractCost": "1,200,000 USD"
       },
       {
         "supplierName": "China Silk Road Textiles",
         "supplierAddress": "No. 88 Keqiao Textile Ave, Shaoxing, Zhejiang 312030, Kina",
         "supplierLocation": "Shaoxing, Kina",
-        "supplierRegion": "Ostasien",
+        "supplierRegion": "East Asia",
         "supplierContact": "Li Wei (li.wei@csrtextiles.cn)",
         "supplierType": "Mixed Textiles",
         "supplierTier": "Tier 2",
-        "contractCost": "3,000,000 USD/\u00e5r"
+        "contractCost": "3,000,000 USD"
       },
       {
         "supplierName": "Myanmar Ethical Manufacturing",
         "supplierAddress": "Industrial Zone 1, Hlaingthaya, Yangon, Myanmar",
         "supplierLocation": "Yangon, Myanmar",
-        "supplierRegion": "Sydostasien",
+        "supplierRegion": "Southeast Asia",
         "supplierContact": "Aung Myo (aung.myo@mem.com.mm)",
         "supplierType": "Ethical Production",
         "supplierTier": "Tier 2",
-        "contractCost": "900,000 USD/\u00e5r"
+        "contractCost": "900,000 USD"
       },
       {
         "supplierName": "Portugal Jersey Knitters",
         "supplierAddress": "Zona Industrial de Pousa, Lote 5, 4755-411 Pousa, Portugal",
         "supplierLocation": "Pousa, Portugal",
-        "supplierRegion": "V\u00e4steuropa",
+        "supplierRegion": "Western Europe",
         "supplierContact": "Rui Costa (rui.costa@portugaljersey.pt)",
         "supplierType": "Jersey Manufacturer",
         "supplierTier": "Tier 1",
-        "contractCost": "1,300,000 EUR/\u00e5r"
+        "contractCost": "1,300,000 EUR"
       },
       {
         "supplierName": "Slovakian Shoe Components s.r.o.",
-        "supplierAddress": "Tovarenska 10, 95801 Partiz\u00e1nske, Slovakien",
-        "supplierLocation": "Partiz\u00e1nske, Slovakien",
-        "supplierRegion": "\u00d6steuropa",
+        "supplierAddress": "Tovarenska 10, 95801 Partizenske, Slovakien",
+        "supplierLocation": "Partizenske, Slovakien",
+        "supplierRegion": "Southeast Europe",
         "supplierContact": "Martin Horvath (martin.h@shoecorp.sk)",
         "supplierType": "Shoe Components",
         "supplierTier": "Tier 3",
-        "contractCost": "400,000 EUR/\u00e5r"
+        "contractCost": "400,000 EUR"
       },
       {
         "supplierName": "Hungarian Embroidery House Kft.",
         "supplierAddress": "Kossuth Lajos utca 5, 6500 Baja, Ungern",
         "supplierLocation": "Baja, Ungern",
-        "supplierRegion": "\u00d6steuropa",
+        "supplierRegion": "Southeast Europe",
         "supplierContact": "Katalin Nagy (katalin.n@embroidery.hu)",
         "supplierType": "Embroidery",
-        "supplierTier": "Nischleverant\u00f6r",
-        "contractCost": "350,000 EUR/\u00e5r"
+        "supplierTier": "Tier 3",
+        "contractCost": "350,000 EUR"
       },
       {
         "supplierName": "Norwegian Woolen Goods AS",
         "supplierAddress": "Storgata 12, 0155 Oslo, Norge",
         "supplierLocation": "Oslo, Norge",
-        "supplierRegion": "Norden",
+        "supplierRegion": "Nordics",
         "supplierContact": "Ingrid Larsen (ingrid.l@norwool.no)",
         "supplierType": "Woolen Clothes",
         "supplierTier": "Tier 2",
-        "contractCost": "950,000 NOK/\u00e5r"
+        "contractCost": "950,000 NOK"
       },
       {
         "supplierName": "Irish Linen Weavers Ltd.",
         "supplierAddress": "Connemara Industrial Park, Galway, Irland",
         "supplierLocation": "Galway, Irland",
-        "supplierRegion": "V\u00e4steuropa",
+        "supplierRegion": "Western Europe",
         "supplierContact": "Patrick O'Malley (patrick.om@irishlinen.ie)",
         "supplierType": "Linen Weaving Mill",
-        "supplierTier": "Prefererad Leverant\u00f6r",
-        "contractCost": "700,000 EUR/\u00e5r"
+        "supplierTier": "Tier 1",
+        "contractCost": "700,000 EUR"
       },
       {
         "supplierName": "Polish Down & Feather Sp. z o.o.",
-        "supplierAddress": "Aleja Niepodleg\u0142o\u015bci 100, 02-577 Warszawa, Polen",
+        "supplierAddress": "Aleja Niepodlegoci 100, 02-577 Warszawa, Polen",
         "supplierLocation": "Warszawa, Polen",
-        "supplierRegion": "\u00d6steuropa",
+        "supplierRegion": "Southeast Europe",
         "supplierContact": "Piotr Zielinski (piotr.z@polishdown.pl)",
         "supplierType": "Down & Feather",
         "supplierTier": "Tier 2",
-        "contractCost": "800,000 EUR/\u00e5r"
+        "contractCost": "800,000 EUR"
       },
       {
         "supplierName": "Turkish Denim Solutions TR",
         "supplierAddress": "Adnan Menderes Blv No:55, Zeytinburnu, Istanbul, Turkiet",
         "supplierLocation": "Istanbul, Turkiet",
-        "supplierRegion": "Mellan\u00f6stern",
+        "supplierRegion": "Mellanfstern",
         "supplierContact": "Ayse Kaya (ayse.k@turkishdenim.tr)",
         "supplierType": "Denim Finishing",
         "supplierTier": "Tier 1",
-        "contractCost": "1,500,000 EUR/\u00e5r"
+        "contractCost": "1,500,000 EUR"
       },
       {
         "supplierName": "Swedish Functional Fabrics",
-        "supplierAddress": "Innovationsv\u00e4gen 8, 721 30 V\u00e4ster\u00e5s, Sverige",
-        "supplierLocation": "V\u00e4ster\u00e5s, Sverige",
-        "supplierRegion": "Norden",
+        "supplierAddress": "Innovationsvegen 8, 721 30 Vesters, Sverige",
+        "supplierLocation": "Vesters, Sverige",
+        "supplierRegion": "Nordic",
         "supplierContact": "Stefan Holm (stefan.h@sff.se)",
         "supplierType": "Functional Fabric",
-        "supplierTier": "Strategisk Partner",
-        "contractCost": "1,800,000 SEK/\u00e5r"
+        "supplierTier": "Strategic Partner",
+        "contractCost": "1,800,000 SEK"
       },
       {
         "supplierName": "Italian High-End Tailoring",
         "supplierAddress": "Via Montenapoleone 8, 20121 Milano, Italien",
         "supplierLocation": "Milano, Italien",
-        "supplierRegion": "Sydeuropa",
+        "supplierRegion": "Southern Europe",
         "supplierContact": "Marco Bianchi (marco.b@ihet.it)",
         "supplierType": "Tailoring",
-        "supplierTier": "Exklusiv Partner",
-        "contractCost": "2,500,000 EUR/\u00e5r"
+        "supplierTier": "Exclusive Partner",
+        "contractCost": "2,500,000 EUR"
       },
       {
         "supplierName": "German Eco-Dyes GmbH",
         "supplierAddress": "Chemieparkring 1, 06749 Bitterfeld-Wolfen, Tyskland",
         "supplierLocation": "Bitterfeld, Tyskland",
-        "supplierRegion": "V\u00e4steuropa",
+        "supplierRegion": "Western Europe",
         "supplierContact": "Julia Weber (julia.w@eco-dyes.de)",
         "supplierType": "Eco-Friendly Dyeing",
         "supplierTier": "Tier 1",
-        "contractCost": "1,000,000 EUR/\u00e5r"
+        "contractCost": "1,000,000 EUR"
       }
     ]
   },
@@ -3697,222 +3658,49 @@
       {
         "fiscalCountryCode": "SE",
         "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "SE",
-        "fiscalCountryName": "Sweden"
-      },
-      {
-        "fiscalCountryCode": "NO",
-        "fiscalCountryName": "Norway"
-      },
-      {
-        "fiscalCountryCode": "NO",
-        "fiscalCountryName": "Norway"
-      },
-      {
-        "fiscalCountryCode": "NO",
-        "fiscalCountryName": "Norway"
-      },
-      {
-        "fiscalCountryCode": "DK",
-        "fiscalCountryName": "Denmark"
-      },
-      {
-        "fiscalCountryCode": "DK",
-        "fiscalCountryName": "Denmark"
-      },
-      {
-        "fiscalCountryCode": "DK",
-        "fiscalCountryName": "Denmark"
-      },
-      {
-        "fiscalCountryCode": "FI",
-        "fiscalCountryName": "Finland"
-      },
-      {
-        "fiscalCountryCode": "FI",
-        "fiscalCountryName": "Finland"
-      },
-      {
-        "fiscalCountryCode": "FI",
-        "fiscalCountryName": "Finland"
-      },
-      {
-        "fiscalCountryCode": "DE",
-        "fiscalCountryName": "Germany"
-      },
-      {
-        "fiscalCountryCode": "DE",
-        "fiscalCountryName": "Germany"
-      },
-      {
-        "fiscalCountryCode": "NL",
-        "fiscalCountryName": "Netherlands"
-      },
-      {
-        "fiscalCountryCode": "PL",
-        "fiscalCountryName": "Poland"
-      },
-      {
-        "fiscalCountryCode": "GB",
-        "fiscalCountryName": "United Kingdom"
-      },
-      {
-        "fiscalCountryCode": "ES",
-        "fiscalCountryName": "Spain"
       }
     ]
   },
   "CustomerProfile": {
     "CustomerProfileDesc": [
-      "F\u00f6redrar bekv\u00e4ma vardagskl\u00e4der, aktiv appanv\u00e4ndare, handlar ofta online.",
-      "Milj\u00f6medveten, s\u00f6ker h\u00e5llbara material, prenumererar p\u00e5 nyhetsbrev.",
-      "Handlar \u00e5t hela familjen, bes\u00f6ker ofta fysisk butik, v\u00e4rderar personlig service.",
-      "Trendk\u00e4nslig student, engagerad p\u00e5 sociala medier, letar efter erbjudanden.",
-      "Karri\u00e4rist, k\u00f6per business-kl\u00e4der online, prioriterar snabb leverans.",
-      "Pension\u00e4r, v\u00e4rdes\u00e4tter kvalitet och komfort, handlar s\u00e4llan men v\u00e4ljer dyrare plagg.",
-      "Ung vuxen, intresserad av streetwear, f\u00f6ljer influencers.",
-      "Sm\u00e5barnsf\u00f6r\u00e4lder, k\u00f6per praktiska barnkl\u00e4der, medlem i kundklubben.",
-      "Fitnessentusiast, k\u00f6per tr\u00e4ningskl\u00e4der regelbundet, gillar tekniska material.",
-      "Minimalist, k\u00f6per f\u00e5 men tidl\u00f6sa plagg, f\u00f6redrar monokroma f\u00e4rger.",
-      "Modeintresserad ton\u00e5ring, handlar ofta, inspireras av TikTok-trender.",
-      "Budgetmedveten, j\u00e4mf\u00f6r priser, anv\u00e4nder rabattkoder.",
-      "Handlar fr\u00e4mst under reaperioder, letar efter fynd.",
-      "Lojal kund sedan m\u00e5nga \u00e5r, k\u00e4nner till varum\u00e4rket v\u00e4l.",
-      "Ny kund, nyligen registrerad, utforskar sortimentet.",
-      "Resen\u00e4r, k\u00f6per kl\u00e4der anpassade f\u00f6r olika klimat.",
-      "Kreativ yrkesperson, s\u00f6ker unika plagg som uttrycker personlighet.",
-      "Presenter-k\u00f6pare, handlar ofta g\u00e5vor till andra.",
-      "Plus-size kund, s\u00f6ker specifikt anpassat sortiment.",
-      "Brud eller br\u00f6llopsg\u00e4st, s\u00f6ker festkl\u00e4der.",
-      "Outdoor-entusiast, k\u00f6per funktionella ytterplagg.",
-      "H\u00e5llbarhetsfokuserad vegan, undviker animaliska material.",
-      "Konservativ stil, f\u00f6redrar klassiska snitt och f\u00e4rger.",
-      "Experimentell, gillar att testa nya stilar och trender.",
-      "Handlar endast online, aldrig i fysisk butik.",
-      "F\u00f6redrar fysisk butik f\u00f6r att prova kl\u00e4der.",
-      "Anv\u00e4nder 'click and collect' frekvent.",
-      "Returnerar s\u00e4llan varor.",
-      "Returnerar ofta, provar m\u00e5nga storlekar.",
-      "Engagerad i varum\u00e4rkets community-forum.",
-      "L\u00e4mnar ofta produktrecensioner.",
-      "Deltar i medlemsevent och t\u00e4vlingar.",
-      "K\u00f6per ofta accessoarer f\u00f6r att uppdatera garderoben.",
-      "V\u00e4rderar etisk produktion och transparens.",
-      "S\u00f6ker efter 'Made in Europe'-produkter."
+      "Prefers comfortable everyday clothes, active app user, often shops online.",
+      "Environmentally conscious, seeks sustainable materials, subscribes to newsletters.",
+      "Shops for the whole family, often visits physical stores, values personal service.",
+      "Trend-sensitive student, active on social media, looks for offers.",
+      "Career-oriented, buys business attire online, prioritizes fast delivery.",
+      "Pensioner, values quality and comfort, shops infrequently but chooses more expensive garments.",
+      "Young adult, interested in streetwear, follows influencers.",
+      "Parent of young children, buys practical children's clothes, member of the loyalty club.",
+      "Fitness enthusiast, buys workout clothes regularly, likes technical materials.",
+      "Minimalist, buys few but timeless garments, prefers monochromatic colors.",
+      "Fashion-interested teenager, shops often, inspired by TikTok trends.",
+      "Budget-conscious, compares prices, uses discount codes.",
+      "Mainly shops during sale periods, looks for bargains.",
+      "Loyal customer for many years, knows the brand well.",
+      "New customer, recently registered, explores the assortment.",
+      "Traveler, buys clothes adapted for different climates.",
+      "Creative professional, seeks unique garments that express personality.",
+      "Gift buyer, often shops for gifts for others.",
+      "Plus-size customer, seeks specifically adapted assortment.",
+      "Bride or wedding guest, seeks formal wear.",
+      "Outdoor enthusiast, buys functional outerwear.",
+      "Sustainability-focused vegan, avoids animal-based materials.",
+      "Conservative style, prefers classic cuts and colors.",
+      "Experimental, likes to try new styles and trends.",
+      "Shops only online, never in physical stores.",
+      "Prefers physical stores to try on clothes.",
+      "Uses 'click and collect' frequently.",
+      "Rarely returns items.",
+      "Often returns items, tries on many sizes.",
+      "Engaged in the brand's community forum.",
+      "Often leaves product reviews.",
+      "Participates in member events and competitions.",
+      "Often buys accessories to update their wardrobe.",
+      "Values ethical production and transparency.",
+      "Looks for 'Made in Europe' products."
     ]
   },
-  "OrderLine": {
-    "orderLineAmount": [
-      "199.00 SEK",
-      "349.50 SEK",
-      "799.00 SEK",
-      "99.00 SEK",
-      "1250.75 SEK",
-      "499.00 SEK",
-      "249.90 SEK",
-      "50.00 SEK",
-      "1499.00 SEK",
-      "89.00 SEK",
-      "299.00 SEK",
-      "649.00 SEK",
-      "179.00 SEK",
-      "449.50 SEK",
-      "999.00 SEK",
-      "129.00 SEK",
-      "599.00 SEK",
-      "399.00 SEK",
-      "75.00 SEK",
-      "1999.00 SEK",
-      "229.00 SEK",
-      "479.00 SEK",
-      "119.50 SEK",
-      "699.00 SEK",
-      "150.00 SEK",
-      "549.00 SEK",
-      "329.00 SEK",
-      "95.00 SEK",
-      "1750.00 SEK",
-      "279.00 SEK",
-      "379.00 SEK",
-      "600.00 SEK",
-      "139.00 SEK",
-      "400.00 SEK",
-      "1100.00 SEK"
-    ],
+  "OrderLine": {   
     "orderLineNumber": [
       "1",
       "2",
@@ -3955,143 +3743,143 @@
     "_value_groups_": [
       {
         "styleCode": "CRWNCK-TS-M-RED01",
-        "styleDesc": "T-shirt R\u00f6d Herr Bomull Rundhals"
+        "styleDesc": "Men's Red Cotton Crew Neck T-shirt"
       },
       {
         "styleCode": "SLMFIT-JN-W-BLK05",
-        "styleDesc": "Slim Fit Jeans Dam Svarta Stretch"
+        "styleDesc": "Women's Black Stretch Slim Fit Jeans"
       },
       {
         "styleCode": "OVRSIZ-HD-U-GRY12",
-        "styleDesc": "Oversized Hoodie Unisex Gr\u00e5melerad Fleece"
+        "styleDesc": "Unisex Grey Melange Fleece Oversized Hoodie"
       },
       {
         "styleCode": "FLRPRT-MDDRS-W-BLU03",
-        "styleDesc": "Blommig Midikl\u00e4nning Dam Bl\u00e5 Viskos"
+        "styleDesc": "Women's Blue Viscose Floral Print Midi Dress"
       },
       {
         "styleCode": "VNK-SWTR-M-NAV07",
-        "styleDesc": "V-ringad Tr\u00f6ja Herr Marinbl\u00e5 Merinoull"
+        "styleDesc": "Men's Navy Blue Merino Wool V-neck Sweater"
       },
       {
         "styleCode": "SKINNY-TRS-W-BGE02",
-        "styleDesc": "Skinny Trousers Dam Beige Twill"
+        "styleDesc": "Women's Beige Twill Skinny Trousers"
       },
       {
         "styleCode": "PLN-SHT-M-WHT09",
-        "styleDesc": "Skjorta Herr Vit Oxford Bomull"
+        "styleDesc": "Men's White Oxford Cotton Shirt"
       },
       {
         "styleCode": "CRDGN-LNG-W-GRN04",
-        "styleDesc": "L\u00e5ng Cardigan Dam Gr\u00f6n Stickad"
+        "styleDesc": "Women's Green Knitted Long Cardigan"
       },
       {
         "styleCode": "CHINO-SHRTS-M-BLE06",
-        "styleDesc": "Chinos Shorts Herr Ljusbl\u00e5 Bomull"
+        "styleDesc": "Men's Light Blue Cotton Chinos Shorts"
       },
       {
         "styleCode": "A-LINE-SKRT-W-PNK01",
-        "styleDesc": "A-linjeformad Kjol Dam Rosa Manchester"
+        "styleDesc": "Women's Pink Corduroy A-line Skirt"
       },
       {
         "styleCode": "ZIP-FLC-JKT-U-BLK10",
-        "styleDesc": "Fleecejacka Unisex Svart Dragkedja"
+        "styleDesc": "Unisex Black Zippered Fleece Jacket"
       },
       {
         "styleCode": "LNN-BLS-W-YLW08",
-        "styleDesc": "Linneblus Dam Gul Knappar"
+        "styleDesc": "Women's Yellow Buttoned Linen Blouse"
       },
       {
         "styleCode": "SWMSHRTS-M-TRQ03",
-        "styleDesc": "Badshorts Herr Turkos Snabbtorkande"
+        "styleDesc": "Men's Turquoise Quick-Dry Swim Shorts"
       },
       {
         "styleCode": "LGNGS-HGHWST-W-CHR05",
-        "styleDesc": "Leggings H\u00f6g Midja Dam Kolf\u00e4rgade"
+        "styleDesc": "Women's Charcoal High Waist Leggings"
       },
       {
         "styleCode": "PLD-FLNSHT-M-RDN02",
-        "styleDesc": "Rutig Flanellskjorta Herr R\u00f6d/Svart"
+        "styleDesc": "Men's Red/Black Plaid Flannel Shirt"
       },
       {
         "styleCode": "DRESS-MAXI-W-BLK11",
-        "styleDesc": "Maxikl\u00e4nning Dam Svart Jersey"
+        "styleDesc": "Women's Black Jersey Maxi Dress"
       },
       {
         "styleCode": "BMBR-JKT-M-OLV07",
-        "styleDesc": "Bomberjacka Herr Olivgr\u00f6n Nylon"
+        "styleDesc": "Men's Olive Green Nylon Bomber Jacket"
       },
       {
         "styleCode": "TOP-LACE-W-CRM01",
-        "styleDesc": "Spetstopp Dam Cremef\u00e4rgad"
+        "styleDesc": "Women's Cream Lace Top"
       },
       {
         "styleCode": "JGGNGPNT-U-NAV09",
-        "styleDesc": "Joggingbyxor Unisex Marinbl\u00e5 Bomullsmix"
+        "styleDesc": "Unisex Navy Blue Cotton Blend Jogging Pants"
       },
       {
         "styleCode": "BLZR-DBLBRST-M-GRY04",
-        "styleDesc": "Dubbelkn\u00e4ppt Kavaj Herr Gr\u00e5 Ullblandning"
+        "styleDesc": "Men's Grey Wool Blend Double-Breasted Blazer"
       },
       {
         "styleCode": "DNM-SHTDRS-W-LBL06",
-        "styleDesc": "Jeansskjortkl\u00e4nning Dam Ljusbl\u00e5"
+        "styleDesc": "Women's Light Blue Denim Shirt Dress"
       },
       {
         "styleCode": "TRTLNCK-SWTR-U-BRN12",
-        "styleDesc": "Polotr\u00f6ja Unisex Brun Kaschmirblandning"
+        "styleDesc": "Unisex Brown Cashmere Blend Turtleneck Sweater"
       },
       {
         "styleCode": "CARGO-PNT-M-KHK03",
-        "styleDesc": "Cargobyxor Herr Khakigr\u00f6n Ripstop"
+        "styleDesc": "Men's Khaki Green Ripstop Cargo Pants"
       },
       {
         "styleCode": "WRAP-DRS-W-RDPT08",
-        "styleDesc": "Omlottkl\u00e4nning Dam R\u00f6d Prickig"
+        "styleDesc": "Women's Red Polka Dot Wrap Dress"
       },
       {
         "styleCode": "QULTD-VST-M-BLU05",
-        "styleDesc": "Quiltad V\u00e4st Herr Bl\u00e5 L\u00e4ttvikt"
+        "styleDesc": "Men's Blue Lightweight Quilted Vest"
       },
       {
         "styleCode": "PLTDSKRT-MIDI-W-GRN10",
-        "styleDesc": "Plisserad Midikjol Dam M\u00f6rkgr\u00f6n Satin"
+        "styleDesc": "Women's Dark Green Satin Pleated Midi Skirt"
       },
       {
         "styleCode": "HOODIE-CROP-W-PNK02",
-        "styleDesc": "Croppad Hoodie Dam Ljusrosa"
+        "styleDesc": "Women's Light Pink Cropped Hoodie"
       },
       {
         "styleCode": "SHORTS-SWT-M-GYM07",
-        "styleDesc": "Sweatshorts Herr Gr\u00e5melerad Ficka"
+        "styleDesc": "Men's Grey Melange Pocket Sweatshorts"
       },
       {
         "styleCode": "BLOUSE-SILK-W-NAV11",
-        "styleDesc": "Sidenskjorta Dam Marinbl\u00e5 L\u00e5ng\u00e4rmad"
+        "styleDesc": "Women's Navy Blue Long-Sleeved Silk Shirt"
       },
       {
         "styleCode": "TRENCHCOAT-U-BGE01",
-        "styleDesc": "Trenchcoat Unisex Beige Klassisk"
+        "styleDesc": "Unisex Beige Classic Trench Coat"
       },
       {
         "styleCode": "KNITVEST-CBL-M-CRM04",
-        "styleDesc": "Kabelstickad V\u00e4st Herr Cremef\u00e4rgad Ull"
+        "styleDesc": "Men's Cream Wool Cable Knit Vest"
       },
       {
         "styleCode": "JUMPSUIT-DNM-W-IND09",
-        "styleDesc": "Jumpsuit Dam Indigo Denim"
+        "styleDesc": "Women's Indigo Denim Jumpsuit"
       },
       {
         "styleCode": "POLO-SHT-M-STR06",
-        "styleDesc": "Pik\u00e9tr\u00f6ja Herr Randig Bl\u00e5/Vit"
+        "styleDesc": "Men's Blue/White Striped Piqué Polo Shirt"
       },
       {
         "styleCode": "BODYCON-DRS-W-RED12",
-        "styleDesc": "Bodycon Kl\u00e4nning Dam R\u00f6d Ribbad"
+        "styleDesc": "Women's Red Ribbed Bodycon Dress"
       },
       {
         "styleCode": "PARKA-FURHD-U-BLK03",
-        "styleDesc": "Parkas Unisex Svart Fuskp\u00e4ls Huva"
+        "styleDesc": "Unisex Black Parka with Faux Fur Hood"
       }
     ]
   },
@@ -4136,10 +3924,10 @@
   },
   "LoyaltyTier": {
     "loyaltyTier": [
-      "Basniv\u00e5 Medlem",
-      "Silver Medlem",
-      "Guld Insider",
-      "Platina Elite",
+      "Basic Member",
+      "Silver Member",
+      "Gold Insider",
+      "Platinum Elite",
       "Standard Tier",
       "Premium Access",
       "VIP Lounge",
@@ -4149,26 +3937,15 @@
       "Exclusive Rewards Member",
       "Loyalty Plus+",
       "Advantage Shopper",
-      "Select Circle",
       "Core Rewards",
       "Preferred Guest",
-      "Elite Fashion Program",
-      "Conscious Points Level 1",
-      "Conscious Points Level 2",
       "Hello Fashion Friend",
       "Plus Benefits Member",
-      "Modeklubben Brons",
-      "Modeklubben Silver",
-      "Fashion Points Collector",
       "Style Points Pro",
       "Wardrobe Warrior Status",
-      "Outfit Oracle Tier",
       "Garment Guru Rewards",
       "Textile Titan Club",
-      "Fabric Fanatic Program",
       "Chic Champion Circle",
-      "Vogue Voyager Pass",
-      "Runway Ready Rewards",
       "Designer's Pick Member",
       "Early Access Tier",
       "Birthday Bonus Club"
@@ -4178,155 +3955,135 @@
     "_value_groups_": [
       {
         "categoryCode": "WOM_TOP_TSH",
-        "categoryName": "Dam T-shirts & Linnen"
+        "categoryName": "Women's T-shirts & Vests"
       },
       {
         "categoryCode": "WOM_TOP_BLS",
-        "categoryName": "Dam Blusar & Skjortor"
+        "categoryName": "Women's Blouses & Shirts"
       },
       {
         "categoryCode": "WOM_DRE_CAS",
-        "categoryName": "Dam Kl\u00e4nningar Vardag"
+        "categoryName": "Women's Everyday Dresses"
       },
       {
         "categoryCode": "WOM_DRE_OCC",
-        "categoryName": "Dam Kl\u00e4nningar Fest"
+        "categoryName": "Women's Party Dresses"
       },
       {
         "categoryCode": "WOM_BOT_JNS",
-        "categoryName": "Dam Jeans"
+        "categoryName": "Women's Jeans"
       },
       {
         "categoryCode": "WOM_BOT_TRS",
-        "categoryName": "Dam Byxor & Leggings"
+        "categoryName": "Women's Trousers & Leggings"
       },
       {
         "categoryCode": "WOM_BOT_SKT",
-        "categoryName": "Dam Kjolar"
+        "categoryName": "Women's Skirts"
       },
       {
         "categoryCode": "WOM_OUT_JCK",
-        "categoryName": "Dam Jackor & Kappor"
+        "categoryName": "Women's Jackets & Coats"
       },
       {
         "categoryCode": "WOM_SWT_CRD",
-        "categoryName": "Dam Tr\u00f6jor & Koftor"
-      },
-      {
-        "categoryCode": "WOM_LNG_BAS",
-        "categoryName": "Dam Underkl\u00e4der Bas"
+        "categoryName": "Women's Sweaters & Cardigans"
       },
       {
         "categoryCode": "WOM_LNG_NGT",
-        "categoryName": "Dam Nattkl\u00e4der"
-      },
-      {
-        "categoryCode": "WOM_ACC_BAG",
-        "categoryName": "Dam V\u00e4skor & Pl\u00e5nb\u00f6cker"
-      },
-      {
-        "categoryCode": "WOM_ACC_SCV",
-        "categoryName": "Dam Scarves & Halsdukar"
-      },
-      {
-        "categoryCode": "WOM_ACC_JWL",
-        "categoryName": "Dam Smycken"
+        "categoryName": "Women's Nightwear"
       },
       {
         "categoryCode": "WOM_SHO_SND",
-        "categoryName": "Dam Sandaler & Tofflor"
+        "categoryName": "Women's Sandals & Slippers"
       },
       {
         "categoryCode": "WOM_SHO_BTS",
-        "categoryName": "Dam K\u00e4ngor & St\u00f6vlar"
+        "categoryName": "Women's Boots & Ankle Boots"
       },
       {
         "categoryCode": "WOM_SHO_HEE",
-        "categoryName": "Dam Klackskor"
+        "categoryName": "Women's Heels"
       },
       {
         "categoryCode": "MAN_TOP_TSH",
-        "categoryName": "Herr T-shirts & Tanktops"
+        "categoryName": "Men's T-shirts & Tank Tops"
       },
       {
         "categoryCode": "MAN_TOP_SHT",
-        "categoryName": "Herr Skjortor Casual"
+        "categoryName": "Men's Casual Shirts"
       },
       {
         "categoryCode": "MAN_TOP_SHT_BUS",
-        "categoryName": "Herr Skjortor Business"
+        "categoryName": "Men's Business Shirts"
       },
       {
         "categoryCode": "MAN_BOT_JNS",
-        "categoryName": "Herr Jeans"
+        "categoryName": "Men's Jeans"
       },
       {
         "categoryCode": "MAN_BOT_TRS",
-        "categoryName": "Herr Byxor & Chinos"
+        "categoryName": "Men's Trousers & Chinos"
       },
       {
         "categoryCode": "MAN_OUT_JCK",
-        "categoryName": "Herr Jackor & V\u00e4star"
+        "categoryName": "Men's Jackets & Vests"
       },
       {
         "categoryCode": "MAN_SWT_HOO",
-        "categoryName": "Herr Hoodies & Sweatshirts"
+        "categoryName": "Men's Hoodies & Sweatshirts"
       },
       {
         "categoryCode": "MAN_ACC_BEL",
-        "categoryName": "Herr B\u00e4lten & H\u00e4ngslen"
+        "categoryName": "Men's Belts & Suspenders"
       },
       {
         "categoryCode": "MAN_SHO_SNK",
-        "categoryName": "Herr Sneakers & Sportskor"
+        "categoryName": "Men's Sneakers & Sports Shoes"
       },
       {
         "categoryCode": "MAN_SHO_FORMAL",
-        "categoryName": "Herr Finskor"
+        "categoryName": "Men's Dress Shoes"
       },
       {
         "categoryCode": "KID_GIR_28_TOP",
-        "categoryName": "Flicka Toppar (2-8 \u00e5r)"
+        "categoryName": "Girls' Tops (2-8 Years)"
       },
       {
         "categoryCode": "KID_BOY_914_BOT",
-        "categoryName": "Pojke Byxor (9-14 \u00e5r)"
+        "categoryName": "Boys' Trousers (9-14 Years)"
       },
       {
         "categoryCode": "KID_UNI_OUT",
-        "categoryName": "Barn Ytterkl\u00e4der Unisex"
+        "categoryName": "Kids' Unisex Outerwear"
       },
       {
         "categoryCode": "KID_NEW_09_ALL",
-        "categoryName": "Nyf\u00f6dd Allt-i-ett (0-9 m\u00e5n)"
+        "categoryName": "Newborn All-in-Ones (0-9 Months)"
       },
       {
         "categoryCode": "DIV_BAS_TSH_UNI",
-        "categoryName": "Basics T-shirts Unisex"
+        "categoryName": "Basics Unisex T-shirts"
       },
       {
         "categoryCode": "DIV_SWM_WOM",
-        "categoryName": "Badkl\u00e4der Dam"
+        "categoryName": "Women's Swimwear"
       },
       {
         "categoryCode": "DIV_SWM_MAN",
-        "categoryName": "Badkl\u00e4der Herr"
-      },
-      {
-        "categoryCode": "DIV_ACC_HAT_ALL",
-        "categoryName": "Accessoarer Hattar & M\u00f6ssor Alla"
+        "categoryName": "Men's Swimwear"
       },
       {
         "categoryCode": "MAT_DRE",
-        "categoryName": "Mamma Kl\u00e4nningar"
+        "categoryName": "Maternity Dresses"
       },
       {
         "categoryCode": "SPO_WOM_TIG",
-        "categoryName": "Sport Dam Tights & Leggings"
+        "categoryName": "Women's Sports Tights & Leggings"
       },
       {
         "categoryCode": "SPO_MAN_TOP_RUN",
-        "categoryName": "Sport Herr L\u00f6partoppar"
+        "categoryName": "Men's Sports Running Tops"
       }
     ]
   },
@@ -4410,336 +4167,216 @@
   },
   "Offer": {
     "offerCode": [
-      "SOMMARREA24",
-      "NYMEDLEM10",
-      "FRIFRAKT700",
-      "HELGKUPONG15",
-      "STUDENTRABATT50",
-      "KLUBBDAGAR25",
-      "VINTERDEAL200",
-      "BLIXTREA48H",
-      "EXTRA50KR",
-      "BL\u00c5M\u00c5NDAGSPECIAL",
-      "MELLANDAGSREA50",
-      "P\u00c5SKERBJUDANDE",
-      "MEMBERWEEKSE",
-      "ONLINEEXKLUSIVT",
-      "APPKOD2024",
-      "F\u00d6DELSEDAGSPRESENT",
-      "STILSPARARE",
-      "TRENDVARNING30",
-      "BARNKL\u00c4DER100KR",
-      "HEMINREDNING20",
-      "BASPLAGGMIX",
-      "JEANSKAMPANJ",
-      "ACCESSOARFYND",
-      "UTVALDABITAR10",
-      "SISTACHANSENNU",
-      "SLUTREAUPPTILL70",
-      "GRATISLEVERANSPLUS",
-      "2FOR1STICKAT",
-      "3FOR2STRUMPOR",
-      "HANDLAF\u00d6R500F\u00c550",
-      "SPARASTORTSE",
-      "EXKLUSIVTF\u00d6R DIG",
-      "MODEM\u00c5STENNU",
-      "H\u00d6STFAVORITER15",
-      "V\u00c5RNYHETER2024",
-      "DAGENSDEALSE"
+      "SUMMERSALE24",
+      "NEWMEMBER10",
+      "FREESHIP700",
+      "WEEKENDCOUPON15",
+      "STUDENTDISCOUNT50",
+      "CLUBDAYS25",
+      "WINTERDEAL200",
+      "FLASHSALE48H",
+      "EXTRA50SEK",
+      "BLUEMONDAYSPECIAL",
+      "BOXINGDAYSALE50",
+      "EASTEROFFER",     
+      "ONLINEEXCLUSIVE",      
+      "BIRTHDAYGIFT",
+      "STYLESAVER",
+      "JEANSCAMPAIGN",
+      "ACCESSORYBARGAIN",
+      "FINALSALEUPTO70",
+      "FREEDELIVERYPLUS",
+      "SAVEBIG",
+      "EXCLUSIVEFORYOU"
     ]
   },
   "PriceStrategy": {
     "_value_groups_": [
       {
         "priceStrategy": "Premium",
-        "strategyName": "Exklusiv Kollektion Priss\u00e4ttning",
-        "strategyDescription": "Priss\u00e4ttning f\u00f6r high-end, designsamarbeten och begr\u00e4nsade upplagor inom den svenska marknaden."
+        "strategyName": "Exclusive Collection Pricing",
+        "strategyDescription": "Pricing for high-end, design collaborations, and limited editions within the Swedish market."
       },
       {
         "priceStrategy": "Value",
-        "strategyName": "Basgarderob V\u00e4rdepris",
-        "strategyDescription": "Konkurrenskraftiga priser f\u00f6r vardagsbasplagg, anpassade f\u00f6r svenska pl\u00e5nb\u00f6cker."
+        "strategyName": "Basic Wardrobe Value Price",
+        "strategyDescription": "Competitive prices for everyday basic garments, adapted for Swedish wallets."
       },
       {
         "priceStrategy": "Promotional",
-        "strategyName": "S\u00e4songsrea Strategi SE",
-        "strategyDescription": "Tidsbegr\u00e4nsade rabatter (t.ex. Sommarrea, Mellandagsrea) f\u00f6r att driva f\u00f6rs\u00e4ljning i Sverige."
+        "strategyName": "Seasonal Sale Strategy",
+        "strategyDescription": "Time-limited discounts (e.g., Summer Sale, Boxing Day Sale) to drive sales in Sweden."
       },
       {
         "priceStrategy": "Penetration",
-        "strategyName": "Ny Produktlinje Introduktion SE",
-        "strategyDescription": "Initialt l\u00e4gre priser vid lansering av nya produktkoncept p\u00e5 den svenska marknaden."
+        "strategyName": "New Product Line Introduction",
+        "strategyDescription": "Initially lower prices at the launch of new product concepts on the Swedish market."
       },
       {
         "priceStrategy": "Skimming",
-        "strategyName": "Trendplagg Lanseringspris SE",
-        "strategyDescription": "H\u00f6gre initialpris f\u00f6r mycket eftertraktade modeplagg vid lansering i Sverige."
+        "strategyName": "Trend Garment Launch Price",
+        "strategyDescription": "Higher initial price for highly sought-after fashion garments at launch in Sweden."
       },
       {
         "priceStrategy": "Competitive",
-        "strategyName": "Marknadsanpassad Priss\u00e4ttning Sverige",
-        "strategyDescription": "Priser satta i linje med eller strax under huvudkonkurrenter p\u00e5 den svenska kl\u00e4dmarknaden."
+        "strategyName": "Market-Adapted Pricing Sweden",
+        "strategyDescription": "Prices set in line with or just below main competitors in the Swedish clothing market."
       },
       {
         "priceStrategy": "Bundle",
-        "strategyName": "Paketpris Erbjudande SE",
-        "strategyDescription": "Rabatterat pris vid k\u00f6p av flera matchande artiklar, t.ex. '3 f\u00f6r 2' p\u00e5 basplagg."
-      },
-      {
-        "priceStrategy": "LossLeader",
-        "strategyName": "Lockpris Produkt Veckans Deal",
-        "strategyDescription": "Utvalda popul\u00e4ra produkter prissatta mycket l\u00e5gt f\u00f6r att locka kunder till svenska butiker och webbplatsen."
+        "strategyName": "Bundle Price Offer",
+        "strategyDescription": "Discounted price when purchasing several matching items, e.g., '3 for 2' on basic garments."
       },
       {
         "priceStrategy": "Dynamic",
-        "strategyName": "Dynamisk Online Priss\u00e4ttning SE",
-        "strategyDescription": "Priser online justeras i realtid baserat p\u00e5 efterfr\u00e5gan, lagerniv\u00e5er och konkurrentpriser i Sverige."
-      },
-      {
-        "priceStrategy": "Psychological",
-        "strategyName": "Prispunktstrategi (X9 kr)",
-        "strategyDescription": "Priser som slutar p\u00e5 9 kr (t.ex. 199 kr, 249 kr) f\u00f6r psykologisk effekt p\u00e5 svenska konsumenter."
+        "strategyName": "Dynamic Online Pricing",
+        "strategyDescription": "Online prices are adjusted in real-time based on demand, stock levels, and competitor prices in Sweden."
       },
       {
         "priceStrategy": "CostPlus",
-        "strategyName": "Kostnad-Plus Marginal Standard",
-        "strategyDescription": "Pris baserat p\u00e5 produktionskostnad plus en f\u00f6rutbest\u00e4md marginal f\u00f6r standardkollektioner."
+        "strategyName": "Cost-Plus Margin Standard",
+        "strategyDescription": "Price based on production cost plus a predetermined margin for standard collections."
       },
       {
         "priceStrategy": "Tiered",
-        "strategyName": "Medlemsniv\u00e5 Priss\u00e4ttning SE",
-        "strategyDescription": "Olika priser eller exklusiva rabatter baserat p\u00e5 kundens medlemsniv\u00e5 i lojalitetsprogrammet i Sverige."
+        "strategyName": "Membership Level Pricing",
+        "strategyDescription": "Different prices or exclusive discounts based on the customer's membership level in the loyalty program in Sweden."
       },
       {
         "priceStrategy": "Clearance",
-        "strategyName": "Slutf\u00f6rs\u00e4ljning Utg\u00e5ende Sortiment SE",
-        "strategyDescription": "Kraftigt reducerade priser f\u00f6r att s\u00e4lja ut gamla kollektioner och enstaka storlekar i Sverige."
-      },
-      {
-        "priceStrategy": "Geographic",
-        "strategyName": "Storstad vs Landsbygd Prisdiff.",
-        "strategyDescription": "Mindre prisjusteringar kan f\u00f6rekomma mellan storstadsbutiker och butiker i mindre orter i Sverige."
+        "strategyName": "Clearance Sale Discontinued Assortment",
+        "strategyDescription": "Heavily reduced prices to sell out old collections and single sizes in Sweden."
       },
       {
         "priceStrategy": "FreemiumUpgrade",
-        "strategyName": "Baslojalitet med Premiumf\u00f6rm\u00e5ner",
-        "strategyDescription": "Gratis medlemskap med m\u00f6jlighet att l\u00e5sa upp premiumf\u00f6rm\u00e5ner mot en avgift eller h\u00f6gre spend."
-      },
-      {
-        "priceStrategy": "Subscription",
-        "strategyName": "Stilbox Prenumeration SE (Pilot)",
-        "strategyDescription": "Priss\u00e4ttning f\u00f6r en m\u00f6jlig framtida prenumerationstj\u00e4nst p\u00e5 utvalda kl\u00e4dpaket i Sverige."
+        "strategyName": "Basic Loyalty with Premium Benefits",
+        "strategyDescription": "Free membership with the option to unlock premium benefits for a fee or higher spend."
       },
       {
         "priceStrategy": "HighLow",
-        "strategyName": "Kampanjdriven Priss\u00e4ttning SE",
-        "strategyDescription": "Regelbundna kampanjer och erbjudanden med h\u00f6gre standardpriser emellan\u00e5t i Sverige."
+        "strategyName": "Campaign-Driven Pricing",
+        "strategyDescription": "Regular campaigns and offers with higher standard prices in between in Sweden."
       },
       {
         "priceStrategy": "EDLP",
-        "strategyName": "Alltid Bra Pris (ABP) p\u00e5 Basics",
-        "strategyDescription": "Konsekvent rimliga priser p\u00e5 utvalda baskl\u00e4der utan frekventa specifika reor p\u00e5 dessa."
+        "strategyName": "Always Good Price on Basics",
+        "strategyDescription": "Consistently reasonable prices on selected basic garments without frequent specific sales on them."
       },
       {
         "priceStrategy": "Segmented",
-        "strategyName": "Student & Ungdomsrabatt SE",
-        "strategyDescription": "S\u00e4rskilda permanenta rabatter f\u00f6r studenter och ibland ungdomar i Sverige."
+        "strategyName": "Student & Youth Discount",
+        "strategyDescription": "Special permanent discounts for students and sometimes youths in Sweden."
       },
       {
         "priceStrategy": "ValueAdded",
-        "strategyName": "Personlig Shopping Service Pris",
-        "strategyDescription": "Eventuellt h\u00f6gre pris eller avgift f\u00f6r tj\u00e4nster som personlig styling i flaggskeppsbutiker."
-      },
-      {
-        "priceStrategy": "LimitedEdition",
-        "strategyName": "Begr\u00e4nsad Upplaga Designsarb. Pris",
-        "strategyDescription": "Premiumpris f\u00f6r exklusiva designsamarbeten i begr\u00e4nsad upplaga."
+        "strategyName": "Personal Shopping Service Price",
+        "strategyDescription": "Possibly higher price or fee for services like personal styling in flagship stores."
       },
       {
         "priceStrategy": "SustainablePremium",
-        "strategyName": "Conscious Collection Prisstrategi",
-        "strategyDescription": "N\u00e5got h\u00f6gre pris f\u00f6r produkter i 'Conscious Collection' som reflekterar h\u00e5llbarhetskostnader."
+        "strategyName": "Conscious Collection Price Strategy",
+        "strategyDescription": "Slightly higher price for products in the 'Conscious Collection' reflecting sustainability costs."
       },
       {
         "priceStrategy": "OutletPricing",
-        "strategyName": "Outletbutik Priss\u00e4ttning (extern)",
-        "strategyDescription": "Specifikt reducerade priser f\u00f6r dedikerade outletbutiker, om s\u00e5dana finns."
+        "strategyName": "Outlet Store Pricing",
+        "strategyDescription": "Specifically reduced prices for dedicated outlet stores, if any."
       },
       {
         "priceStrategy": "VolumeDiscount",
-        "strategyName": "K\u00f6p Fler Spara Mer (Underkl\u00e4der)",
-        "strategyDescription": "L\u00e4gre enhetspris vid k\u00f6p av flera enheter, t.ex. '3 f\u00f6r 2' p\u00e5 strumpor eller underkl\u00e4der."
+        "strategyName": "Buy More Save More",
+        "strategyDescription": "Lower unit price when purchasing multiple units, e.g., '3 for 2' on socks or underwear."
       },
       {
         "priceStrategy": "FlashSale",
-        "strategyName": "Online Blixtrea 24h",
-        "strategyDescription": "Mycket korta och djupa rabatter online f\u00f6r att skapa br\u00e5dska och driva trafik."
-      },
-      {
-        "priceStrategy": "AnchorPricing",
-        "strategyName": "Referenspriss\u00e4ttning Premiumlinje",
-        "strategyDescription": "Presentera en dyrare premiumlinje f\u00f6r att f\u00e5 standardlinjen att verka mer prisv\u00e4rd."
-      },
-      {
-        "priceStrategy": "FairWear",
-        "strategyName": "R\u00e4ttvis Produktion P\u00e5slag",
-        "strategyDescription": "Priss\u00e4ttning som kan inkludera ett mindre p\u00e5slag f\u00f6r att t\u00e4cka kostnader f\u00f6r etisk produktion."
+        "strategyName": "Online Flash Sale",
+        "strategyDescription": "Very short and deep discounts online to create urgency and drive traffic."
       },
       {
         "priceStrategy": "PersonalizedDiscount",
-        "strategyName": "Individanpassade Medlemserbjudanden",
-        "strategyDescription": "Rabatter skr\u00e4ddarsydda f\u00f6r enskilda medlemmar baserat p\u00e5 k\u00f6phistorik och preferenser."
+        "strategyName": "Individualized Member Offers",
+        "strategyDescription": "Discounts tailored for individual members based on purchase history and preferences."
       },
       {
         "priceStrategy": "EarlyAccess",
-        "strategyName": "Medlemsf\u00f6rtur Rea Pris",
-        "strategyDescription": "Medlemmar f\u00e5r tillg\u00e5ng till rean och dess priser f\u00f6re allm\u00e4nheten."
+        "strategyName": "Member Priority Sale Price",
+        "strategyDescription": "Members get access to the sale and its prices before the general public."
       },
       {
         "priceStrategy": "LastChance",
-        "strategyName": "Sista Chansen Prisreduktion",
-        "strategyDescription": "Ytterligare prisneds\u00e4ttningar p\u00e5 varor som \u00e4r p\u00e5 v\u00e4g att utg\u00e5 helt."
-      },
-      {
-        "priceStrategy": "ConsciousChoiceHighlight",
-        "strategyName": "Pris Medvetet Val",
-        "strategyDescription": "Priss\u00e4ttning som tydligt kommunicerar merv\u00e4rdet av h\u00e5llbara produkter."
-      },
-      {
-        "priceStrategy": "LocalDesignerCollab",
-        "strategyName": "Svenskt Designsamb. Specialpris",
-        "strategyDescription": "Unik priss\u00e4ttning f\u00f6r kollektioner skapade med lokala svenska designers."
+        "strategyName": "Last Chance Price Reduction",
+        "strategyDescription": "Additional price reductions on items that are about to be completely discontinued."
       },
       {
         "priceStrategy": "AppExclusive",
-        "strategyName": "App-Exklusivt Erbjudande",
-        "strategyDescription": "S\u00e4rskilda priser eller rabatter endast tillg\u00e4ngliga via mobilappen i Sverige."
-      },
-      {
-        "priceStrategy": "OnlineReturnFeeAdjust",
-        "strategyName": "Returavgiftsjusterat Pris Online",
-        "strategyDescription": "Priss\u00e4ttning som kan ta h\u00e4nsyn till kostnaden f\u00f6r online-returer."
+        "strategyName": "App-Exclusive Offer",
+        "strategyDescription": "Special prices or discounts only available via the mobile app in Sweden."
       },
       {
         "priceStrategy": "ClickCollectIncentive",
-        "strategyName": "H\u00e4mta i Butik Rabatt",
-        "strategyDescription": "Mindre rabatt eller incitament f\u00f6r kunder som v\u00e4ljer att h\u00e4mta onlinebest\u00e4llningar i butik."
+        "strategyName": "Pick Up In Store Discount",
+        "strategyDescription": "Minor discount or incentive for customers who choose to pick up online orders in store."
       }
     ]
   },
   "ItemInductionEvent": {
     "inductionInitiatedBy": [
-      "Svenska Ink\u00f6psteamet",
+      "Swedish Purchasing Team",
       "Global Buying Office (GBO)",
-      "Automatiserat P\u00e5fyllnadssystem (APS)",
-      "Butikschef Stockholm Flaggskepp",
-      "E-handelsplattform Trigger (Nytt In)",
+      "Automated Replenishment System (ARS)",     
+      "E-commerce Platform Trigger",
       "Supply Chain Planning Nordics",
-      "Produktutvecklingsteamet SE",
-      "Regional Allokeringsansvarig SE",
-      "Lagerstyrningssystem (WMS)",
-      "S\u00e4songs\u00f6verg\u00e5ngsprotokoll V\u00e5r/Sommar",
-      "Lanseringsplan Ny Kollektion",
-      "Marknadskampanjbehov (Sverige)",
-      "Leverant\u00f6rsdatafl\u00f6de (EDI)",
-      "Manuell \u00d6verstyrning av Admin (SE)",
-      "Chef Damkl\u00e4der Skandinavien",
-      "Chef Herrkl\u00e4der Europa Nord",
-      "Planerare Barnkollektion SE",
-      "Accessoaravdelningen Centralt",
-      "Kategorichef Heminredning SE",
-      "Logistikpartner Avisering (Inkommande)",
-      "Kvalitetskontroll \u00c5terkoppling (Retur)",
-      "Kunddriven Efterfr\u00e5gesignal (Online)",
-      "L\u00e5gr\u00f6rlig Produkt Flaggning (System)",
-      "H\u00f6gr\u00f6rlig Produkt Alert (System)",
-      "Systemuppdatering Batchk\u00f6rning (Natt)",
-      "Ink\u00f6psassistent Uppgift (Stockholm)",
-      "Prognosjustering Trigger (S\u00e4ljdata)",
-      "Retur till Leverant\u00f6r Process (RTV)",
-      "Butiks\u00f6verf\u00f6ring Beg\u00e4ran (Malm\u00f6 till Ume\u00e5)",
-      "Konsignationsavtal Initiering",
-      "Varuprov Godk\u00e4nnandeprocess",
-      "Visuell Merchandising Uppdateringsbehov",
-      "E-com Content Team Produktbehov",
-      "H\u00e5llbarhetsinitiativ Lagerp\u00e5fyllnad",
-      "Limited Edition Koordinering"
+      "Product Development Team",
+      "Regional Allocation Manager",
+      "Warehouse Management System (WMS)",
+      "Marketing Campaign Need",
+      "Supplier Data Flow (EDI)",
+      "Planner Kids Collection",
+      "Accessories Department Central",
+      "Logistics Partner Notification",
+      "Customer-Driven Demand Signal",
+      "Purchasing Assistant Task",
+      "Forecast Adjustment Trigger",
+      "Return to Vendor Process (RTV)",
+      "Store Transfer Request",
+      "Consignment Agreement Initiation",
+      "Sample Approval Process",
+      "Visual Merchandising Update Need",
+      "E-com Content Team Product Need",
+      "Sustainability Initiative Stock Replenishment",
+      "Limited Edition Coordination"
     ],
     "inductionMethod": [
-      "Manuell Produktregistrering (Webbportal)",
-      "EDIFACT ORDER (Ink\u00f6psorder)",
-      "Automatiserad API Integration (Leverant\u00f6r)",
-      "Excel Massuppladdning (.xlsx format)",
-      "Intern System\u00f6verf\u00f6ring (PIM till Web)",
-      "Leverant\u00f6rsportal Produktinmatning",
-      "Streckkodsinskanning Vid Ankomst",
-      "Mobilapp F\u00e4ltregistrering (Lager)",
-      "PLM System Synkronisering (Design till Prod)",
-      "ERP Master Data Skapande (SAP)",
-      "Automatiserad P\u00e5fyllnadsalgoritm (RELEX)",
-      "Dra-och-sl\u00e4pp Gr\u00e4nssnitt (Adminverktyg)",
-      "R\u00f6ststyrd Inmatning (Pilotprojekt Lager)",
-      "XML Datafl\u00f6de (Partnerintegration)",
-      "JSON API Endpoint (Ny Produkt)",
-      "Flatfil Import (.csv standardformat)",
-      "Direkt Databasuppdatering (Systemadmin)",
-      "Tredjeparts Integrationsplattform (MuleSoft)",
-      "Varuplaneringsprogram Output (TXT)",
-      "Brygga mot \u00c4ldre System (AS400)",
-      "Centraliserad Induktionshubb (Europa)",
-      "Decentraliserad Butiksinduktion (Vid behov)",
-      "Bildigenk\u00e4nning Produktmatchning (Test)",
-      "RFID Taggning och Registrering",
+      "Manual Product Registration (Web Portal)",
+      "EDIFACT ORDER (Purchase Order)",
+      "Automated API Integration (Supplier)",
+      "Excel Bulk Upload (.xlsx format)",
+      "Internal System Transfer (PIM to Web)",
+      "Supplier Portal Product Entry",
+      "Barcode Scanning Upon Arrival",
+      "Mobile App Field Registration (Warehouse)",
+      "PLM System Synchronization (Design to Prod)",
+      "ERP Master Data Creation (SAP)",
+      "Automated Replenishment Algorithm (RELEX)",
+      "Drag-and-Drop Interface (Admin Tool)",
+      "Voice-Controlled Entry (Warehouse Pilot Project)",
+      "XML Data Flow (Partner Integration)",
+      "JSON API Endpoint (New Product)",
+      "Flat File Import (.csv standard format)",
+      "Direct Database Update (System Admin)",
+      "Third-Party Integration Platform (MuleSoft)",
+      "Merchandise Planning Program Output (TXT)",
+      "Centralized Induction Hub (Europe)",
+      "Decentralized Store Induction (As Needed)",
+      "RFID Tagging and Registration",
       "Product Information Management (PIM) System Update",
-      "Sortimentsplan Exekvering (Systemst\u00f6d)",
-      "F\u00f6rhandsorderl\u00e4ggning (S\u00e4song)",
-      "Realtidsjustering Verktyg (S\u00e4song)",
-      "Snabbrespons Order (QRO)",
-      "Testprodukt Induktionsprotokoll (Begr\u00e4nsat antal)",
-      "Varuprovshanteringssystem (Digitalt)",
-      "Batchimport Skript (Schemalagt)",
-      "Realtids Lageruppdatering (Omnikanal)",
-      "Kanal\u00f6verskridande Lagersynk (Webb/Butik)",
-      "Dropship Leverant\u00f6rsfl\u00f6de (Automatiserat)"
-    ]
-  },
-  "PromotionalPrice": {
-    "promotionalPrice": [
-      "49.90 SEK",
-      "79 SEK",
-      "99 SEK",
-      "129.50 SEK",
-      "149 SEK",
-      "179 SEK",
-      "199 SEK",
-      "249 SEK",
-      "299 SEK",
-      "349 SEK",
-      "399 SEK",
-      "449 SEK",
-      "499 SEK",
-      "599 SEK",
-      "699 SEK",
-      "2 for 150 SEK",
-      "3 for 250 SEK",
-      "Buy 1 Get 1 50% Off",
-      "20% Off All Dresses",
-      "30% Off Outerwear",
-      "Special Price: 89.90 SEK",
-      "Limited Time: 119 SEK",
-      "Online Exclusive: 189 SEK",
-      "Weekend Deal: 279 SEK",
-      "Flash Sale: 99.90 SEK",
-      "Student Discount: 10% Extra",
-      "Loyalty Price: 139 SEK",
-      "Clearance: 39 SEK",
-      "Final Sale: 69 SEK",
-      "Bundle Price: T-shirt + Jeans 499 SEK",
-      "New Arrival Intro: 229 SEK",
-      "Online Only: 79.50 SEK",
-      "Store Special: 169 SEK",
-      "Manager's Special: 329 SEK",
-      "Introductory Offer: 15% off first purchase"
+      "Assortment Plan Execution (System Support)",
+      "Test Product Induction Protocol (Limited Quantity)",
+      "Sample Management System (Digital)",
+      "Batch Import Script (Scheduled)",
+      "Real-Time Inventory Update (Omnichannel)",
+      "Cross-Channel Inventory Sync (Web/Store)",
+      "Dropship Supplier Flow (Automated)"
     ]
   },
   "PlanningReactionEvent": {
@@ -4747,10 +4384,6 @@
       {
         "reactionType": "Price Adjustment",
         "reactionReason": "End-of-season clearance for Winter Collection '23"
-      },
-      {
-        "reactionType": "Inventory Transfer",
-        "reactionReason": "High demand for 'UrbanKnit' sweaters in S\u00f6dermalm store, low in Kista"
       },
       {
         "reactionType": "Promotional Campaign Launch",
@@ -4810,7 +4443,7 @@
       },
       {
         "reactionType": "Inventory Transfer",
-        "reactionReason": "Overstock of 'Men's Winter Jackets' in Malm\u00f6, need space for new arrivals"
+        "reactionReason": "Overstock of 'Men's Winter Jackets' in Malmo, need space for new arrivals"
       },
       {
         "reactionType": "Promotional Campaign Launch",
@@ -4956,9 +4589,9 @@
       "Quality Check Pending",
       "Awaiting Shipment Advice",
       "In Transit to Hub SE",
-      "Customs Cleared - Sweden",
-      "At Local Distribution Center (Stockholm)",
-      "Scheduled for Store Delivery (Malm\u00f6)",
+      "Customs Cleared",
+      "At Local Distribution Center",
+      "Scheduled for Store Delivery",
       "Rejected - Quality Issue by QC",
       "Pending Payment Authorization",
       "Dispute Raised - Quantity Mismatch",
@@ -4968,8 +4601,7 @@
       "Payment Confirmed by Finance",
       "Consolidated for Group Shipment",
       "Split Shipment - Order Alpha",
-      "Backordered - Item 'EcoTee M'",
-      "Confirmed with ETA 2024-08-15",
+      "Backordered",
       "Ready for Pickup (Supplier Warehouse)",
       "Pending Export Customs Documentation",
       "Shipment Delayed - Carrier Congestion",
@@ -5285,7 +4917,6 @@
       "Premium Outlet",
       "Digital-First Store",
       "Sustainable Concept Store",
-      "Personal Shopping Suite",
       "Kids Only Store",
       "Menswear Focus",
       "Womenswear Focus",
@@ -5293,8 +4924,6 @@
       "Home Goods Section",
       "Click & Collect Point",
       "Factory Outlet",
-      "Mobile Van Store",
-      "Seasonal Pop-Up",
       "Airport Store",
       "Train Station Kiosk"
     ]
@@ -5340,20 +4969,6 @@
   },
   "CampaignInteraction": {
     "_value_groups_": [
-      {
-        "utmCampaign": "ss24_launch_promo",
-        "utmContent": "hero_banner_main",
-        "utmMedium": "cpc",
-        "utmSource": "google_ads",
-        "utmTerm": "womens_linen_dresses"
-      },
-      {
-        "utmCampaign": "aw24_preview_signup",
-        "utmContent": "email_cta_button",
-        "utmMedium": "email",
-        "utmSource": "klaviyo_newsletter",
-        "utmTerm": "mens_chino_shorts"
-      },
       {
         "utmCampaign": "summer_sale_earlybird",
         "utmContent": "ig_story_swipeup",
@@ -5411,7 +5026,7 @@
         "utmTerm": "influencer_code_STYLE15"
       },
       {
-        "utmCampaign": "mens_new_arrivals_june",
+        "utmCampaign": "mens_new_arrivals",
         "utmContent": "push_notification_alert",
         "utmMedium": "push_notification",
         "utmSource": "internal_app_promo",
@@ -5509,7 +5124,7 @@
         "utmTerm": "athleisure_sets_promo"
       },
       {
-        "utmCampaign": "final_clearance_ss23",
+        "utmCampaign": "final_clearance",
         "utmContent": "store_locator_cta",
         "utmMedium": "search_organic",
         "utmSource": "organic_google_search",
@@ -5572,7 +5187,7 @@
         "utmTerm": "win_shopping_spree_stockholm"
       },
       {
-        "utmCampaign": "new_store_opening_stockholm",
+        "utmCampaign": "new_store_opening",
         "utmContent": "native_ad_article",
         "utmMedium": "native_advertising",
         "utmSource": "local_newspaper_ad",
@@ -5628,41 +5243,31 @@
   },
   "AssortmentPlan": {
     "assortmentSeason": [
-      "Spring/Summer 2024",
-      "Autumn/Winter 2024",
-      "Pre-Fall 2024",
-      "Resort 2025",
-      "High Summer 2024",
-      "Holiday Collection 2024",
-      "Early Spring 2025",
-      "Transitional 2024",
-      "Capsule Wardrobe SS24",
-      "Core Basics AW24",
-      "Limited Edition Q3 2024",
-      "Back to School 2024",
-      "Mid-Season Drops AW24",
-      "Chinese New Year 2025",
-      "Ramadan Collection 2025",
-      "Festival Edit SS24",
-      "Cruise Line 2024",
-      "Ski Season AW24/25",
-      "Bridal Collection 2024",
-      "Graduation Styles 2024",
-      "Workwear Refresh 2024",
-      "Loungewear Focus AW24",
-      "Denim Edit SS24",
-      "Outerwear Preview AW24",
-      "Sustainable Choices SS24",
-      "Essentials Range 2024",
-      "Trend Focus Q2 2024",
-      "Summer Flash Sale 2024",
-      "Winter Warmers 2024",
-      "End of Season SS24",
-      "New Year Sparkle 2025",
-      "Valentine's Day Edit 2025",
-      "Easter Pastels 2025",
-      "Athleisure Drop Q3 2024",
-      "Formal Wear Update 2024"
+      "Spring/Summer",
+      "Autumn/Winter",
+      "Pre-Fall",
+      "High Summer",
+      "Holiday Collection",
+      "Early Spring",
+      "Back to School",
+      "Mid-Season Drops",
+      "Chinese New Year",
+      "Bridal Collection",
+      "Graduation Styles",
+      "Workwear Refresh",
+      "Loungewear Focus",
+      "Outerwear Preview",
+      "Sustainable Choices",
+      "Essentials Range",
+      "Trend Focus",
+      "Summer Flash Sale",
+      "Winter Warmers",
+      "End of Season",
+      "New Year Sparkle",
+      "Valentine's Day",
+      "Easter Pastels",
+      "Athleisure Drop",
+      "Formal Wear Update"
     ]
   },
   "StyleColor": {
@@ -5809,80 +5414,292 @@
       }
     ]
   },
+  "Scenario": {
+    "_value_groups_": [
+      {
+        "scenarioName": "HighSummer_Heatwave",
+        "scenarioObjective": "Assess impact of prolonged heatwave on summer collection sales."
+      },
+      {
+        "scenarioName": "EarlyColdSnap_Knitwear",
+        "scenarioObjective": "Evaluate knitwear demand if autumn cold arrives 3 weeks early."
+      },
+      {
+        "scenarioName": "DenimLaunch_Influencer",
+        "scenarioObjective": "Measure ROI of influencer marketing for new SS25 denim line."
+      },
+      {
+        "scenarioName": "BlackFriday_DeepDiscount",
+        "scenarioObjective": "Simulate profit impact of a 40% Black Friday discount storewide."
+      },
+      {
+        "scenarioName": "CompetitorSale_Response",
+        "scenarioObjective": "Model optimal response to competitor's unexpected 30% off sale."
+      },
+      {
+        "scenarioName": "LogisticsDisruption_Ports",
+        "scenarioObjective": "Analyze inventory risk due to potential 2-week port delays."
+      },
+      {
+        "scenarioName": "SustainableCotton_Premium",
+        "scenarioObjective": "Test price elasticity for a new premium sustainable cotton range."
+      },
+      {
+        "scenarioName": "StoreOpening_Malmo",
+        "scenarioObjective": "Forecast sales uplift and cannibalization from new Malm\u00f6 store."
+      },
+      {
+        "scenarioName": "OnlineAdSpend_Increase",
+        "scenarioObjective": "Project conversion rate change from a 20% increase in online ad spend."
+      },
+      {
+        "scenarioName": "EconomicDownturn_Luxury",
+        "scenarioObjective": "Estimate sales decline in luxury segment during a mild recession."
+      },
+      {
+        "scenarioName": "NewTech_VirtualTryOn",
+        "scenarioObjective": "Evaluate customer adoption and sales impact of virtual try-on tech."
+      },
+      {
+        "scenarioName": "ReturnRate_Increase",
+        "scenarioObjective": "Analyze profit impact if online return rates increase by 5%."
+      },
+      {
+        "scenarioName": "Weather_UnseasonalRain",
+        "scenarioObjective": "Assess demand shift for rainwear vs. summer wear due to rainy July."
+      },
+      {
+        "scenarioName": "SupplierPrice_Increase",
+        "scenarioObjective": "Model impact of a 5% supplier price increase on COGS and retail price."
+      },
+      {
+        "scenarioName": "LoyaltyProgram_Revamp",
+        "scenarioObjective": "Forecast impact of new loyalty program tiers on customer retention."
+      },
+      {
+        "scenarioName": "Kids_BackToSchool",
+        "scenarioObjective": "Optimize inventory for Back-to-School campaign for kids' apparel."
+      },
+      {
+        "scenarioName": "FlashSale_TShirts",
+        "scenarioObjective": "Determine optimal duration and discount for a t-shirt flash sale."
+      },
+      {
+        "scenarioName": "VisualMerch_Overhaul",
+        "scenarioObjective": "Measure impact of new VM guidelines on AOV in flagship stores."
+      },
+      {
+        "scenarioName": "EthicalSourcing_Campaign",
+        "scenarioObjective": "Assess brand perception and sales lift from ethical sourcing campaign."
+      },
+      {
+        "scenarioName": "ClickCollect_Expansion",
+        "scenarioObjective": "Evaluate cost-benefit of expanding Click & Collect to 10 more stores."
+      },
+      {
+        "scenarioName": "Marketplace_Integration",
+        "scenarioObjective": "Analyze sales potential and integration costs for a new online marketplace."
+      },
+      {
+        "scenarioName": "StaffTraining_Upselling",
+        "scenarioObjective": "Measure impact of upselling training on basket size and staff performance."
+      },
+      {
+        "scenarioName": "Personalization_AI",
+        "scenarioObjective": "Test effectiveness of AI-driven product recommendations on website."
+      },
+      {
+        "scenarioName": "OutletStrategy_Review",
+        "scenarioObjective": "Review profitability and stock clearance speed of current outlet strategy."
+      },
+      {
+        "scenarioName": "PopUpStore_Gotland",
+        "scenarioObjective": "Forecast sales and brand exposure from a summer pop-up store in Gotland."
+      },
+      {
+        "scenarioName": "GiftCard_Promotion",
+        "scenarioObjective": "Assess impact of a 'Buy 500 SEK Gift Card, Get 100 SEK Extra' promotion."
+      },
+      {
+        "scenarioName": "CircularEconomy_Pilot",
+        "scenarioObjective": "Evaluate feasibility and customer interest in a clothing take-back program."
+      },
+      {
+        "scenarioName": "EnergyPrice_Impact",
+        "scenarioObjective": "Model impact of 15% energy price increase on store operational costs."
+      },
+      {
+        "scenarioName": "InfluencerFatigue_Analysis",
+        "scenarioObjective": "Analyze potential decline in influencer campaign effectiveness."
+      },
+      {
+        "scenarioName": "NewPOS_Rollout",
+        "scenarioObjective": "Simulate impact of new POS system rollout on transaction speed and errors."
+      },
+      {
+        "scenarioName": "AR_ShoppingExperience",
+        "scenarioObjective": "Assess customer engagement with a new AR mobile shopping feature."
+      },
+      {
+        "scenarioName": "Competitor_NewEntry",
+        "scenarioObjective": "Model market share impact of a new international competitor entering Sweden."
+      },
+      {
+        "scenarioName": "DataPrivacy_Changes",
+        "scenarioObjective": "Evaluate compliance costs and marketing adjustments for new data privacy laws."
+      },
+      {
+        "scenarioName": "EmployeeEngagement_Boost",
+        "scenarioObjective": "Measure impact of new employee incentive program on sales performance."
+      },
+      {
+        "scenarioName": "GlobalShipping_CostHike",
+        "scenarioObjective": "Analyze impact of a 10% increase in global shipping costs on margins."
+      }
+    ]
+  },
   "SupplierEntity": {
-    "supplierID": [
-      "SWEFAB789",
-      "EURTEX123",
-      "ASIAGMT456",
-      "AFRLEATH001",
-      "SAMKNT902",
-      "NAMACCES53",
-      "EUTRENDSET01",
-      "GLOBALSRC22",
-      "NORDPROD76",
-      "BALTICMFG34",
-      "POLTEXGRP1",
-      "ROMGARMENT8",
-      "TURKEYKNIT5",
-      "PORTDENIM11",
-      "SPAINLEATH2",
-      "ITALYLUX99",
-      "FRANCEFAB3",
-      "GERTECHTEX7",
-      "UKDESIGNCO4",
-      "BANGLADESG1",
-      "VIETNAMESEW2",
-      "CHINAFABRIC3",
-      "INDIASILK44",
-      "PAKCOTTON5",
-      "ETHIOPIALE6",
-      "MOROCCOFAB7",
-      "TUNISIAGMT8",
-      "EGYPTCOT9",
-      "MEXICOCRAFT10",
-      "BRAZILSOUR11",
-      "PERUALPACA12",
-      "COLOMDENIM13",
-      "INDOAPPAREL14",
-      "THAISEW15",
-      "MALAYFAB16"
-    ],
-    "supplierName": [
-      "Swedish Fabrics AB",
-      "EuroTextiles Consortium",
-      "Asia Garments Ltd.",
-      "African Leather Goods Plc",
-      "South American Knits Co.",
-      "North American Accessories Inc.",
-      "EU Trendsetters Group",
-      "Global Sourcing Partners",
-      "Nordic Productions ehf",
-      "Baltic Manufacturing OU",
-      "Poltex Group Sp. z o.o.",
-      "Romanian Garments SRL",
-      "Turkish Knitwear Exports",
-      "Portugal Denim Solutions Lda",
-      "Spanish Leather Crafters SA",
-      "Italian Luxury Fabrics S.p.A.",
-      "France Textiles SAS",
-      "German Technical Textiles GmbH",
-      "UK Design Collective Ltd.",
-      "Bangladesh Garments Factory Ltd.",
-      "Vietnamese Weaving Co. Ltd.",
-      "China Fabric Supply Co.",
-      "Indian Silk Emporium Pvt. Ltd.",
-      "Pakistan Cotton Mills Ltd.",
-      "Ethiopian Leather PLC",
-      "Moroccan Fabric Artisans SARL",
-      "Tunisian Garments International",
-      "Egyptian Cotton Co.",
-      "Mexican Craftsmanship Collective",
-      "Brazilian Sourcing Ltda.",
-      "Peruvian Alpaca Wool Inc.",
-      "Colombian Denim Works",
-      "Indonesian Apparel Makers",
-      "Thai Sewing Solutions",
-      "Malaysian Fabrics Bhd"
+    "_value_groups_": [
+      {
+        "supplierID": "SWEFAB789",
+        "supplierName": "Swedish Fabrics AB"
+      },
+      {
+        "supplierID": "EURTEX123",
+        "supplierName": "EuroTextiles Consortium"
+      },
+      {
+        "supplierID": "ASIAGMT456",
+        "supplierName": "Asia Garments Ltd."
+      },
+      {
+        "supplierID": "AFRLEATH001",
+        "supplierName": "African Leather Goods Plc"
+      },
+      {
+        "supplierID": "SAMKNT902",
+        "supplierName": "South American Knits Co."
+      },
+      {
+        "supplierID": "NAMACCES53",
+        "supplierName": "North American Accessories Inc."
+      },
+      {
+        "supplierID": "EUTRENDSET01",
+        "supplierName": "EU Trendsetters Group"
+      },
+      {
+        "supplierID": "GLOBALSRC22",
+        "supplierName": "Global Sourcing Partners"
+      },
+      {
+        "supplierID": "NORDPROD76",
+        "supplierName": "Nordic Productions ehf"
+      },
+      {
+        "supplierID": "BALTICMFG34",
+        "supplierName": "Baltic Manufacturing OU"
+      },
+      {
+        "supplierID": "POLTEXGRP1",
+        "supplierName": "Poltex Group Sp. z o.o."
+      },
+      {
+        "supplierID": "ROMGARMENT8",
+        "supplierName": "Romanian Garments SRL"
+      },
+      {
+        "supplierID": "TURKEYKNIT5",
+        "supplierName": "Turkish Knitwear Exports"
+      },
+      {
+        "supplierID": "PORTDENIM11",
+        "supplierName": "Portugal Denim Solutions Lda"
+      },
+      {
+        "supplierID": "SPAINLEATH2",
+        "supplierName": "Spanish Leather Crafters SA"
+      },
+      {
+        "supplierID": "ITALYLUX99",
+        "supplierName": "Italian Luxury Fabrics S.p.A."
+      },
+      {
+        "supplierID": "FRANCEFAB3",
+        "supplierName": "France Textiles SAS"
+      },
+      {
+        "supplierID": "GERTECHTEX7",
+        "supplierName": "German Technical Textiles GmbH"
+      },
+      {
+        "supplierID": "UKDESIGNCO4",
+        "supplierName": "UK Design Collective Ltd."
+      },
+      {
+        "supplierID": "BANGLADESG1",
+        "supplierName": "Bangladesh Garments Factory Ltd."
+      },
+      {
+        "supplierID": "VIETNAMESEW2",
+        "supplierName": "Vietnamese Weaving Co. Ltd."
+      },
+      {
+        "supplierID": "CHINAFABRIC3",
+        "supplierName": "China Fabric Supply Co."
+      },
+      {
+        "supplierID": "INDIASILK44",
+        "supplierName": "Indian Silk Emporium Pvt. Ltd."
+      },
+      {
+        "supplierID": "PAKCOTTON5",
+        "supplierName": "Pakistan Cotton Mills Ltd."
+      },
+      {
+        "supplierID": "ETHIOPIALE6",
+        "supplierName": "Ethiopian Leather PLC"
+      },
+      {
+        "supplierID": "MOROCCOFAB7",
+        "supplierName": "Moroccan Fabric Artisans SARL"
+      },
+      {
+        "supplierID": "TUNISIAGMT8",
+        "supplierName": "Tunisian Garments International"
+      },
+      {
+        "supplierID": "EGYPTCOT9",
+        "supplierName": "Egyptian Cotton Co."
+      },
+      {
+        "supplierID": "MEXICOCRAFT10",
+        "supplierName": "Mexican Craftsmanship Collective"
+      },
+      {
+        "supplierID": "BRAZILSOUR11",
+        "supplierName": "Brazilian Sourcing Ltda."
+      },
+      {
+        "supplierID": "PERUALPACA12",
+        "supplierName": "Peruvian Alpaca Wool Inc."
+      },
+      {
+        "supplierID": "COLOMDENIM13",
+        "supplierName": "Colombian Denim Works"
+      },
+      {
+        "supplierID": "INDOAPPAREL14",
+        "supplierName": "Indonesian Apparel Makers"
+      },
+      {
+        "supplierID": "THAISEW15",
+        "supplierName": "Thai Sewing Solutions"
+      },
+      {
+        "supplierID": "MALAYFAB16",
+        "supplierName": "Malaysian Fabrics Bhd"
+      }
     ]
   },
   "ChurnAnalysis": {
@@ -6216,7 +6033,7 @@
     "analysisNotes": [
       "Summer campaign 'Scandi Sun' increased dress sales by 18% in Stockholm stores.",
       "Influencer collaboration with 'Erik Modeblogg' drove 500+ new followers and 70 sales.",
-      "A/B test on email subject: 'Fresh Summer Styles \u2728' outperformed 'New Collection Arrived'.",
+      "A/B test on email subject: 'Fresh Summer Styles outperformed 'New Collection Arrived'.",
       "Competitor 'ModeKompaniet' launched free shipping; monitoring our cart abandonment rate.",
       "Customer feedback survey shows high demand for more sustainable activewear options.",
       "Gothenburg flagship store's new window display increased foot traffic by 9% on weekends.",
@@ -6244,7 +6061,6 @@
       "Mobile app checkout process optimization project initiated based on user feedback.",
       "Sales of formal suits continue to decline; consider shifting focus to smart casual blazers.",
       "Pop-up store in Visby during summer was highly effective for brand awareness.",
-      "Top organic search term driving traffic: '[BrandName] kl\u00e4der online Sverige'.",
       "Analysis of return data for 'Performance Fit' line indicates sizing runs small.",
       "Campaign targeting new movers in major Swedish cities with a welcome discount successful.",
       "User-generated content contest 'ShowYourStyleSE' garnered over 2000 entries.",
@@ -6262,7 +6078,6 @@
       "Premium Member Circle Stockholm",
       "Green Thread Loyalty",
       "City Fashion Pass Gothenburg",
-      "MyOutfit Perks Malm\u00f6",
       "Scandi Style Elite",
       "Conscious Choice Club SE",
       "Wardrobe Wins Rewards",
@@ -6279,7 +6094,6 @@
       "Street Smart Savings Club",
       "Classic Comfort Crew",
       "The Fashion Frontline SE",
-      "VIP Style Access Pass",
       "Sustainable Style Society",
       "Smart Shopper Rewards SE",
       "Chic Perks Sweden",
@@ -6475,41 +6289,37 @@
   },
   "PriceList": {
     "priceListCode": [
-      "SEK_STD_FY24_APPAREL_ALL",
-      "SEK_SALE_SUMMER24_WOMENS",
-      "SEK_KIDS_AUTUMN24_ORGANIC",
-      "SEK_PREMIUM_WINTER24_OUTERWEAR",
-      "SEK_OUTLET_Q3_24_NATIONAL",
-      "SEK_ONLINE_EXCLUSIVE_FY24_SHOES",
-      "SEK_LOYALTY_MEMBER_SPRING24",
+      "SEK_STD_APPAREL_ALL",
+      "SEK_SALE_SUMMER_WOMENS",
+      "SEK_KIDS_AUTUMN_ORGANIC",
+      "SEK_PREMIUM_WINTER_OUTERWEAR",
+      "SEK_OUTLET_NATIONAL",
+      "SEK_ONLINE_EXCLUSIVE_SHOES",
+      "SEK_LOYALTY_MEMBER_SPRING",
       "SEK_STAFF_DISCOUNT_ALL_TIME",
-      "SEK_B2B_CORPORATE_GIFTS_24",
-      "SEK_CAMPAIGN_HOLIDAY24_KNITWEAR",
-      "SEK_FLASH_SALE_OCT24_ACCESSORIES",
+      "SEK_B2B_CORPORATE_GIFTS",
+      "SEK_CAMPAIGN_HOLIDA_KNITWEAR",
+      "SEK_FLASH_SALE_ACCESSORIES",
       "SEK_MIDSEASON_SALE_SPRING25_DRESSES",
-      "SEK_DENIM_PROMO_SEP24_ALLGENDERS",
-      "SEK_OUTERWEAR_SPECIAL_NOV24_MENS",
-      "SEK_ACCESSORIES_FY24_JEWELRY",
+      "SEK_DENIM_PROMO_ALLGENDERS",
+      "SEK_OUTERWEAR_SPECIAL_MENS",
+      "SEK_ACCESSORIES_JEWELRY",
       "SEK_BASIC_COLLECTION_ALWAYS_ON",
-      "SEK_SUSTAINABLE_LINE_ECO_FY24",
+      "SEK_SUSTAINABLE_LINE_ECO",
       "SEK_LIMITED_EDITION_COLLAB_ARTIST",
-      "SEK_CLEARANCE_WINTER23_LASTCHANCE",
-      "SEK_NEW_ARRIVALS_Q4_24_ALLCATS",
-      "SEK_BACKTOSCHOOL_AUG24_TEENS",
+      "SEK_CLEARANCE_LASTCHANCE",
+      "SEK_NEW_ARRIVALS_ALLCATS",
+      "SEK_BACKTOSCHOOL_TEENS",
       "SEK_GIFT_CARD_VALUES_STANDARD_SEK",
-      "SEK_STUDENT_DISCOUNT_MECENAT_24",
+      "SEK_STUDENT_DISCOUNT",
       "SEK_CORPORATE_BULK_ORDER_RATES",
-      "SEK_BLACKFRIDAY_DEALS_NOV24_ONLINE",
-      "SEK_CYBERMONDAY_NOV24_APPONLY",
-      "SEK_BRIDAL_GUEST_COLLECTION_24",
-      "SEK_MATERNITY_COMFORT_Q1_25",
-      "SEK_PLUSSIZE_FASHION_FY24",
-      "SEK_REGIONAL_TEST_MALMO_PRICING_A",
+      "SEK_BLACKFRIDAY_DEALS_ONLINE",
+      "SEK_CYBERMONDAY_APPONLY",
+      "SEK_MATERNITY_COMFORT",
       "SEK_COMPETITOR_PRICE_MATCH_POLICY",
-      "SEK_FRIENDS_FAMILY_SPRINGEVENT_24",
-      "SEK_ANNIVERSARY_SALE_MAY24_SPECIALS",
-      "SEK_CHARITY_PARTNER_PRODUCT_LINE",
-      "SEK_POPUP_STORE_GOTHENBURG_JULY24"
+      "SEK_FRIENDS_FAMILY_SPRINGEVENT",
+      "SEK_ANNIVERSARY_SALE_SPECIALS",
+      "SEK_CHARITY_PARTNER_PRODUCT_LINE"
     ]
   },
   "ForecastGranularity": {
@@ -6553,19 +6363,14 @@
   },
   "UnitOfMeasure": {
     "unitOfMeasureName": [
-      "Piece (st)",
-      "Pair (par)",
+      "Piece",
+      "Pair",
       "Set (2-piece)",
       "Set (3-piece)",
       "Pack (3 units)",
       "Pack (5 units)",
       "Single Item",
-      "Garment",
-      "Outfit Bundle",
-      "Box (e.g. gift box)",
       "Each (ea)",
-      "Ensemble (fashion)",
-      "Unit",
       "Accessory Piece",
       "Footwear Pair",
       "Hosiery Pair",
@@ -6576,18 +6381,10 @@
       "Jewelry Piece",
       "Bag Unit",
       "Sock Pair (2-pack)",
-      "Underwear Piece (single)",
       "Swimsuit Set",
       "Twin Pack (identical items)",
       "Multi-pack (assorted styles)",
-      "Gift Set (multiple items)",
-      "Travel Size Item",
-      "Headwear Item",
-      "Outerwear Garment",
-      "Tailored Suit (Jacket+Trousers)",
-      "Dress Unit",
-      "Trouser Piece",
-      "Shirt/Blouse Piece"
+      "Gift Set (multiple items)"
     ]
   },
   "CostCenter": {
@@ -6603,12 +6400,6 @@
         "costCenterName": "Sales Gothenburg West Region",
         "department": "Sales",
         "location": "Gothenburg"
-      },
-      {
-        "costCenterCode": "LOG-MALMO-WH01",
-        "costCenterName": "Logistics Malm\u00f6 Central Warehouse",
-        "department": "Logistics",
-        "location": "Malm\u00f6"
       },
       {
         "costCenterCode": "HR-HQ-STK-001",
@@ -6641,22 +6432,10 @@
         "location": "Gothenburg"
       },
       {
-        "costCenterCode": "MERCH-MALMO-PLN01",
-        "costCenterName": "Merchandising Planning Malm\u00f6",
-        "department": "Merchandising",
-        "location": "Malm\u00f6"
-      },
-      {
         "costCenterCode": "STOREOPS-STK-C01",
         "costCenterName": "Store Operations Stockholm City",
         "department": "Store Operations",
         "location": "Stockholm"
-      },
-      {
-        "costCenterCode": "CS-ONLINE-NAT01",
-        "costCenterName": "Customer Service Online National",
-        "department": "Customer Service",
-        "location": "Link\u00f6ping"
       },
       {
         "costCenterCode": "ECOMM-STK-DEV01",
@@ -6671,12 +6450,6 @@
         "location": "Gothenburg"
       },
       {
-        "costCenterCode": "STOREOPS-MALMO-S01",
-        "costCenterName": "Store Operations Malm\u00f6 South",
-        "department": "Store Operations",
-        "location": "Malm\u00f6"
-      },
-      {
         "costCenterCode": "HR-GOTH-REC01",
         "costCenterName": "Human Resources Gothenburg Recruitment",
         "department": "Human Resources",
@@ -6687,12 +6460,6 @@
         "costCenterName": "IT Infrastructure Stockholm HQ",
         "department": "IT",
         "location": "Stockholm"
-      },
-      {
-        "costCenterCode": "FIN-MALMO-ACC01",
-        "costCenterName": "Finance Accounts Payable Malm\u00f6",
-        "department": "Finance",
-        "location": "Malm\u00f6"
       },
       {
         "costCenterCode": "DESIGN-GOTH-KD01",
@@ -6725,34 +6492,10 @@
         "location": "Stockholm"
       },
       {
-        "costCenterCode": "ECOMM-MALMO-UX01",
-        "costCenterName": "E-Commerce UX Team Malm\u00f6",
-        "department": "E-Commerce",
-        "location": "Malm\u00f6"
-      },
-      {
-        "costCenterCode": "MKTG-MALMO-DIGI01",
-        "costCenterName": "Digital Marketing Malm\u00f6",
-        "department": "Marketing",
-        "location": "Malm\u00f6"
-      },
-      {
         "costCenterCode": "LOG-STK-RET01",
         "costCenterName": "Logistics Returns Center Stockholm",
         "department": "Logistics",
         "location": "Stockholm"
-      },
-      {
-        "costCenterCode": "STOREOPS-LINK-001",
-        "costCenterName": "Store Operations Link\u00f6ping",
-        "department": "Store Operations",
-        "location": "Link\u00f6ping"
-      },
-      {
-        "costCenterCode": "HR-MALMO-TRAIN01",
-        "costCenterName": "HR Training & Development Malm\u00f6",
-        "department": "Human Resources",
-        "location": "Malm\u00f6"
       },
       {
         "costCenterCode": "IT-GOTH-SEC01",
@@ -6768,9 +6511,9 @@
       },
       {
         "costCenterCode": "DESIGN-MALMO-TXT01",
-        "costCenterName": "Design Textiles Malm\u00f6",
+        "costCenterName": "Design Textiles Malmo",
         "department": "Design",
-        "location": "Malm\u00f6"
+        "location": "Malmo"
       },
       {
         "costCenterCode": "BUY-UPP-SUST01",
@@ -6783,12 +6526,6 @@
         "costCenterName": "Merchandising Allocation Gothenburg",
         "department": "Merchandising",
         "location": "Gothenburg"
-      },
-      {
-        "costCenterCode": "STOREOPS-OREBRO-001",
-        "costCenterName": "Store Operations \u00d6rebro",
-        "department": "Store Operations",
-        "location": "\u00d6rebro"
       },
       {
         "costCenterCode": "CS-GOTH-QUAL01",
@@ -6860,9 +6597,7 @@
       "KIDSWEAR_MULTI_BUY",
       "ACCESSORY_DEAL_2FOR1",
       "ONLINE_ONLY_WEEKEND",
-      "STORE_OPENING_SPECIAL_MALMO",
       "BIRTHDAY_VOUCHER_20",
-      "APP_DOWNLOAD_BONUS",
       "JEANS_PROMO_STACK",
       "KNITWEAR_SEASON_START",
       "SUSTAINABLE_CHOICE_5",
@@ -6871,11 +6606,9 @@
       "BLACKFRIDAY_PREVIEW_MEMBER",
       "CYBERMONDAY_SNEAKPEEK",
       "ENDOFSEASON_MUSTGO",
-      "WELCOME10_NEWSLETTER",
       "REFERAFRIEND_50SEK",
       "SPRING_REFRESH_15OFF",
       "DENIM_DAYS_EVENT",
-      "SPEND_SAVE_1000_GET_200",
       "EARLYBIRD_MORNING_SHOP",
       "LUNCHBREAK_DEAL_WED",
       "SPORT_ACTIVE_PROMO",
@@ -6914,11 +6647,7 @@
       },
       {
         "materialCode": "LENZINGEV",
-        "materialType": "Lenzing\u2122 EcoVero\u2122 Viscose"
-      },
-      {
-        "materialCode": "LYOCELL",
-        "materialType": "Lyocell (Tencel\u2122)"
+        "materialType": "Lenzing EcoVero Viscose"
       },
       {
         "materialCode": "LINEN100",
@@ -6965,14 +6694,6 @@
         "materialType": "Stretch Denim"
       },
       {
-        "materialCode": "ELAS",
-        "materialType": "Elastane"
-      },
-      {
-        "materialCode": "MODAL",
-        "materialType": "Modal"
-      },
-      {
         "materialCode": "CASHMERE",
         "materialType": "Cashmere"
       },
@@ -7001,24 +6722,8 @@
         "materialType": "Bamboo Viscose"
       },
       {
-        "materialCode": "HEMP",
-        "materialType": "Hemp"
-      },
-      {
-        "materialCode": "CUPRO",
-        "materialType": "Cupro"
-      },
-      {
-        "materialCode": "JUTE",
-        "materialType": "Jute"
-      },
-      {
-        "materialCode": "RAMIE",
-        "materialType": "Ramie"
-      },
-      {
         "materialCode": "METALFIB",
-        "materialType": "Metallic Fibre"
+        "materialType": "Metallic Fiber"
       },
       {
         "materialCode": "DOWNFEATH",
@@ -7029,249 +6734,157 @@
   "LegalEntity": {
     "_value_groups_": [
       {
-        "legalEntityName": "ModeKompaniet Sverige AB",
-        "registeredAddress": "Drottninggatan 10A, 111 51 Stockholm",
+        "legalEntityName": "Fashion Company Sweden Ltd.",
+        "registeredAddress": "Queen Street 10A, 111 51 Stockholm",
         "countryOfRegistration": "Sweden",
         "taxID": "556011-0011",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "1995-03-15T00:00:00"
       },
       {
-        "legalEntityName": "TrendTextilier Norden AB",
-        "registeredAddress": "Kungsgatan 5B, 411 07 G\u00f6teborg",
+        "legalEntityName": "Trend Textiles Nordics Ltd.",
+        "registeredAddress": "King Street 5B, 411 07 Gothenburg",
         "countryOfRegistration": "Sweden",
         "taxID": "556022-0022",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2002-08-20T00:00:00"
       },
       {
-        "legalEntityName": "StilFabriken Malm\u00f6 HB",
-        "registeredAddress": "Storgatan 22, 211 42 Malm\u00f6",
+        "legalEntityName": "Style Factory Malmö Trading Partnership",
+        "registeredAddress": "Main Street 22, 211 42 Malmö",
         "countryOfRegistration": "Sweden",
         "taxID": "969711-0011",
-        "entityType": "Handelsbolag (HB)"
+        "entityType": "Trading Partnership (HB)",
+        "isInternal": false,
+        "incorporationDate": "2010-01-10T00:00:00"
       },
       {
-        "legalEntityName": "Uppsala Kl\u00e4der & Design AB",
-        "registeredAddress": "Svartb\u00e4cksgatan 8, 753 20 Uppsala",
+        "legalEntityName": "Uppsala Clothing & Design Ltd.",
+        "registeredAddress": "Svartbcksgatan 8, 753 20 Uppsala",
         "countryOfRegistration": "Sweden",
         "taxID": "556033-0033",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2005-05-05T00:00:00"
       },
       {
-        "legalEntityName": "V\u00e4ster\u00e5s Modehus AB",
-        "registeredAddress": "Vasagatan 15, 722 15 V\u00e4ster\u00e5s",
+        "legalEntityName": "Västerås Fashion House Ltd.",
+        "registeredAddress": "Vasagatan 15, 722 15 Vsters",
         "countryOfRegistration": "Sweden",
         "taxID": "556044-0044",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2012-11-30T00:00:00"
       },
       {
-        "legalEntityName": "\u00d6rebro Fashion Group AB",
-        "registeredAddress": "K\u00f6pmangatan 24, 702 10 \u00d6rebro",
+        "legalEntityName": "Örebro Fashion Group Ltd.",
+        "registeredAddress": "Merchant Street 24, 702 10 Örebro",
         "countryOfRegistration": "Sweden",
         "taxID": "556055-0055",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2018-02-14T00:00:00"
       },
       {
-        "legalEntityName": "Link\u00f6ping Apparel AB",
-        "registeredAddress": "Tr\u00e4dg\u00e5rdstorget 1, 582 24 Link\u00f6ping",
+        "legalEntityName": "Linköping Apparel Ltd.",
+        "registeredAddress": "Garden Square 1, 582 24 Linköping",
         "countryOfRegistration": "Sweden",
         "taxID": "556066-0066",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2015-09-01T00:00:00"
       },
-      {
-        "legalEntityName": "Helsingborg Kl\u00e4dhandel KB",
+     {
+        "legalEntityName": "Helsingborg Clothing Trade Limited Partnership",
         "registeredAddress": "Kullagatan 30, 252 20 Helsingborg",
         "countryOfRegistration": "Sweden",
         "taxID": "969722-0022",
-        "entityType": "Kommanditbolag (KB)"
+        "entityType": "Limited Partnership (KB)",
+        "isInternal": false,
+        "incorporationDate": "2019-07-22T00:00:00"
       },
       {
-        "legalEntityName": "J\u00f6nk\u00f6ping Style Invest AB",
-        "registeredAddress": "\u00d6stra Storgatan 19, 553 21 J\u00f6nk\u00f6ping",
+        "legalEntityName": "Jönköping Style Invest Ltd.",
+        "registeredAddress": "East Main Street 19, 553 21 Jönköping",
         "countryOfRegistration": "Sweden",
         "taxID": "556077-0077",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2011-04-11T00:00:00"
       },
       {
-        "legalEntityName": "Norrk\u00f6ping Textil Partner AB",
-        "registeredAddress": "Drottninggatan 50, 602 32 Norrk\u00f6ping",
+        "legalEntityName": "Norrköping Textile Partner Ltd.",
+        "registeredAddress": "Queen Street 50, 602 32 Norrköping",
         "countryOfRegistration": "Sweden",
         "taxID": "556088-0088",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2008-12-01T00:00:00"
       },
       {
-        "legalEntityName": "Lund Kl\u00e4dimport AB",
-        "registeredAddress": "Stora S\u00f6dergatan 5, 222 23 Lund",
+        "legalEntityName": "Lund Clothing Import Ltd.",
+        "registeredAddress": "Great South Street 5, 222 23 Lund",
         "countryOfRegistration": "Sweden",
         "taxID": "556099-0099",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2017-06-19T00:00:00"
       },
       {
-        "legalEntityName": "Ume\u00e5 Mode Distribution AB",
-        "registeredAddress": "R\u00e5dhusesplanaden 6A, 903 28 Ume\u00e5",
+        "legalEntityName": "Umeå Fashion Distribution Ltd.",
+        "registeredAddress": "City Hall Esplanade 6A, 903 28 Umeå",
         "countryOfRegistration": "Sweden",
         "taxID": "556100-0100",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2013-10-25T00:00:00"
       },
       {
-        "legalEntityName": "G\u00e4vle Garments AB",
-        "registeredAddress": "Drottninggatan 12, 803 20 G\u00e4vle",
+        "legalEntityName": "Gävle Garments Ltd.",
+        "registeredAddress": "Queen Street 12, 803 20 Gävle",
         "countryOfRegistration": "Sweden",
         "taxID": "556111-0111",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2016-03-08T00:00:00"
       },
       {
-        "legalEntityName": "Bor\u00e5s Konfektion AB",
-        "registeredAddress": "All\u00e9gatan 45, 503 32 Bor\u00e5s",
+        "legalEntityName": "Borås Garment Manufacturing Ltd.",
+        "registeredAddress": "Avenue Street 45, 503 32 Borås",
         "countryOfRegistration": "Sweden",
         "taxID": "556122-0122",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "1988-07-01T00:00:00"
       },
       {
-        "legalEntityName": "S\u00f6dert\u00e4lje Retail Group AB",
-        "registeredAddress": "Storgatan 3, 151 72 S\u00f6dert\u00e4lje",
+        "legalEntityName": "Södertälje Retail Group Ltd.",
+        "registeredAddress": "Main Street 3, 151 72 Södertälje",
         "countryOfRegistration": "Sweden",
         "taxID": "556133-0133",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2020-01-15T00:00:00"
       },
       {
-        "legalEntityName": "Karlstad Fashion House AB",
+        "legalEntityName": "Karlstad Fashion House Ltd.",
         "registeredAddress": "Tingvallagatan 19, 652 25 Karlstad",
         "countryOfRegistration": "Sweden",
         "taxID": "556144-0144",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2014-02-20T00:00:00"
       },
       {
-        "legalEntityName": "Eskilstuna Kl\u00e4der AB",
+        "legalEntityName": "Eskilstuna Clothing Ltd.",
         "registeredAddress": "Kungsgatan 27, 632 20 Eskilstuna",
         "countryOfRegistration": "Sweden",
         "taxID": "556155-0155",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Halmstad Mode & Co AB",
-        "registeredAddress": "Storgatan 14, 302 43 Halmstad",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556166-0166",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Sundsvall Collection AB",
-        "registeredAddress": "Storgatan 20, 852 30 Sundsvall",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556177-0177",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Lule\u00e5 Style Import HB",
-        "registeredAddress": "Storgatan 48, 972 31 Lule\u00e5",
-        "countryOfRegistration": "Sweden",
-        "taxID": "969733-0033",
-        "entityType": "Handelsbolag (HB)"
-      },
-      {
-        "legalEntityName": "Svensk Design Retail AB",
-        "registeredAddress": "Hornsgatan 70, 118 21 Stockholm",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556188-0188",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Nordic Threads Holding AB",
-        "registeredAddress": "\u00d6stra Hamngatan 42, 411 09 G\u00f6teborg",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556199-0199",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Sk\u00e5ne Fashion Group AB",
-        "registeredAddress": "S\u00f6dergatan 10, 211 34 Malm\u00f6",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556200-0200",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Modern Kl\u00e4dsel Sverige AB",
-        "registeredAddress": "Kungs\u00e4ngsgatan 12, 753 22 Uppsala",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556211-0211",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "City Look AB",
-        "registeredAddress": "Stora Gatan 30, 722 12 V\u00e4ster\u00e5s",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556222-0222",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "EuroFashion SE AB",
-        "registeredAddress": "Drottninggatan 2, 702 10 \u00d6rebro",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556233-0233",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Trendia Retail AB",
-        "registeredAddress": "Storgatan 33, 582 23 Link\u00f6ping",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556244-0244",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Fashion Partner Skandinavien AB",
-        "registeredAddress": "Bruksgatan 17, 252 23 Helsingborg",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556255-0255",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Mode Direkt Import AB",
-        "registeredAddress": "Barnarpsgatan 12, 553 16 J\u00f6nk\u00f6ping",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556266-0266",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Kl\u00e4dGrossisten Norden AB",
-        "registeredAddress": "Hospitalsgatan 28, 602 27 Norrk\u00f6ping",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556277-0277",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Chic Kl\u00e4der Lund AB",
-        "registeredAddress": "Klostergatan 9, 222 22 Lund",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556288-0288",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Norrlands Modehus AB",
-        "registeredAddress": "Kungsgatan 55, 903 26 Ume\u00e5",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556299-0299",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Premium Apparel G\u00e4vleborg AB",
-        "registeredAddress": "Norra Kungsgatan 1, 803 20 G\u00e4vle",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556300-0300",
-        "entityType": "Aktiebolag (AB)"
-      },
-      {
-        "legalEntityName": "Textil Gruppen Bor\u00e5s KB",
-        "registeredAddress": "Torggatan 18, 503 34 Bor\u00e5s",
-        "countryOfRegistration": "Sweden",
-        "taxID": "969744-0044",
-        "entityType": "Kommanditbolag (KB)"
-      },
-      {
-        "legalEntityName": "Fashion Forward S\u00f6dert\u00e4lje AB",
-        "registeredAddress": "J\u00e4rnagatan 8, 151 71 S\u00f6dert\u00e4lje",
-        "countryOfRegistration": "Sweden",
-        "taxID": "556311-0311",
-        "entityType": "Aktiebolag (AB)"
+        "entityType": "Limited Company (Ltd.)",
+        "isInternal": true,
+        "incorporationDate": "2009-06-10T00:00:00"
       }
     ]
   },
@@ -7727,37 +7340,7 @@
       "Acknowledged",
       "Pending",
       "Not Required",
-      "Failed",
-      "Sent",
-      "Acknowledged",
-      "Pending",
-      "Not Required",
-      "Sent",
-      "Acknowledged",
-      "Pending",
-      "Not Required",
-      "Sent",
-      "Acknowledged",
-      "Pending",
-      "Not Required",
-      "Sent",
-      "Acknowledged",
-      "Pending",
-      "Not Required",
-      "Sent",
-      "Acknowledged",
-      "Pending",
-      "Not Required",
-      "Sent",
-      "Acknowledged",
-      "Pending",
-      "Not Required",
-      "Sent",
-      "Acknowledged",
-      "Pending",
-      "Not Required",
-      "Sent",
-      "Acknowledged"
+      "Failed"
     ],
     "relatedFulfillmentID": [
       "FUL-20230915-001",
@@ -8029,119 +7612,119 @@
   },
   "PriceGuide": {
     "guideName": [
-      "V\u00e5r/Sommar 2024 Fullprislista",
-      "Mellans\u00e4songsrea Guide",
-      "H\u00f6st/Vinter 2024 Baskollektion Priser",
-      "Barnkollektion Prisniv\u00e5 1",
-      "Accessoarer Prislista SE",
-      "Premiumlinjen Prisguide EU",
-      "Outletbutik Prislista Stockholm",
-      "Online Exklusiv Priss\u00e4ttning",
-      "Studentrabatt Policy & Priser",
-      "Personalink\u00f6p Prispolicy",
-      "Limited Edition Kollaboration Priser",
-      "Helgkampanj Prisguide",
-      "Slutrea Prisstruktur",
-      "Basplagg Prislista Standard",
-      "Denimkollektion Priss\u00e4ttning V\u00e5r",
-      "Stickat Prisniv\u00e5er",
-      "Ytterkl\u00e4der Prisguide H\u00f6st",
-      "Badkl\u00e4der S\u00e4songspriser Sommar",
-      "Underkl\u00e4der & Sovplagg Priser",
-      "Skor Prisstrategi EU",
-      "Nyinkommet Prisguide Vecka 20",
-      "Kampanjevent Prislista (Maj)",
-      "Butiks\u00f6ppning Specialpriser G\u00f6teborg",
-      "Medlemsexklusiva Priser Online",
-      "Presentkort V\u00e4rdeguide SEK",
-      "Paketerbjudanden Priss\u00e4ttning",
-      "Black Friday Prisguide Sverige",
-      "Cyber Monday Erbjudanden EU",
-      "S\u00e4songsslutrea Priser Butik",
-      "Skolstartskollektion Priser",
-      "Julklappsguide Priser",
-      "Festkl\u00e4der Priss\u00e4ttning Ny\u00e5r",
-      "Sportkl\u00e4der Kollektion Priser",
-      "Plus Size Kollektion Prisguide",
-      "Gravidkl\u00e4der Prisguide"
+     "Spring/Summer 2024 Full Price List",
+      "Mid-Season Sale Guide",
+      "Autumn/Winter 2024 Basic Collection Prices",
+      "Kids Collection Price Level 1",
+      "Accessories Price List SE",
+      "Premium Line Price Guide EU",
+      "Outlet Store Price List Stockholm",
+      "Online Exclusive Pricing",
+      "Student Discount Policy & Prices",
+      "Staff Purchase Price Policy",
+      "Limited Edition Collaboration Prices",
+      "Weekend Campaign Price Guide",
+      "Final Sale Price Structure",
+      "Basic Garments Price List Standard",
+      "Denim Collection Pricing Spring",
+      "Knitwear Price Levels",
+      "Outerwear Price Guide Autumn",
+      "Swimwear Seasonal Prices Summer",
+      "Underwear & Sleepwear Prices",
+      "Shoes Price Strategy EU",
+      "New Arrivals Price Guide Week 20",
+      "Campaign Event Price List (May)",
+      "Store Opening Special Prices Gothenburg",
+      "Member Exclusive Prices Online",
+      "Gift Card Value Guide SEK",
+      "Bundle Offers Pricing",
+      "Black Friday Price Guide Sweden",
+      "Cyber Monday Offers EU",
+      "End of Season Sale Prices Store",
+      "Back to School Collection Prices",
+      "Christmas Gift Guide Prices",
+      "Party Wear Pricing New Year",
+      "Sportswear Collection Prices",
+      "Plus Size Collection Price Guide",
+      "Maternity Wear Price Guide"
     ]
   },
   "SizeCurve": {
     "sizeCurveType": [
-      "Standard Dam S-XL SWE",
-      "Standard Herr S-XL SWE",
-      "Petite Fit Dam XS-L",
-      "Tall Fit Herr M-XXL",
-      "Barn \u00c5ldersbaserad Storlek (2-10 \u00e5r)",
-      "Baby 0-24 M\u00e5nader EU",
-      "Unisex One-Size Accessoarer",
-      "Dam Jeans Numerisk W25-W33",
-      "Herr Byxor Numerisk M28-M38",
-      "Dubbelstorlek Dam S/M, M/L",
-      "BH Kupa/Band EU Standard",
-      "Skor Dam EU 36-41",
-      "Skor Herr EU 40-45",
-      "Accessoarer OSFA (One Size Fits All)",
-      "Relaxed Fit Kollektion Dam",
-      "Slim Fit Kollektion Herr",
-      "Athletic Fit Sportkl\u00e4der",
-      "Oversized Modeplagg",
-      "Gravidkl\u00e4der S-XL EU",
-      "Plus Size Dam 1XL-4XL",
-      "Pojkar \u00c5lder 4-14 \u00e5r",
-      "Flickor \u00c5lder 4-14 \u00e5r",
-      "Ton\u00e5r S-L Unisex",
-      "Festkl\u00e4der Dam EU 34-44",
-      "Ytterkl\u00e4der Herr S-XXL",
-      "Badkl\u00e4der Dam S-L",
-      "Denim Midja/L\u00e4ngd Standard",
-      "Kostymer Herr EU 46-56",
-      "Stickat Unisex S-XL",
-      "Bas T-shirts S-XXL MultiPack",
-      "Junior Ton\u00e5r XS-L",
-      "Stora Storlekar Herr Curve",
-      "Barnskor EU 20-35",
-      "Underkl\u00e4der Dam XS-L",
-      "Sovplagg Herr S-XL"
+      "Standard Women S-XL SWE",
+      "Standard Men S-XL SWE",
+      "Petite Fit Women XS-L",
+      "Tall Fit Men M-XXL",
+      "Kids Age-Based Size (2-10 years)",
+      "Baby 0-24 Months EU",
+      "Unisex One-Size Accessories",
+      "Women Jeans Numeric W25-W33",
+      "Men Trousers Numeric M28-M38",
+      "Dual Size Women S/M, M/L",
+      "Bra Cup/Band EU Standard",
+      "Shoes Women EU 36-41",
+      "Shoes Men EU 40-45",
+      "Accessories OSFA (One Size Fits All)",
+      "Relaxed Fit Collection Women",
+      "Slim Fit Collection Men",
+      "Athletic Fit Sportswear",
+      "Oversized Fashion Garments",
+      "Maternity Wear S-XL EU",
+      "Plus Size Women 1XL-4XL",
+      "Boys Age 4-14 years",
+      "Girls Age 4-14 years",
+      "Teen S-L Unisex",
+      "Party Wear Women EU 34-44",
+      "Outerwear Men S-XXL",
+      "Swimwear Women S-L",
+      "Denim Waist/Length Standard",
+      "Suits Men EU 46-56",
+      "Knitwear Unisex S-XL",
+      "Basic T-shirts S-XXL MultiPack",
+      "Junior Teen XS-L",
+      "Large Sizes Men Curve",
+      "Kids Shoes EU 20-35",
+      "Underwear Women XS-L",
+      "Sleepwear Men S-XL"
     ]
   },
   "BuyingEvent": {
     "eventComment": [
-      "Godk\u00e4nd ink\u00f6psorder f\u00f6r SS25-kollektionen",
-      "Br\u00e5dskande ombest\u00e4llning av bas t-shirts",
-      "Slutf\u00f6rt kontrakt med ny denimleverant\u00f6r",
-      "Provgodk\u00e4nnande f\u00f6r AW25 ytterkl\u00e4der",
-      "F\u00f6rhandlad rabatt p\u00e5 bulkk\u00f6p av tyg",
-      "Annullerad ink\u00f6psorder pga kvalitetsproblem",
-      "Snabbfrakt f\u00f6r h\u00f6gdemandartikel",
-      "S\u00e4songsallokeringsplanering slutf\u00f6rd",
-      "Initialt ink\u00f6p f\u00f6r ny butiks\u00f6ppning i Malm\u00f6",
-      "Marknadsvecka orderbekr\u00e4ftelse",
-      "Leverant\u00f6rskapacitetskoll f\u00f6r Q3",
-      "Prisjustering pga materialkostnads\u00f6kning",
-      "M\u00f6tesanteckningar: AW25 trendgenomg\u00e5ng",
-      "H\u00e5llbarhetskontroll f\u00f6r ny leverant\u00f6r",
-      "Logistikplan f\u00f6r inkommande leverans",
-      "Uppf\u00f6ljning av f\u00f6rsenad leverans",
-      "Lagergenomg\u00e5ng och p\u00e5fyllnadsplan",
-      "F\u00f6rhandlar betalningsvillkor med Leverant\u00f6r Alfa",
-      "Kvalitetskontroll feedback f\u00f6r batch Beta",
-      "Sourcing av nya material f\u00f6r Eco-linjen",
-      "Uppdaterad prognos f\u00f6r Q4-f\u00f6rs\u00e4ljning",
-      "Bekr\u00e4ftar orderkvantiteter f\u00f6r accessoarer",
-      "Granskar prover fr\u00e5n potentiella nya leverant\u00f6rer",
-      "L\u00e4gger best\u00e4llning p\u00e5 f\u00f6rpackningsmaterial",
-      "Samarbetar med design p\u00e5 nya stilar",
-      "Analyserar genomf\u00f6rs\u00e4ljning f\u00f6r aktuell s\u00e4song",
-      "Slutf\u00f6r f\u00e4rgpalett f\u00f6r n\u00e4sta kollektion",
-      "Svarar p\u00e5 leverant\u00f6rsf\u00f6rfr\u00e5gan om specifikationer",
-      "Deltar i m\u00e4ssa - nya kontakter fr\u00e5n Berlin",
-      "F\u00f6rbereder ink\u00f6psplan f\u00f6r n\u00e4sta s\u00e4song",
-      "Reviderar budget f\u00f6r materialink\u00f6p",
-      "Konsoliderar order f\u00f6r effektivitet",
-      "Riskbed\u00f6mning f\u00f6r st\u00f6rningar i leveranskedjan",
-      "Kontrollerar ledtider f\u00f6r kritiska komponenter",
-      "Koordinerar med marknad f\u00f6r produktlansering av 'Nordic Light' kollektionen"
+      "Approved purchase order for SS25 collection",
+      "Urgent reorder of basic t-shirts",
+      "Finalized contract with new denim supplier",
+      "Sample approval for AW25 outerwear",
+      "Negotiated discount on bulk fabric purchase",
+      "Cancelled purchase order due to quality issues",
+      "Expedited shipping for high-demand item",
+      "Seasonal allocation planning completed",
+      "Initial purchase for new store opening in Malmö",
+      "Market week order confirmation",
+      "Supplier capacity check for Q3",
+      "Price adjustment due to material cost increase",
+      "Meeting notes: AW25 trend review",
+      "Sustainability check for new supplier",
+      "Logistics plan for incoming delivery",
+      "Follow-up on delayed delivery",
+      "Inventory review and replenishment plan",
+      "Negotiating payment terms with Supplier Alpha",
+      "Quality control feedback for batch Beta",
+      "Sourcing new materials for Eco-line",
+      "Updated forecast for Q4 sales",
+      "Confirming order quantities for accessories",
+      "Reviewing samples from potential new suppliers",
+      "Placing order for packaging materials",
+      "Collaborating with design on new styles",
+      "Analyzing sell-through for current season",
+      "Finalizing color palette for next collection",
+      "Responding to supplier query about specifications",
+      "Attending trade fair - new contacts from Berlin",
+      "Preparing purchasing plan for next season",
+      "Revising budget for material purchases",
+      "Consolidating orders for efficiency",
+      "Risk assessment for supply chain disruptions",
+      "Checking lead times for critical components",
+      "Coordinating with marketing for 'Nordic Light' collection product launch"
     ],
     "eventSourceSystem": [
       "CoreRetailERP",
@@ -8153,13 +7736,11 @@
       "FashionPLM_Cloud",
       "GlobalBuyingHub",
       "InventoryOptModule",
-      "SupplierPortal_SWE",
+      "SupplierPortal",
       "FinanceIntegrationBus",
-      "LogisticsControl_EU",
+      "LogisticsControl",
       "RetailDataWarehouse",
       "BI_AnalyticsSuite",
-      "ManualEntry_CentralDB",
-      "EmailArchive_BuyingDept",
       "EDIGateway_Nordics",
       "InternalOrderAPI",
       "MobileBuyerApp_iOS",
@@ -8170,7 +7751,6 @@
       "ComplianceCheck_System",
       "BudgetFlow_App",
       "OrderGen_Service_EU",
-      "TradeFairConnect_App",
       "BuyingDashboard_Realtime",
       "SupplierOnboard_Tool",
       "ContractManager_Online",
@@ -8181,396 +7761,362 @@
       "MarketIntelFeed_API"
     ],
     "eventTriggeredBy": [
-      "Ink\u00f6pare_AnnaN",
-      "AutoSystem_Lagerp\u00e5fyllnad",
-      "Planerare_ErikL",
-      "Sortimentschef_SofiaM",
-      "Ink\u00f6pare_LarsG",
-      "SystemAlert_L\u00e5gtLager",
-      "Planerare_MariaB",
-      "SeniorInk\u00f6pare_AndersS",
-      "AutoSystem_PrognosUppdatering",
-      "Ink\u00f6psadmin_LenaH",
-      "Ink\u00f6pare_JohanP",
-      "SystemEvent_S\u00e4songsstart",
-      "Planerare_EmmaK",
-      "Kategoriansvarig_OskarJ",
-      "Ink\u00f6pare_KarinE",
-      "AutoSystem_OrderGodk\u00e4nnande",
-      "Planerare_GustavN",
-      "Sortimentsplanerare_IdaF",
-      "Ink\u00f6pare_FredrikA",
-      "SystemNotis_AvtalsUtg\u00e5ng",
-      "Planerare_ClaraS",
+      "Buyer_AnnaN",
+      "AutoSystem_StockReplenishment",
+      "Planner_ErikL",
+      "AssortmentManager_SofiaM",
+      "Buyer_LarsG",
+      "SystemAlert_LowStock",
+      "Planner_MariaB",
+      "SeniorBuyer_AndersS",
+      "AutoSystem_ForecastUpdate",
+      "PurchasingAdmin_LenaH",
+      "Buyer_JohanP",
+      "SystemEvent_SeasonStart",
+      "Planner_EmmaK",
+      "CategoryManager_OskarJ",
+      "Buyer_KarinE",
+      "AutoSystem_OrderApproval",
+      "Planner_GustavN",
+      "AssortmentPlanner_IdaF",
+      "Buyer_FredrikA",
+      "SystemNotification_ContractExpiry",
+      "Planner_ClaraS",
       "SourcingSpecialist_ViktorM",
-      "Ink\u00f6pare_HannaL",
-      "AutoSystem_Lager\u00f6verf\u00f6ring",
-      "Planerare_NilsB",
-      "Ink\u00f6pskoordinator_ElsaP",
-      "Ink\u00f6pare_PatrikG",
-      "SystemTrigger_Gr\u00e4nsv\u00e4rdeN\u00e5tt",
-      "Planerare_LinneaJ",
-      "GlobalInk\u00f6pare_IngridE",
-      "Ink\u00f6pare_MartinN",
-      "AutoSystem_Pris\u00e4ndring",
-      "Planerare_SaraK",
-      "JuniorInk\u00f6pare_EliasF",
-      "Ink\u00f6pare_CeciliaA"
+      "Buyer_HannaL",
+      "AutoSystem_StockTransfer",
+      "Planner_NilsB",
+      "PurchasingCoordinator_ElsaP",
+      "Buyer_PatrikG",
+      "SystemTrigger_ThresholdReached",
+      "Planner_LinneaJ",
+      "GlobalBuyer_IngridE",
+      "Buyer_MartinN",
+      "AutoSystem_PriceChange",
+      "Planner_SaraK",
+      "JuniorBuyer_EliasF",
+      "Buyer_CeciliaA"
     ]
   },
   "SupplierCostChange": {
     "costChangeType": [
-      "\u00c5rlig Pris\u00f6versyn Leverant\u00f6r",
-      "R\u00e5materialtill\u00e4gg Bomull",
-      "Valutakursjustering EUR/SEK",
-      "Volymrabatt Niv\u00e5\u00e4ndring",
-      "Ny Produktintroduktionskostnad",
-      "Logistikkostnad Uppdatering Fraktbolag X",
-      "Arbetskostnads\u00f6kning Fabrik Asien",
-      "Tull/Avgifts P\u00e5verkan Import EU",
-      "Kampanjkostnadsdelning Sommarrea",
-      "Rabatt\u00e4ndring Vid Tidig Betalning",
-      "Energitill\u00e4gg Produktion",
-      "F\u00f6rpackningskostnad Revision Milj\u00f6v\u00e4nligt Material",
-      "Kvalitetsf\u00f6rb\u00e4ttringsinvestering S\u00f6mnad",
-      "P\u00e5verkan Av \u00c4ndrad Minimiorderkvantitet",
-      "Leverant\u00f6rsserviceavgift Justering",
-      "Kontraktsomf\u00f6rhandling \u00c5rlig",
-      "Utfasing Av Gammalt Material Kostnad",
-      "Premie F\u00f6r Ekologiskt Material Linne",
-      "Avgift F\u00f6r Snabbproduktion H\u00f6gs\u00e4song",
-      "Komponentpris\u00e4ndring Knappar & Dragkedjor",
-      "Br\u00e4nsletill\u00e4gg Justering Transport",
-      "Lagerh\u00e5llningskostnad Uppdatering Externlager",
-      "Verktygskostnadsavskrivning Ny Modell",
-      "Valutas\u00e4kringsjustering USD",
-      "S\u00e4songsbetonad Efterfr\u00e5getill\u00e4gg Vinterjackor",
-      "Force Majeure Kostnadsp\u00e5verkan \u00d6versv\u00e4mning Fabrik",
-      "Leverant\u00f6rskonsolidering Priss\u00e4ttning",
-      "Innovationskostnadsdelning Ny Teknik",
-      "Regelefterlevnadskostnad Uppdatering REACH",
-      "Betalningsvillkorsjustering P\u00e5verkan",
-      "Rabattstruktur\u00e4ndring \u00c5terf\u00f6rs\u00e4ljare",
-      "Kapitalkostnad Lager Justering",
-      "Transportmedels\u00e4ndring P\u00e5verkan Flyg till Sj\u00f6",
-      "Premie F\u00f6r Akutorder Specialkollektion",
-      "Design\u00e4ndring Kostnadsp\u00e5verkan M\u00f6nsterjustering"
+      "Annual Supplier Price Review",
+      "Raw Material Surcharge Cotton",
+      "Currency Exchange Adjustment EUR/SEK",
+      "Volume Discount Level Change",
+      "New Product Introduction Cost",
+      "Logistics Cost Update",
+      "Labor Cost Increase Factory",
+      "Customs/Duty Impact",
+      "Campaign Cost Sharing Summer Sale",
+      "Discount Change For Early Payment",
+      "Energy Surcharge Production",
+      "Packaging Cost Revision Eco-Friendly Material",
+      "Quality Improvement Investment Sewing",
+      "Impact Of Changed Minimum Order Quantity",
+      "Supplier Service Fee Adjustment",
+      "Annual Contract Renegotiation",
+      "Phase-out Of Old Material Cost",
+      "Premium For Organic Material Linen",
+      "Fee For Express Production High Season",
+      "Component Price Change Buttons & Zippers",
+      "Fuel Surcharge Adjustment Transport",
+      "Warehousing Cost Update External Warehouse",
+      "Tooling Cost Depreciation New Model",
+      "Currency Hedging Adjustment USD",
+      "Seasonal Demand Surcharge Winter Jackets",
+      "Force Majeure Cost Impact Factory Flood",
+      "Supplier Consolidation Pricing",
+      "Innovation Cost Sharing New Technology",
+      "Regulatory Compliance Cost Update REACH",
+      "Payment Terms Adjustment Impact",
+      "Discount Structure Change Reseller",
+      "Capital Cost Inventory Adjustment",
+      "Transport Mode Change Impact Air to Sea",
+      "Premium For Urgent Order Special Collection",
+      "Design Change Cost Impact Pattern Adjustment"
     ]
   },
   "StoreTrafficRecord": {
     "_value_groups_": [
       {
         "trafficPeriod": "Q1 2023",
-        "trafficPeriodGranularity": "Kvartalsvis"
+        "trafficPeriodGranularity": "Quarterly"
       },
       {
         "trafficPeriod": "Q2 2023",
-        "trafficPeriodGranularity": "Kvartalsvis"
+        "trafficPeriodGranularity": "Quarterly"
       },
       {
         "trafficPeriod": "Q3 2023",
-        "trafficPeriodGranularity": "Kvartalsvis"
+        "trafficPeriodGranularity": "Quarterly"
       },
       {
         "trafficPeriod": "Q4 2023",
-        "trafficPeriodGranularity": "Kvartalsvis"
+        "trafficPeriodGranularity": "Quarterly"
       },
       {
         "trafficPeriod": "Q1 2024",
-        "trafficPeriodGranularity": "Kvartalsvis"
+        "trafficPeriodGranularity": "Quarterly"
       },
       {
-        "trafficPeriod": "Januari 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "January 2023",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Februari 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "February 2023",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Mars 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "March 2023",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
         "trafficPeriod": "April 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Maj 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "May 2023",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Juni 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "June 2023",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Juli 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "July 2023",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Augusti 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "August 2023",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
         "trafficPeriod": "September 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Oktober 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "October 2023",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
         "trafficPeriod": "November 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriodGranularity": "Monthly"
       },
       {
         "trafficPeriod": "December 2023",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Januari 2024",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "January 2024",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Februari 2024",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "February 2024",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Mars 2024",
-        "trafficPeriodGranularity": "M\u00e5nadsvis"
+        "trafficPeriod": "March 2024",
+        "trafficPeriodGranularity": "Monthly"
       },
       {
-        "trafficPeriod": "Vecka 1, 2023",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 1, 2023",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
-        "trafficPeriod": "Vecka 5, 2023",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 5, 2023",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
-        "trafficPeriod": "Vecka 10, 2023",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 10, 2023",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
-        "trafficPeriod": "Vecka 15, 2023",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 15, 2023",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
-        "trafficPeriod": "Vecka 20, 2023",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 20, 2023",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
-        "trafficPeriod": "Vecka 25, 2023 (Midsommarveckan)",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 25, 2023 (Midsummer Week)",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
-        "trafficPeriod": "Vecka 30, 2023 (Semesterperiod)",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 30, 2023 (Holiday Period)",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
         "trafficPeriod": "Vecka 48, 2023 (Black Week)",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriodGranularity": "Weekly"
       },
       {
-        "trafficPeriod": "Vecka 51, 2023 (Julveckan)",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 51, 2023 (Christmas Week)",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
-        "trafficPeriod": "Vecka 2, 2024 (Rea)",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 2, 2024 (Sale)",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
         "trafficPeriod": "2023-11-24 (Black Friday)",
-        "trafficPeriodGranularity": "Dagligen"
+        "trafficPeriodGranularity": "Daily"
       },
       {
-        "trafficPeriod": "2023-12-23 (Dan f\u00f6re dopparedan)",
-        "trafficPeriodGranularity": "Dagligen"
+        "trafficPeriod": "2023-12-23 (Day before Christmas Eve)",
+        "trafficPeriodGranularity": "Daily"
       },
       {
-        "trafficPeriod": "2024-01-01 (Ny\u00e5rsdagen)",
-        "trafficPeriodGranularity": "Dagligen"
+        "trafficPeriod": "2024-01-01 (New Year's Day)",
+        "trafficPeriodGranularity": "Daily"
       },
       {
-        "trafficPeriod": "2024-03-29 (L\u00e5ngfredagen)",
-        "trafficPeriodGranularity": "Dagligen"
+        "trafficPeriod": "2024-03-29 (Good Friday)",
+        "trafficPeriodGranularity": "Daily"
       },
       {
-        "trafficPeriod": "2024-02-14 (Alla hj\u00e4rtans dag)",
-        "trafficPeriodGranularity": "Dagligen"
+        "trafficPeriod": "2024-02-14 (Valentine's Day)",
+        "trafficPeriodGranularity": "Daily"
       },
       {
         "trafficPeriod": "2023-10-31 (Halloween)",
-        "trafficPeriodGranularity": "Dagligen"
+        "trafficPeriodGranularity": "Daily"
       },
       {
-        "trafficPeriod": "Vecka 44, 2023 (H\u00f6stlov)",
-        "trafficPeriodGranularity": "Veckovis"
+        "trafficPeriod": "Week 44, 2023 (Autumn Break)",
+        "trafficPeriodGranularity": "Weekly"
       },
       {
-        "trafficPeriod": "2024-05-01 (F\u00f6rsta maj)",
-        "trafficPeriodGranularity": "Dagligen"
+        "trafficPeriod": "2024-05-01 (May Day)",
+        "trafficPeriodGranularity": "Daily"
       }
     ],
     "entranceID": [
-      "Huvudentr\u00e9 Storgatan",
-      "Sidoing\u00e5ng Torget",
-      "Galleriaplan Entr\u00e9 Syd",
-      "Parkeringsing\u00e5ng P1 V\u00e4st",
-      "Varuintag Norra Kajen",
-      "Personalentr\u00e9 Bakg\u00e5rd",
-      "\u00d6stra ing\u00e5ngen (vid caf\u00e9)",
-      "V\u00e4stra ing\u00e5ngen (mot bussh\u00e5llplats)",
-      "Entr\u00e9 Plan 2 (fr\u00e5n rulltrappa)",
-      "K\u00e4llarplan Entr\u00e9 (fr\u00e5n P-hus)",
-      "Bakre Entr\u00e9 (service)",
-      "Huvuding\u00e5ng Centrum",
-      "Lilla Entr\u00e9n (vid blomsterbutik)",
-      "Stora Entr\u00e9n (huvudstr\u00e5k)",
-      "Entr\u00e9 mot Storgatan",
-      "Entr\u00e9 mot Lilla Torget",
-      "Ing\u00e5ng fr\u00e5n tunnelbanestation",
-      "Ing\u00e5ng fr\u00e5n parkeringsd\u00e4ck 2",
-      "Entr\u00e9 vid Systembolaget",
-      "Entr\u00e9 vid Apoteket",
-      "Pop-up yta Entr\u00e9",
-      "Event Entr\u00e9",
-      "Natt\u00f6ppet Entr\u00e9",
-      "VIP Entr\u00e9",
-      "Click & Collect disk",
-      "Entr\u00e9 f\u00f6r funktionshindrade",
-      "Barnvagnsentr\u00e9",
-      "Varuleveransport",
-      "\u00c5tervinningsentr\u00e9",
-      "Brandutg\u00e5ng (ej trafik)",
-      "Serviceing\u00e5ng Teknik",
-      "Ing\u00e5ng fr\u00e5n grannfastighet",
-      "Entr\u00e9 med v\u00e4ndkors",
-      "Dubbel d\u00f6rr entr\u00e9",
-      "Skjutd\u00f6rrsentr\u00e9 Automatisk",
-      "Sv\u00e4ngd\u00f6rrsentr\u00e9",
-      "Entr\u00e9 utan tr\u00f6skel",
-      "Tillf\u00e4llig evententr\u00e9"
+      "Main Entrance",
+      "Side Entrance",
+      "Mall Level Entrance South",
+      "Parking Entrance West",
+      "Goods Intake North",
+      "Staff Entrance Backyard",
+      "East Entrance",
+      "West Entrance",
+      "Entrance Level",
+      "Basement Entrance (from Parking Garage)",
+      "Rear Entrance (service)",
+      "Small Entrance (by flower shop)",
+      "Large Entrance (main thoroughfare)",
+      "Entrance from parking deck 2",
+      "Event Entrance",
+      "Night Opening Entrance",
+      "Click & Collect Desk",
+      "Disabled Access Entrance",
+      "Stroller Entrance",
+      "Goods Delivery Gate",
+      "Recycling Entrance",
+      "Service Entrance Technical",
+      "Double Door Entrance",
+      "Automatic Sliding Door Entrance",
+      "Revolving Door Entrance"    
     ],
     "relatedStoreID": [
-      "STHLM-DROTTN-01",
-      "GBG-NORDSTN-01",
-      "MALMO-TRIANG-01",
-      "UPPS-CENTR-01",
-      "LUND-CITY-01",
+      "STHLM-DROTTN-01", 
+      "GBG-NORDSTN-01",  
+      "MALMO-TRIANG-01", 
+      "UPPS-CENTR-01",   
+      "LUND-CITY-01",    
       "OREBRO-KRSMRKT-01",
-      "LINKP-CITY-01",
-      "HSBG-CENTR-01",
-      "JKPG-A6-01",
-      "VSTRS-CITY-01",
+      "LINKP-CITY-01",   
+      "JKPG-A6-01",      
+      "VSTRS-CITY-01",   
       "NORRKP-DOMINO-01",
-      "GAVLE-CITY-01",
-      "UMEA-CENTR-01",
-      "BORAS-KNALL-01",
-      "KARLST-MITTI-01",
-      "STHLM-SKHLMN-01",
-      "GBG-FROLUNDA-01",
+      "GAVLE-CITY-01",   
+      "UMEA-CENTR-01",   
+      "BORAS-KNALL-01",  
+      "KARLST-MITTI-01", 
+      "STHLM-SKHLMN-01", 
+      "GBG-FROLUNDA-01", 
       "MALMO-EMPORIA-01",
       "STHLM-GALLERIAN-01",
-      "STHLM-KISTA-01",
-      "STHLM-FARSTA-01",
+      "STHLM-KISTA-01",  
+      "STHLM-FARSTA-01", 
       "GBG-BACKAPLAN-01",
       "MALMO-MOBILIA-01",
-      "UPPS-GRANBY-01",
+      "UPPS-GRANBY-01",  
       "LULEA-STORHEDEN-01",
-      "SODERT-CENTR-01",
-      "HALMST-CITY-01",
+      "SODERT-CENTR-01", 
+      "HALMST-CITY-01",  
       "ESKIL-TUNA-PARK-01",
       "VAXJO-GRAND-SAMARK-01",
       "SUNDSV-BIRSTA-01",
       "KALMAR-HANSA-CITY-01",
-      "OSTERS-CENTR-01",
-      "FALUN-CITY-01",
-      "PITEA-CENTR-01",
+      "OSTERS-CENTR-01", 
+      "FALUN-CITY-01",   
+      "PITEA-CENTR-01",  
       "TROLLH-OVERBY-01",
       "GOTTS-CENTRUM-01",
-      "VISBY-OSTER-01",
-      "SKELLE-CITY-01"
+      "VISBY-OSTER-01",  
+      "SKELLE-CITY-01"  
     ],
     "trafficDataSource": [
-      "Automatiskt Kamerasystem typ A",
-      "WiFi-analys (anonymiserad, intern)",
-      "Manuella Observationer (personal)",
-      "D\u00f6rr\u00e4knare Infrar\u00f6d (SensTech)",
-      "D\u00f6rr\u00e4knare Termisk (HeatScan)",
-      "POS-transaktionsdata (uppskattning enl. modell X)",
-      "Sensorplattor Golv (FootFall AB)",
-      "Personalrapportering (kvartalsvis)",
-      "S\u00e4kerhetsloggar (ing\u00e5ng via passersystem)",
-      "Laserbaserad R\u00e4knare (LidarCount)",
-      "Videoanalys AI (DeepVision SE)",
-      "App-baserad Incheckning (pilotprojekt kundklubb)",
-      "Mobilmasterdata (aggregerad fr\u00e5n Telia)",
-      "3D-sensorer Takmonterade (StereoVision)",
-      "Passagesystem (endast f\u00f6r anst\u00e4llda)",
-      "Analys av Kassak\u00f6 (QueueMetrics)",
-      "Feedbackterminaler (indirekt via enk\u00e4t)",
-      "LoRaWAN-sensorer (IoT Sweden)",
-      "Bluetooth Beacons (estimote-kompatibel)",
-      "Externt Konsultdata (RetailAnalytics Inc.)",
-      "Historisk Data J\u00e4mf\u00f6relse (egen databas)",
-      "Integrerad S\u00e4kerhetskamera (Axis Communications)",
-      "V\u00e4rmekamera (FLIR Systems)",
-      "Radarbaserad N\u00e4rvarosensor (Acconeer)",
-      "Optisk Fl\u00f6desanalys (OpenCV custom)",
-      "Manuell Klickr\u00e4knare (stickprov per timme)",
-      "Tryckk\u00e4nsliga Mattor (PressureMat Co.)",
-      "PIR-sensorer (Passiv Infrar\u00f6d, Bosch)",
-      "Ultraljudssensorer (MaxBotix)",
-      "Kamera med Personsp\u00e5rning (anonym, intern l\u00f6sning)",
-      "F\u00f6rs\u00e4ljningsdata Korrelation (automatiserad rapport)",
-      "Personalens Bed\u00f6mning (daglig logg)",
-      "Trafikljussystem vid Entr\u00e9 (egenbyggd)",
-      "Biljettscanner (event-specifik, SKIDATA)",
-      "Kundvagnsr\u00e4knare (RFID-baserad)",
-      "V\u00e4derdata korrelation (SMHI API)",
-      "Kampanjdata korrelation (intern marknadsavd.)",
-      "Social media omn\u00e4mnanden (indirekt indikator)"
+      "Automatic Camera System Type A",
+      "WiFi Analysis (anonymized, internal)",
+      "Manual Observations (staff)",
+      "Infrared Door Counter (SensTech)",
+      "Thermal Door Counter (HeatScan)",     
+      "Floor Sensor Plates (FootFall AB)",
+      "Staff Reporting (quarterly)",
+      "Security Logs (entry via access system)",
+      "Laser-based Counter (LidarCount)",
+      "Video Analysis AI (DeepVision SE)",
+      "App-based Check-in (loyalty club pilot project)",
+      "Ceiling-mounted 3D Sensors (StereoVision)",
+      "Checkout Queue Analysis (QueueMetrics)",
+      "Bluetooth Beacons (Estimote compatible)",
+      "External Consultant Data (RetailAnalytics Inc.)",
+      "Integrated Security Camera (Axis Communications)",
+      "Thermal Camera (FLIR Systems)",
+      "Optical Flow Analysis (OpenCV custom)",
+      "PIR Sensors (Passive Infrared, Bosch)",
+      "Ultrasonic Sensors (MaxBotix)",
+      "Camera with Person Tracking (anonymous, internal solution)",
+      "Traffic Light System at Entrance (custom built)",
+      "Shopping Cart Counter (RFID-based)"      
     ],
     "weatherCondition": [
-      "Soligt och varmt (+25C)",
-      "Klart och kyligt (+5C)",
-      "Molnigt, uppeh\u00e5ll (+15C)",
-      "L\u00e4tt regn, bl\u00e5sigt (+12C)",
-      "Kraftigt regn, \u00e5ska (+18C)",
-      "Sn\u00f6fall l\u00e4tt, -2C",
-      "Sn\u00f6blandat regn, +1C",
-      "Bl\u00e5sigt men soligt (+8C)",
-      "Dimma, fuktigt (+10C)",
-      "Hagel, kortvarigt (+7C)",
-      "Mulet och milt (+14C)",
-      "V\u00e4xlande molnighet, byig vind (+16C)",
-      "Risk f\u00f6r \u00e5ska, kvavt (+22C)",
-      "Soligt med stackmoln, svag vind (+20C)",
-      "Minusgrader, klart, -5C",
-      "Nollgradigt, isigt p\u00e5 v\u00e4gar, 0C",
-      "Duggregn, gr\u00e5tt (+9C)",
-      "T\u00f6v\u00e4der, slaskigt, +3C",
-      "Stark vind (klass 1 varning)",
-      "Sn\u00f6storm (varning utf\u00e4rdad)",
-      "Perfekt shoppingv\u00e4der (sol, +18C)",
-      "Gr\u00e5mulet, ingen nederb\u00f6rd (+11C)",
-      "V\u00e5rk\u00e4nsla i luften, sol (+10C)",
-      "H\u00f6ststorm, ih\u00e5llande regn (+6C)",
-      "Sommarregn, skurar (+19C)",
-      "Vinterkyla, klart, -10C",
-      "Behaglig bris, halvklart (+17C)",
-      "Klibbigt och fuktigt, mulet (+23C)",
-      "Uppklarnande efter regn (+15C)",
-      "Risk f\u00f6r halka (frostnatt)",
-      "Stilla och klart, h\u00f6g luft (+13C)",
-      "\u00d6msom sol, \u00f6msom skurar, bl\u00e5sigt (+14C)",
-      "Mild vinterdag, +2C, mulet",
-      "Kall morgon (-3C), solig dag (+5C)",
-      "Tidig h\u00f6stkyla, +8C, klart",
-      "Pollens\u00e4song h\u00f6g, soligt (+18C)",
-      "Sommarv\u00e4rme, \u00f6ver +28C",
-      "F\u00f6rsta sn\u00f6n, -1C"
+      "Sunny and warm (+25C)",
+      "Clear and chilly (+5C)",
+      "Cloudy, no rain (+15C)",
+      "Light rain, windy (+12C)",
+      "Heavy rain, thunder (+18C)",
+      "Light snowfall, -2C",
+      "Windy but sunny (+8C)",
+      "Fog, humid (+10C)",
+      "Hail, brief (+7C)",
+      "Overcast and mild (+14C)",
+      "Variable cloudiness, gusty wind (+16C)",
+      "Risk of thunder, muggy (+22C)",
+      "Sunny with cumulus clouds, light wind (+20C)",
+      "Below freezing, clear, -5C",
+      "Freezing, icy roads, 0C",
+      "Drizzle, grey (+9C)",
+      "Strong wind (class 1 warning)",
+      "Snowstorm (warning issued)",
+      "Perfect shopping weather (sun, +18C)",
+      "Overcast, no precipitation (+11C)",
+      "Spring feeling in the air, sun (+10C)",
+      "Autumn storm, persistent rain (+6C)",
+      "Summer rain, showers (+19C)",
+      "Winter cold, clear, -10C",
+      "Pleasant breeze, partly cloudy (+17C)",
+      "Sticky and humid, overcast (+23C)",
+      "Clearing up after rain (+15C)",
+      "Risk of ice (frosty night)",
+      "Sun and showers, windy (+14C)",
+      "Mild winter day, +2C, overcast",
+      "Cold morning (-3C), sunny day (+5C)",
+      "Early autumn chill, +8C, clear",
+      "Summer heat, above +28C"     
     ]
   },
   "Receiving": {
@@ -8618,10 +8164,9 @@
   "CompetitorPriceComparison": {
     "comparedCompetitor": [
       "Fashion House Sweden Ltd.",
-      "TrendClothes Online SE",
+      "TrendClothes Online",
       "Basics For All",
       "Your Style Stores Ltd.",
-      "Stadens Modehus",
       "Swedish Clothing Outlet",
       "Always Stylish Fashion",
       "Quality Wardrobe Premium",
@@ -8633,28 +8178,19 @@
       "PartyWear Store in Town",
       "WorkStyle Office Fashion",
       "Children's Clothing Paradise Webshop",
-      "StreetStyle SE",
       "Nordic Design Wear Collective",
       "The Outlet Sweden North",
       "FashionDirect Fast Delivery",
       "BudgetClothes Outlet Store",
       "DesignerLook Alike Boutique",
       "Season's Must-Haves Magazine",
-      "Your Wardrobe Renewal",
-      "FashionFind Online Store",
-      "Men's Store Classic Wear",
-      "Women's World Fashion House",
-      "PlusSize Sverige Online",
       "The Little Clothing Store on the Corner",
-      "Premium Basics Stockholm",
+      "Premium Basics",
       "Fast Fashion Trends International",
       "Sustainable Fashion Choice Certified",
-      "Skandinavisk Chic Design",
-      "BudgetFashion SE Store",
-      "TrendExpress Daily Update",
+      "BudgetFashion Store",
       "Swedish Design Central",
-      "European Fashion Imports",
-      "Local Designer X"
+      "European Fashion Imports"      
     ]
   }
 }

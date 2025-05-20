@@ -569,7 +569,7 @@
         },
         {
           "name": "customerAgeGroup",
-          "type": "Float"
+          "type": "String"
         },
         {
           "name": "customerEducationLevel",
@@ -1636,7 +1636,7 @@
       "properties": [
         {
           "name": "refundAmount",
-          "type": "String"
+          "type": "Float"
         },
         {
           "name": "returnDate",
@@ -2401,7 +2401,7 @@
       "properties": [
         {
           "name": "orderLineAmount",
-          "type": "String"
+          "type": "Float"
         },
         {
           "name": "orderLineNumber",
@@ -2840,7 +2840,7 @@
       "properties": [
         {
           "name": "promotionalPrice",
-          "type": "String"
+          "type": "Float"
         },
         {
           "name": "promotionalPriceID",

@@ -122,11 +122,7 @@
       "Customer.customerAccuracy": [
         0.5,
         1.0
-      ],
-      "Customer.customerAgeGroup": [
-        1.0,
-        10.0
-      ],
+      ],      
       "ForecastVarianceEvent.forecastMissAmount": [
         -200.0,
         200.0
@@ -195,9 +191,17 @@
         5.0,
         75.0
       ],
+      "PromotionalPrice.promotionalPrice": [
+        5.0,
+        50.0
+      ],
       "ReturnOrder.returnQuantity": [
         1.0,
         10.0
+      ],
+      "ReturnOrder.refundAmount": [
+        5.0,
+        50.0
       ],
       "InventoryLevel.inventoryQuantity": [
         0.0,
@@ -261,7 +265,7 @@
       ],
       "SalesTransaction.salesAmount": [
         5.0,
-        1500.0
+        400.0
       ],
       "SalesTransaction.salesQuantity": [
         1.0,
