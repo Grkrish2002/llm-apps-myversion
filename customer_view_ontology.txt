@@ -1,0 +1,1147 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/ontology/> .
+
+ex:ontology rdf:type owl:Ontology .
+
+# Classes
+
+ex:PartyAffiliationType rdf:type owl:Class ;
+    rdfs:label "PartyAffiliationType" .
+
+ex:PartyAffiliation rdf:type owl:Class ;
+    rdfs:label "PartyAffiliation" .
+
+ex:PartyType rdf:type owl:Class ;
+    rdfs:label "PartyType" .
+
+ex:Party rdf:type owl:Class ;
+    rdfs:label "Party" .
+
+ex:PartyRole rdf:type owl:Class ;
+    rdfs:label "PartyRole" .
+
+ex:PartyRoleAssignment rdf:type owl:Class ;
+    rdfs:label "PartyRoleAssignment" .
+
+ex:PartyContactMethod rdf:type owl:Class ;
+    rdfs:label "PartyContactMethod" .
+
+ex:Person rdf:type owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf ex:Party . # PK/FK PersonPartyID references Party
+
+ex:Organization rdf:type owl:Class ;
+    rdfs:label "Organization" ;
+    rdfs:subClassOf ex:Party . # PK/FK PartyID references Party
+
+ex:Household rdf:type owl:Class ;
+    rdfs:label "Household" .
+
+ex:PersonName rdf:type owl:Class ;
+    rdfs:label "PersonName" ;
+    rdfs:subClassOf ex:Person . # PK/FK PersonPartyID references Person
+
+ex:Consumer rdf:type owl:Class ;
+    rdfs:label "Consumer" .
+
+ex:ConsumerConversionState rdf:type owl:Class ;
+    rdfs:label "ConsumerConversionState" .
+
+ex:Visitor rdf:type owl:Class ;
+    rdfs:label "Visitor" .
+
+ex:Customer rdf:type owl:Class ;
+    rdfs:label "Customer" ;
+    rdfs:subClassOf ex:Consumer . # PK/FK CustomerID references Consumer
+
+ex:KeyCustomer rdf:type owl:Class ;
+    rdfs:label "KeyCustomer" ;
+    rdfs:subClassOf ex:Customer . # PK/FK CustomerID references Customer
+
+ex:CustomerAccount rdf:type owl:Class ;
+    rdfs:label "CustomerAccount" .
+
+ex:CustomerGroupType rdf:type owl:Class ;
+    rdfs:label "CustomerGroupType" .
+
+ex:CustomerGroup rdf:type owl:Class ;
+    rdfs:label "CustomerGroup" .
+
+ex:CustomerAffiliation rdf:type owl:Class ;
+    rdfs:label "CustomerAffiliation" . # Link table class is created
+
+# Datatype Properties
+
+ex:PartyAffiliationType_PartyAffiliationTypeCode rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:PartyAffiliationType ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyAffiliationType_PartyAffiliationTypeCode" .
+
+ex:PartyAffiliationType_Description rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyAffiliationType ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyAffiliationType_Description" .
+
+ex:PartyAffiliation_PartyAffiliationID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:PartyAffiliation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "PartyAffiliation_PartyAffiliationID" .
+
+ex:PartyAffiliation_EffectiveDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyAffiliation ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "PartyAffiliation_EffectiveDateTime" .
+
+ex:PartyAffiliation_ExpirationDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyAffiliation ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "PartyAffiliation_ExpirationDateTime" .
+
+ex:PartyAffiliation_StatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyAffiliation ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyAffiliation_StatusCode" .
+
+ex:PartyAffiliation_PrincipleSubPartyFlag rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyAffiliation ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "PartyAffiliation_PrincipleSubPartyFlag" .
+
+ex:PartyType_PartyTypeCode rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:PartyType ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyType_PartyTypeCode" .
+
+ex:PartyType_PartyTypeDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyType ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyType_PartyTypeDescription" .
+
+ex:Party_PartyID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:Party ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Party_PartyID" .
+
+ex:PartyRole_PartyRoleTypeCode rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:PartyRole ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyRole_PartyRoleTypeCode" .
+
+ex:PartyRole_Name rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyRole ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyRole_Name" .
+
+ex:PartyRole_Description rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyRole ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyRole_Description" .
+
+ex:PartyRoleAssignment_PartyRoleAssignmentID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:PartyRoleAssignment ;
+    rdfs:range xsd:integer ;
+    rdfs:label "PartyRoleAssignment_PartyRoleAssignmentID" .
+
+ex:PartyRoleAssignment_StatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyRoleAssignment ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyRoleAssignment_StatusCode" .
+
+ex:PartyRoleAssignment_EffectiveDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyRoleAssignment ;
+    rdfs:range xsd:date ;
+    rdfs:label "PartyRoleAssignment_EffectiveDate" .
+
+ex:PartyRoleAssignment_ExpirationDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyRoleAssignment ;
+    rdfs:range xsd:date ;
+    rdfs:label "PartyRoleAssignment_ExpirationDate" .
+
+ex:PartyContactMethod_PartyContactMethodID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # AK implies UNIQUE
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:integer ;
+    rdfs:label "PartyContactMethod_PartyContactMethodID" .
+
+ex:PartyContactMethod_ContactPurposeTypeCode rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # AK implies UNIQUE, NOT NULL
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyContactMethod_ContactPurposeTypeCode" .
+
+ex:PartyContactMethod_ContactMethodTypeCode rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # AK implies UNIQUE, NOT NULL
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyContactMethod_ContactMethodTypeCode" .
+
+ex:PartyContactMethod_SocialNetworkUserID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyContactMethod_SocialNetworkUserID" .
+
+ex:PartyContactMethod_EffectiveDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "PartyContactMethod_EffectiveDateTime" .
+
+ex:PartyContactMethod_ExpirationDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "PartyContactMethod_ExpirationDateTime" .
+
+ex:PartyContactMethod_AddressID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:integer ;
+    rdfs:label "PartyContactMethod_AddressID" .
+
+ex:PartyContactMethod_EmailAddressID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:integer ;
+    rdfs:label "PartyContactMethod_EmailAddressID" .
+
+ex:PartyContactMethod_TelephoneID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:integer ;
+    rdfs:label "PartyContactMethod_TelephoneID" .
+
+ex:PartyContactMethod_WebsiteID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:integer ;
+    rdfs:label "PartyContactMethod_WebsiteID" .
+
+ex:PartyContactMethod_StatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range xsd:string ;
+    rdfs:label "PartyContactMethod_StatusCode" .
+
+ex:Person_PersonPartyID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # PK/FK
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Person_PersonPartyID" .
+
+ex:Person_LanguageID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Person_LanguageID" .
+
+ex:Person_Salutation rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_Salutation" .
+
+ex:Person_FirstName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_FirstName" .
+
+ex:Person_FirstNameType rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_FirstNameType" .
+
+ex:Person_MiddleNames rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_MiddleNames" .
+
+ex:Person_MiddleNameType rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_MiddleNameType" .
+
+ex:Person_LastName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_LastName" .
+
+ex:Person_LastNameType rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_LastNameType" .
+
+ex:Person_Suffix rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_Suffix" .
+
+ex:Person_SortingName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_SortingName" .
+
+ex:Person_MailingName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_MailingName" .
+
+ex:Person_OfficialName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_OfficialName" .
+
+ex:Person_GenderTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_GenderTypeCode" .
+
+ex:Person_DateOfBirth rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:date ;
+    rdfs:label "Person_DateOfBirth" .
+
+ex:Person_MaritalStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_MaritalStatusCode" .
+
+ex:Person_LifeStageCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_LifeStageCode" .
+
+ex:Person_RaceCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_RaceCode" .
+
+ex:Person_EthnicityTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_EthnicityTypeCode" .
+
+ex:Person_ReligionFamilyCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_ReligionFamilyCode" .
+
+ex:Person_ReligionName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_ReligionName" .
+
+ex:Person_EducationLevelCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_EducationLevelCode" .
+
+ex:Person_EmploymentStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_EmploymentStatusCode" .
+
+ex:Person_OccupationTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_OccupationTypeCode" .
+
+ex:Person_AnnualIncomeRangeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_AnnualIncomeRangeCode" .
+
+ex:Person_PersonalityTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_PersonalityTypeCode" .
+
+ex:Person_LifestyleTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_LifestyleTypeCode" .
+
+ex:Person_PersonalityValueTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_PersonalityValueTypeCode" .
+
+ex:Person_ValueAttitudeLifestyleTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_ValueAttitudeLifestyleTypeCode" .
+
+ex:Person_ConsumerCreditScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Person_ConsumerCreditScore" .
+
+ex:Person_DietaryHabitTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_DietaryHabitTypeCode" .
+
+ex:Person_ConsumerCreditRatingServiceName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_ConsumerCreditRatingServiceName" .
+
+ex:Person_DisabilityImpairmentTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Person_DisabilityImpairmentTypeCode" .
+
+ex:Organization_PartyID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # PK/FK
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Organization_PartyID" .
+
+ex:Organization_LegalName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_LegalName" .
+
+ex:Organization_TradeName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_TradeName" .
+
+ex:Organization_LegalStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_LegalStatusCode" .
+
+ex:Organization_TerminationDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:date ;
+    rdfs:label "Organization_TerminationDate" .
+
+ex:Organization_LegalOrganizationTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_LegalOrganizationTypeCode" .
+
+ex:Organization_JurisdictionOfIncorporation rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_JurisdictionOfIncorporation" .
+
+ex:Organization_IncorporationDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:date ;
+    rdfs:label "Organization_IncorporationDate" .
+
+ex:Organization_FiscalYearEndDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:date ;
+    rdfs:label "Organization_FiscalYearEndDate" .
+
+ex:Organization_BusinessActivityCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_BusinessActivityCode" .
+
+ex:Organization_LocalAnnualRevenueAmount rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Organization_LocalAnnualRevenueAmount" .
+
+ex:Organization_GlobalAnnualRevenueAmount rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Organization_GlobalAnnualRevenueAmount" .
+
+ex:Organization_OpenForBusinessDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:date ;
+    rdfs:label "Organization_OpenForBusinessDate" .
+
+ex:Organization_ClosedForBusinessDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:date ;
+    rdfs:label "Organization_ClosedForBusinessDate" .
+
+ex:Organization_DUNSNumber rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_DUNSNumber" .
+
+ex:Organization_BankruptcyFlag rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "Organization_BankruptcyFlag" .
+
+ex:Organization_BankruptcyDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:date ;
+    rdfs:label "Organization_BankruptcyDate" .
+
+ex:Organization_BankruptcyEmergenceDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:date ;
+    rdfs:label "Organization_BankruptcyEmergenceDate" .
+
+ex:Organization_BankruptcyTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_BankruptcyTypeCode" .
+
+ex:Organization_EmployeeCountLocal rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Organization_EmployeeCountLocal" .
+
+ex:Organization_EmployeeCountGlobal rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Organization_EmployeeCountGlobal" .
+
+ex:Organization_DunnAndBradstreetRating rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_DunnAndBradstreetRating" .
+
+ex:Organization_PrimaryBusinessLanguageID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_PrimaryBusinessLanguageID" .
+
+ex:Organization_OrganizationDescriptionNarrative rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_OrganizationDescriptionNarrative" .
+
+ex:Organization_GlobalBusinessSizeTypeCodeAttribute rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_GlobalBusinessSizeTypeCodeAttribute" .
+
+ex:Organization_ReligionFamilyCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_ReligionFamilyCode" .
+
+ex:Organization_ReligionName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Organization_ReligionName" .
+
+ex:Household_HouseholdID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:Household ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Household_HouseholdID" .
+
+ex:Household_HouseholdIncomeAmount rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Household ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Household_HouseholdIncomeAmount" .
+
+ex:Household_HouseholdName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Household ;
+    rdfs:range xsd:string ;
+    rdfs:label "Household_HouseholdName" .
+
+ex:Household_HouseholdPartyCount rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Household ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Household_HouseholdPartyCount" .
+
+ex:Household_HouseholdTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Household ;
+    rdfs:range xsd:string ;
+    rdfs:label "Household_HouseholdTypeCode" .
+
+ex:PersonName_PersonPartyID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # Part of composite PK/FK
+    rdfs:domain ex:PersonName ;
+    rdfs:range xsd:integer ;
+    rdfs:label "PersonName_PersonPartyID" .
+
+ex:PersonName_EffectiveDate rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # Part of composite PK
+    rdfs:domain ex:PersonName ;
+    rdfs:range xsd:date ;
+    rdfs:label "PersonName_EffectiveDate" .
+
+ex:Consumer_ConsumerID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:Consumer ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Consumer_ConsumerID" .
+
+ex:ConsumerConversionState_ConsumerConversionStateID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:ConsumerConversionState ;
+    rdfs:range xsd:integer ;
+    rdfs:label "ConsumerConversionState_ConsumerConversionStateID" .
+
+ex:ConsumerConversionState_EffectiveDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:ConsumerConversionState ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "ConsumerConversionState_EffectiveDateTime" .
+
+ex:ConsumerConversionState_ExpirationDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:ConsumerConversionState ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "ConsumerConversionState_ExpirationDateTime" .
+
+ex:ConsumerConversionState_CurrentStatus rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:ConsumerConversionState ;
+    rdfs:range xsd:string ;
+    rdfs:label "ConsumerConversionState_CurrentStatus" .
+
+ex:ConsumerConversionState_ConversionStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:ConsumerConversionState ;
+    rdfs:range xsd:string ;
+    rdfs:label "ConsumerConversionState_ConversionStatusCode" .
+
+ex:ConsumerConversionState_ChannelID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:ConsumerConversionState ;
+    rdfs:range xsd:integer ;
+    rdfs:label "ConsumerConversionState_ChannelID" .
+
+ex:Visitor_VisitorID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:Visitor ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Visitor_VisitorID" .
+
+ex:Visitor_UserName rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # AK implies UNIQUE
+    rdfs:domain ex:Visitor ;
+    rdfs:range xsd:string ;
+    rdfs:label "Visitor_UserName" .
+
+ex:Visitor_UserEmailAddress rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # AK implies UNIQUE
+    rdfs:domain ex:Visitor ;
+    rdfs:range xsd:string ;
+    rdfs:label "Visitor_UserEmailAddress" .
+
+ex:Customer_CustomerID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # PK/FK
+    rdfs:domain ex:Customer ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Customer_CustomerID" .
+
+ex:Customer_AnonymousFlag rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "Customer_AnonymousFlag" .
+
+ex:KeyCustomer_CustomerID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; # PK/FK
+    rdfs:domain ex:KeyCustomer ;
+    rdfs:range xsd:integer ;
+    rdfs:label "KeyCustomer_CustomerID" .
+
+ex:KeyCustomer_PrivacyOptOutCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:KeyCustomer ;
+    rdfs:range xsd:string ;
+    rdfs:label "KeyCustomer_PrivacyOptOutCode" .
+
+ex:CustomerAccount_CustomerAccountID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range xsd:integer ;
+    rdfs:label "CustomerAccount_CustomerAccountID" .
+
+ex:CustomerAccount_FinancialLedgerAccountID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range xsd:integer ;
+    rdfs:label "CustomerAccount_FinancialLedgerAccountID" .
+
+ex:CustomerAccount_CustomerAccountName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range xsd:string ;
+    rdfs:label "CustomerAccount_CustomerAccountName" .
+
+ex:CustomerAccount_CustomerAccountTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range xsd:string ;
+    rdfs:label "CustomerAccount_CustomerAccountTypeCode" .
+
+ex:CustomerAccount_CustomerAccountEffectiveDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range xsd:date ;
+    rdfs:label "CustomerAccount_CustomerAccountEffectiveDate" .
+
+ex:CustomerAccount_CustomerAccountExpirationDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range xsd:date ;
+    rdfs:label "CustomerAccount_CustomerAccountExpirationDate" .
+
+ex:CustomerAccount_StatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range xsd:string ;
+    rdfs:label "CustomerAccount_StatusCode" .
+
+ex:CustomerAccount_UnpaidBalanceInterestRatePercent rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "CustomerAccount_UnpaidBalanceInterestRatePercent" .
+
+ex:CustomerAccount_GracePeriodDayCount rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range xsd:integer ;
+    rdfs:label "CustomerAccount_GracePeriodDayCount" .
+
+ex:CustomerGroupType_CustomerGroupTypeCode rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:CustomerGroupType ;
+    rdfs:range xsd:string ;
+    rdfs:label "CustomerGroupType_CustomerGroupTypeCode" .
+
+ex:CustomerGroupType_CustomerGroupTypeName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerGroupType ;
+    rdfs:range xsd:string ;
+    rdfs:label "CustomerGroupType_CustomerGroupTypeName" .
+
+ex:CustomerGroup_CustomerGroupID rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain ex:CustomerGroup ;
+    rdfs:range xsd:integer ;
+    rdfs:label "CustomerGroup_CustomerGroupID" .
+
+ex:CustomerGroup_Name rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerGroup ;
+    rdfs:range xsd:string ;
+    rdfs:label "CustomerGroup_Name" .
+
+ex:CustomerGroup_Description rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerGroup ;
+    rdfs:range xsd:string ;
+    rdfs:label "CustomerGroup_Description" .
+
+ex:CustomerAffiliation_IdentifyVerifyRequiredFlag rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAffiliation ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "CustomerAffiliation_IdentifyVerifyRequiredFlag" .
+
+ex:CustomerAffiliation_EffectiveDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAffiliation ;
+    rdfs:range xsd:date ;
+    rdfs:label "CustomerAffiliation_EffectiveDate" .
+
+ex:CustomerAffiliation_ExpirationDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAffiliation ;
+    rdfs:range xsd:date ;
+    rdfs:label "CustomerAffiliation_ExpirationDate" .
+
+ex:CustomerAffiliation_StatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:CustomerAffiliation ;
+    rdfs:range xsd:string ;
+    rdfs:label "CustomerAffiliation_StatusCode" .
+
+
+# Object Properties
+
+ex:PartyAffiliation_has_Party rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:PartyAffiliation ;
+    rdfs:range ex:Party ;
+    rdfs:label "PartyAffiliation_has_Party" .
+
+ex:PartyAffiliation_has_SubParty rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:PartyAffiliation ;
+    rdfs:range ex:Party ;
+    rdfs:label "PartyAffiliation_has_SubParty" .
+
+ex:Party_has_PartyType rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Party ;
+    rdfs:range ex:PartyType ;
+    rdfs:label "Party_has_PartyType" .
+
+ex:PartyRoleAssignment_has_Party rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:PartyRoleAssignment ;
+    rdfs:range ex:Party ;
+    rdfs:label "PartyRoleAssignment_has_Party" .
+
+ex:PartyRoleAssignment_has_PartyRole rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:PartyRoleAssignment ;
+    rdfs:range ex:PartyRole ;
+    rdfs:label "PartyRoleAssignment_has_PartyRole" .
+
+ex:PartyContactMethod_has_PartyRoleAssignment rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range ex:PartyRoleAssignment ;
+    rdfs:label "PartyContactMethod_has_PartyRoleAssignment" .
+
+ex:PartyContactMethod_has_ConsumerConversionState rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:PartyContactMethod ;
+    rdfs:range ex:ConsumerConversionState ;
+    rdfs:label "PartyContactMethod_has_ConsumerConversionState" .
+
+ex:Household_has_Party rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Household ;
+    rdfs:range ex:Party ;
+    rdfs:label "Household_has_Party" .
+
+ex:Consumer_has_PartyRoleAssignment rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Consumer ;
+    rdfs:range ex:PartyRoleAssignment ;
+    rdfs:label "Consumer_has_PartyRoleAssignment" .
+
+ex:Consumer_has_Party rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Consumer ;
+    rdfs:range ex:Party ;
+    rdfs:label "Consumer_has_Party" .
+
+ex:ConsumerConversionState_has_Consumer rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:ConsumerConversionState ;
+    rdfs:range ex:Consumer ;
+    rdfs:label "ConsumerConversionState_has_Consumer" .
+
+ex:Visitor_has_ConsumerConversionState rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Visitor ;
+    rdfs:range ex:ConsumerConversionState ;
+    rdfs:label "Visitor_has_ConsumerConversionState" .
+
+ex:Customer_has_ConsumerConversionState rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range ex:ConsumerConversionState ;
+    rdfs:label "Customer_has_ConsumerConversionState" .
+
+ex:Customer_has_Party rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range ex:Party ;
+    rdfs:label "Customer_has_Party" .
+
+ex:KeyCustomer_has_ConsumerConversionState rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:KeyCustomer ;
+    rdfs:range ex:ConsumerConversionState ;
+    rdfs:label "KeyCustomer_has_ConsumerConversionState" .
+
+ex:CustomerAccount_has_Customer rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:CustomerAccount ;
+    rdfs:range ex:Customer ;
+    rdfs:label "CustomerAccount_has_Customer" .
+
+ex:CustomerGroup_has_CustomerGroupType rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:CustomerGroup ;
+    rdfs:range ex:CustomerGroupType ;
+    rdfs:label "CustomerGroup_has_CustomerGroupType" .
+
+# Object Properties from the CustomerAffiliation Link Table (linking the link table itself)
+ex:CustomerAffiliation_has_CustomerGroup rdf:type owl:ObjectProperty , owl:FunctionalProperty ; # Part of composite PK
+    rdfs:domain ex:CustomerAffiliation ;
+    rdfs:range ex:CustomerGroup ;
+    rdfs:label "CustomerAffiliation_has_CustomerGroup" .
+
+ex:CustomerAffiliation_has_Customer rdf:type owl:ObjectProperty , owl:FunctionalProperty ; # Part of composite PK
+    rdfs:domain ex:CustomerAffiliation ;
+    rdfs:range ex:Customer ;
+    rdfs:label "CustomerAffiliation_has_Customer" .
+
+# Bidirectional Object Properties for the CustomerAffiliation Link Table (linking the related tables)
+ex:CustomerGroup_relatesViaCustomerAffiliation_Customer rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:CustomerGroup ;
+    rdfs:range ex:Customer ;
+    rdfs:label "CustomerGroup_relatesViaCustomerAffiliation_Customer" .
+
+ex:Customer_relatesViaCustomerAffiliation_CustomerGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range ex:CustomerGroup ;
+    owl:inverseOf ex:CustomerGroup_relatesViaCustomerAffiliation_Customer ;
+    rdfs:label "Customer_relatesViaCustomerAffiliation_CustomerGroup" .
+
+
+# Restrictions (based on NOT NULL and PRIMARY KEY)
+
+# PartyAffiliationType
+ex:PartyAffiliationType rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyAffiliationType_PartyAffiliationTypeCode ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:PartyAffiliationType rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyAffiliationType_PartyAffiliationTypeCode ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+
+# PartyAffiliation - PK constraint handled by functional property
+ex:PartyAffiliation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyAffiliation_PartyAffiliationID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:PartyAffiliation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyAffiliation_PartyAffiliationID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+
+# PartyType
+ex:PartyType rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyType_PartyTypeCode ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:PartyType rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyType_PartyTypeCode ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+
+# Party
+ex:Party rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Party_PartyID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:Party rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Party_PartyID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+ex:Party rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Party_has_PartyType ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+
+# PartyRole
+ex:PartyRole rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyRole_PartyRoleTypeCode ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:PartyRole rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyRole_PartyRoleTypeCode ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+
+# PartyRoleAssignment
+ex:PartyRoleAssignment rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyRoleAssignment_PartyRoleAssignmentID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:PartyRoleAssignment rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyRoleAssignment_PartyRoleAssignmentID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+ex:PartyRoleAssignment rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyRoleAssignment_has_Party ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+ex:PartyRoleAssignment rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyRoleAssignment_has_PartyRole ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+
+# PartyContactMethod - PK rule not applicable as it uses AK instead of PK
+ex:PartyContactMethod rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyContactMethod_ContactPurposeTypeCode ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:PartyContactMethod rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyContactMethod_ContactMethodTypeCode ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:PartyContactMethod rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PartyContactMethod_has_PartyRoleAssignment ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+
+# Person - PK/FK handled by subClassOf and restrictions
+ex:Person rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Person_PersonPartyID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:Person rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Person_PersonPartyID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+
+# Organization - PK/FK handled by subClassOf and restrictions
+ex:Organization rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Organization_PartyID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:Organization rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Organization_PartyID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+
+# Household
+ex:Household rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Household_HouseholdID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:Household rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Household_HouseholdID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+ex:Household rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Household_has_Party ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+
+# PersonName - Composite PK, apply restrictions to each component
+ex:PersonName rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PersonName_PersonPartyID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:PersonName rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PersonName_PersonPartyID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY component
+] .
+ex:PersonName rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PersonName_EffectiveDate ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:PersonName rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:PersonName_EffectiveDate ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY component
+] .
+
+# Consumer
+ex:Consumer rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Consumer_ConsumerID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:Consumer rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Consumer_ConsumerID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+
+# ConsumerConversionState
+ex:ConsumerConversionState rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:ConsumerConversionState_ConsumerConversionStateID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:ConsumerConversionState rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:ConsumerConversionState_ConsumerConversionStateID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+ex:ConsumerConversionState rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:ConsumerConversionState_CurrentStatus ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL (from description)
+] .
+ex:ConsumerConversionState rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:ConsumerConversionState_ConversionStatusCode ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:ConsumerConversionState rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:ConsumerConversionState_has_Consumer ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+
+# Visitor
+ex:Visitor rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Visitor_VisitorID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:Visitor rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Visitor_VisitorID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+ex:Visitor rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Visitor_has_ConsumerConversionState ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+
+# Customer - PK/FK handled by subClassOf and restrictions
+ex:Customer rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Customer_CustomerID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:Customer rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Customer_CustomerID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+ex:Customer rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:Customer_has_ConsumerConversionState ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+
+# KeyCustomer - PK/FK handled by subClassOf and restrictions
+ex:KeyCustomer rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:KeyCustomer_CustomerID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:KeyCustomer rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:KeyCustomer_CustomerID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+
+# CustomerAccount
+ex:CustomerAccount rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerAccount_CustomerAccountID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:CustomerAccount rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerAccount_CustomerAccountID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+ex:CustomerAccount rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerAccount_has_Customer ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+
+# CustomerGroupType
+ex:CustomerGroupType rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerGroupType_CustomerGroupTypeCode ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:CustomerGroupType rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerGroupType_CustomerGroupTypeCode ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+
+# CustomerGroup
+ex:CustomerGroup rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerGroup_CustomerGroupID ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # NOT NULL
+] .
+ex:CustomerGroup rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerGroup_CustomerGroupID ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY
+] .
+ex:CustomerGroup rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerGroup_has_CustomerGroupType ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL
+] .
+
+# CustomerAffiliation - Composite PK on FKs, apply restrictions to the object properties representing the FKs
+ex:CustomerAffiliation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerAffiliation_has_CustomerGroup ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL (part of PK)
+] .
+ex:CustomerAffiliation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerAffiliation_has_CustomerGroup ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY component
+] .
+ex:CustomerAffiliation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerAffiliation_has_Customer ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ; # FK NOT NULL (part of PK)
+] .
+ex:CustomerAffiliation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ex:CustomerAffiliation_has_Customer ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ; # PRIMARY KEY component
+] .
+```
