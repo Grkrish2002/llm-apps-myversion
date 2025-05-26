@@ -1,0 +1,288 @@
+```sql
+CREATE TABLE PartyAffiliationType (
+    PartyAffiliationTypeCode VARCHAR(50) PRIMARY KEY,
+    Description VARCHAR(255)
+);
+
+CREATE TABLE PartyType (
+    PartyTypeCode VARCHAR(50) PRIMARY KEY,
+    PartyTypeDescription VARCHAR(255)
+);
+
+CREATE TABLE PartyRole (
+    PartyRoleTypeCode VARCHAR(50) PRIMARY KEY,
+    Name VARCHAR(255),
+    Description VARCHAR(500)
+);
+
+CREATE TABLE CustomerGroupType (
+    CustomerGroupTypeCode VARCHAR(50) PRIMARY KEY,
+    CustomerGroupTypeName VARCHAR(255)
+);
+
+-- Note: The diagram shows a circular dependency between Consumer and ConsumerConversionState.
+-- Based on the description and typical modeling patterns, the FK is placed on the consumer-side tables.
+-- The FK from ConsumerConversionState to Consumer (ConsumerID) is omitted here to break the cycle.
+CREATE TABLE ConsumerConversionState (
+    ConsumerConversionStateID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Description VARCHAR(500),
+    CurrentStatus VARCHAR(50),
+    ConversionStatusCode VARCHAR(50), -- FK? Target table not shown
+    ConversionReasonCode VARCHAR(50) -- FK? Target table not shown
+);
+
+CREATE TABLE Party (
+    PartyID INT PRIMARY KEY,
+    PartyTypeCode VARCHAR(50) NOT NULL,
+    CONSTRAINT FK_Party_PartyType FOREIGN KEY (PartyTypeCode) REFERENCES PartyType(PartyTypeCode)
+);
+
+CREATE TABLE Person (
+    PartyID INT PRIMARY KEY, -- PK is also FK to Party
+    LanguageID VARCHAR(50), -- FK? Target table not shown
+    Salutation VARCHAR(50),
+    FirstName VARCHAR(255),
+    MiddleName VARCHAR(255),
+    MiddleNameType VARCHAR(50),
+    LastName VARCHAR(255),
+    LastNameType VARCHAR(50),
+    Suffix VARCHAR(50),
+    SortingName VARCHAR(255),
+    MailingName VARCHAR(255),
+    OfficialName VARCHAR(255),
+    GenderTypeCode VARCHAR(50), -- FK? Target table not shown
+    DateOfBirth DATE,
+    MaritalStatusCode VARCHAR(50), -- FK? Target table not shown
+    LifeStageCode VARCHAR(50), -- FK? Target table not shown
+    RaceCode VARCHAR(50), -- FK? Target table not shown
+    EthnicityTypeCode VARCHAR(50), -- FK? Target table not shown
+    ReligionFamilyCode VARCHAR(50), -- FK? Target table not shown
+    ReligionName VARCHAR(255), -- FK? Target table not shown
+    EducationLevelCode VARCHAR(50), -- FK? Target table not shown
+    EmploymentStatusCode VARCHAR(50), -- FK? Target table not shown
+    OccupationTypeCode VARCHAR(50), -- FK? Target table not shown
+    AnnualIncomeRangeCode VARCHAR(50), -- FK? Target table not shown
+    PersonalityTypeCode VARCHAR(50), -- FK? Target table not shown
+    LifestyleTypeCode VARCHAR(50), -- FK? Target table not shown
+    PersonalityValueTypeCode VARCHAR(50), -- FK? Target table not shown
+    ValueAttitudeLifestyleTypeCode VARCHAR(50), -- FK? Target table not shown
+    ConsumerCreditScore DECIMAL(10, 2),
+    DietaryHabitTypeCode VARCHAR(50), -- FK? Target table not shown
+    ConsumerCreditRatingServiceName VARCHAR(255),
+    DisabilityImpairmentTypeCode VARCHAR(50), -- FK? Target table not shown
+    CONSTRAINT FK_Person_Party FOREIGN KEY (PartyID) REFERENCES Party(PartyID)
+);
+
+CREATE TABLE Organization (
+    PartyID INT PRIMARY KEY, -- PK is also FK to Party
+    LegalName VARCHAR(255),
+    TradeName VARCHAR(255),
+    LegalStatusCode VARCHAR(50), -- FK? Target table not shown
+    TerminationDate DATE,
+    LegalOrganizationTypeCode VARCHAR(50), -- FK? Target table not shown
+    JurisdictionOfIncorporation VARCHAR(255),
+    IncorporationDate DATE,
+    FiscalYearEndDate DATE,
+    BusinessActivityCode VARCHAR(50), -- FK? Target table not shown
+    LocalAnnualRevenueAmount DECIMAL(18, 2),
+    GlobalAnnualRevenueAmount DECIMAL(18, 2),
+    OpenForBusinessDate DATE,
+    ClosedForBusinessDate DATE,
+    DUNSNumber VARCHAR(50),
+    BankruptcyFlag BOOLEAN,
+    BankruptcyDate DATE,
+    BankruptcyEmergenceDate DATE,
+    BankruptcyTypeCode VARCHAR(50), -- FK? Target table not shown
+    EmployeeCountLocal INT,
+    EmployeeCountGlobal INT,
+    DunnAndBradstreetRating DECIMAL(5, 2),
+    PrimaryBusinessLanguageID VARCHAR(50), -- FK? Target table not shown
+    OrganizationDescriptionNarrative VARCHAR(1000),
+    GlobalBusinessSizeTypecode VARCHAR(50), -- FK? Target table not shown
+    ReligionFamilyCode VARCHAR(50), -- FK? Target table not shown
+    ReligionName VARCHAR(255), -- FK? Target table not shown
+    CONSTRAINT FK_Organization_Party FOREIGN KEY (PartyID) REFERENCES Party(PartyID)
+);
+
+CREATE TABLE Household (
+    HouseholdID INT PRIMARY KEY,
+    PartyID INT NOT NULL,
+    HouseholdIncomeAmount DECIMAL(18, 2),
+    HouseholdName VARCHAR(255),
+    HouseholdPartyCount INT,
+    HouseholdTypeCode VARCHAR(50),
+    CONSTRAINT FK_Household_Party FOREIGN KEY (PartyID) REFERENCES Party(PartyID)
+);
+
+CREATE TABLE PartyRoleAssignment (
+    PartyRoleAssignmentID INT PRIMARY KEY,
+    PartyID INT NOT NULL,
+    PartyRoleTypeCode VARCHAR(50) NOT NULL,
+    StatusCode VARCHAR(50),
+    EffectiveDate DATE,
+    ExpirationDate DATE,
+    CONSTRAINT FK_PartyRoleAssignment_Party FOREIGN KEY (PartyID) REFERENCES Party(PartyID),
+    CONSTRAINT FK_PartyRoleAssignment_PartyRole FOREIGN KEY (PartyRoleTypeCode) REFERENCES PartyRole(PartyRoleTypeCode)
+);
+
+CREATE TABLE Consumer (
+    ConsumerID INT PRIMARY KEY,
+    ConsumerConversionStateID INT NOT NULL,
+    PartyID INT NOT NULL,
+    AnonymousFlag BOOLEAN,
+    CONSTRAINT FK_Consumer_ConsumerConversionState FOREIGN KEY (ConsumerConversionStateID) REFERENCES ConsumerConversionState(ConsumerConversionStateID),
+    CONSTRAINT FK_Consumer_Party FOREIGN KEY (PartyID) REFERENCES Party(PartyID)
+);
+
+CREATE TABLE Visitor (
+    VisitorID INT PRIMARY KEY,
+    UserName VARCHAR(255),
+    UserEmailAddress VARCHAR(255),
+    ConsumerConversionStateID INT NOT NULL,
+    CONSTRAINT FK_Visitor_ConsumerConversionState FOREIGN KEY (ConsumerConversionStateID) REFERENCES ConsumerConversionState(ConsumerConversionStateID)
+);
+
+CREATE TABLE Customer (
+    CustomerID INT PRIMARY KEY,
+    ConsumerConversionStateID INT NOT NULL,
+    PartyID INT NOT NULL,
+    AnonymousFlag BOOLEAN,
+    CONSTRAINT FK_Customer_ConsumerConversionState FOREIGN KEY (ConsumerConversionStateID) REFERENCES ConsumerConversionState(ConsumerConversionStateID),
+    CONSTRAINT FK_Customer_Party FOREIGN KEY (PartyID) REFERENCES Party(PartyID)
+);
+
+CREATE TABLE KeyCustomer (
+    CustomerID INT PRIMARY KEY, -- PK is also FK to Customer
+    PrivacyOptOutCode VARCHAR(50),
+    ConsumerRegistrationStateID INT NOT NULL, -- Assumed to be ConsumerConversionStateID
+    CONSTRAINT FK_KeyCustomer_Customer FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+    CONSTRAINT FK_KeyCustomer_ConsumerConversionState FOREIGN KEY (ConsumerRegistrationStateID) REFERENCES ConsumerConversionState(ConsumerConversionStateID)
+);
+
+CREATE TABLE PartyContactMethod (
+    ContactPurposeTypeCode VARCHAR(50) NOT NULL, -- Part of AK1 / PK
+    ContactMethodTypeCode VARCHAR(50) NOT NULL, -- Part of AK1 / PK
+    PartyRoleAssignmentID INT NOT NULL, -- Part of AK1 / PK
+    SocialNetworkUserID INT, -- FK? Target table not shown
+    EffectiveDateTime DATETIME,
+    ExpirationDateTime DATETIME,
+    AddressID INT, -- FK? Target table not shown
+    EmailAddressID INT, -- FK? Target table not shown
+    TelephoneID INT, -- FK? Target table not shown
+    WebSiteID INT, -- FK? Target table not shown
+    StatusCode VARCHAR(50),
+    ConsumerRegistrationStateID INT, -- Assumed to be ConsumerConversionStateID - Nullable based on dashed line
+    PRIMARY KEY (ContactPurposeTypeCode, ContactMethodTypeCode, PartyRoleAssignmentID), -- Based on AK1 likely being the PK
+    CONSTRAINT FK_PartyContactMethod_PartyRoleAssignment FOREIGN KEY (PartyRoleAssignmentID) REFERENCES PartyRoleAssignment(PartyRoleAssignmentID),
+    CONSTRAINT FK_PartyContactMethod_ConsumerConversionState FOREIGN KEY (ConsumerRegistrationStateID) REFERENCES ConsumerConversionState(ConsumerConversionStateID)
+);
+
+CREATE TABLE PersonName (
+    PartyID INT NOT NULL, -- Part of PK, FK to Person
+    EffectiveDate DATE NOT NULL, -- Part of PK
+    PRIMARY KEY (PartyID, EffectiveDate),
+    CONSTRAINT FK_PersonName_Person FOREIGN KEY (PartyID) REFERENCES Person(PartyID)
+);
+
+CREATE TABLE CustomerGroup (
+    CustomerGroupID INT PRIMARY KEY,
+    CustomerGroupTypeCode VARCHAR(50) NOT NULL,
+    Name VARCHAR(255),
+    Description VARCHAR(500),
+    CONSTRAINT FK_CustomerGroup_CustomerGroupType FOREIGN KEY (CustomerGroupTypeCode) REFERENCES CustomerGroupType(CustomerGroupTypeCode)
+);
+
+CREATE TABLE CustomerAccount (
+    CustomerAccountID INT PRIMARY KEY,
+    FinancialLedgerAccountID INT, -- FK? Target table not shown
+    CustomerAccountName VARCHAR(255),
+    CustomerAccountTypeCode VARCHAR(50), -- FK? Target table not shown
+    CustomerID INT NOT NULL,
+    CustomerAccountEffectiveDate DATE,
+    CustomerAccountExpirationDate DATE,
+    StatusCode VARCHAR(50),
+    UnpaidBalanceInterestRatePercent DECIMAL(5, 2),
+    GracePeriodDayCount INT,
+    CONSTRAINT FK_CustomerAccount_Customer FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+);
+
+CREATE TABLE CustomerAffiliation (
+    CustomerGroupID INT NOT NULL, -- Part of PK, FK to CustomerGroup
+    CustomerID INT NOT NULL, -- Part of PK, FK to Customer
+    IdentifyVerifyRequiredFlag BOOLEAN,
+    EffectiveDate DATE,
+    ExpirationDate DATE,
+    StatusCode VARCHAR(50),
+    PRIMARY KEY (CustomerGroupID, CustomerID),
+    CONSTRAINT FK_CustomerAffiliation_CustomerGroup FOREIGN KEY (CustomerGroupID) REFERENCES CustomerGroup(CustomerGroupID),
+    CONSTRAINT FK_CustomerAffiliation_Customer FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+);
+
+-- Note: AK1 appears to be the intended PK for this link table.
+CREATE TABLE PartyAffiliation (
+    PartyAffiliationTypeCode VARCHAR(50) NOT NULL, -- Part of PK, FK to PartyAffiliationType
+    PartyID INT NOT NULL, -- Part of PK, FK to Party
+    SubPartyID INT NOT NULL, -- Part of PK, FK to Party (Self-referencing or different Party)
+    ChannelID VARCHAR(50), -- FK? Target table not shown - Nullable based on dashed line
+    InvolvementTypeCode VARCHAR(50), -- FK? Target table not shown - Nullable based on dashed line
+    EffectiveDateTime DATETIME NOT NULL, -- Part of PK
+    ExpirationDateTime DATETIME,
+    StatusCode VARCHAR(50),
+    PrincipleSubPartyFlag BOOLEAN,
+    PRIMARY KEY (PartyAffiliationTypeCode, PartyID, SubPartyID, EffectiveDateTime), -- Using the relevant parts of AK1 as PK. ChannelID and InvolvementTypeCode are nullable FKs, unlikely to be part of a PK unless explicitly shown. Assuming the core identifying components. If the full AK1 including nullable FKs is the PK, the model is unusual. Using non-nullable components + datetime seems more standard for this pattern. Re-evaluating AK1 in the image: (PartyAffiliationTypeCode, PartyID, SubPartyID, ChannelID, InvolvementTypeCode, EffectiveDateTime). Let's use the full AK1 as the PK as indicated in the diagram.
+    CONSTRAINT FK_PartyAffiliation_PartyAffiliationType FOREIGN KEY (PartyAffiliationTypeCode) REFERENCES PartyAffiliationType(PartyAffiliationTypeCode),
+    CONSTRAINT FK_PartyAffiliation_Party FOREIGN KEY (PartyID) REFERENCES Party(PartyID),
+    CONSTRAINT FK_PartyAffiliation_SubParty FOREIGN KEY (SubPartyID) REFERENCES Party(PartyID) -- Assumes SubPartyID references Party
+);
+
+-- Re-creating PartyAffiliation with full AK1 as PK
+DROP TABLE IF EXISTS PartyAffiliation;
+
+CREATE TABLE PartyAffiliation (
+    PartyAffiliationTypeCode VARCHAR(50) NOT NULL, -- Part of PK, FK to PartyAffiliationType
+    PartyID INT NOT NULL, -- Part of PK, FK to Party
+    SubPartyID INT NOT NULL, -- Part of PK, FK to Party (Self-referencing or different Party)
+    ChannelID VARCHAR(50), -- FK? Target table not shown - Part of PK, Nullable FK makes it complex
+    InvolvementTypeCode VARCHAR(50), -- FK? Target table not shown - Part of PK, Nullable FK makes it complex
+    EffectiveDateTime DATETIME NOT NULL, -- Part of PK
+    ExpirationDateTime DATETIME,
+    StatusCode VARCHAR(50),
+    PrincipleSubPartyFlag BOOLEAN,
+    -- Including nullable FKs ChannelID and InvolvementTypeCode in PK based on diagram AK1
+    PRIMARY KEY (PartyAffiliationTypeCode, PartyID, SubPartyID, ChannelID, InvolvementTypeCode, EffectiveDateTime),
+    CONSTRAINT FK_PartyAffiliation_PartyAffiliationType FOREIGN KEY (PartyAffiliationTypeCode) REFERENCES PartyAffiliationType(PartyAffiliationTypeCode),
+    CONSTRAINT FK_PartyAffiliation_Party FOREIGN KEY (PartyID) REFERENCES Party(PartyID),
+    CONSTRAINT FK_PartyAffiliation_SubParty FOREIGN KEY (SubPartyID) REFERENCES Party(PartyID) -- Assumes SubPartyID references Party
+    -- Note: ChannelID and InvolvementTypeCode are marked as FK in the diagram but target tables are not shown.
+    -- Including them in the PK while potentially nullable is an unusual design based on standard SQL PK rules.
+    -- If ChannelID or InvolvementTypeCode can be NULL, they cannot be part of the PRIMARY KEY in most SQL dialects.
+    -- Assuming, for DDL generation based strictly on the AK1 marking as PK, that these columns *cannot* actually be NULL
+    -- when used in the PK context, despite being marked as FK with a dashed line which usually indicates nullability.
+    -- Or perhaps ChannelID and InvolvementTypeCode are actually components of the AK, and a separate technical PK exists, but not shown.
+    -- Sticking to the diagram: AK1 is the PK. Reverting to the first interpretation where AK1 is PK.
+);
+
+-- Re-creating PartyAffiliation again, assuming AK1 is the PK as stated, and its components are NOT NULL as required for a PK.
+DROP TABLE IF EXISTS PartyAffiliation;
+
+CREATE TABLE PartyAffiliation (
+    PartyAffiliationTypeCode VARCHAR(50) NOT NULL, -- Part of PK, FK to PartyAffiliationType
+    PartyID INT NOT NULL, -- Part of PK, FK to Party
+    SubPartyID INT NOT NULL, -- Part of PK, FK to Party
+    ChannelID VARCHAR(50) NOT NULL, -- Part of PK, FK? Target table not shown. Assuming NOT NULL for PK.
+    InvolvementTypeCode VARCHAR(50) NOT NULL, -- Part of PK, FK? Target table not shown. Assuming NOT NULL for PK.
+    EffectiveDateTime DATETIME NOT NULL, -- Part of PK
+    ExpirationDateTime DATETIME,
+    StatusCode VARCHAR(50),
+    PrincipleSubPartyFlag BOOLEAN,
+    PRIMARY KEY (PartyAffiliationTypeCode, PartyID, SubPartyID, ChannelID, InvolvementTypeCode, EffectiveDateTime),
+    CONSTRAINT FK_PartyAffiliation_PartyAffiliationType FOREIGN KEY (PartyAffiliationTypeCode) REFERENCES PartyAffiliationType(PartyAffiliationTypeCode),
+    CONSTRAINT FK_PartyAffiliation_Party FOREIGN KEY (PartyID) REFERENCES Party(PartyID),
+    CONSTRAINT FK_PartyAffiliation_SubParty FOREIGN KEY (SubPartyID) REFERENCES Party(PartyID) -- Assumes SubPartyID references Party
+    -- Note: ChannelID and InvolvementTypeCode are marked as FK and part of AK1 (used as PK).
+    -- Their target tables are not shown, and the dashed line might imply nullability,
+    -- but components of a standard SQL PRIMARY KEY must be NOT NULL.
+    -- We assume they are NOT NULL in practice for the PK to be valid.
+);
+```
