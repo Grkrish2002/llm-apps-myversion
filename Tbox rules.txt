@@ -1,0 +1,52 @@
+You are an expert in database schema to ontology mapping. Your task is to convert the provided SQL DDL statements into an OWL ontology serialized in Turtle (TTL) format.
+
+Follow these transformation rules strictly:
+
+# Transformation Rules:
+*   Tables become `owl:Class` instances. The class URI should be `http://example.com/ontology/{TableName}` and it should have an `rdfs:label` with the table name.
+*   Non-Foreign Key columns become `owl:DatatypeProperty` instances.
+    *   The property URI should be `http://example.com/ontology/{TableName}_{ColumnName}`.
+    *   `rdfs:domain` should be the `owl:Class` corresponding to the table.
+    *   `rdfs:range` should be the XSD datatype mapped from the SQL type (e.g., INT -> xsd:integer, VARCHAR -> xsd:string).
+*   A `NOT NULL` constraint on a column translates to an `owl:Restriction` on the class, specifying `owl:minCardinality "1"^^xsd:nonNegativeInteger` for the corresponding property.
+*   A `UNIQUE` constraint on a column makes the corresponding `owl:DatatypeProperty` an `owl:FunctionalProperty`.
+*   A `PRIMARY KEY` constraint on a column makes the property an `owl:FunctionalProperty` and adds an `owl:Restriction` with `owl:cardinality "1"^^xsd:nonNegativeInteger`.
+*   Foreign Keys (e.g., `FOREIGN KEY (colA) REFERENCES TableB(colB)`) become `owl:ObjectProperty` instances.
+    *   The property URI should be `http://example.com/ontology/{SourceTableName}_has_{TargetTableName}`.
+    *   `rdfs:domain` is the source table's class.
+    *   `rdfs:range` is the target table's class.
+*   If a table (e.g., TableB) has its Primary Key also defined as a Foreign Key referencing another table's (e.g., TableA) Primary Key, then `ex:TableB rdfs:subClassOf ex:TableA`.
+*   A `DEFAULT {value}` constraint on a column translates to an `owl:Restriction` on the class, specifying `owl:hasValue "{value}"` (ensure the literal is correctly typed, e.g., "18"^^xsd:integer or "FEZ"^^xsd:string) for the corresponding property.
+*   A `CHECK ({column} >= {value})` constraint translates to a restricted datatype for the property's range. The property's `rdfs:range` should be a new `rdfs:Datatype` that has `owl:withRestrictions` including an `xsd:minInclusive "{value}"^^xsd:{original_xsd_type}`. (Similarly for <=, >, < with maxInclusive, minExclusive, maxExclusive).
+*   If a table has exactly two Foreign Keys and these are its primary means of relating other tables (a join/link table), create two `owl:ObjectProperty` instances. For FK1 from TableA to TableX and FK2 from TableB to TableX, create properties `ex:TableA_relatesVia{LinkTable}_TableB` (domain TableA, range TableB) and its `owl:inverseOf` property `ex:TableB_relatesVia{LinkTable}_TableA` (domain TableB, range TableA).
+*   If a Foreign Key references its own table, the corresponding `owl:ObjectProperty` should also be an `owl:SymmetricProperty`.
+
+# SQL DDL Statements:
+{Your DDL statements here, e.g.:}
+CREATE TABLE Persons (
+    pid INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    age INT,
+    city VARCHAR(255) DEFAULT 'FEZ',
+    CHECK (age >= 18)
+);
+
+CREATE TABLE Orders (
+    orderid INT PRIMARY KEY,
+    orderdate DATE,
+    customer_pid INT,
+    FOREIGN KEY (customer_pid) REFERENCES Persons(pid)
+);
+-- ... more DDL ...
+
+# Output:
+Generate the complete OWL ontology in Turtle (TTL) format.
+Use the following prefixes:
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/ontology/> .
+
+ex:ontology rdf:type owl:Ontology .
+
