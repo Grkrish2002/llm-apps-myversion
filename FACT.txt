@@ -1,0 +1,317 @@
+CREATE VIEW `mtech-daas-unified-data.transaction.com_traffic_txn_day_fact`(
+  greg_dt OPTIONS(description="Transaction Date - Date on which a COM transaction is made"),
+  dmd_traffic OPTIONS(description="Demand Traffic - Current year COM Traffic for <customer>'s & BLM , based on unique session id's. No traffic for Big Ticket/Furniture gallery stores."),
+  dmd_traffic_ly OPTIONS(description="Demand Traffic for Previous Year - Previous year COM Traffic for <customer>'s & BLM , based on unique session id's. No traffic for Big Ticket/Furniture gallery stores."),
+  dmd_txn OPTIONS(description="Demand Transaction - Current year COM Transactions for <customer>'s & BLM , based on unique reservation numbers. This contains Small ticket and big ticket transactions. ESEND transactions are excluded from COM transactions."),
+  dmd_txn_ly OPTIONS(description="Demand Transaction for Previous Year - Previous year COM Transactions for <customer>'s & BLM , based on unique reservation numbers. This contains Small ticket and big ticket transactions. ESEND transactions are excluded from COM transactions."),
+  dmd_traffic_pln_olm OPTIONS(description=" Demand Traffic Plans for Owned, Leased and Marketplace - Plan for COM traffic. \n<customer>'s plans daily COM traffic.\nBloomingdale's COM traffic plans equals  its equivalent  forecasted amount."),
+  dmd_txn_pln_olm OPTIONS(description="Demand Transaction Plans for Owned, Leased and Marketplace - Plan  for COM transaction.This is inclusive of Big Ticket.\n<customer>'s plans COM transactions daily.\nBloomingdale's COM transactions plans equals its equivalent forecasted amount."),
+  dmd_txn_pln_bt OPTIONS(description="Demand Transaction Plan for Big Ticket - Plan for COM Big ticket (BT) transactions .\n<customer>'s plans COM Big ticket transactions  daily.\nBloomingdale's do not plan COM Big ticket transactions."),
+  dmd_traffic_rof_olm OPTIONS(description="Demand Traffic Forecast for Owned, Leased and Marketplace - Forecast for COM traffic."),
+  dmd_txn_rof_olm OPTIONS(description="Demand Transaction Forecast for Owned, Leased and Marketplace - Forecast forCOM transaction.This is inclusive of Big Ticket."),
+  dmd_txn_rof_bt OPTIONS(description="Demand Transaction Forecast for Big Ticket - Forecast for COM Big ticket (BT)\nMCY forecast  COM transaction for Big Ticket\nBLM do not have  COM transaction forecast for Big ticket."),
+  divn_nbr OPTIONS(description="Division Number - Operating division number")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-04-23T09:09:47.938Z",
+  description="Table=com_traffic_txn_day_fact | Process to Generate the COM data for Golden Equation traffic transaction day data UDF BQ tables",
+  labels=[("createdby", "udf"), ("datazone", "transaction"), ("datasource", "bigquery")]
+);
+
+CREATE VIEW `mtech-daas-unified-data.transaction.sls_prod_loc_day_txn_fact`(
+  stt_rgstr_loc_dim_id OPTIONS(description="A dimension of STT, Register number, and LOC_DIM_ID : A dimension assigned to provide part of a unique key, used to later join various detailed sales tables. The STT_REG_LOC_DIM_ID represents the ringing/ Fulfillment  location for a dot com sale, and represents the physical location for a store ('bricks') sale transaction..The intersection where product on the salescheck was fulfilled - 1) STT-Store Terminal Transaction ID. Store transaction has a DSTT number  2) For .com transaction, a DSTT(Date Store Terminal Transaction ID) gets assigned randomly by the system  to identify the transaction."),
+  greg_dt OPTIONS(description="Gregorian Date : The date the transaction was billed to the customer.The format for date selection is 'yyyy-mm-dd'."),
+  rgstr_nbr OPTIONS(description="Register Number : A number assigned either to a point-of-sale (POS) physical terminal id on the selling floor, or to a Back Office reserved id, to indicate where this transaction originated in this division, location, register number, and day.Register numbers may be duplicated between locations and divisions."),
+  txn_nbr OPTIONS(description="Transaction Number : A unique number assigned to this transaction from this POS or back office reserved id, on this day in this division, location, register number , transaction number, and day . Transaction number is a unique system generated random number that is created for each transaction(transaction  example:Return/Cancel/Book/Ship)"),
+  prod_dim_id OPTIONS(description="Product Dimension Identification number : The PROD_DIM_ID is an 18 digit number created from the timestamp when the PROD_DIM row was created; it uniquely identifies each product in each division of the company. Multiple SKU_UPC_NBR's can and do exist for a single Dept/Vendor/Mkst/Color/Size. Therefore, PROD_DIM_ID must be added to ensure that duplicates will not occur."),
+  stt_divn_nbr OPTIONS(description="Division Number : The operating division / company for this transaction."),
+  stt_zl_str_nbr OPTIONS(description="Store number where transaction happens or the sales was rung : (1) For <customer>'s most online transactions go to ringing location 222 ,  but Market Place goes to ringing location 130 (2) For Bloomingdales, most online transaction go to ringing location 93, but Market Place goes to ringing location 130  (3) For RDS (big ticket) transactions processed on line go directly to location 129 in both operating divisions."),
+  stt_crdt_zl_str_nbr OPTIONS(description="Central ring store number : The central ring location number; this indicates what location gets the sale/return credit. If this column is zero, the sales credit goes to the store number in the STT_ZL_STORE_NBR field.  (1) For <customer>'s most online transactions credit goes to 129 ,  but Market Place goes to ringing location 130  (2) For Bloomingdales, most transactions credit goes to 129 , but Market Place goes to ringing location 130  (3) For RDS (big ticket) transactions processed on line go directly to location 129 in both operating divisions."),
+  stt_loc_dim_id OPTIONS(description="A dimension of STT and LOC_DIM_ID : A dimension assigned to provide part of a unique key, used to later join various detailed sales tables. The STT_LOC_DIM_ID represents the Central Ring location for a dot com sale, and represents the physical location for a store ('bricks') sale transaction.  (1) The location dimension for MCOM is 930 vs BCOM location is 977  (2) The location dimension for <customer>'s Marketplace is11142  vs Bloomingdales Marketplace is11144"),
+  loc_dim_id OPTIONS(description="Location Dimension Identifier : A dimension assigned to provide location dimension id."),
+  divn_nbr OPTIONS(description="Division Number : The operating division / company for this transaction."),
+  zl_str_nbr OPTIONS(description="Legacy Store Number : The 'ZL' fields were used for user facing screens and reports"),
+  crdt_zl_str_nbr OPTIONS(description="Legacy Central ring store number : The 'ZL' fields were used for user facing screens and reports"),
+  dept_nbr OPTIONS(description="Department Number where a product belongs : The department number for this UPC at the time of the sale transaction."),
+  sls_merch_amt OPTIONS(description="Sales Merchandise Amount : The extended (quantity x price) line item sold amount before point-of-sale discounts are applied, except for dotcom / RDS items that are net. "),
+  sls_merch_disc OPTIONS(description="Sales Merchandise Discount : The amount of point-of-sale discounts applied to this item on this transaction on this day  at this location."),
+  sls_assoc_disc OPTIONS(description="Sales Associate Discount : The amount of colleague / associate discounts applied to this item in the Back Office"),
+  sls_bomd_loyal_disc OPTIONS(description="Sales Back Office Markdown Loyalty Discount : The amount of Back Office Markdown Loyalty Discounts as calculated by the back office systems, in dollars and cents, for this transaction."),
+  sls_sbomd_loyal_disc OPTIONS(description="Sales Special Back Office Markdown Loyalty Discount : The amount of Special Back Office Markdown Loyalty Discounts as calculated by the back office systems, in dollars and cents, for this transaction."),
+  sls_adj OPTIONS(description="Sales Adjustments : The dollar amount of sales adjustments for this transaction."),
+  sls_unit OPTIONS(description="Sales Units : Units that are sold for each product on this transaction"),
+  rtrn_merch_amt OPTIONS(description="Return Merchandise Amount : The extended (quantity x price) line item returned amount before point-of-sale discounts are applied, except for dotcom /RDS items that are net"),
+  rtrn_merch_disc OPTIONS(description="Return Merchandise Discount : The original line item discount amount being reversed."),
+  rtrn_assoc_disc OPTIONS(description="Return Associate Discount : The amount of colleague / associate discounts applied to this returned item in the Back Office tied to an original sale"),
+  rtrn_bomd_loyal_disc OPTIONS(description="Return Back Office Markdown Loyalty Discount : Calculated by the back office systems, in dollars and cents, for thistransaction tied to an original sale. New charge accounts are a source of this discount."),
+  rtrn_sbomd_loyal_disc OPTIONS(description="Return Special Back Office Markdown Loyalty Discount : The return adjustment dollars tied to an original sale."),
+  rtrn_adj OPTIONS(description="Return Adjustment : The return adjustment dollars tied to an original sale."),
+  rtrn_unit OPTIONS(description="Return Units : The returned units tied to the original sale"),
+  item_last_cost OPTIONS(description="Item Last Cost : The item's most recent cost. Represented in dollars/cents."),
+  last_upd_nbr OPTIONS(description="Last Update number : The last date / time a row was updated.The value is zero unless the row was updated."),
+  rgstr_id OPTIONS(description="Register ID : A value applied to a sales transaction to indicate it's origin. \nCommon values include:\n FF = FedFIL transactions will no longer use this code if processed through the central server.\nAL=Aloha Restaurant\nFB=Back Office Markdown\nRD=RDS Transactions\nZM=Zoom Kiosks\nSP=SmartPOS\nFA=Full Screen\nLY=My <customer>s Loyalty Rewards Markdowns\nFP= Pre-Sell\nMR=Micros Restaurant\nBR=Bridal Automated Markdowns"),
+  ocd_cd OPTIONS(description="Omni Channel Dimension Code : A number initially assigned to each item sold to identify how the customer purchased merchandise and how the merchandise was fulfilled."),
+  congry_val OPTIONS(description="Congruency Value"),
+  prc_loc_nbr OPTIONS(description="Price Location Number : The division or the pricing region assigned to this row."),
+  tkt_rtl OPTIONS(description="Ticket Retail/Current ticket price : Value of Merchandise that <customer>'s Inc. currently sells a product. It is the price that a customer will pay for a product at the door when it is not on sale."),
+  own_rtl OPTIONS(description="Owned Retail : Value of Merchandise that <customer>'s Inc. currently own a product from accounting perspective."),
+  zl_stat_nbr OPTIONS(description="Price Status : The markdown status from the Item or Basic Record."),
+  fil_prc_loc_nbr OPTIONS(description="Fulfillment Price Location Number : The division or the pricing region assigned to this row."),
+  fil_zl_stat_nbr OPTIONS(description=""),
+  ocd_loc_typ OPTIONS(description="Attribute Abbreviation for selling location : The abbreviation of the attribute type description of the attribute type number."),
+  fil_ocd_loc_typ OPTIONS(description="Attribute Abbreviation for Fulfillment location : The abbreviation of the attribute type description of the attribute type number."),
+  rplnsh_flg OPTIONS(description="Replenishment Flag : A lookup flag that indicates if a product needs to be stocked up/reordered by location during any transaction event. "),
+  rplnsh_rplcmnt_sku_flg OPTIONS(description="Replenishment Replacement SKU Flag"),
+  rplnsh_flg_src OPTIONS(description=""),
+  fil_rplnsh_flg OPTIONS(description="FIL Replenishment Flag"),
+  fil_rplnsh_rplcmnt_sku_flg OPTIONS(description="FIL Replenishment Replacement SKU Flag"),
+  fil_rplnsh_flg_src OPTIONS(description="FIL Replenishment Flag Source"),
+  ocd_err_cd OPTIONS(description=""),
+  awc OPTIONS(description="Average Weighted Cost : Average Weighted Cost is the style level cost tracked over time, which updates as the cost increases/decreases due to negotiated discounts or price increases AWC cannot be reduced with Markdown. "),
+  item_frst_tkt_rtl OPTIONS(description="First Ticket Retail : Value of the Merchandise that <customer>'s Inc. initially decides to sell a product. It is the manufacturer suggested retail price at which the product is first introduced in the market for selling. "),
+  penny_ind OPTIONS(description="Penny Indicator : A code that indicates a liquidation (penny) status of products based on the product retail value. Penny merchandise are products that are valued at 2 cents or less."),
+  penny_flg OPTIONS(description="Penny Flag : A lookup flag that indicates if a product is valued at a penny or not."),
+  gross_sls_amt OPTIONS(description="Gross Sales Amount : Sales merchandise amount, sales discounts and adjustments, in dollars / cents for this level of transaction. Returns are not used in this calculation"),
+  gross_rtrn_amt OPTIONS(description="Gross Returns Amount : Return merchandise amount,  return discounts and adjustments, in dollars / cents for this level of transaction. Sales are not used in this calculation"),
+  net_sls_amt OPTIONS(description="Net Sales Amount at Transaction Level : The net of Gross Sales and Gross Returns in dollars."),
+  net_sls_unit OPTIONS(description="Net Sales Units at Transaction Level : The net of Gross Sales and Gross Returns in units"),
+  sls_loyal_disc OPTIONS(description="Sales Loyalty Discount : The combined Sale Loyalty Back Office Markdowns and Sale Special Back Office Markdowns."),
+  rtrn_loyal_disc OPTIONS(description="Return Loyalty Discount : The combined Return Loyalty Back Office Markdowns and Return Special Back Office Markdowns, representing the total loyalty discounts returned"),
+  frst_tkt_net_sls_amt OPTIONS(description="First Ticket Net Sales Amount : The initial retail price for all net quantity of units sold during this transaction, on this specific day, at this location, for this particular product."),
+  net_sls_cost_amt OPTIONS(description="Net Sales Cost Amount : Cost associated with net quantity of units sold during this transaction, on this specific day, at this location, for this particular product."),
+  tot_disc_amt OPTIONS(description="Total Discount Amount : Discount amount for merchandise sold on a given transaction day for a given time frame. ")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2104-12-31T16:36:36.724Z",
+  friendly_name="sls_prod_loc_day_txn_fact",
+  description="This is a detailed summary view that presents data at the transaction level, organized by day and location. It has been created to simplify the query process and includes calculations for net sales at the transaction level.\n\nIn addition to the main data, this view features extra columns that provide the following information:\n- Penny indicator to identify penny units\n- Congruency value\n- Markdown status\n- First ticket retail amount\n- Average weighted cost\n- Omni-channel dimension codes, among others.",
+  labels=[("udf", "sls_prod_loc_day_txn_fact")]
+);
+
+CREATE VIEW `mtech-daas-unified-data.transaction.fin_sls_pln_loc_day_fact`(
+  divn_nbr OPTIONS(description="Operating Division Nbr"),
+  amc_year OPTIONS(description="AMC Year"),
+  amc_season OPTIONS(description="AMC Season"),
+  amc_period OPTIONS(description="AMC Period"),
+  amc_week OPTIONS(description="AMC Week"),
+  amc_day OPTIONS(description="AMC Day"),
+  greg_dt OPTIONS(description="Gregarion Date"),
+  loc_dim_id OPTIONS(description="Location Dimension ID"),
+  zl_str_nbr OPTIONS(description="Legacy Store Nbr"),
+  zl_divn_nbr OPTIONS(description="Legacy Operating Divisino Nbr"),
+  pln_typ OPTIONS(description="Plan Type"),
+  pln_typ_desc OPTIONS(description="Description whether the plan is owned , leased marketplace or total example: own = 1, lease = 5, 6 = total . For Blumercury hardcoded to 1 =OWN"),
+  pln_sls_amt OPTIONS(description="Plan Net Sales")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-01-29T14:28:09.650Z",
+  friendly_name="Financial Sales Plans by Day and Location for <customer>s, Bloomingdales ,Blumercury",
+  description="Contains Financial Sales Plan by Day and Location for <customer>s, Bloomingdales and Bluemercury for Ownership Levels of Owned , Leased and Totals"
+);
+
+
+CREATE VIEW `mtech-daas-unified-data.transaction.div_dept_cl_loc_day_presell_fact`(
+  divn_nbr OPTIONS(description="Operating Division Number-The operating division / company for this transaction. The division values are 12 (<customer>'s) & 13 (Bloomingdales)"),
+  greg_dt OPTIONS(description="Gregorian Date -The date the transaction was recorded as a non-financial pre-sale to the customer or as a Pre-Sale Cancel."),
+  dept_nbr OPTIONS(description="Department Number-The department number for this UPC at the time of the sale transaction. It denotes the presell department numbers for both small ticket and big ticket."),
+  loc_dim_id OPTIONS(description="Location Dimension Identification number-The unique ID number assigned to the location"),
+  zl_class_nbr OPTIONS(description="Class Number-The class within a department assigned to this product dimension"),
+  zl_str_nbr OPTIONS(description="Store Number- The store number for this row indicating where the sales was rung."),
+  presell_init_amt OPTIONS(description="Presell Initial -Refers to a transaction in which a customer makes a purchase for a future date. It is the stage before any cancellations occur. Pre-orders have not been processed financially yet, and this applies to sales specific to a store. The value can be expressed in both units and dollars. This is after the Point of Sale Discounts, Perms, and Coupon discounts and prior to back office  and colleague discounts."),
+  presell_net_amt OPTIONS(description="Presell Net (WRTSUM)-This value represents both the small ticket and big ticket presell Net .\nPresell Net refers to any transaction where a customer makes a purchase for a future date. It is the stage after all cancellations are removed.  Cancellations occur on the day of the cancellations.Pre-orders have not been financially processed yet, and this applies to store specific sales. The value can be expressed in both units and dollars."),
+  cncl_amt OPTIONS(description="Presell Cancel Amount-This value represents the presale cancel amount for the small ticket transactions. This column is a place holder column and  not used for calculating the Presell Net(WRTSUM). Not populating big ticket cancel amount ")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-05-02T11:51:27.679Z"
+);
+
+CREATE VIEW `mtech-daas-unified-data.transaction.str_traffic_txn_day_fact`(
+  greg_dt OPTIONS(description="Gregorian Date - Date on which the transaction was made."),
+  divn_nbr OPTIONS(description="Division Number - Operating division number:"),
+  gross_sls_amt OPTIONS(description="Gross Sales Amount - Total Store gross sales prior to returns for current year. This includes the loyalty markdowns and all discounts. Includes only selling store locations in operating divisions(MCY & MBKS combined) and (BLM &BOS Combined). This is true gross sales for current year.It is for Owned,Leased & Marketplace"),
+  fleet_traffic OPTIONS(description="Store Fleet Traffic - Total Store fleet Traffic for the current year for all selling locations. This represents the number of footsteps in a store for current year\nFor MCY Stores-It represents grossed-up/extrapolated  fleet Traffic for the current year. It is calculated by extrapolating store traffic for all selling locations based on 2025 traffic comp logic. This extrapolation aims to project the total traffic for the entire fleet, even if traffic data is only available for a subset of locations.\n\nFor BLM Stores- this represents the actual total store fleet traffic for the current year. The data is sourced directly from RetailNext, as all Bloomingdale's stores have cameras that generate traffic data."),
+  txn OPTIONS(description="Net Positive Sale Transaction for stores - Number of purchase transactions for current year where unit quantity is greater than zero. This includes transactions with net_sls_amt>.02, and excludes audit adjustment transactions, Gift with Purchase (GWP) and restaurants .This is true store transaction for all selling locations in the current year."),
+  gross_sls_unit OPTIONS(description="Gross Sales Units  - Numbersof units sold for current year.Units with sales values >0 for current year,Includes only selling store locations.Excludes GWP & penny units"),
+  gross_sls_amt_ly OPTIONS(description="Gross Sales Amount for Previous Year - Total Store gross sales prior to returns for previous year. This includes the loyalty markdowns and all discounts. Includes only selling store locations in operating divisions(MCY & MBKS combined) and (BLM &BOS Combined). This is true gross sales for previous year.It is for Owned,Leased & Marketplace"),
+  fleet_traffic_ly OPTIONS(description="Store Fleet Traffic for Previous Year - Total Store fleet Traffic for the previous year for all selling locations. This represents the number of footsteps in a store for previous year\nFor MCY Stores-It represents grossed-up/extrapolated  fleet Traffic for the previous year. It is calculated by extrapolating store traffic for all selling locations based on 2025 traffic comp logic. This extrapolation aims to project the total traffic for the entire fleet, even if data is only available for a subset of locations.\n\nFor BLM Stores- this represents the actual total store fleet traffic for the previous year. The data is sourced directly from RetailNext, as all Bloomingdale's stores have cameras that generate traffic data."),
+  txn_ly OPTIONS(description="Net Positive Sale Transaction for stores for Previous Year - Number of purchase transactions forprevious year where unit quantity is greater than zero. This includes transactions with net_sls_amt>.02, and excludes audit adjustment transactions,Gift with Purchase (GWP) and restaurants.This is true store transaction for all selling locations in the previous year."),
+  gross_sls_unit_ly OPTIONS(description=" Gross Sale units for Previous Year - Numbers of units sold for previous year.Units with sales values >0 for current year,Includes only selling store locations.Excludes GWP & penny units"),
+  gross_sls_amt_pln OPTIONS(description="Gross Sales Plan Amount - Plan Amount for Gross Sales. Gross Sales plans exist for MCYs.There are no gross sales plan amount for BLM."),
+  traffic_pln OPTIONS(description="Traffic Plan - Plan for the Traffic. Store Traffic plans exist for MCYs.\n There are no store traffic plans for BLM."),
+  gross_sls_unit_pln OPTIONS(description="Number of Units Plan - Plan for units sold .Store unit plans exist for MCYs.\nThere are no store unit plans for BLM."),
+  txn_pln OPTIONS(description="Transaction Plan - Plan for Transactions. Store transaction plans exist for MCYs..There are no store transaction plans for BLM."),
+  gross_sls_amt_rof OPTIONS(description="Gross Sales Forecast Amount  - Forecast Amount for Gross Sales.Store gross sales forecast exist for MCYs.There are no store gross sales forecast for BLM."),
+  traffic_rof OPTIONS(description="Traffic Forecast - Forecast for Traffic.Store traffic forecast exist for MCYs.There are no store traffic forecast for BLM."),
+  gross_sls_unit_rof OPTIONS(description="Number of  Units Forecast - Forecast for units sold . Store unit forecast exist for MCYs.\nThere are no store units forecast for BLM."),
+  txn_rof OPTIONS(description="Transaction Forecast - Forecast for Transaction.Store transaction forecast exist for MCYs.\nThere are no store transaction forecast for BLM.")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-04-23T09:25:23.016Z",
+  friendly_name="Golden Equation Metrics ",
+  description="This table  STORE Golden Equation Metrics"
+);
+
+CREATE VIEW `mtech-daas-unified-data.transaction.resv_prod_loc_dmd_cnfrm_sls_fact`(
+  divn_nbr OPTIONS(description="Division Number-Operating Division Number\nMCY = 12 / 72; BLM = 13 / 72"),
+  resv_nbr OPTIONS(description="Small Ticket Reservation Number-Reservation Number for small ticket orders"),
+  resv_nbr_bt OPTIONS(description="Big Ticket Reservation Number-RDS Reservation Number for big ticket orders"),
+  shp_nbr_bt OPTIONS(description="Big Ticket Shipment Number-RDS Shipment Number for big ticket orders, which currently does not exist and will be null.  "),
+  shp_nbr OPTIONS(description="Small Ticket Shipment Number-Shipment Number for small ticket orders"),
+  sls_prod_dim_id OPTIONS(description="Sales Product Dimension ID-Product identifier for the products included in the transaction"),
+  sls_loc_dim_id OPTIONS(description="Sales Location Dimension ID-Location identifier for the location where the sales transaction originated"),
+  fil_loc_dim_id OPTIONS(description="Fill Location Dimension ID'-Location identifier for the location where the products in a transaction were fulfilled from"),
+  dmd_dt OPTIONS(description="Date of Demand Initially Placed-Date on which an order was first created"),
+  cncl_dt OPTIONS(description="Order cancel date-Date on which an order was cancelled"),
+  shp_dt OPTIONS(description="Shipped date-Date on which an item in an order was shipped"),
+  appl_id OPTIONS(description="Application ID-Identifies the originating source of launched application"),
+  penny_ind OPTIONS(description="Penny Unit Indicator-A code that indicates a liquidation (penny) status of products. Penny merchandise are products that are valued at 2 cents or less. \nFor small ticket, 0-8 = penny unit, 9 = everything else.  \nFor big ticket, 2 = penny unit, 9  everything else."),
+  penny_flg OPTIONS(description="Penny Flag-A lookup flag that indicates if a product is valued at a penny or not.  Use this column to remove penny units from the corresponding unit columns. \nFor small ticket, when penny_ind is either 0, 1, 2, 8 then penny_flg is 'Y' and 9 is 'N'.\nFor big ticket, when penny_ind = 2 then penny_flg is 'Y' ELSE 'N'.  "),
+  init_dmd_amt OPTIONS(description="Initial Demand Amount-Initial Demand Amount for all customer orders which are checked out in website prior remorse / fraud check window.  \nFor big ticket, this will be same as Demand Amount. "),
+  init_dmd_unit OPTIONS(description="Initial Demand Units-Initial Demand Amount for all customer orders which are checked out in website prior remorse / fraud check window.  \nFor big ticket, this will be same as Demand Amount. "),
+  dmd_unit OPTIONS(description="Demand Units-Demand Units of COM Orders made by customers after remorse / fraud check window. ESEND is not part of COM orders and should be excluded here. Use appl_id to exclude ESEND for respective Divisions."),
+  dmd_amt OPTIONS(description="Demand Amount-Demand Amount of COM Orders made by customers after remorse/fraud check window. ESEND is not part of COM orders and should be excluded here. Use appl_id to exclude ESEND for respective Divisions."),
+  cncl_amt OPTIONS(description="Total Cancellation Amount-Demand Amount that has been cancelled"),
+  cncl_unit OPTIONS(description="Total Cancellation Units-Demand Units that have been cancelled"),
+  shp_amt OPTIONS(description="Shipped Amount-Demand Amount that has been fulfilled or shipped"),
+  shp_unit OPTIONS(description="Shipped Units-Demand Units that have been fulfilled or shipped"),
+  cnfrm_sls_amt OPTIONS(description="Confirmed Sales Amount-Demand Amount excluding Total Cancellation Amount"),
+  cnfrm_sls_unit OPTIONS(description="Confirmed Sales Units-Demand Units excluding Total Cancellation Units"),
+  open_to_shp_amt OPTIONS(description="Demand Open to Ship Amt-Demand Amount that is yet to be shipped"),
+  open_to_shp_unit OPTIONS(description="Demand Open to Ship Units-Demand Units that are yet to be shipped"),
+  dept_nbr OPTIONS(description="Department Number-Department Number assigned to the product")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-05-02T11:50:35.075Z",
+  friendly_name="com demand conf demand conf sales shipped sales fact ",
+  description="This table has initial demand, conf demand, conf sales shipped sales for a resv/prod/loc/day level"
+);
+
+CREATE VIEW `mtech-daas-unified-data.transaction.dcr_pos_sls_loc_hh_fact`(
+  divn_nbr OPTIONS(description="Operating Division Number where the sale originated"),
+  greg_dt OPTIONS(description="Date when sale occurred"),
+  hh OPTIONS(description="Hour when sale occurred"),
+  loc_dim_id OPTIONS(description="Location Dimension ID where the sale occurred"),
+  zl_store_nbr OPTIONS(description="Legacy store number where sale occurred"),
+  locn_name OPTIONS(description="Name of the store where the sale occurred"),
+  txn_cnt OPTIONS(description="Count of POS Transactions in the given date and hour"),
+  net_sls_amt OPTIONS(description="Summary of Total Sales Amount including returns and discounts before tax is applied for any given hour of the day")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-02-11T21:47:36.041Z",
+  friendly_name="POS hourly sales actuals fact",
+  description="This fact table has hourly POS sales actuals"
+);
+
+CREATE VIEW `mtech-daas-unified-data.transaction.fin_sls_dept_cls_loc_day_fact`(
+  greg_dt OPTIONS(description="Calendar Date of Financial Transaction"),
+  loc_dim_id OPTIONS(description="Location Dimension ID"),
+  dept_nbr OPTIONS(description="Department Number"),
+  divn_nbr OPTIONS(description="Operating Division Nbr"),
+  zl_class_nbr OPTIONS(description="Class Number"),
+  amc_year OPTIONS(description="AMC Year"),
+  amc_period OPTIONS(description="AMC Period"),
+  amc_week OPTIONS(description="AMC Week"),
+  amc_day OPTIONS(description="AMC Day"),
+  sls_audit_ind OPTIONS(description="Sales Audit Indicator"),
+  sls_amt OPTIONS(description="Dollar Amount for the units sold"),
+  sls_amt_adj OPTIONS(description="Sales Adjustment"),
+  rtrn_amt OPTIONS(description="Dollar Amount for the units returned"),
+  rtrn_amt_adj OPTIONS(description="Return Adjustment"),
+  sls_disc_amt OPTIONS(description="Colleague Discount Sales Amount"),
+  rtrn_disc_amt OPTIONS(description="Colleague Discount Return Amount"),
+  zl_str_nbr OPTIONS(description="Legacy Store Nbr"),
+  net_sls_amt OPTIONS(description="Financial Net Sales "),
+  gross_sls_amt OPTIONS(description="Financial Gross Sales"),
+  gross_rtrn_amt OPTIONS(description="Financial Gross Returns")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-01-11T17:47:11.764Z",
+  friendly_name="Financial Sales by Department by Class by Location by Day",
+  description="Net Sales aggregated by Department by Class by Location by Day in which components of the sales excluding Back Office Discounts are allocated to the Financial Transaction Date. Back Office Discounts are applied to the date on which the individual Back Office Discounts are applied financially in our systems. This is often after the date of the Transaction"
+);
+
+CREATE VIEW `mtech-daas-unified-data.transaction.merch_dept_pln_rof_day_fact`(
+  greg_dt OPTIONS(description="Greg date"),
+  divn_nbr OPTIONS(description="Division number"),
+  dept_nbr OPTIONS(description="Department number"),
+  chnl_id OPTIONS(description="channel Id"),
+  chnl_desc OPTIONS(description="channel description"),
+  src OPTIONS(description="source"),
+  sls_pln_amt OPTIONS(description="Sales plan amount"),
+  sls_rof_amt OPTIONS(description="Sales ROF amount"),
+  tot_disc_pln OPTIONS(description="Total discount plan"),
+  tot_disc_rof OPTIONS(description="Total discount ROF")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-01-01T14:59:17.564Z"
+);
+
+
+CREATE VIEW `mtech-daas-unified-data.transaction.uop_ordevnts_dmd_sls_hh_fact`(
+  divn_nbr OPTIONS(description="Operating Division Number where the sale originated"),
+  sell_chnl_typ OPTIONS(description="Application or 3rd party order service where the order originated"),
+  subclient_id OPTIONS(description="Channel where sale originated"),
+  greg_dt OPTIONS(description="Date when sale originated"),
+  hh OPTIONS(description="Hour when sale originated"),
+  init_dmd_unit OPTIONS(description="Total sale line items sold in any given hour of the day"),
+  ord_cnt OPTIONS(description="Count of distinct orders in any given hour of the day"),
+  init_dmd_amt OPTIONS(description="Summary of the initial demand amount for customer orders checked out on the website for any given hour of the day, before tax and after applying online discounts"),
+  cpn_disc_amt OPTIONS(description="Summary of the discount amount applied to online orders placed in any given hour of the day"),
+  tax_amt OPTIONS(description="Summary of tax amount applied to online orders placed in any given hour of the day")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-02-12T16:32:16.841Z",
+  friendly_name="UOP hourly sales actuals fact",
+  description="This fact table has hourly sales actuals from UOP"
+);
+
+CREATE VIEW `mtech-daas-unified-data.transaction.fin_rof_loc_day_fact`(
+  rof_sls_amt OPTIONS(description="ROF Net Sales"),
+  greg_dt OPTIONS(description="Gregarion Date"),
+  amc_year OPTIONS(description="AMC Year"),
+  amc_season OPTIONS(description="AMC Season"),
+  amc_period OPTIONS(description="AMC Period"),
+  amc_week OPTIONS(description="AMC Week"),
+  amc_day OPTIONS(description="AMC Day"),
+  ol_typ OPTIONS(description="Ownership Level Type"),
+  col_typ OPTIONS(description="TBD"),
+  loc_dim_id OPTIONS(description="Location Dimension ID")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-01-11T08:40:55.126Z",
+  friendly_name="ROF Plans by Day and Financial Channel ",
+  description="ROF Plans by Day and Financial Channel example bcom,bmp,bos,bstr,mbks,mcom,mmp,mstr"
+);
+
+
+CREATE VIEW `mtech-daas-unified-data.transaction.dmd_pln_rof_cnfrm_dly_fact`(
+  divn_nbr OPTIONS(description="Division Number - Operating Division Number"),
+  greg_dt OPTIONS(description="Date in Gregarion Calendar - Date in Gregarion Calendar"),
+  dmd_pln_amt_olm OPTIONS(description="Demand  Plan Amount for Owned, Leased, Marketplace - Total Demand plan amount (Owned, Leased and Marketplace) with Big Ticket.\nBloomingdales  daily demand plans and  demand forecast are same at OLM level.Demand plans are only available for OL level."),
+  dmd_pln_amt_ol OPTIONS(description="Demand  Plan Amount for Owned, and Leased - Demand plan amount (Owned & Leased) with Big Ticket (BT) .\n<customer>'s plan value excludes Marketplace. \nBloomingdales plan value excludes Marketplace, and  BT .However, it is inclusive of BOPS ."),
+  dmd_pln_amt_mp OPTIONS(description="Demand  Plan Amount for Marketplace - Demand plan amount for  Marketplace  without Big Ticket.It exists for <customer>'s but Bloomingdales do not plan Demand  for Marketplace."),
+  dmd_pln_amt_bt OPTIONS(description="Demand   Plan Amount for Big Ticket - Demand plan amount for big ticket by location by day.\nExists only for Mcy's.Bloomingdales do not plan Big Ticket Demand seperately."),
+  dmd_pln_unit OPTIONS(description="Demand Plan Units - Total Demand plan units  (Owned, Leased and Marketplace) with Big Ticket.\nBloomingdales do not plan Demand Unit."),
+  dmd_rof_amt_olm OPTIONS(description="Demand Forecast Amount for Owned and Leased Marketplace - Total Demand forecast amount (Owned, Leased and Marketplace) with Big Ticket.\nBloomingdales  daily demand plans and  demand forecast are same at OLM level.BLM Demand forecast are only available for OL level."),
+  dmd_rof_amt_ol OPTIONS(description="Demand Forecast Amount for Owned and Leased - Demand forecast amount (Owned & Leased)  with Big Ticket .Forecast value excludes Marketplace. \nBloomingdales do not have forecast Demand at OL Level."),
+  dmd_rof_amt_mp OPTIONS(description="Demand Forecast Amount for Marketplace - Demand forecast amount for <customer>'s Marketplace without Big Ticket.\nBloomingdales do not forecast Demand  at Marketplace."),
+  dmd_rof_amt_bt OPTIONS(description="Demand Forecast Amount for Big Ticket - Demand forecast amount for big ticket by location by day.\nExists ONLY for <customer>'s.\nBloomingdales do not forecast Big Ticket demand seperately."),
+  dmd_rof_unit OPTIONS(description="Demand Forecast Units - Total Forecast plan units  (Owned, Leased and Marketplace) with Big Ticket.\nBloomingdales do not forecast Demand Unit."),
+  cnfrm_sls_pln_amt_olm OPTIONS(description="Confirmed Sales Planned Amount for Owned and Leased Marketplace - Total Confirmed Sales plan amount (Owned, Leased and Marketplace) with Big Ticket.Not available for Bloomigdales.\nBLM do not plan Confirmed Sales"),
+  cnfrm_sls_pln_amt_ol OPTIONS(description="Confirmed Sales Planned  Amount for Owned and Leased - Confirmed Sales plan amount (Owned & Leased) for <customer>'s with Big Ticket .Plan value excludes Marketplace\nBLM do not plan Confirmed Sales"),
+  cnfrm_sls_pln_amt_mp OPTIONS(description="Confirmed Sales Planned Amount for Marketplace - Confirmed Sales plan amount for <customer>'s Marketplace without Big Ticket.\nBLM do not plan Confirmed Sales"),
+  cnfrm_sls_rof_amt_olm OPTIONS(description="Confirmed Sales Forecast Amount for Owned and Leased Marketplace - Total Confirmed Sales forecast amount (Owned, Leased and Marketplace) with Big Ticket.Not available for Bloomigdales.\nBLM do not forecast  Confirmed Sales"),
+  cnfrm_sls_rof_amt_ol OPTIONS(description="Confirmed Sales Forecast Amount for Owned and Leased - Confirmed Sales forecast amount (Owned & Leased) for <customer>'s with Big Ticket .Plan value excludes Marketplace\nBLM do not forecast  Confirmed Sales"),
+  cnfrm_sls_rof_amt_mp OPTIONS(description="Confirmed Sales Forecast Amount for Marketplace - Confirmed sales forecast amount for <customer>'s Marketplace  without Big Ticket.\nBLM do not forecast  Confirmed Sales"),
+  dmd_cncl_rof_amt_ol OPTIONS(description="Demand Cancel Forecast Amount for Owned and Leased Departments - Demand Cancel Forecast Amount for Owned and Leased Departments\nBloomingdales do not forecast Demand at Owned & Leased cancels."),
+  dmd_cncl_rof_amt_mp OPTIONS(description="Demand Cancel Forecast Amount for Marketplace Departments - Demand Cancel Forecast Amount for Marketplace Departments\nBloomingdales do not forecast Demand Marketplace cancels."),
+  dmd_cncl_rof_amt_olm OPTIONS(description="Demand Cancel Forecast Amount for Owned Leased and Marketplace Departments - Demand Cancel Forecast Amount for Owned Leased and Marketplace Departments\nBloomingdales do not forecast Demand  OLM cancels."),
+  dmd_cncl_pln_amt_ol OPTIONS(description="Demand Cancel Plan Amount for Owned and Leased Departments - Demand Cancel Plan Amount for Owned and Leased Departments\nBloomingdales do not plan Demand Owned & Leased cancels."),
+  dmd_cncl_pln_amt_mp OPTIONS(description="Demand Cancel Plan Amount for Marketplace Departments - Demand Cancel Plan Amount for Marketplace Departments\nBloomingdales do not plan Demand Marketplace cancels."),
+  dmd_cncl_pln_amt_olm OPTIONS(description="Demand Cancel Plan Amount for Owned Leased and Marketplace Departments - Demand Cancel Plan Amount for Owned Leased and Marketplace Departments")
+)
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2105-04-23T07:29:06.755Z",
+  friendly_name="demand_forecast_confirmed_sales_daily_summary",
+  description="This view provides a summary of demand and confirmed sales plans and  forecasts . It also includes Demand Status of Cancel Plan and Forecast .This is at Day Level for <customer>s."
+);
