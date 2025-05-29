@@ -1,0 +1,21 @@
+"Table name","Shortened table name","Friendly Name","Table description"
+"mtech-daas-unified-data.transaction.com_traffic_txn_day_fact","com_traffic_txn_day_fact","","Table=com_traffic_txn_day_fact | Process to Generate the COM data for Golden Equation traffic transaction day data UDF BQ tables"
+"mtech-daas-unified-data.transaction.sls_prod_loc_day_txn_fact","sls_prod_loc_day_txn_fact","sls_prod_loc_day_txn_fact","This is a detailed summary view that presents data at the transaction level, organized by day and location. It has been created to simplify the query process and includes calculations for net sales at the transaction level.
+
+In addition to the main data, this view features extra columns that provide the following information:
+- Penny indicator to identify penny units
+- Congruency value
+- Markdown status
+- First ticket retail amount
+- Average weighted cost
+- Omni-channel dimension codes, among others."
+"mtech-daas-unified-data.transaction.fin_sls_pln_loc_day_fact","fin_sls_pln_loc_day_fact","Financial Sales Plans by Day and Location for <customer>s, Bloomingdales ,Blumercury","Contains Financial Sales Plan by Day and Location for <customer>s, Bloomingdales and Bluemercury for Ownership Levels of Owned , Leased and Totals"
+"mtech-daas-unified-data.transaction.div_dept_cl_loc_day_presell_fact","div_dept_cl_loc_day_presell_fact","",""
+"mtech-daas-unified-data.transaction.str_traffic_txn_day_fact","str_traffic_txn_day_fact","Golden Equation Metrics","This table  STORE Golden Equation Metrics"
+"mtech-daas-unified-data.transaction.resv_prod_loc_dmd_cnfrm_sls_fact","resv_prod_loc_dmd_cnfrm_sls_fact","com demand conf demand conf sales shipped sales fact","This table has initial demand, conf demand, conf sales shipped sales for a resv/prod/loc/day level"
+"mtech-daas-unified-data.transaction.dcr_pos_sls_loc_hh_fact","dcr_pos_sls_loc_hh_fact","POS hourly sales actuals fact","This fact table has hourly POS sales actuals"
+"mtech-daas-unified-data.transaction.fin_sls_dept_cls_loc_day_fact","fin_sls_dept_cls_loc_day_fact","Financial Sales by Department by Class by Location by Day","Net Sales aggregated by Department by Class by Location by Day in which components of the sales excluding Back Office Discounts are allocated to the Financial Transaction Date. Back Office Discounts are applied to the date on which the individual Back Office Discounts are applied financially in our systems. This is often after the date of the Transaction"
+"mtech-daas-unified-data.transaction.merch_dept_pln_rof_day_fact","merch_dept_pln_rof_day_fact","",""
+"mtech-daas-unified-data.transaction.uop_ordevnts_dmd_sls_hh_fact","uop_ordevnts_dmd_sls_hh_fact","UOP hourly sales actuals fact","This fact table has hourly sales actuals from UOP"
+"mtech-daas-unified-data.transaction.fin_rof_loc_day_fact","fin_rof_loc_day_fact","ROF Plans by Day and Financial Channel","ROF Plans by Day and Financial Channel example bcom,bmp,bos,bstr,mbks,mcom,mmp,mstr"
+"mtech-daas-unified-data.transaction.dmd_pln_rof_cnfrm_dly_fact","dmd_pln_rof_cnfrm_dly_fact","demand_forecast_confirmed_sales_daily_summary","This view provides a summary of demand and confirmed sales plans and  forecasts . It also includes Demand Status of Cancel Plan and Forecast .This is at Day Level for <customer>s."

@@ -1,0 +1,7 @@
+"Table name","Shortened table name","Friendly Name","Table description"
+"mtech-daas-unified-data.dimensions.dept_grp_dim","dept_grp_dim","","Table=dept_grp_dim | Department Group Dimension"
+"mtech-daas-unified-data.dimensions.operating_division_dim","operating_division_dim","operating_division_dimension","Reference table containing list of operating division IDs, names, and other relevant data. Filter on ACTIVE_IND = 1 to see current operating divisions"
+"mtech-daas-unified-data.dimensions.date_dim","date_dim","","Table=date_dim | Dimention table which contains all the date based data"
+"mtech-daas-unified-data.dimensions.location_dim","location_dim","","Table=location_dim | Dimention table which contains all the location based data"
+"mtech-daas-unified-data.dimensions.merchant_hierarchy_dim","merchant_hierarchy_dim","Merchant Hierarchy","This table contains the Merchant Hierarchy from Operating Division down to Division/Department: Operating Division > GMM > PDIV > DIV > MGM > Buyer > Department"
+"mtech-daas-unified-data.dimensions.product_dim","product_dim","","Table=cmrm_v10_t_stg_prod_dim | CMRM Stage prod Dimension"
