@@ -3,7 +3,671 @@
     "integer": {
       "default": [
         0,
+        1000
+      ],
+      "Buyer.buyerActivePurchaseOrderCountCurrent": [
+        0,
+        50
+      ],
+      "Buyer.buyerManagedSupplierCount": [
+        1,
+        100
+      ],
+      "Buyer.buyerRiskAssessmentParticipationCount": [
+        0,
+        20
+      ],
+      "Buyer.buyerSuccessfulNewProductIntroductionCount": [
+        0,
+        50
+      ],
+      "Buyer.buyerTrainingModulesCompletedCount": [
+        0,
+        30
+      ],
+      "BuyerGroup.buyerGroupBuyingOfficeID": [
+        1,
         10000
+      ],
+      "BuyerGroup.buyerGroupLeadBuyerUserID": [
+        1,
+        10000
+      ],
+      "BuyerGroup.buyerGroupMemberCount": [
+        1,
+        50
+      ],
+      "BuyerGroup.buyerGroupNewSupplierOnboardedCount": [
+        0,
+        20
+      ],
+      "BuyerGroup.buyerGroupPerformanceReviewCycleDays": [
+        30,
+        365
+      ],
+      "BuyerGroup.buyerGroupSKUCountManaged": [
+        100,
+        10000
+      ],
+      "BuyerGroup.buyerGroupSupplierPortfolioSize": [
+        10,
+        500
+      ],
+      "BuyingEvent.buyingEventLeadTimeDays": [
+        7,
+        180
+      ],
+      "BuyingEvent.buyingEventTotalQuantityOrdered": [
+        10,
+        100000
+      ],
+      "BuyingEvent.buyingEventUniqueProductCount": [
+        1,
+        500
+      ],
+      "BuyingOffice.buyingOfficeActiveSupplierCount": [
+        5,
+        500
+      ],
+      "BuyingOffice.buyingOfficeBuyerCount": [
+        1,
+        100
+      ],
+      "BuyingOffice.buyingOfficeHeadUserID": [
+        1,
+        10000
+      ],
+      "BuyingOffice.buyingOfficeLocationID": [
+        1,
+        10000
+      ],
+      "BuyingOffice.buyingOfficeNewProductsSourcedCount": [
+        5,
+        200
+      ],
+      "BuyingOffice.buyingOfficeStrategicSourcingProjectCount": [
+        1,
+        50
+      ],
+      "CalendarDate.calendarDateDayOfMonthNum": [
+        1,
+        31
+      ],
+      "CalendarDate.calendarDateDayOfQrtrNumH": [
+        1,
+        92
+      ],
+      "CalendarDate.calendarDateDayOfWeekNum": [
+        1,
+        7
+      ],
+      "CalendarDate.calendarDateDayOfYearNum": [
+        1,
+        366
+      ],
+      "CalendarDate.calendarDateFiscalDayOfPeriodNum": [
+        1,
+        31
+      ],
+      "CalendarDate.calendarDateFiscalDayOfQrtrNum": [
+        1,
+        92
+      ],
+      "CalendarDate.calendarDateFiscalDayOfWeekNum": [
+        1,
+        7
+      ],
+      "CalendarDate.calendarDateFiscalDayOfYearNum": [
+        1,
+        366
+      ],
+      "CalendarDate.calendarDateFiscalPeriodId": [
+        1,
+        12
+      ],
+      "CalendarDate.calendarDateFiscalPeriodOfQrtrNum": [
+        1,
+        3
+      ],
+      "CalendarDate.calendarDateFiscalPeriodOfYearNum": [
+        1,
+        12
+      ],
+      "CalendarDate.calendarDateFiscalQrtrId": [
+        1,
+        4
+      ],
+      "CalendarDate.calendarDateFiscalQrtrOfYearNum": [
+        1,
+        4
+      ],
+      "CalendarDate.calendarDateFiscalWeekId": [
+        1,
+        53
+      ],
+      "CalendarDate.calendarDateFiscalWeekOfPeriodNum": [
+        1,
+        5
+      ],
+      "CalendarDate.calendarDateFiscalWeekOfQrtrNum": [
+        1,
+        14
+      ],
+      "CalendarDate.calendarDateFiscalWeekOfYearNum": [
+        1,
+        53
+      ],
+      "CalendarDate.calendarDateFiscalWeekid": [
+        1,
+        53
+      ],
+      "CalendarDate.calendarDateFiscalYearId": [
+        "current_year - 10",
+        "current_year + 1"
+      ],
+      "CalendarDate.calendarDateFiscalYearNum": [
+        "current_year - 10",
+        "current_year + 1"
+      ],
+      "CalendarDate.calendarDateLYFiscalDayOfPeriodNum": [
+        1,
+        31
+      ],
+      "CalendarDate.calendarDateLYFiscalDayOfQrtrNum": [
+        1,
+        92
+      ],
+      "CalendarDate.calendarDateLYFiscalDayOfWeekNum": [
+        1,
+        7
+      ],
+      "CalendarDate.calendarDateLYFiscalDayOfYearNum": [
+        1,
+        366
+      ],
+      "CalendarDate.calendarDateLYFiscalPeriodOfQrtrNum": [
+        1,
+        3
+      ],
+      "CalendarDate.calendarDateLYFiscalPeriodOfYearNum": [
+        1,
+        12
+      ],
+      "CalendarDate.calendarDateLYFiscalQrtrOfYearNum": [
+        1,
+        4
+      ],
+      "CalendarDate.calendarDateLYFiscalWeekOfPeriodNum": [
+        1,
+        5
+      ],
+      "CalendarDate.calendarDateLYFiscalWeekOfQrtrNum": [
+        1,
+        14
+      ],
+      "CalendarDate.calendarDateLYFiscalWeekOfYearNum": [
+        1,
+        53
+      ],
+      "CalendarDate.calendarDateLYFiscalYearNum": [
+        "current_year - 11",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateMonthId": [
+        1,
+        12
+      ],
+      "CalendarDate.calendarDateMonthOfYearNum": [
+        1,
+        12
+      ],
+      "CalendarDate.calendarDateQrtrId": [
+        1,
+        4
+      ],
+      "CalendarDate.calendarDateQrtrOfYearNum": [
+        1,
+        4
+      ],
+      "CalendarDate.calendarDateWeekId": [
+        1,
+        53
+      ],
+      "CalendarDate.calendarDateWeekOfYearNum": [
+        1,
+        53
+      ],
+      "CalendarDate.calendarDateYearId": [
+        "current_year - 10",
+        "current_year + 1"
+      ],
+      "CalendarDate.calendarDateYearNum": [
+        "current_year - 10",
+        "current_year + 1"
+      ],
+      "CampaignInteraction.campaignInteractionDevicePlatformID": [
+        1,
+        10000
+      ],
+      "CampaignInteraction.campaignInteractionElementID": [
+        1,
+        10000
+      ],
+      "CampaignInteraction.campaignInteractionEngagementTypeID": [
+        1,
+        10000
+      ],
+      "CampaignInteraction.campaignInteractionInteractionSequenceInCampaign": [
+        1,
+        20
+      ],
+      "CampaignInteraction.campaignInteractionOfferIDPresented": [
+        1,
+        10000
+      ],
+      "CampaignInteraction.campaignInteractionTargetAudienceSegmentID": [
+        1,
+        10000
+      ],
+      "CartInteraction.cartInteractionEventChannelID": [
+        1,
+        10000
+      ],
+      "CartInteraction.cartInteractionEventCustomerID": [
+        1,
+        10000
+      ],
+      "CartInteraction.cartInteractionEventID": [
+        1,
+        100000
+      ],
+      "CartInteraction.cartInteractionEventItemCountInCartAfter": [
+        0,
+        50
+      ],
+      "CartInteraction.cartInteractionEventItemCountInCartBefore": [
+        0,
+        50
+      ],
+      "CartInteraction.cartInteractionEventNewQuantityInCart": [
+        0,
+        20
+      ],
+      "CartInteraction.cartInteractionEventProductID": [
+        1,
+        10000
+      ],
+      "CartInteraction.cartInteractionEventQuantityChanged": [
+        -20,
+        20
+      ],
+      "CartInteraction.cartInteractionEventRelatedRecommendationID": [
+        1,
+        10000
+      ],
+      "CartInteraction.cartInteractionEventSourceOfChangeID": [
+        1,
+        10000
+      ],
+      "CartInteraction.cartInteractionEventTypeID": [
+        1,
+        10000
+      ],
+      "CartInteraction.cartInteractionEventUniqueItemCountInCartAfter": [
+        0,
+        30
+      ],
+      "CartInteraction.cartInteractionEventUniqueItemCountInCartBefore": [
+        0,
+        30
+      ],
+      "CheckoutProcess.checkOutProcessCartID": [
+        1,
+        10000
+      ],
+      "CheckoutProcess.checkOutProcessCustomerID": [
+        1,
+        10000
+      ],
+      "CheckoutProcess.checkOutProcessID": [
+        1,
+        1000000
+      ],
+      "CheckoutProcess.checkOutProcessLastCompletedStepID": [
+        0,
+        10
+      ],
+      "CheckoutProcess.checkOutProcessSelectedPaymentMethodTypeID": [
+        1,
+        100000
+      ],
+      "CheckoutProcess.checkOutProcessSelectedShippingMethodID": [
+        1,
+        100000
+      ],
+      "Competitor.competitorAverageCustomerReviewVolume": [
+        100,
+        100000
+      ],
+      "Competitor.competitorAverageDeliveryTimeDays": [
+        1,
+        14
+      ],
+      "Competitor.competitorEmployeeCount": [
+        50,
+        50000
+      ],
+      "Competitor.competitorProductAssortmentBreadth": [
+        100,
+        50000
+      ],
+      "Competitor.competitorReturnPeriodDays": [
+        7,
+        90
+      ],
+      "Competitor.competitorSocialMediaFollowerCount": [
+        1000,
+        10000000
+      ],
+      "Competitor.competitorStoreCount": [
+        0,
+        5000
+      ],
+      "CostCenter.costCenterHeadcount": [
+        1,
+        500
+      ],
+      "Customer.customerFamilySize": [
+        1,
+        6
+      ],
+      "CustomerBrowsing.customerBrowsingLastViewedProductID": [
+        1,
+        100000
+      ],
+      "CustomerBrowsing.customerBrowsingProductViewsCount": [
+        1,
+        200
+      ],
+      "CustomerBrowsing.customerBrowsingWishlistAdditionFromBrowsingCount": [
+        0,
+        10
+      ],
+      "CustomerDelivery.customerDeliveryCarrierID": [
+        1,
+        100000
+      ],
+      "CustomerDelivery.customerDeliveryCustomerID": [
+        1,
+        100000
+      ],
+      "CustomerDelivery.customerDeliveryDeliveryAttemptCount": [
+        1,
+        5
+      ],
+      "CustomerDelivery.customerDeliveryDeliveryStatusID": [
+        1,
+        100000
+      ],
+      "CustomerDelivery.customerDeliveryFailureReasonID": [
+        1,
+        100000
+      ],
+      "CustomerDelivery.customerDeliveryNumberOfPackages": [
+        1,
+        10
+      ],
+      "CustomerDelivery.customerDeliverySalesOrderID": [
+        1,
+        100000
+      ],
+      "CustomerDelivery.customerDeliveryShippingAddressID": [
+        1,
+        100000
+      ],
+      "CustomerExperience.customerExperienceCESScore": [
+        1,
+        5
+      ],
+      "CustomerExperience.customerExperienceCSATScore": [
+        1,
+        5
+      ],
+      "CustomerExperience.customerExperienceChannelID": [
+        1,
+        100000
+      ],
+      "CustomerExperience.customerExperienceCustomerID": [
+        1,
+        100000
+      ],
+      "CustomerExperience.customerExperienceFeedbackTextID": [
+        1,
+        100000
+      ],
+      "CustomerExperience.customerExperienceID": [
+        1,
+        10000000
+      ],
+      "CustomerExperience.customerExperienceIssueTypeID": [
+        1,
+        100000
+      ],
+      "CustomerExperience.customerExperienceJourneyStageID": [
+        1,
+        100000
+      ],
+      "CustomerExperience.customerExperienceNPSScore": [
+        -80,
+        80
+      ],
+      "CustomerExperience.customerExperienceResolutionStatusID": [
+        1,
+        100000
+      ],
+      "CustomerExperience.customerExperienceReviewRating": [
+        1,
+        5
+      ],
+      "CustomerExperience.customerExperienceSurveyID": [
+        1,
+        100000
+      ],
+      "CustomerFeedback.customerFeedbackCustomerID": [
+        1,
+        100000
+      ],
+      "CustomerFeedback.customerFeedbackID": [
+        1,
+        10000000
+      ],
+      "CustomerFeedback.customerFeedbackRatingScore": [
+        1,
+        5
+      ],
+      "CustomerFeedback.customerFeedbackSourceChannelID": [
+        1,
+        100000
+      ],
+      "CustomerFitnessProfile.customerFitnessProfileAverageActivityDurationMinutes": [
+        15,
+        240
+      ],
+      "CustomerFitnessProfile.customerFitnessProfilePreferredWorkoutIntensityScale": [
+        1,
+        10
+      ],
+      "CustomerHousehold.customerHouseholdMatchingFamilyApparelSetsPurchasedLast12M": [
+        0,
+        20
+      ],
+      "CustomerInteraction.customerInteractionAgentID": [
+        1,
+        100000
+      ],
+      "CustomerInteraction.customerInteractionAssociatedCampaignID": [
+        1,
+        100000
+      ],
+      "CustomerInteraction.customerInteractionChannelID": [
+        1,
+        100000
+      ],
+      "CustomerInteraction.customerInteractionCustomerID": [
+        1,
+        100000
+      ],
+      "CustomerInteraction.customerInteractionDurationSeconds": [
+        5,
+        3600
+      ],
+      "CustomerInteraction.customerInteractionID": [
+        1,
+        100000000
+      ],
+      "CustomerInteraction.customerInteractionInitiatorID": [
+        1,
+        100000
+      ],
+      "CustomerInteraction.customerInteractionJourneyStageID": [
+        1,
+        100000
+      ],
+      "CustomerInteraction.customerInteractionOutcomeID": [
+        1,
+        100000
+      ],
+      "CustomerInteraction.customerInteractionResponseTimeSeconds": [
+        0,
+        86400
+      ],
+      "CustomerInteraction.customerInteractionSentimentScoreID": [
+        1,
+        100000
+      ],
+      "CustomerInteraction.customerInteractionSpecificEventID": [
+        1,
+        100000
+      ],
+      "CustomerInteraction.customerInteractionTypeID": [
+        1,
+        100000
+      ],
+      "CustomerProfile.Number Of Channels Used In Period": [
+        1,
+        5
+      ],
+      "CustomerSearchInteraction.customerSearchInteractionPreviousQueryID": [
+        1,
+        100000
+      ],
+      "CustomerSearchInteraction.customerSearchInteractionResultsCount": [
+        0,
+        1000
+      ],
+      "CustomerSearchInteraction.customerSearchInteractionSortOptionID": [
+        1,
+        100000
+      ],
+      "CustomerSearchInteraction.customerSearchInteractionTimeToFirstClickSeconds": [
+        0,
+        300
+      ],
+      "CustomerSeasonalSummary.seasonalInteractionCount": [
+        0,
+        100
+      ],
+      "CustomerSeasonalSummary.seasonalTransactionCount": [
+        0,
+        20
+      ],
+      "CustomerWebSession.customerWebSessionBrowserID": [
+        1,
+        100000
+      ],
+      "CustomerWebSession.customerWebSessionCartInteractionCount": [
+        0,
+        50
+      ],
+      "CustomerWebSession.customerWebSessionCustomerID": [
+        1,
+        100000
+      ],
+      "CustomerWebSession.customerWebSessionDeviceTypeID": [
+        1,
+        100000
+      ],
+      "CustomerWebSession.customerWebSessionDurationSeconds": [
+        1,
+        7200
+      ],
+      "CustomerWebSession.customerWebSessionOperatingSystemID": [
+        1,
+        100000
+      ],
+      "CustomerWebSession.customerWebSessionPageViewsCount": [
+        1,
+        200
+      ],
+      "CustomerWebSession.customerWebSessionUniquePageViewsCount": [
+        1,
+        100
+      ],
+      "DivisionORGroup.divisionORGroupManagedFashionBrandCount": [
+        1,
+        50
+      ],
+      "ForecastHorizon.forecastHorizonInWeeks": [
+        1,
+        52
+      ],
+      "GoodsReceivedEvent.goodsReceivedEventQuantityDiscrepancyUnits": [
+        -1000,
+        1000
+      ],
+      "GoodsReceivedEvent.goodsReceivedEventTotalQuantityExpectedUnits": [
+        1,
+        10000
+      ],
+      "GoodsReceivedEvent.goodsReceivedEventTotalQuantityReceivedUnits": [
+        0,
+        10000
+      ],
+      "GoodsReceivedEvent.goodsReceivedEventUniqueProductsExpectedCount": [
+        1,
+        500
+      ],
+      "GoodsReceivedEvent.goodsReceivedEventUniqueProductsReceivedCount": [
+        0,
+        500
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventInvoiceNumber": [
+        100000,
+        99999999
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventLineItemCount": [
+        1,
+        200
+      ],
+      "ItemInductionEvent.itemInductionEventInitialOrderQuantityUnits": [
+        100,
+        100000
+      ],
+      "ItemInductionEvent.itemInductionEventInitialStorePlacementCount": [
+        1,
+        500
+      ],
+      "ItemInductionEvent.itemInductionEventProjectedFirstMonthSalesUnits": [
+        50,
+        20000
+      ],
+      "ItemInductionEvent.itemInductionEventSetupTimeDays": [
+        7,
+        180
+      ],
+      "MultichannelCustomerSegment.Secondary Channel Count": [
+        0,
+        4
       ],
       "MultichannelCustomerSegment.maxChannelsUsed": [
         1,
@@ -13,61 +677,309 @@
         1,
         5
       ],
-      "MultichannelCustomerSegment.secondaryChannelCount": [
-        0,
-        4
-      ],
-      "ForecastHorizon.forecastHorizonWeeks": [
+      "Order.orderQuantity": [
         1,
-        52
-      ],
-      "CustomerSeasonalSummary.seasonalInteractionCount": [
-        0,
         100
       ],
-      "CustomerSeasonalSummary.seasonalTransactionCount": [
+      "OrderLine.orderLineQuantity": [
+        1,
+        20
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyBusinessUnitAffiliationID": [
+        1,
+        100000
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyDirectSubordinatesCount": [
         0,
         50
       ],
-      "Customer.customerFamilySize": [
+      "OrganizationalHierarchy.organizationalHierarchyLevelDepthIndicator": [
         1,
-        6
+        10
       ],
-      "PaymentTerm.paymentDueDays": [
-        0,
-        90
-      ],
-      "ProductChannelPerformance.numberOfTransactionsInvolvingProduct": [
-        0,
-        10000
-      ],
-      "ProductChannelPerformance.numberOfUniqueCustomersPurchasing": [
-        0,
-        5000
-      ],
-      "ProductChannelPerformance.rankByValue": [
+      "OrganizationalHierarchy.organizationalHierarchyNodeUniversalID": [
         1,
-        5000
+        1000000
       ],
-      "ProductChannelPerformance.rankByVolume": [
+      "OrganizationalHierarchy.organizationalHierarchyParentNodeRefID": [
         1,
-        5000
+        100000
       ],
-      "CustomerProfile.numberOfChannelsUsedInPeriod": [
+      "OrganizationalHierarchy.organizationalHierarchyPrimaryFunctionDescriptionID": [
+        1,
+        100000
+      ],
+      "POApprovedEvent.pOApprovedEventApprovalLevel": [
         1,
         5
       ],
-      "SalesBasket.basketSize": [
-        1,
-        25
+      "POApprovedEvent.pOApprovedEventApprovalWorkflowDurationSeconds": [
+        60,
+        864000
       ],
-      "Week.weekNumber": [
-        1,
-        53
+      "POApprovedEvent.pOApprovedEventTotalQuantityApprovedUnits": [
+        10,
+        100000
       ],
-      "StoreTrafficRecord.trafficCount": [
+      "POApprovedEvent.pOApprovedEventUniqueProductCountApproved": [
+        1,
+        500
+      ],
+      "POIssuedEvent.pOIssuedEventAttachmentCount": [
+        0,
+        10
+      ],
+      "POIssuedEvent.pOIssuedEventIssuanceLagFromApprovalSeconds": [
+        0,
+        86400
+      ],
+      "POIssuedEvent.pOIssuedEventTotalQuantityIssuedUnits": [
+        10,
+        100000
+      ],
+      "POIssuedEvent.pOIssuedEventUniqueProductCountIssued": [
+        1,
+        500
+      ],
+      "PaymentTerms.Payment Due Days": [
+        0,
+        120
+      ],
+      "PersonalizedRecommendation.personalizedRecommendationAlgorithmID": [
+        1,
+        100000
+      ],
+      "PersonalizedRecommendation.personalizedRecommendationDisplayContextID": [
+        1,
+        100000
+      ],
+      "PersonalizedRecommendation.personalizedRecommendationFeedbackExplicit": [
+        -1,
+        1
+      ],
+      "PersonalizedRecommendation.personalizedRecommendationItemAddedToCartProductID": [
+        1,
+        100000
+      ],
+      "PersonalizedRecommendation.personalizedRecommendationItemClickedProductID": [
+        1,
+        100000
+      ],
+      "PersonalizedRecommendation.personalizedRecommendationItemPurchasedProductID": [
+        1,
+        100000
+      ],
+      "PersonalizedRecommendation.personalizedRecommendationRankOfClickedItem": [
+        1,
+        50
+      ],
+      "PlanningMarket.planningMarketCustomerCount": [
+        1000,
+        10000000
+      ],
+      "PlanningMarket.planningMarketCustomerDensity": [
+        10,
+        5000
+      ],
+      "PlanningMarket.planningMarketHouseholdCount": [
+        500,
+        5000000
+      ],
+      "PlanningMarket.planningMarketStoreCount": [
+        0,
+        1000
+      ],
+      "PlanningMarket.planningMarketTotalPopulation": [
+        2000,
+        20000000
+      ],
+      "PlanningReactionEvent.planningReactionEventDurationOfEffectDays": [
+        1,
+        90
+      ],
+      "PlanningReactionEvent.planningReactionEventLagTimeHours": [
+        1,
+        168
+      ],
+      "ProductChannelPerformance.Number Of Transactions Involving Product": [
         0,
         10000
+      ],
+      "ProductChannelPerformance.Number Of Unique Customers Purchasing": [
+        0,
+        8000
+      ],
+      "ProductChannelPerformance.Rank By Value": [
+        1,
+        100000
+      ],
+      "ProductChannelPerformance.Rank By Volume": [
+        1,
+        100000
+      ],
+      "ProductChannelPerformance.prodChnlPerfDaysOfSupply": [
+        0,
+        365
+      ],
+      "ProductChannelPerformance.prodChnlPerfInventoryTurnoverRate": [
+        0,
+        15
+      ],
+      "ProductChannelPerformance.prodChnlPerfPageViewsOrFootfall": [
+        0,
+        100000
+      ],
+      "ProductChannelPerformance.prodChnlPerfSalesVolumeUnits": [
+        0,
+        50000
+      ],
+      "ProductChannelPerformance.prodChnlPerfStockoutFrequency": [
+        0,
+        100
+      ],
+      "ProductInquiry.productInquiryAnswerTextID": [
+        1,
+        100000
+      ],
+      "ProductInquiry.productInquiryProductID": [
+        1,
+        100000
+      ],
+      "ProductInquiry.productInquiryQuestionTextID": [
+        1,
+        100000
+      ],
+      "ProductInquiry.productInquiryTypeDetailID": [
+        1,
+        100000
+      ],
+      "ProductInquiry.productInquiryUrgencyLevel": [
+        1,
+        5
+      ],
+      "ProductPack.productPackNumberOfUniqueApparelSKUs": [
+        2,
+        20
+      ],
+      "ProductPack.productPackPackagingSustainabilityRating": [
+        1,
+        5
+      ],
+      "ProductPack.productPackTotalIndividualApparelItemCount": [
+        2,
+        50
+      ],
+      "ProductPack.productPackUnitsSoldCurrentSeason": [
+        0,
+        5000
+      ],
+      "PurchaseOrder.purchaseOrderAgreedLeadTimeVarianceToleranceDays": [
+        0,
+        30
+      ],
+      "PurchaseOrder.purchaseOrderDistinctColorwayCount": [
+        1,
+        50
+      ],
+      "PurchaseOrder.purchaseOrderSpecializedTrimComponentCount": [
+        0,
+        30
+      ],
+      "PurchaseOrderLine.purchaseOrderLineNegotiatedMOQVarianceUnits": [
+        0,
+        1000
+      ],
+      "Receipt.receiptItemsFromNewArrivalsCount": [
+        0,
+        10
+      ],
+      "Receipt.receiptReturnEligibilityWindowDaysApparel": [
+        7,
+        90
+      ],
+      "Receipt.receiptTotalApparelItemCount": [
+        1,
+        50
+      ],
+      "ReceiptLine.receiptLineWarrantyPeriodMonthsApparelItem": [
+        0,
+        24
+      ],
+      "Receiving.receivingASNtoActualGarmentCountOverallDiscrepancy": [
+        -100,
+        100
+      ],
+      "Receiving.receivingTotalApparelCartonsProcessed": [
+        1,
+        1000
+      ],
+      "ReceivingLine.receivingLineASNvsActualQuantityVariance": [
+        -20,
+        20
+      ],
+      "ReceivingLine.receivingLineFabricDefectTypeCodeCount": [
+        0,
+        10
+      ],
+      "ReturnOrder.returnQuantity": [
+        1,
+        50
+      ],
+      "SalesBasket.basketSize": [
+        1,
+        50
+      ],
+      "SalesBasket.salesBasketItemCount": [
+        1,
+        50
+      ],
+      "SalesBasket.salesBasketItemsPerCategoryCount": [
+        1,
+        20
+      ],
+      "SalesBasket.salesBasketPromotionAppliedCount": [
+        0,
+        10
+      ],
+      "SalesBasket.salesBasketTransactionDurationSeconds": [
+        10,
+        1800
+      ],
+      "SalesBasket.salesBasketUniqueItemCount": [
+        1,
+        30
+      ],
+      "SearchTerm.searchTermAppliedSortOrderID": [
+        1,
+        100000
+      ],
+      "SearchTerm.searchTermPageNumberOfResultsViewed": [
+        1,
+        10
+      ],
+      "SearchTerm.searchTermResultsCountGenerated": [
+        0,
+        1000
+      ],
+      "SearchTerm.searchTermSessionSearchInstanceCount": [
+        1,
+        20
+      ],
+      "Sentiment Score.sentimentScoreSourceTextID": [
+        1,
+        100000
+      ],
+      "StoreTrafficRecord.Traffic Count": [
+        0,
+        10000
+      ],
+      "Supplier.supplierBannerSupplierNbr": [
+        1000,
+        99999
+      ],
+      "Week.Week Number": [
+        1,
+        53
       ]
     },
     "float": {
@@ -75,93 +987,1389 @@
         0.0,
         1000.0
       ],
-      "ReorderPoint.reorderPointQty": [
+      "AllocationPlan.assortedPlannedSalesVolume": [
+        100.0,
+        100000.0
+      ],
+      "AllocationPlan.assortmentPlannedInventory": [
+        100.0,
+        50000.0
+      ],
+      "Assortment.assortmentPlannedInventory": [
+        100.0,
+        50000.0
+      ],
+      "Budget.budgetAmount": [
+        1000.0,
+        10000000.0
+      ],
+      "Buyer.buyerAdherenceToEthicalSourcingGuidelinesScore": [
+        0.0,
+        100.0
+      ],
+      "Buyer.buyerAuthorizedApprovalThresholdAmount": [
+        1000.0,
+        500000.0
+      ],
+      "Buyer.buyerAveragePOProcessingTimeDays": [
+        1.0,
+        30.0
+      ],
+      "Buyer.buyerIndividualNegotiatedSavingsYTD": [
+        0.0,
+        100000.0
+      ],
+      "Buyer.buyerIndividualSpendLimitAmount": [
+        5000.0,
+        1000000.0
+      ],
+      "Buyer.buyerLastPerformanceScore": [
+        50.0,
+        100.0
+      ],
+      "Buyer.buyerPeerCollaborationRating": [
+        1.0,
+        5.0
+      ],
+      "Buyer.buyerSupplierVisitFrequencyPerQuarter": [
+        0.0,
+        5.0
+      ],
+      "Buyer.buyerWorkloadCapacityUtilizationPercentage": [
+        50.0,
+        120.0
+      ],
+      "Buyer.buyerYearsInCurrentRole": [
+        0.5,
+        15.0
+      ],
+      "BuyerGroup.buyerGroupAchievedMarginPercentage": [
         10.0,
-        200.0
+        70.0
       ],
-      "MultichannelCustomerSegment.avgSpendMultiplierVsSingleChannel": [
-        1.1,
-        3.0
+      "BuyerGroup.buyerGroupAnnualProcurementBudget": [
+        100000.0,
+        50000000.0
       ],
-      "MultichannelCustomerSegment.crossChannelJourneyFrequency": [
-        0.1,
-        10.0
+      "BuyerGroup.buyerGroupAverageLeadTimeDays": [
+        15.0,
+        180.0
       ],
-      "Product.productPrice": [
-        4.99,
-        399.99
+      "BuyerGroup.buyerGroupCollaborationToolUsageScore": [
+        0.0,
+        100.0
       ],
-      "Product.productWeight": [
-        0.05,
-        2.5
+      "BuyerGroup.buyerGroupCurrentOpenToBuyAmount": [
+        0.0,
+        10000000.0
       ],
-      "SafetyStock.safetyStockQty": [
-        5.0,
-        150.0
+      "BuyerGroup.buyerGroupInventoryTurnoverRate": [
+        1.0,
+        12.0
       ],
-      "InvoiceReceivedEvent.invoiceAmount": [
-        10.0,
+      "BuyerGroup.buyerGroupNegotiationSuccessRatePercentage": [
+        50.0,
+        100.0
+      ],
+      "BuyerGroup.buyerGroupPromotionalSpendAllocated": [
+        10000.0,
+        1000000.0
+      ],
+      "BuyerGroup.buyerGroupTargetMarginPercentage": [
+        20.0,
+        70.0
+      ],
+      "BuyingEvent.buyingEventDiscountAmountReceived": [
+        0.0,
+        50000.0
+      ],
+      "BuyingEvent.buyingEventInvoiceAmount": [
+        100.0,
+        1000000.0
+      ],
+      "BuyingEvent.buyingEventShippingCost": [
+        50.0,
         10000.0
       ],
-      "PricingThreshold.thresholdAmount": [
+      "BuyingEvent.buyingEventTaxAmount": [
+        0.0,
+        100000.0
+      ],
+      "BuyingEvent.buyingEventTotalOrderValue": [
+        100.0,
+        2000000.0
+      ],
+      "BuyingOffice.buyingOfficeAveragePurchaseOrderValue": [
+        5000.0,
+        500000.0
+      ],
+      "BuyingOffice.buyingOfficeContractComplianceRatePercentage": [
+        70.0,
+        100.0
+      ],
+      "BuyingOffice.buyingOfficeCostSavingsAchievedAmount": [
+        10000.0,
+        5000000.0
+      ],
+      "BuyingOffice.buyingOfficeEmergencyPurchaseRatePercentage": [
+        0.0,
+        20.0
+      ],
+      "BuyingOffice.buyingOfficeOnTimeDeliveryRatePercentage": [
+        60.0,
+        100.0
+      ],
+      "BuyingOffice.buyingOfficeOperatingExpenseAmount": [
+        50000.0,
+        2000000.0
+      ],
+      "BuyingOffice.buyingOfficeSupplierPerformanceScoreAverage": [
+        60.0,
+        100.0
+      ],
+      "BuyingOffice.buyingOfficeSustainabilityScoreOfSourcing": [
+        0.0,
+        100.0
+      ],
+      "BuyingOffice.buyingOfficeTotalBudgetAmount": [
+        1000000.0,
+        100000000.0
+      ],
+      "BuyingOffice.buyingOfficeTotalSpendAmount": [
+        500000.0,
+        90000000.0
+      ],
+      "CallCenterChannel.callCenterChnlAbandonmentRatePercent": [
+        0.0,
+        30.0
+      ],
+      "CallCenterChannel.callCenterChnlAfterCallWorkTimeSeconds": [
+        30.0,
+        600.0
+      ],
+      "CallCenterChannel.callCenterChnlAgentOccupancyRatePercent": [
+        60.0,
+        95.0
+      ],
+      "CallCenterChannel.callCenterChnlAverageHandleTimeSeconds": [
+        120.0,
+        1200.0
+      ],
+      "CallCenterChannel.callCenterChnlAverageOrderValue": [
         20.0,
         500.0
       ],
-      "CustomerSeasonalSummary.totalSeasonalSpend": [
+      "CallCenterChannel.callCenterChnlAverageWaitTimeSeconds": [
         10.0,
+        300.0
+      ],
+      "CallCenterChannel.callCenterChnlCallRecordingCount": [
+        1000.0,
+        100000.0
+      ],
+      "CallCenterChannel.callCenterChnlCallsPerAgentPerHour": [
+        2.0,
+        15.0
+      ],
+      "CallCenterChannel.callCenterChnlComplaintVolume": [
+        0.0,
+        500.0
+      ],
+      "CallCenterChannel.callCenterChnlCostPerCall": [
+        1.0,
+        20.0
+      ],
+      "CallCenterChannel.callCenterChnlCustomerSatisfactionScore": [
+        60.0,
+        100.0
+      ],
+      "CallCenterChannel.callCenterChnlFirstCallResolutionRatePercent": [
+        50.0,
+        95.0
+      ],
+      "CallCenterChannel.callCenterChnlNetPromoterScore": [
+        -80.0,
+        80.0
+      ],
+      "CallCenterChannel.callCenterChnlOutboundCallsMade": [
+        0.0,
+        20000.0
+      ],
+      "CallCenterChannel.callCenterChnlSalesConversionRatePercent": [
+        1.0,
+        25.0
+      ],
+      "CallCenterChannel.callCenterChnlServiceLevelPercent": [
+        70.0,
+        99.0
+      ],
+      "CallCenterChannel.callCenterChnlTotalCallsAnswered": [
+        1000.0,
+        500000.0
+      ],
+      "CallCenterChannel.callCenterChnlTotalCallsReceived": [
+        1100.0,
+        600000.0
+      ],
+      "CallCenterChannel.callCenterChnlTotalSalesRevenue": [
+        10000.0,
+        10000000.0
+      ],
+      "CallCenterChannel.callCenterChnlTransferRatePercent": [
+        0.0,
+        20.0
+      ],
+      "CampaignInteraction.campaignInteractionConversionValueFromElement": [
+        0.0,
+        1000.0
+      ],
+      "CampaignInteraction.campaignInteractionCostPerEngagementAmount": [
+        0.01,
+        5.0
+      ],
+      "CartInteraction.cartInteractionEventCartTotalValueAfter": [
+        0.0,
         1500.0
+      ],
+      "CartInteraction.cartInteractionEventCartTotalValueBefore": [
+        0.0,
+        1500.0
+      ],
+      "CartInteraction.cartInteractionEventItemPriceAtInteraction": [
+        0.99,
+        599.99
+      ],
+      "CheckoutProcess.checkOutProcessEstimatedTaxAmount": [
+        0.0,
+        100.0
+      ],
+      "CheckoutProcess.checkOutProcessFinalOrderTotalValue": [
+        5.0,
+        2000.0
+      ],
+      "CheckoutProcess.checkOutProcessShippingCostAmount": [
+        0.0,
+        50.0
+      ],
+      "CheckoutProcess.checkOutProcessTotalValueAtStart": [
+        5.0,
+        2000.0
+      ],
+      "Competitor.competitorAdvertisingSpendEstimate": [
+        10000.0,
+        10000000.0
+      ],
+      "Competitor.competitorLoyaltyProgramValue": [
+        0.0,
+        100.0
+      ],
+      "Competitor.competitorMarketSharePercentage": [
+        0.1,
+        50.0
+      ],
+      "Competitor.competitorNewProductIntroductionRate": [
+        1.0,
+        100.0
+      ],
+      "Competitor.competitorPriceMatchGuaranteeInstances": [
+        0.0,
+        1000.0
+      ],
+      "Competitor.competitorProductPrice": [
+        5.0,
+        600.0
+      ],
+      "Competitor.competitorProductRating": [
+        1.0,
+        5.0
+      ],
+      "Competitor.competitorProductStockAvailabilityPercentage": [
+        50.0,
+        99.0
+      ],
+      "Competitor.competitorPromotionDiscountPercentage": [
+        5.0,
+        70.0
+      ],
+      "Competitor.competitorShippingCost": [
+        0.0,
+        25.0
+      ],
+      "Competitor.competitorWebsiteTrafficVolume": [
+        10000.0,
+        100000000.0
+      ],
+      "CompetitorPrice.competitorPriceAmount": [
+        4.99,
+        599.99
       ],
       "Cost.costAmount": [
         0.5,
         200.0
       ],
-      "SellThroughRate.sellThroughRate": [
-        0.05,
-        0.95
+      "CostCenter.budgetLimit": [
+        10000.0,
+        10000000.0
+      ],
+      "CostCenter.costCenterActualSpendAmount": [
+        5000.0,
+        9000000.0
+      ],
+      "CostCenter.costCenterBudgetedAmount": [
+        10000.0,
+        10000000.0
+      ],
+      "CostCenter.costCenterControllableCostAmount": [
+        1000.0,
+        5000000.0
+      ],
+      "CostCenter.costCenterDepreciationExpense": [
+        0.0,
+        1000000.0
+      ],
+      "CostCenter.costCenterDirectLaborCost": [
+        1000.0,
+        2000000.0
+      ],
+      "CostCenter.costCenterFixedCostAmount": [
+        500.0,
+        1000000.0
+      ],
+      "CostCenter.costCenterIndirectLaborCost": [
+        500.0,
+        1000000.0
+      ],
+      "CostCenter.costCenterMaintenanceRepairCost": [
+        0.0,
+        200000.0
+      ],
+      "CostCenter.costCenterMarketingExpenseAllocated": [
+        0.0,
+        1000000.0
+      ],
+      "CostCenter.costCenterOccupancyCost": [
+        0.0,
+        500000.0
+      ],
+      "CostCenter.costCenterSuppliesCost": [
+        100.0,
+        50000.0
+      ],
+      "CostCenter.costCenterTechnologyServiceCost": [
+        0.0,
+        300000.0
+      ],
+      "CostCenter.costCenterTrainingDevelopmentCost": [
+        0.0,
+        100000.0
+      ],
+      "CostCenter.costCenterTravelExpense": [
+        0.0,
+        150000.0
+      ],
+      "CostCenter.costCenterUtilitiesExpense": [
+        0.0,
+        100000.0
+      ],
+      "CostCenter.costCenterVarianceAmount": [
+        -500000.0,
+        500000.0
+      ],
+      "CostCenter.costCenterVariancePercentage": [
+        -50.0,
+        50.0
       ],
       "Customer.customerAccuracy": [
         0.5,
         1.0
-      ],      
-      "ForecastVarianceEvent.forecastMissAmount": [
-        -200.0,
-        200.0
       ],
-      "PurchaseOrderLine.purchaseOrderLinePrice": [
-        2.0,
-        150.0
-      ],
-      "PurchaseOrderLine.purchaseOrderLineQuantity": [
-        1.0,
-        1000.0
-      ],
-      "ForecastVariance.forecastVariancePct": [
-        -0.8,
-        0.8
-      ],
-      "ForecastVariance.varianceAmount": [
-        -1000.0,
-        1000.0
-      ],
-      "PaymentTerm.earlyPayDiscountPct": [
+      "Customer.customerApparelReturnRateFitRelatedPercentage": [
         0.0,
-        5.0
+        50.0
       ],
-      "OpenToBuy.openToBuyAmount": [
-        1000.0,
-        2000000.0
+      "Customer.customerAverageApparelSpendPerSeason": [
+        50.0,
+        2000.0
       ],
-      "MerchandisingPerformance.merchandisingPerformanceScore": [
+      "Customer.customerFashionTrendAdoptionLagDays": [
+        0.0,
+        365.0
+      ],
+      "Customer.customerLuxuryVsFastFashionPurchaseRatio": [
         0.0,
         1.0
       ],
-      "Spend.amount": [
-        10.0,
+      "Customer.customerSizeBracketConsistencyScore": [
+        0.0,
+        1.0
+      ],
+      "Customer.customerSustainableFashionPreferenceLevel": [
+        0.0,
+        1.0
+      ],
+      "Customer.customerVirtualTryOnEngagementScore": [
+        0.0,
+        1.0
+      ],
+      "CustomerBrowsing.customerBrowsingAverageProductViewDepth": [
+        1.0,
+        20.0
+      ],
+      "CustomerDelivery.customerDeliveryPackageVolumeCubicMeters": [
+        0.001,
+        0.5
+      ],
+      "CustomerDelivery.customerDeliveryPackageWeightKilograms": [
+        0.1,
+        20.0
+      ],
+      "CustomerDelivery.customerDeliveryPromisedDeliveryWindowHours": [
+        1.0,
+        24.0
+      ],
+      "CustomerDelivery.customerDeliveryShippingCostActual": [
+        0.0,
+        75.0
+      ],
+      "CustomerDelivery.customerDeliveryShippingFeeCharged": [
+        0.0,
+        75.0
+      ],
+      "CustomerExperience.customerExperienceLoyaltyImpactScore": [
+        -1.0,
+        1.0
+      ],
+      "CustomerExperience.customerExperienceSentimentScore": [
+        -1.0,
+        1.0
+      ],
+      "CustomerExperience.customerExperienceTimeToResolutionHours": [
+        0.1,
+        168.0
+      ],
+      "CustomerFeedback.customerFeedbackSentimentScoreCalculated": [
+        -1.0,
+        1.0
+      ],
+      "CustomerFitnessProfile.customerFitnessProfileActiveYearsInPrimarySport": [
+        0.5,
+        30.0
+      ],
+      "CustomerFitnessProfile.customerFitnessProfileActivityFrequencyPerWeek": [
+        0.0,
+        14.0
+      ],
+      "CustomerFitnessProfile.customerFitnessProfileAnnualActivewearExpenditureEstimate": [
+        50.0,
+        3000.0
+      ],
+      "CustomerFitnessProfile.customerFitnessProfilePerformanceTargetMetricValue": [
+        0.0,
         1000.0
+      ],
+      "CustomerHousehold.customerHouseholdAnnualExpenditureOnUniformsApparel": [
+        0.0,
+        5000.0
+      ],
+      "CustomerHousehold.customerHouseholdApparelTakeBackProgramParticipationRate": [
+        0.0,
+        1.0
+      ],
+      "CustomerHousehold.customerHouseholdAvgApparelItemsPurchasedPerMemberAnnually": [
+        1.0,
+        100.0
+      ],
+      "CustomerHousehold.customerHouseholdTotalAnnualApparelSpendEstimate": [
+        100.0,
+        20000.0
+      ],
+      "CustomerInteraction.customerInteractionCostToServeAmount": [
+        0.0,
+        50.0
+      ],
+      "CustomerInteraction.customerInteractionValueToRetailerScore": [
+        -100.0,
+        1000.0
+      ],
+      "CustomerPersonalityType.customerPersonalityTypeBrandLoyaltyIndexApparel": [
+        0.0,
+        1.0
+      ],
+      "CustomerPersonalityType.customerPersonalityTypeFashionInfluencerSusceptibilityScore": [
+        0.0,
+        1.0
+      ],
+      "CustomerPersonalityType.customerPersonalityTypeFashionRiskTakingScore": [
+        0.0,
+        1.0
+      ],
+      "CustomerPersonalityType.customerPersonalityTypeMinimalismVsMaximalismStyleScore": [
+        -1.0,
+        1.0
+      ],
+      "CustomerPersonalityType.customerPersonalityTypeSelfExpressionThroughFashionScore": [
+        0.0,
+        1.0
+      ],
+      "CustomerPersonalityType.customerPersonalityTypeSustainabilityFocusApparelScore": [
+        0.0,
+        1.0
+      ],
+      "CustomerPersonalityType.customerPersonalityTypeValueSeekerApparelScore": [
+        0.0,
+        1.0
+      ],
+      "CustomerPersonalityType.customerPersonalityTypeVintageSecondHandApparelPreferenceScore": [
+        0.0,
+        1.0
+      ],
+      "CustomerSeasonalSummary.totalSeasonalSpend": [
+        0.0,
+        5000.0
+      ],
+      "DivisionORGroup.divisionORGroupAverageApparelProductDevelopmentCycleDays": [
+        30.0,
+        365.0
+      ],
+      "DivisionORGroup.divisionORGroupAverageGrossMarginPercentageApparel": [
+        20.0,
+        80.0
+      ],
+      "DivisionORGroup.divisionORGroupAverageReturnRatePercentageApparel": [
+        5.0,
+        40.0
+      ],
+      "DivisionORGroup.divisionORGroupInventoryTurnoverRateApparel": [
+        1.0,
+        12.0
+      ],
+      "DivisionORGroup.divisionORGroupOnlineSalesContributionPercentageApparel": [
+        10.0,
+        90.0
+      ],
+      "DivisionORGroup.divisionORGroupPrivateLabelApparelSharePercentage": [
+        0.0,
+        100.0
+      ],
+      "DivisionORGroup.divisionORGroupSeasonalCollectionLaunchSuccessRate": [
+        0.5,
+        1.0
+      ],
+      "DivisionORGroup.divisionORGroupSustainableApparelProductRatio": [
+        0.0,
+        1.0
+      ],
+      "DivisionORGroup.divisionORGroupTotalAnnualSalesRevenueApparel": [
+        1000000.0,
+        1000000000.0
+      ],
+      "FinancialPlanVariance.financialPlanVariance(%)": [
+        -50.0,
+        50.0
+      ],
+      "Forecast.forecastQuantity": [
+        0.0,
+        10000.0
+      ],
+      "ForecastAccuracy.forecastAccuracy%": [
+        0.0,
+        100.0
+      ],
+      "ForecastVariance.Variance Amount": [
+        -10000.0,
+        10000.0
+      ],
+      "ForecastVariance.forecastVariancePct": [
+        -100.0,
+        100.0
+      ],
+      "GoodsReceivedEvent.expectedQuantity": [
+        1.0,
+        10000.0
+      ],
+      "GoodsReceivedEvent.receivingDelayinDays": [
+        0.0,
+        30.0
+      ],
+      "GoodsReceivedEvent.receivingReceivedQuantity": [
+        0.0,
+        10000.0
+      ],
+      "Invoice.invoiceAmount": [
+        10.0,
+        1000000.0
+      ],
+      "InvoiceReceivedEvent.invoiceAmount": [
+        10.0,
+        1000000.0
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventOtherChargesAmount": [
+        0.0,
+        1000.0
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventShippingChargeAmount": [
+        0.0,
+        5000.0
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventSubtotalAmount": [
+        10.0,
+        900000.0
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventTaxAmount": [
+        0.0,
+        100000.0
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventTotalAmount": [
+        10.0,
+        1000000.0
+      ],
+      "ItemInductionEvent.itemInductionEventInitialMarkdownBudgetAmount": [
+        0.0,
+        50000.0
+      ],
+      "ItemInductionEvent.itemInductionEventInitialStockingCost": [
+        100.0,
+        200000.0
+      ],
+      "ItemInductionEvent.itemInductionEventListingFeeAmount": [
+        0.0,
+        10000.0
+      ],
+      "ItemInductionEvent.itemInductionEventMarketingSupportBudgetAmount": [
+        1000.0,
+        500000.0
+      ],
+      "ItemInductionEvent.itemInductionEventProjectedFirstMonthRevenue": [
+        1000.0,
+        1000000.0
       ],
       "LeadTime.leadTimeDays": [
         1.0,
+        180.0
+      ],
+      "MarkdownPlan.markdownPercent": [
+        5.0,
+        80.0
+      ],
+      "MobileAppChannel.mobileAppChnlActiveUserCount": [
+        1000.0,
+        1000000.0
+      ],
+      "MobileAppChannel.mobileAppChnlAppRatingAverage": [
+        1.0,
+        5.0
+      ],
+      "MobileAppChannel.mobileAppChnlAverageLoadTimeSeconds": [
+        0.5,
+        10.0
+      ],
+      "MobileAppChannel.mobileAppChnlAverageOrderValue": [
+        20.0,
+        500.0
+      ],
+      "MobileAppChannel.mobileAppChnlCartAbandonmentRatePercent": [
+        10.0,
+        80.0
+      ],
+      "MobileAppChannel.mobileAppChnlChurnRatePercent": [
+        1.0,
+        50.0
+      ],
+      "MobileAppChannel.mobileAppChnlConversionRatePercent": [
+        0.5,
+        15.0
+      ],
+      "MobileAppChannel.mobileAppChnlCrashRatePercent": [
+        0.0,
+        5.0
+      ],
+      "MobileAppChannel.mobileAppChnlFeatureUsageCount": [
+        100.0,
+        1000000.0
+      ],
+      "MobileAppChannel.mobileAppChnlInAppPurchaseCount": [
+        0.0,
+        100000.0
+      ],
+      "MobileAppChannel.mobileAppChnlLoyaltyProgramEngagementRate": [
+        0.0,
+        1.0
+      ],
+      "MobileAppChannel.mobileAppChnlNewUserAcquisitionRate": [
+        10.0,
+        5000.0
+      ],
+      "MobileAppChannel.mobileAppChnlPushNotificationOpenRatePercent": [
+        1.0,
+        40.0
+      ],
+      "MobileAppChannel.mobileAppChnlSalesRevenue": [
+        10000.0,
+        50000000.0
+      ],
+      "MobileAppChannel.mobileAppChnlScreenViewsPerSession": [
+        1.0,
+        50.0
+      ],
+      "MobileAppChannel.mobileAppChnlSessionDurationSeconds": [
+        30.0,
+        3600.0
+      ],
+      "MobileAppChannel.mobileAppChnlSessionsPerUser": [
+        1.0,
+        30.0
+      ],
+      "MobileAppChannel.mobileAppChnlTotalDownloads": [
+        5000.0,
+        10000000.0
+      ],
+      "MobileAppChannel.mobileAppChnlUserFeedbackVolume": [
+        10.0,
+        10000.0
+      ],
+      "MobileAppChannel.mobileAppChnlUserRetentionRatePercent": [
+        10.0,
         90.0
+      ],
+      "MultichannelCustomerSegment.avgSpendMultiplierVsSingleChannel": [
+        1.0,
+        5.0
+      ],
+      "MultichannelCustomerSegment.crossChannelJourneyFrequency": [
+        0.0,
+        10.0
+      ],
+      "OnlineChannel.onlineChnlAverageOrderValue": [
+        20.0,
+        600.0
+      ],
+      "OnlineChannel.onlineChnlAveragePageLoadTimeSeconds": [
+        0.5,
+        8.0
+      ],
+      "OnlineChannel.onlineChnlAverageSessionDurationSeconds": [
+        30.0,
+        3600.0
+      ],
+      "OnlineChannel.onlineChnlBounceRatePercent": [
+        20.0,
+        80.0
+      ],
+      "OnlineChannel.onlineChnlCartAbandonmentRatePercent": [
+        30.0,
+        85.0
+      ],
+      "OnlineChannel.onlineChnlCheckoutCompletionRatePercent": [
+        10.0,
+        70.0
+      ],
+      "OnlineChannel.onlineChnlClickThroughRatePercent": [
+        0.1,
+        10.0
+      ],
+      "OnlineChannel.onlineChnlConversionRatePercent": [
+        0.5,
+        10.0
+      ],
+      "OnlineChannel.onlineChnlCustomerAcquisitionCost": [
+        5.0,
+        200.0
+      ],
+      "OnlineChannel.onlineChnlEmailSubscriptionRatePercent": [
+        0.1,
+        15.0
+      ],
+      "OnlineChannel.onlineChnlLiveChatEngagementRatePercent": [
+        0.0,
+        20.0
+      ],
+      "OnlineChannel.onlineChnlNewVsReturningVisitorRatio": [
+        0.1,
+        10.0
+      ],
+      "OnlineChannel.onlineChnlPageViews": [
+        1000.0,
+        10000000.0
+      ],
+      "OnlineChannel.onlineChnlProductViewsPerSession": [
+        1.0,
+        30.0
+      ],
+      "OnlineChannel.onlineChnlSalesRevenue": [
+        50000.0,
+        100000000.0
+      ],
+      "OnlineChannel.onlineChnlSearchUsageFrequency": [
+        0.05,
+        0.8
+      ],
+      "OnlineChannel.onlineChnlTotalSessions": [
+        500.0,
+        5000000.0
+      ],
+      "OnlineChannel.onlineChnlTrafficSourceVolume": [
+        100.0,
+        1000000.0
+      ],
+      "OnlineChannel.onlineChnlUniqueVisitorCount": [
+        300.0,
+        3000000.0
+      ],
+      "OnlineChannel.onlineChnlWishlistAdditionCount": [
+        100.0,
+        200000.0
+      ],
+      "OpenToBuy.Open to Buy Amount": [
+        0.0,
+        5000000.0
+      ],
+      "Order.orderAmount": [
+        5.0,
+        2500.0
+      ],
+      "Order.orderQuantity": [
+        1.0,
+        100.0
+      ],
+      "OrderLine.orderLineAmount": [
+        2.99,
+        1000.0
+      ],
+      "OrderLine.orderLineQuantity": [
+        1.0,
+        20.0
+      ],
+      "OrderLine.productPrice": [
+        2.99,
+        599.99
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyAvgTimeToMarketNewApparelProductDays": [
+        30.0,
+        365.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyCircularEconomyContributionIndex": [
+        0.0,
+        1.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyCollectionLaunchTimelinessAdherencePercentage": [
+        50.0,
+        100.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyDesignerCollaborationSuccessRatePercentage": [
+        50.0,
+        100.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyDigitalFashionToolAdoptionRate": [
+        0.0,
+        1.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyEthicalManufacturingAuditComplianceScore": [
+        0.0,
+        100.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyFashionTrendAdoptionCycleTimeDays": [
+        15.0,
+        180.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyInfluencerCampaignROIPercentageApparel": [
+        -50.0,
+        500.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyManagedApparelSKUDiversityScore": [
+        0.0,
+        1.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchySustainableMaterialUsagePercentage": [
+        0.0,
+        100.0
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyTotalPersonnelCount": [
+        0.0,
+        1000.0
+      ],
+      "POApprovedEvent.pOApprovedEventTotalOrderValueApproved": [
+        100.0,
+        2000000.0
+      ],
+      "POIssuedEvent.pOIssuedEventTotalOrderValueIssued": [
+        100.0,
+        2000000.0
+      ],
+      "PageVisit.Scroll Depth": [
+        0.0,
+        1.0
+      ],
+      "PageVisit.timeOnPage": [
+        1.0,
+        1800.0
+      ],
+      "PaymentTerms.earlyPaymentDiscountPercentage": [
+        0.0,
+        5.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlAverageTransactionValue": [
+        10.0,
+        500.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlClickAndCollectOrderVolume": [
+        0.0,
+        1000.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlConversionRatePercent": [
+        5.0,
+        60.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlCustomerDwellTimeMinutes": [
+        1.0,
+        120.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlFootTrafficCount": [
+        50.0,
+        10000.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlInventoryTurnoverRate": [
+        1.0,
+        12.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlLoyaltyMemberTransactionPercent": [
+        5.0,
+        70.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlOperatingCostAmount": [
+        5000.0,
+        500000.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlProfitAmount": [
+        -50000.0,
+        1000000.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlPromotionalSalesLiftPercent": [
+        0.0,
+        300.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlQueueWaitTimeSeconds": [
+        10.0,
+        900.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlReturnRatePercent": [
+        1.0,
+        30.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlSalesPerSquareFoot": [
+        50.0,
+        2000.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlSalesRevenue": [
+        10000.0,
+        5000000.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlSalesTransactionCount": [
+        100.0,
+        20000.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlSameStoreSalesGrowthPercent": [
+        -20.0,
+        50.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlStaffToCustomerRatio": [
+        0.01,
+        0.2
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlStockoutRatePercent": [
+        0.0,
+        25.0
+      ],
+      "PhysicalStoreChannel.physicalStoreChnlUnitsPerTransaction": [
+        1.0,
+        10.0
+      ],
+      "PlanningMarket.planningMarketAverageCustomerSpend": [
+        100.0,
+        5000.0
+      ],
+      "PlanningMarket.planningMarketAverageHouseholdIncome": [
+        30000.0,
+        250000.0
+      ],
+      "PlanningMarket.planningMarketAverageTransactionValue": [
+        20.0,
+        300.0
+      ],
+      "PlanningMarket.planningMarketCategorySalesIndex": [
+        50.0,
+        200.0
+      ],
+      "PlanningMarket.planningMarketGrowthRatePercentage": [
+        -5.0,
+        15.0
+      ],
+      "PlanningMarket.planningMarketMedianAge": [
+        20.0,
+        60.0
+      ],
+      "PlanningMarket.planningMarketOnlineSalesPenetrationPercentage": [
+        5.0,
+        80.0
+      ],
+      "PlanningMarket.planningMarketRetailerMarketSharePercentage": [
+        0.1,
+        70.0
+      ],
+      "PlanningMarket.planningMarketRetailerSalesVolume": [
+        100000.0,
+        100000000.0
+      ],
+      "PlanningMarket.planningMarketSalesPerSqFoot": [
+        100.0,
+        3000.0
+      ],
+      "PlanningMarket.planningMarketSameStoreSalesGrowthPercentage": [
+        -15.0,
+        25.0
+      ],
+      "PlanningMarket.planningMarketTotalRetailSalesVolume": [
+        1000000.0,
+        5000000000.0
+      ],
+      "PlanningMarket.planningMarketUnemploymentRate": [
+        1.0,
+        15.0
+      ],
+      "PlanningReactionEvent.Reaction Impact Score": [
+        0.0,
+        100.0
+      ],
+      "PlanningReactionEvent.planningReactionEventActualImpactValue": [
+        -100000.0,
+        100000.0
+      ],
+      "PlanningReactionEvent.planningReactionEventCostOfReactionAmount": [
+        0.0,
+        500000.0
+      ],
+      "PlanningReactionEvent.planningReactionEventExpectedImpactValue": [
+        -100000.0,
+        100000.0
+      ],
+      "PlanningReactionEvent.planningReactionEventMagnitudeOfChangeNumeric": [
+        -1.0,
+        1.0
+      ],
+      "Price.basePrice": [
+        4.99,
+        799.99
+      ],
+      "PriceChange.New Price": [
+        4.5,
+        750.0
+      ],
+      "PricingThreshold.Pricing Threshold Amount": [
+        10.0,
+        500.0
+      ],
+      "Product.productPrice": [
+        4.99,
+        799.99
+      ],
+      "Product.productWeight": [
+        0.05,
+        5.0
+      ],
+      "ProductChannelPerformance.Total Quantity Sold": [
+        0.0,
+        50000.0
+      ],
+      "ProductChannelPerformance.Total Value Sold": [
+        0.0,
+        1000000.0
+      ],
+      "ProductChannelPerformance.averageSellingPrice": [
+        4.99,
+        799.99
+      ],
+      "ProductChannelPerformance.channelSpecificInventoryTurn": [
+        0.5,
+        15.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfAbandonedCartRateWithProduct": [
+        0.0,
+        1.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfAverageOrderValueWithProduct": [
+        10.0,
+        1000.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfAverageSellingPrice": [
+        4.99,
+        799.99
+      ],
+      "ProductChannelPerformance.prodChnlPerfCLVChannelProduct": [
+        0.0,
+        5000.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfChannelShareOfProductSales": [
+        0.0,
+        1.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfClickThroughRate": [
+        0.0,
+        0.2
+      ],
+      "ProductChannelPerformance.prodChnlPerfConversionRate": [
+        0.0,
+        0.15
+      ],
+      "ProductChannelPerformance.prodChnlPerfCustomerAcquisitionCost": [
+        0.0,
+        100.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfCustomerRatingChannelSpecific": [
+        1.0,
+        5.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfProfitMarginPercentage": [
+        -20.0,
+        80.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfPromotionalLiftPercentage": [
+        0.0,
+        500.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfReturnRatePercentage": [
+        0.0,
+        60.0
+      ],
+      "ProductChannelPerformance.prodChnlPerfSalesRevenueAmount": [
+        0.0,
+        2000000.0
+      ],
+      "ProductPack.productPackAggregateRetailValueIfSoldSeparately": [
+        19.99,
+        999.99
+      ],
+      "ProductPack.productPackAverageCostPerContainedApparelItem": [
+        5.0,
+        150.0
+      ],
+      "ProductPack.productPackAverageCustomerReviewScore": [
+        1.0,
+        5.0
+      ],
+      "ProductPack.productPackEffectiveBundleDiscountPercentage": [
+        5.0,
+        40.0
+      ],
+      "ProductPack.productPackOnlineConversionRateViewsToPurchase": [
+        0.005,
+        0.15
+      ],
+      "ProductPack.productPackOverallReturnRatePercentage": [
+        2.0,
+        50.0
+      ],
+      "Promotion.discountPercentage": [
+        5.0,
+        80.0
+      ],
+      "PromotionalPrice.promotionalPrice": [
+        3.99,
+        699.99
+      ],
+      "PurchaseOrder.purchaseOrderApplicableRoyaltyFeeRateApparel": [
+        0.0,
+        0.15
+      ],
+      "PurchaseOrder.purchaseOrderAverageGarmentCMTCost": [
+        2.0,
+        100.0
+      ],
+      "PurchaseOrder.purchaseOrderInitialPrototypeDevelopmentCostAssociated": [
+        0.0,
+        20000.0
+      ],
+      "PurchaseOrder.purchaseOrderOriginalQuotedCurrencyExchangeRate": [
+        0.5,
+        1.5
+      ],
+      "PurchaseOrder.purchaseOrderPreBookCommitmentPercentage": [
+        0.0,
+        100.0
+      ],
+      "PurchaseOrder.purchaseOrderSizeCurveComplexityScore": [
+        1.0,
+        10.0
+      ],
+      "PurchaseOrder.purchaseOrderSustainableMaterialPercentageTarget": [
+        0.0,
+        100.0
+      ],
+      "PurchaseOrder.purchaseOrderTotalAmount": [
+        500.0,
+        5000000.0
+      ],
+      "PurchaseOrder.purchaseOrderTotalLandedCostApparelEstimate": [
+        600.0,
+        6000000.0
+      ],
+      "PurchaseOrderLine.purchaseOrderLineApplicableDutyRatePercentage": [
+        0.0,
+        0.35
+      ],
+      "PurchaseOrderLine.purchaseOrderLineEstimatedLandedCostPerUnit": [
+        1.0,
+        300.0
+      ],
+      "PurchaseOrderLine.purchaseOrderLineFabricConsumptionPerUnitMeters": [
+        0.5,
+        5.0
+      ],
+      "PurchaseOrderLine.purchaseOrderLineGarmentWeightGrams": [
+        50.0,
+        2000.0
+      ],
+      "PurchaseOrderLine.purchaseOrderLineMaximumShrinkageTolerancePercentage": [
+        0.0,
+        0.1
+      ],
+      "PurchaseOrderLine.purchaseOrderLineNegotiatedDefectTolerancePercentage": [
+        0.0,
+        0.05
+      ],
+      "PurchaseOrderLine.purchaseOrderLinePackagedGarmentVolumeCubicCm": [
+        100.0,
+        20000.0
+      ],
+      "PurchaseOrderLine.purchaseOrderLinePrice": [
+        0.5,
+        250.0
+      ],
+      "PurchaseOrderLine.purchaseOrderLineQuantity": [
+        10.0,
+        100000.0
+      ],
+      "PurchaseOrderLine.purchaseOrderLineSpecificToolingCostAllocation": [
+        0.0,
+        5000.0
+      ],
+      "Receipt.receiptApparelSubtotalAmount": [
+        4.0,
+        2000.0
+      ],
+      "Receipt.receiptApparelToAccessoriesValueRatio": [
+        0.0,
+        10.0
+      ],
+      "Receipt.receiptAverageGarmentPriceOnReceipt": [
+        4.99,
+        300.0
+      ],
+      "Receipt.receiptLoyaltyPointsEarnedOnApparelPurchase": [
+        0.0,
+        1000.0
+      ],
+      "Receipt.receiptOutfitBundleSavingsAppliedAmount": [
+        0.0,
+        200.0
+      ],
+      "Receipt.receiptOverallApparelDiscountPercentage": [
+        0.0,
+        80.0
+      ],
+      "Receipt.receiptTaxOnApparelAmount": [
+        0.0,
+        200.0
+      ],
+      "ReceiptLine.receiptLineApparelItemSpecificTaxAmount": [
+        0.0,
+        50.0
+      ],
+      "ReceiptLine.receiptLineLoyaltyPointsRedeemedValue": [
+        0.0,
+        100.0
+      ],
+      "ReceiptLine.receiptLineOriginalPriceBeforeDiscount": [
+        4.99,
+        599.99
+      ],
+      "Receiving.receivingApparelPackagingLabelingAccuracyRate": [
+        0.8,
+        1.0
+      ],
+      "Receiving.receivingApparelQualityInspectionPassRatePercentage": [
+        70.0,
+        100.0
+      ],
+      "Receiving.receivingAverageApparelItemsPerProcessedCarton": [
+        5.0,
+        100.0
+      ],
+      "Receiving.receivingAverageProcessingTimePerApparelUnitMinutes": [
+        0.1,
+        5.0
+      ],
+      "Receiving.receivingColorShadeLotConsistencyScore": [
+        0.7,
+        1.0
+      ],
+      "Receiving.receivingDockToStockCycleTimeHoursApparelLot": [
+        1.0,
+        72.0
+      ],
+      "Receiving.receivingEthicalSourcingDocumentationOverallCompletenessScore": [
+        0.5,
+        1.0
+      ],
+      "Receiving.receivingGarmentMeasurementOverallCompliancePercentage": [
+        80.0,
+        100.0
+      ],
+      "Receiving.receivingOverallPercentageOfApparelUnitsForRTV": [
+        0.0,
+        20.0
+      ],
+      "Receiving.receivingPOtoReceiptStyleColorSizeOverallMatchRate": [
+        0.8,
+        1.0
+      ],
+      "Receiving.receivingSustainableMaterialsDeclaredVerificationRate": [
+        0.5,
+        1.0
+      ],
+      "Receiving.receivingTotalLandedCostVariancePercentageApparel": [
+        -10.0,
+        10.0
+      ],
+      "Receiving.receivingTotalValueApparelItemsFlaggedForRTV": [
+        0.0,
+        50000.0
+      ],
+      "ReceivingCorrectionCode.receivingCorrectionCode": [
+        -50.0,
+        50.0
+      ],
+      "ReceivingLine.receivingLineAppliedDutyAmountPerUnit": [
+        0.0,
+        50.0
+      ],
+      "ReceivingLine.receivingLineColorStandardMatchScore": [
+        0.5,
+        1.0
+      ],
+      "ReceivingLine.receivingLineFinalLandedCostPerUnit": [
+        1.0,
+        300.0
+      ],
+      "ReorderPoint.Reorder Point Quantity": [
+        5.0,
+        1000.0
+      ],
+      "ReturnOrder.refundAmount": [
+        2.99,
+        2000.0
+      ],
+      "SafetyStock.Safety Stock Quantity": [
+        0.0,
+        500.0
       ],
       "SalesAttribution.attributionWeight": [
         0.0,
@@ -169,305 +2377,485 @@
       ],
       "SalesAttribution.contributionScore": [
         0.0,
-        1.0
-      ],
-      "Inventory.inventoryFinalStock": [
-        0.0,
-        2000.0
-      ],
-      "Inventory.inventoryGMROI": [
-        0.5,
-        5.0
-      ],
-      "Inventory.inventoryInitialStock": [
-        0.0,
-        2500.0
-      ],
-      "Inventory.inventoryQuantity": [
-        0.0,
-        2000.0
-      ],
-      "Promotion.discountPercentage": [
-        5.0,
-        75.0
-      ],
-      "PromotionalPrice.promotionalPrice": [
-        5.0,
-        50.0
-      ],
-      "ReturnOrder.returnQuantity": [
-        1.0,
-        10.0
-      ],
-      "ReturnOrder.refundAmount": [
-        5.0,
-        50.0
-      ],
-      "InventoryLevel.inventoryQuantity": [
-        0.0,
-        1000.0
-      ],
-      "StockTurn.stockTurnRatio": [
-        0.5,
-        12.0
-      ],
-      "ProductChannelPerformance.averageSellingPrice": [
-        4.99,
-        399.99
-      ],
-      "ProductChannelPerformance.channelSpecificInventoryTurn": [
-        0.5,
-        12.0
-      ],
-      "ProductChannelPerformance.totalQuantitySold": [
-        0.0,
-        20000.0
-      ],
-      "ProductChannelPerformance.totalValueSold": [
-        0.0,
-        500000.0
-      ],
-      "PageVisit.scrollDepth": [
-        0.0,
-        1.0
-      ],
-      "PageVisit.timeOnPage": [
-        5.0,
-        600.0
-      ],
-      "Store.storeSize": [
-        100.0,
-        3000.0
-      ],
-      "Supplier.leadTimeDays": [
-        7.0,
-        120.0
-      ],
-      "Supplier.supplierPerformanceScore": [
-        0.5,
-        1.0
-      ],
-      "SellEvents.hasConversionRate": [
-        0.01,
-        0.3
-      ],
-      "OrderLine.orderLineQuantity": [
-        1.0,
-        10.0
-      ],
-      "OrderLine.productPrice": [
-        4.99,
-        399.99
-      ],
-      "SalesTransaction.hasConversionRate": [
-        0.01,
-        0.5
-      ],
-      "SalesTransaction.salesAmount": [
-        5.0,
-        400.0
-      ],
-      "SalesTransaction.salesQuantity": [
-        1.0,
-        20.0
-      ],
-      "Forecast.forecastQuantity": [
-        0.0,
-        5000.0
-      ],
-      "CustomerSearchInteraction.hasSearchConversionRate": [
-        0.005,
-        0.2
-      ],
-      "PlanogramAnalysis.planogramCompliancePct": [
-        0.6,
-        1.0
-      ],
-      "ForecastAccuracy.forecastAccuracy": [
-        0.4,
-        0.98
-      ],
-      "Price.basePrice": [
-        4.99,
-        399.99
-      ],
-      "PlanningReactionEvent.reactionImpactScore": [
-        -1.0,
-        1.0
-      ],
-      "PurchaseOrder.purchaseOrderTotalAmount": [
-        100.0,
-        100000.0
-      ],
-      "Invoice.invoiceAmount": [
-        100.0,
-        100000.0
-      ],
-      "InventoryThreshold.inventoryThresholdQty": [
-        5.0,
         100.0
       ],
       "SalesBasket.basketValue": [
-        5.0,
-        1500.0
+        2.99,
+        2500.0
       ],
-      "GrossMarginReturnOnInventory.grossMarginROI": [
+      "SalesBasket.salesBasketAverageItemPrice": [
+        2.99,
+        300.0
+      ],
+      "SalesBasket.salesBasketBasketPenetrationRatio": [
+        0.01,
+        1.0
+      ],
+      "SalesBasket.salesBasketChangeGivenAmount": [
+        0.0,
+        100.0
+      ],
+      "SalesBasket.salesBasketLoyaltyPointsEarned": [
+        0.0,
+        1000.0
+      ],
+      "SalesBasket.salesBasketLoyaltyPointsRedeemed": [
+        0.0,
+        500.0
+      ],
+      "SalesBasket.salesBasketNetSaleAmount": [
+        2.0,
+        2400.0
+      ],
+      "SalesBasket.salesBasketTaxAmount": [
+        0.0,
+        250.0
+      ],
+      "SalesBasket.salesBasketTenderAmount": [
+        2.99,
+        2600.0
+      ],
+      "SalesBasket.salesBasketTotalDiscountAmount": [
+        0.0,
+        1000.0
+      ],
+      "SalesBasket.salesBasketTotalTransactionValue": [
+        2.99,
+        2500.0
+      ],
+      "SalesTransaction.salesAmount": [
+        2.99,
+        2500.0
+      ],
+      "SalesTransaction.salesPerformanceScore": [
+        0.0,
+        100.0
+      ],
+      "SalesTransaction.salesQuantity": [
+        1.0,
+        100.0
+      ],
+      "SalesTransactionLine.salesTransactionLineAmount": [
+        2.99,
+        1000.0
+      ],
+      "SalesTransactionLine.salesTransactionLineQuantity": [
+        1.0,
+        20.0
+      ],
+      "SellThroughRate.Sell Through Rate": [
+        0.0,
+        100.0
+      ],
+      "Sentiment Score.sentimentScoreConfidenceLevel": [
         0.5,
+        1.0
+      ],
+      "Sentiment Score.sentimentScorePolarityValue": [
+        -1.0,
+        1.0
+      ],
+      "Sentiment Score.sentimentScoreSubjectivityValue": [
+        0.0,
+        1.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlAdSpendEffectivenessRatio": [
+        0.5,
+        10.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlAverageOrderValue": [
+        15.0,
+        400.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlClickThroughRateToProductPagePercent": [
+        0.1,
+        15.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlCommentsPerProductPost": [
+        0.0,
+        1000.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlConversionRateFromSocialPostPercent": [
+        0.01,
         5.0
       ],
-      "SearchInteraction.hasSearchConversionRate": [
-        0.005,
-        0.2
-      ],
-      "CompetitorAnalysis.competitorPerformanceScore": [
+      "SocialCommerceChannel.socialCommerceChnlDirectMessageQueriesForPurchase": [
         0.0,
-        1.0
+        500.0
       ],
-      "Budget.budgetAmount": [
-        5000.0,
-        5000000.0
+      "SocialCommerceChannel.socialCommerceChnlEngagementRatePercent": [
+        0.1,
+        20.0
       ],
-      "FinancialPlanVariance.financialPlanVariancePct": [
-        -0.3,
-        0.3
+      "SocialCommerceChannel.socialCommerceChnlFollowerOrSubscriberCount": [
+        100.0,
+        10000000.0
       ],
-      "GoodsReceivedEvent.expectedQuantity": [
+      "SocialCommerceChannel.socialCommerceChnlInfluencerCollaborationCount": [
+        0.0,
+        100.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlLiveShoppingConversionRatePercent": [
+        0.1,
+        10.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlLiveShoppingViewerCount": [
         10.0,
-        5000.0
+        50000.0
       ],
-      "GoodsReceivedEvent.receivedQuantity": [
-        0.0,
-        5000.0
-      ],
-      "GoodsReceivedEvent.receivingDelayDays": [
-        0.0,
-        21.0
-      ],
-      "SupplierEntity.supplierPerformanceScore": [
-        0.5,
-        1.0
-      ],
-      "CustomerBehaviorAnalysis.hasSearchConversionRate": [
-        0.005,
-        0.2
-      ],
-      "CampaignPerformance.campaignPerformanceScore": [
-        0.0,
-        1.0
-      ],
-      "CostCenter.budgetLimit": [
-        10000.0,
+      "SocialCommerceChannel.socialCommerceChnlReachPerPost": [
+        50.0,
         1000000.0
       ],
-      "CompetitorPrice.competitorPriceAmount": [
-        3.99,
-        379.99
-      ],
-      "MarkdownPlan.markdownPercent": [
+      "SocialCommerceChannel.socialCommerceChnlReferralTrafficToWebsite": [
         10.0,
-        80.0
+        100000.0
       ],
-      "SubstitutionEvent.priceDifferenceApplied": [
+      "SocialCommerceChannel.socialCommerceChnlRevenuePerInfluencer": [
+        0.0,
+        50000.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlSalesRevenue": [
+        1000.0,
+        10000000.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlSavedOrWishlistedItemsCount": [
+        0.0,
+        50000.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlSharesOrRepostsPerProduct": [
+        0.0,
+        500.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlTimeToPurchaseFromFirstInteractionDays": [
+        0.1,
+        90.0
+      ],
+      "SocialCommerceChannel.socialCommerceChnlUserGeneratedContentCount": [
+        0.0,
+        10000.0
+      ],
+      "Spend.Spend Amount": [
+        100.0,
+        1000000.0
+      ],
+      "StockTurn.Stock Turn Ratio": [
+        0.5,
+        12.0
+      ],
+      "Store.storeSize": [
+        100.0,
+        10000.0
+      ],
+      "StoreDailyInventory.storeDailyInventory": [
+        0.0,
+        5000.0
+      ],
+      "StoreDailyInventory.storeDailyInventoryDailyShrinkQuantity": [
+        0.0,
+        50.0
+      ],
+      "StoreDailyInventory.storeDailyInventoryNetReceivedQuantity": [
+        0.0,
+        1000.0
+      ],
+      "StoreDailyInventory.storeInventoryDailyFinalStock": [
+        0.0,
+        5000.0
+      ],
+      "StoreDailyInventory.storeInventoryDailyInitialStock": [
+        0.0,
+        5000.0
+      ],
+      "StoreDailyInventory.storeInventoryDailySalesAdjustment": [
+        -1000.0,
+        0.0
+      ],
+      "StoreTrafficRecord.comparisonToPeriod": [
+        -1.0,
+        1.0
+      ],
+      "StoreWeeklyInventory.storeInventoryWeeklyFinalStock": [
+        0.0,
+        10000.0
+      ],
+      "StoreWeeklyInventory.storeInventoryWeeklyInitialStock": [
+        0.0,
+        10000.0
+      ],
+      "StoreWeeklyInventory.storeInventoryWeeklySalesAdjustment": [
+        -5000.0,
+        0.0
+      ],
+      "StoreWeeklyInventory.storeWeeklyInventory": [
+        0.0,
+        10000.0
+      ],
+      "StoreWeeklyInventory.storeWeeklyInventoryNetReceivedQuantity": [
+        0.0,
+        5000.0
+      ],
+      "StoreWeeklyInventory.storeWeeklyInventoryWeeklyShrinkQuantity": [
+        0.0,
+        200.0
+      ],
+      "SubstitutionEvent.Price Difference Applied": [
         -50.0,
         50.0
       ],
-      "SubstitutionEvent.quantitySubstituted": [
+      "SubstitutionEvent.Quantity Substituted": [
         1.0,
-        10.0
+        20.0
       ],
-      "PriceChange.newPrice": [
-        4.99,
-        399.99
+      "Supplier.leadTimeDays": [
+        7.0,
+        180.0
+      ],
+      "Supplier.supplierPerformanceScore": [
+        0.0,
+        100.0
       ],
       "SupplierCostChange.supplerCostSavingsID": [
-        10.0,
-        5000.0
+        0.0,
+        100000.0
       ],
-      "StoreTrafficRecord.comparisonToPeriod": [
-        -0.5,
-        0.5
+      "SupplierEntity.supplierPerformanceScore": [
+        0.0,
+        100.0
       ],
-      "CompetitorPriceComparison.priceDifference": [
-        -150.0,
-        150.0
+      "WarehouseDailyInventory.warehouseDailyInventory": [
+        0.0,
+        100000.0
       ],
-      "CustomerSearchEvent.hasSearchConversionRate": [
-        0.005,
-        0.2
+      "WarehouseDailyInventory.warehouseDailyInventoryDailyNetReceivedQuantity": [
+        0.0,
+        20000.0
       ],
-      "PromotionAnalysis.hasConversionRate": [
-        0.005,
-        0.4
+      "WarehouseDailyInventory.warehouseDailyInventoryDailyShrinkQuantity": [
+        0.0,
+        500.0
+      ],
+      "WarehouseDailyInventory.warehouseInventoryDailyFinalStock": [
+        0.0,
+        100000.0
+      ],
+      "WarehouseDailyInventory.warehouseInventoryDailyInitialStock": [
+        0.0,
+        100000.0
+      ],
+      "WarehouseDailyInventory.warehouseInventoryDailySalesAdjustment": [
+        -20000.0,
+        0.0
+      ],
+      "WarehouseInventory.warehouseInventoryInitialStock": [
+        0.0,
+        200000.0
+      ],
+      "WarehouseInventory.warehouseInventoryLevel": [
+        0.0,
+        200000.0
+      ],
+      "WarehouseInventory.warehouseInventoryQuality": [
+        0.0,
+        1.0
+      ],
+      "WarehouseInventory.warehouseInventoryThresholdQuantity": [
+        100.0,
+        10000.0
+      ],
+      "WarehouseWeeklyInventory.warehouseInventoryWeeklyFinalStock": [
+        0.0,
+        250000.0
+      ],
+      "WarehouseWeeklyInventory.warehouseInventoryWeeklyInitialStock": [
+        0.0,
+        250000.0
+      ],
+      "WarehouseWeeklyInventory.warehouseInventoryWeeklySalesAdjustment": [
+        -100000.0,
+        0.0
+      ],
+      "WarehouseWeeklyInventory.warehouseWeeklyInventory": [
+        0.0,
+        250000.0
+      ],
+      "WarehouseWeeklyInventory.warehouseWeeklyInventoryWeeklyNetReceivedQuantity": [
+        0.0,
+        100000.0
+      ],
+      "WarehouseWeeklyInventory.warehouseWeeklyInventoryWeeklyShrinkQuantity": [
+        0.0,
+        1000.0
       ]
     },
     "date": {
       "default": [
-        "-3Y",
-        "NOW"
-      ],
-      "MultichannelCustomerSegment.segmentEntryDate": [
-        "-5Y",
-        "NOW"
-      ],
-      "CustomerDelivery.deliveryDate": [
-        "-3Y",
-        "NOW"
-      ],
-      "Order.orderDate": [
-        "-3Y",
+        "2020-01-01",
         "NOW"
       ],
       "Assortment.assortmentDate": [
         "-2Y",
-        "+6M"
-      ],
-      "Promotion.promotionEndDate": [
-        "-1Y",
-        "+6M"
-      ],
-      "Promotion.promotionStartDate": [
-        "-1Y",
-        "+3M"
-      ],
-      "EffectivePeriod.priceEndDate": [
-        "-2Y",
-        "+1Y"
-      ],
-      "ReturnOrder.returnDate": [
-        "-1Y",
         "NOW"
-      ],
-      "ProductChannelPerformance.summaryPeriodEndDate": [
-        "-1Y",
-        "NOW"
-      ],
-      "ProductChannelPerformance.summaryPeriodStartDate": [
-        "-2Y",
-        "-1M"
-      ],
-      "TimePeriodType.periodEndDate": [
-        "-3Y",
-        "+1Y"
-      ],
-      "TimePeriodType.periodStartDate": [
-        "-3Y",
-        "+1Y"
-      ],
-      "CustomerProfile.customerAcquisitionDate": [
-        "-10Y",
-        "NOW"
-      ],
-      "Forecast.forecastPeriodEnd": [
-        "-6M",
-        "+1Y"
-      ],
-      "Forecast.forecastPeriodStart": [
-        "-6M",
-        "+1Y"
       ],
       "AssortmentPlan.assortmentDate": [
         "-2Y",
-        "+6M"
+        "NOW"
+      ],
+      "BuyingEvent.buyingEventPaymentDueDateTimestamp": [
+        "NOW",
+        "+90D"
+      ],
+      "BuyingEvent.buyingEventPaymentMadeDateTimestamp": [
+        "-1Y",
+        "NOW"
+      ],
+      "CalendarDate.DayDate": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateDayDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateEqvlntWeekEndDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateEqvlntWeekStartDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateFiscalPeriodEndDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateFiscalPeriodStartDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateFiscalQrtrEndDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateFiscalQrtrStartDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateFiscalWeekEndDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateFiscalWeekStartDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateFiscalYearEndDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateFiscalYearStartDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateLYDayDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYEqvlntDayDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYEqvlntWeekEndDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYEqvlntWeekStartDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYFiscalPeriodEndDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYFiscalPeriodStartDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYFiscalQrtrEndDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYFiscalQrtrStartDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYFiscalWeekEndDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYFiscalWeekStartDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYFiscalYearEndDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateLYFiscalYearStartDt": [
+        "-11Y",
+        "current_year"
+      ],
+      "CalendarDate.calendarDateMonthEndDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateMonthStartDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateQuarterEndDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateQuarterStartDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateWeekEndDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateWeekStartDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateYearEndDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.calendarDateYearStartDt": [
+        "-10Y",
+        "+1Y"
+      ],
+      "CalendarDate.lYDayDate": [
+        "-11Y",
+        "current_year"
+      ],
+      "CartRule.cartRuleEndDate": [
+        "NOW",
+        "+2Y"
+      ],
+      "CartRule.cartRuleStartDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "ChannelRule.channelRuleEndDate": [
+        "NOW",
+        "+2Y"
+      ],
+      "ChannelRule.channelRuleStartDate": [
+        "-1Y",
+        "NOW"
       ],
       "Contract.contractEndDate": [
         "NOW",
@@ -477,101 +2865,217 @@
         "-5Y",
         "NOW"
       ],
-      "Week.weekEndDate": [
-        "-2Y",
-        "NOW"
-      ],
-      "Week.weekStartDate": [
-        "-2Y",
-        "NOW"
-      ],
-      "CompetitorPriceComparison.comparisonDate": [
+      "CustomerDelivery.deliveryDate": [
         "-1Y",
         "NOW"
+      ],
+      "CustomerInteractionRule.customerInteractionRuleEndDate": [
+        "NOW",
+        "+2Y"
+      ],
+      "CustomerInteractionRule.customerInteractionRuleStartDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "CustomerProfile.customerAcquisitionDate": [
+        "-10Y",
+        "NOW"
+      ],
+      "EffectivePeriod.Price End Date": [
+        "NOW",
+        "+2Y"
+      ],
+      "Forecast.forecastPeriodEnd": [
+        "NOW",
+        "+1Y"
+      ],
+      "Forecast.forecastPeriodStart": [
+        "NOW",
+        "+1D"
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventInvoiceDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventPaymentDueDate": [
+        "NOW",
+        "+90D"
+      ],
+      "ItemInductionEvent.itemInductionEventActualLaunchDate": [
+        "-1Y",
+        "+6M"
+      ],
+      "ItemInductionEvent.itemInductionEventDecisionDate": [
+        "-18M",
+        "NOW"
+      ],
+      "ItemInductionEvent.itemInductionEventPlannedLaunchDate": [
+        "-6M",
+        "+1Y"
+      ],
+      "ItemInductionEvent.itemInductionEventWarehouseReceiptDate": [
+        "-1Y",
+        "+3M"
+      ],
+      "LoyaltyRule.loyaltyRuleEndDate": [
+        "NOW",
+        "+2Y"
+      ],
+      "LoyaltyRule.loyaltyRuleStartDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "MultichannelCustomerSegment.Segment Entry Date": [
+        "-5Y",
+        "NOW"
+      ],
+      "Order.orderDate": [
+        "-5Y",
+        "NOW"
+      ],
+      "OrderRule.orderRuleEndDate": [
+        "NOW",
+        "+2Y"
+      ],
+      "OrderRule.orderRuleStartDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyEffectiveDate": [
+        "-10Y",
+        "NOW"
+      ],
+      "OrganizationalHierarchy.organizationalHierarchyValidUntilDate": [
+        "NOW",
+        "+10Y"
+      ],
+      "POApprovedEvent.pOApprovedEventExpectedDeliveryDateAtApproval": [
+        "NOW",
+        "+1Y"
+      ],
+      "POIssuedEvent.pOIssuedEventExpectedDeliveryDateConfirmedBySupplierTimestamp": [
+        "NOW",
+        "+1Y"
+      ],
+      "PaymentRule.paymentRuleEndDate": [
+        "NOW",
+        "+2Y"
+      ],
+      "PaymentRule.paymentRuleStartDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "Planogram.planogramEffectiveDate": [
+        "-2Y",
+        "NOW"
+      ],
+      "PricingRule.pricingRuleEndDate": [
+        "NOW",
+        "+2Y"
+      ],
+      "PricingRule.pricingRuleStartDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "ProductChannelPerformance.Summary Period End Date": [
+        "-1Y",
+        "NOW"
+      ],
+      "ProductChannelPerformance.Summary Period Start Date": [
+        "-2Y",
+        "-1M"
+      ],
+      "Promotion.promotionEndDate": [
+        "NOW",
+        "+1Y"
+      ],
+      "Promotion.promotionStartDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "PurchaseOrder.purchaseOrderPreProductionSampleApprovalDate": [
+        "-2Y",
+        "+6M"
+      ],
+      "ReturnOrder.returnDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "ReturnPolicy.returnPolicyEndDate": [
+        "NOW",
+        "+5Y"
+      ],
+      "ReturnPolicy.returnPolicyStartDate": [
+        "-5Y",
+        "NOW"
+      ],
+      "ShippingRule.shippingRuleEndDate": [
+        "NOW",
+        "+2Y"
+      ],
+      "ShippingRule.shippingRuleStartDate": [
+        "-1Y",
+        "NOW"
+      ],
+      "StoreDailyInventory.storeDailyInventoryDate": [
+        "-2Y",
+        "NOW"
+      ],
+      "StoreWeeklyInventory.storeWeeklyInventoryWeekDate": [
+        "-2Y",
+        "NOW"
+      ],
+      "Supplier.supplierDateUpdated": [
+        "-5Y",
+        "NOW"
+      ],
+      "SupplierClassification.supplierLastUpdateDt": [
+        "-5Y",
+        "NOW"
+      ],
+      "SupplierClassification.supplierRowLoadDt": [
+        "-5Y",
+        "NOW"
+      ],
+      "TimePeriodType.Period End Date": [
+        "-5Y",
+        "+5Y"
+      ],
+      "TimePeriodType.Period Start Date": [
+        "-5Y",
+        "+5Y"
+      ],
+      "WarehouseDailyInventory.warehouseDailyInventoryDate": [
+        "-2Y",
+        "NOW"
+      ],
+      "WarehouseWeeklyInventory.warehouseWeeklyInventoryWeekDate": [
+        "-2Y",
+        "NOW"
+      ],
+      "Week.Week End Date": [
+        "-10Y",
+        "+1Y"
+      ],
+      "Week.Week Start Date": [
+        "-10Y",
+        "+1Y"
       ]
     },
     "datetime": {
       "default": [
-        "-3Y_DATETIME",
+        "2020-01-01T00:00:00",
         "NOW_DATETIME"
       ],
-      "MultichannelCustomerSegment.lastActivityDate": [
+      "BuyingEvent.buyingEventActualDeliveryDateTimestamp": [
         "-1Y_DATETIME",
         "NOW_DATETIME"
       ],
-      "Product.discontinueDate": [
-        "-2Y_DATETIME",
-        "+2Y_DATETIME"
-      ],
-      "Product.launchDate": [
-        "-10Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "CustomerInteraction.interactionTimestamp": [
-        "-2Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "POApprovedEvent.approvalTimestamp": [
-        "-1Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "EffectivePeriod.priceStartDate": [
-        "-2Y_DATETIME",
-        "+6M_DATETIME"
-      ],
-      "POIssuedEvent.issueTimestamp": [
-        "-2Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "InventoryLevel.inventorySnapshotTimestamp": [
-        "-1Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "ProductChannelPerformance.lastSaleTimestampInChannel": [
-        "-1Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "DeliveryTerm.deliveryWindowEnd": [
-        "NOW_DATETIME",
-        "+1M_DATETIME"
-      ],
-      "DeliveryTerm.deliveryWindowStart": [
-        "NOW_DATETIME",
-        "+28D_DATETIME"
-      ],
-      "Store.storeOpeningDate": [
-        "-20Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "SalesTransaction.transactionTimestamp": [
-        "-3Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "PurchaseOrder.purchaseOrderDate": [
-        "-3Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "MarkdownPlan.markdownEndDate": [
+      "BuyingEvent.buyingEventExpectedDeliveryDateTimestamp": [
         "-1Y_DATETIME",
         "+3M_DATETIME"
       ],
-      "MarkdownPlan.markdownStartDate": [
-        "-1Y_DATETIME",
-        "+2M_DATETIME"
-      ],
-      "LegalEntity.incorporationDate": [
-        "-50Y_DATETIME",
-        "-1Y_DATETIME"
-      ],
-      "SubstitutionEvent.customerApprovalTimestamp": [
-        "-1Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "SubstitutionEvent.substitutionTimestamp": [
-        "-1Y_DATETIME",
-        "NOW_DATETIME"
-      ],
-      "PriceChange.priceChangeDate": [
+      "BuyingEvent.buyingEventOrderDateTimestamp": [
         "-2Y_DATETIME",
         "NOW_DATETIME"
       ],
@@ -579,9 +3083,189 @@
         "-2Y_DATETIME",
         "NOW_DATETIME"
       ],
-      "SupplierCostChange.costEffectiveDate": [
+      "CartInteraction.cartInteractionEventTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CheckoutProcess.checkOutProcessAbandonmentTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CheckoutProcess.checkOutProcessBillingAddressCompletionTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CheckoutProcess.checkOutProcessOrderReviewTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CheckoutProcess.checkOutProcessPaymentMethodSelectionTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CheckoutProcess.checkOutProcessShippingAddressCompletionTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CheckoutProcess.checkOutProcessStartTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CustomerDelivery.customerDeliveryActualDeliveryTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CustomerDelivery.customerDeliveryDispatchTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CustomerDelivery.customerDeliveryEstimatedDeliveryTimestamp": [
+        "-1Y_DATETIME",
+        "+1M_DATETIME"
+      ],
+      "CustomerDelivery.customerDeliveryScheduledDeliveryTimestamp": [
+        "-1Y_DATETIME",
+        "+1M_DATETIME"
+      ],
+      "CustomerExperience.customerExperienceTimestamp": [
         "-2Y_DATETIME",
-        "+6M_DATETIME"
+        "NOW_DATETIME"
+      ],
+      "CustomerFeedback.customerFeedbackTimestamp": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CustomerFitnessProfile.customerFitnessProfileLastUpdateTimestamp": [
+        "-3Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CustomerInteraction.customerInteractionEndTimestamp": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CustomerInteraction.customerInteractionStartTimestamp": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CustomerInteraction.interactionTimestamp": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CustomerWebSession.customerWebSessionEndTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "CustomerWebSession.customerWebSessionStartTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "DeliveryTerms.deliveryWindowEnd": [
+        "NOW_DATETIME",
+        "+7D_DATETIME"
+      ],
+      "DeliveryTerms.deliveryWindowStart": [
+        "NOW_DATETIME",
+        "+6D_DATETIME"
+      ],
+      "EffectivePeriod.Price Start Date": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "GoodsReceivedEvent.goodsReceivedEventActualReceiptTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "GoodsReceivedEvent.goodsReceivedEventExpectedDeliveryTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "InvoiceReceivedEvent.invoiceReceivedEventReceiptTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "LegalEntity.Incorporation Date": [
+        "-50Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "MarkdownPlan.markdownEndDate": [
+        "NOW_DATETIME",
+        "+1Y_DATETIME"
+      ],
+      "MarkdownPlan.markdownStartDate": [
+        "-6M_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "MultichannelCustomerSegment.lastActivityDate": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "POApprovedEvent.approvalTimestamp": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "POApprovedEvent.pOApprovedEventApprovalTimestamp": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "POApprovedEvent.pOApprovedEventPOTransmissionTimestamp": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "POIssuedEvent.issueTimestamp": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "POIssuedEvent.pOIssuedEventIssuanceTimestamp": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "PlanningReactionEvent.planningReactionEventDecisionTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "PlanningReactionEvent.planningReactionEventImplementationTimestamp": [
+        "-1Y_DATETIME",
+        "+3M_DATETIME"
+      ],
+      "PriceChange.Price Change Date": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "Product.productDiscontinuedDate": [
+        "NOW_DATETIME",
+        "+2Y_DATETIME"
+      ],
+      "Product.productLaunchDate": [
+        "-5Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "ProductChannelPerformance.lastSaleTimestampInChannel": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "PurchaseOrder.purchaseOrderDate": [
+        "-3Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "Receiving.receivingReceivedAt": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "SalesBasket.salesBasketTransactionHourOfDay": [
+        "-2Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "SalesTransaction.TransactionTimestamp": [
+        "-5Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "Sentiment Score.sentimentScoreAnalysisTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "Store.storeOpeningDate": [
+        "-30Y_DATETIME",
+        "NOW_DATETIME"
       ],
       "StoreTrafficRecord.trafficPeriodEndTimestamp": [
         "-1Y_DATETIME",
@@ -591,8 +3275,20 @@
         "-1Y_DATETIME",
         "NOW_DATETIME"
       ],
-      "Receiving.receivedAt": [
+      "SubstitutionEvent.Substitution Timestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "SubstitutionEvent.customerApprovalTimestamp": [
+        "-1Y_DATETIME",
+        "NOW_DATETIME"
+      ],
+      "SupplierCostChange.costEffectiveDate": [
         "-2Y_DATETIME",
+        "+1Y_DATETIME"
+      ],
+      "WarehouseInventory.warehouseInventoryLevelTimestamp": [
+        "-1Y_DATETIME",
         "NOW_DATETIME"
       ]
     }
