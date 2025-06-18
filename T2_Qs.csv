@@ -1,0 +1,217 @@
+Question ,Inference,Steps,
+Why did Platinum-tier customers reduce their basket value during winter despite overall sales growth?,"Incomplete assortment
+Reduced footfall
+Campaign effectiveness
+Loyalty points effectiveness","Assortment sales comparison for Platinum tier
+
+Compare Summer sales and Winter Sales
+Compare Product assortment with Gold/Silver Tier  Customers
+Check the responsiveness of Platinum tier customers to promotions
+RFM scores comparison of Platinum tier customer to Gold/Silver tier
+",
+Why are certain products consistently outperforming their category average even without being part of any active promotion?,"Strong Branding /Rating
+Product Placement
+Product Availability/Replenishment
+Competitive Pricing ","Category level Product reviews 
+Planogram layout analysis 
+Replenishment analysis
+
+For each product, compute sales performance (e.g., revenue or quantity sold) over a fixed time period (e.g., last 3 months).
+Calculate the average sales for each category over the same time period.
+Flag products whose sales consistently exceed their respective category average over a fixed time period .
+Filter out any products that were part of an active promotion during those time periods.
+Analyze co-purchase behavior to see if these products are frequently bought with promoted or popular items.
+Compare return rates and customer satisfaction (if available) against category averages.Check product availability and forecast accuracy for these products—ensure stock levels weren’t a limiting factor.
+Summarize potential drivers of performance: co-purchase influence, planogram layouts, segment appeal, better availability, or lower return rates.",
+"What are the hidden risks associated with my suppliers? Are there any risks that I can draw from quarterly sales, returns and supplier rating starting Q1 2023?","Supplier Rating 
+Quaterly Sales
+Leadtime Days
+Global/Local events 
+Returns and reasons
+Product Quality and Recalls ","Calculate quarterly sales by category per supplier
+Calculate quarterly return volume and return rate per supplier
+Track supplier rating (latest or quarterly if available)
+Identify suppliers with declining category sales over multiple quarters
+Highlight suppliers with declining sales, rising returns, low ratings (high risk) and analyze return reasons
+Map supplier performance against known global/local events. Identify performance dips or quality issues aligned with such events",
+Why do low-priced products still have higher product return rates across multiple stores?,"Product Quality or Fit Issues
+Customer Expectation Mismatch
+Promotion or Bundling Effects
+Store-Level Operational Issues
+Regional or Seasonal Timing Factors","Identify low-priced products with high return volumes across multiple stores
+Analyze return reasons for signs of quality, sizing, or defect issues
+Check if supplier ratings for these products are low or declining
+Identify if these products are part of bundles or co-purchased with popular or high-return items
+Check if returns are driven by the primary item in the bundle rather than the product itself
+Investigate if specific stores have significantly higher return rates for these products
+Check for post-holiday or end-of-season return spikes for these products
+Segment returners by age, gender, or loyalty tier to identify over-indexing segments
+Validate if high-return patterns repeat across stores and seasons (consistency)
+Summarize dominant reasons based on multi-dimensional correlations: product, store, customer, time",
+What factors contributed to a sharp dip in average basket size for high value customers during Q4 despite holiday promotions?,"Promotion issues 
+Seasonal spending behavior changes
+Economic factors affecting high-value customers
+Shift in product preferences
+Competition or alternative shopping options","Identify high-value customers
+Calculate average basket size in Q4
+Compare with Q3 and previous Q4
+Confirm dip magnitude
+Analyze shift in product categories purchased
+Compare product price points with previous periods
+Check for increase in order frequency per customer
+Analyze return volume and net basket value
+Identify promotions used and their structure
+Check if promos encouraged low-value orders
+Review inventory levels of preferred products
+Identify stockouts or under-forecasted items
+Analyze shift in purchase channel 
+Check for increase in gift card or non-merchandise spending
+Correlate patterns across customer, product, promo, and inventory dimensions",
+which of my store layout is successful (more sales in terms of revenue) and which factors are contributing to the success ?,"Planogram/layout optimization .
+Product placement effectiveness.
+Customer flow and navigation patterns.
+Seasonal or regional preferences .
+Impact of promotions or discounts tied to specific layouts","1. Analyze Sales by Layout:
+Compare sales revenue across different store layouts to identify the most successful ones.
+Use historical sales data segmented by layout.
+
+2. Evaluate Product Placement Effectiveness:
+Assess the impact of product placement on sales within each layout.
+Identify high-performing product zones or areas.
+
+3. Study Customer Flow and Navigation Patterns:
+Analyze customer movement data (e.g., heatmaps or foot traffic) to understand navigation patterns.
+Correlate these patterns with sales performance.
+
+4.Consider Seasonal or Regional Preferences:
+Examine sales trends for each layout during different seasons or in specific regions.
+Identify layouts that align well with seasonal or regional preferences.
+
+5.Assess Impact of Promotions or Discounts:
+Review the effectiveness of promotions or discounts tied to specific layouts.
+Determine if certain layouts amplify the impact of promotional campaigns.",
+What underlying signals of disengagement among formerly loyal customers?,"Decline in purchase frequency or basket size.
+Reduced responsiveness to promotions or loyalty programs.
+Shift in preferred product categories or brands.
+Increased returns or complaints.
+Migration to competitors or alternative channels.","Analyze Purchase Frequency and Basket Size:
+Identify formerly loyal customers.
+Compare their purchase frequency and basket size over time.
+
+Evaluate Responsiveness to Promotions:
+Review historical promotion data.
+Check engagement levels (e.g., redemption rates) among these customers.
+
+Examine Product Category Preferences:
+Identify shifts in preferred product categories or brands.
+Compare current preferences with past trends.
+
+Investigate Returns and Complaints:
+Analyze return volume and reasons for complaints.
+Correlate these with customer satisfaction metrics.
+
+Assess Migration to Competitors:
+Check for reduced spending or inactivity.
+Identify potential migration to competitors or alternative channels.",
+"Do I need to revise loyalty tier for my platinum customers based on customer churn, sales, returns and response to promotions","Loyalty tier effectiveness in retaining customers.
+Correlation between churn and sales decline.
+Impact of returns on customer satisfaction and loyalty.
+Responsiveness of platinum customers to promotions.
+Need for tier revision based on customer behavior and profitability.","Analyze Customer Churn:
+Identify churned platinum customers.
+Compare churn rates with other loyalty tiers.
+
+Evaluate Sales Trends:
+Analyze sales data for platinum customers.
+Compare sales trends with other tiers.
+
+Investigate Returns:
+Review return volume and reasons for platinum customers.
+Correlate returns with customer satisfaction metrics.
+
+Assess Promotion Effectiveness:
+Analyze responsiveness of platinum customers to promotions.
+Compare promotion effectiveness across loyalty tiers.
+
+Review Profitability and Tier Structure:
+Evaluate profitability of platinum customers.
+Assess if loyalty tier revision is needed based on customer behavior and profitability.","For the Question in Cell $A$10 and the inferences/causes identified for the same in $B$10, please come up with the steps needed to address the question. I need to copy this into $C$10"
+"How does the variability and reliability of our suppliers (in terms of lead time, quality, and order accuracy) impact our total cost and downstream margin, beyond the initial Purchase Price Variance (PPV)?
+ ","Supplier reliability impacts inventory holding costs and stockouts.
+Lead time variability affects production schedules and customer delivery timelines.
+Quality issues increase rework costs and reduce customer satisfaction.
+Order accuracy errors lead to operational inefficiencies and higher downstream costs.","Analyze Supplier Reliability:
+Evaluate supplier performance metrics such as lead time, quality, and order accuracy.
+Identify suppliers with high variability or reliability issues.
+
+Assess Inventory Holding Costs:
+Calculate the impact of supplier variability on inventory holding costs and stockouts.
+Determine the cost implications of maintaining buffer stock.
+
+Review Production Schedules:
+Analyze how lead time variability affects production schedules and customer delivery timelines.
+Identify delays and their downstream cost impact.
+
+Investigate Quality Issues:
+Quantify rework costs and customer dissatisfaction caused by quality problems.
+Correlate supplier quality issues with customer complaints or returns.
+
+Evaluate Order Accuracy:
+Assess operational inefficiencies and costs due to order inaccuracies.
+Identify patterns in errors and their financial impact.
+
+Calculate Total Cost Impact:
+Combine the effects of lead time, quality, and order accuracy variability to estimate the total cost impact beyond PPV.
+Analyze how these factors influence downstream margins.
+
+Develop Supplier Improvement Plan:
+Collaborate with suppliers to address reliability issues.
+Implement performance improvement measures and monitor progress.",
+Why certain brands are returned more in a product category even though the prices are competitive?,"Product quality issues despite competitive pricing.
+Misalignment between customer expectations and product features.
+Brand reputation or trust concerns.
+Regional or demographic preferences impacting returns.
+Marketing or promotional messaging creating mismatched expectations.
+External events like Festivals, Trends, Influencers etc. ","Identify High-Value Customers
+Segment customers based on their purchase history and value contribution.
+Calculate Average Basket Size in Q4
+Compute the average basket size for high-value customers during Q4.
+Compare with Q3 and Previous Q4
+Analyze trends by comparing Q4 basket size with Q3 and the same period in previous years.
+
+Confirm Dip Magnitude
+Quantify the extent of the dip in basket size.
+
+Analyze Shift in Product Categories Purchased
+Identify changes in product categories purchased by high-value customers.
+
+Compare Product Price Points with Previous Periods
+Evaluate if price point changes contributed to the dip.
+
+Check for Increase in Order Frequency per Customer
+Determine if customers placed more frequent but lower-value orders.
+
+Analyze Return Volume and Net Basket Value
+Assess the impact of returns on basket size and net value.
+
+Identify Promotions Used and Their Structure
+Review promotions used during Q4 and analyze if they encouraged low-value orders.
+
+Review Inventory Levels of Preferred Products
+Check for stockouts or under-forecasted items affecting basket size.
+
+Analyze Shift in Purchase Channel
+Investigate if customers shifted to alternative purchase channels.
+
+Check for Increase in Gift Card or Non-Merchandise Spending
+Evaluate if spending shifted to gift cards or non-merchandise items.
+
+Correlate Patterns Across Customer, Product, Promo, and Inventory Dimensions
+Combine insights across these dimensions to identify root causes.",
+"How to improve the current buying plan by leveraging  return data, issues raised by customers and product reviews","Quality or fit issues in products.
+Customer support tickets reveal recurring pain points with specific items.
+","Identify recurring issues from return data to refine product selection.
+Use customer feedback to address quality or fit concerns.
+Leverage product reviews to align offerings with customer expectations.
+Adjust buying plan to avoid overstocking problematic items.
+Incorporate data-driven insights to improve customer satisfaction and reduce returns.",
