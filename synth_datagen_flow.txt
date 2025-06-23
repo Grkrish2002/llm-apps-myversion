@@ -1,0 +1,65 @@
+**Neo4j Synthetic Data Generation Workflow**
+
+1. **Schema Analyzer**  
+   - Parses Neo4j schema JSON  
+   - Identifies node labels, properties, relationships, and unique IDs  
+   - Outputs a structured schema summary
+
+2. **Data Planner**  
+   - Takes schema analysis and user-specified counts (e.g., Store, Customer)  
+   - Infers realistic counts for all node types using domain logic and relationships  
+   - Outputs a node count plan
+
+3. **Value List Generator**  
+   - For each string property, generates sample value lists (e.g., names, categories)  
+   - Uses schema and count plan as context
+
+4. **Generation Rule Generator**  
+   - For non-string properties, defines value ranges or rules (e.g., price, dates)  
+   - Ensures data consistency and realism
+
+5. **Python Code Planner**  
+   - Integrates all previous outputs  
+   - Produces executable Python code to generate the synthetic data
+
+**Summary:**  
+Each agent builds on the previous step, automating schema analysis, planning, value/rule generation, and code creation for Neo4j synthetic data.
+
+Certainly! Here’s a succinct explanation for the remaining agents in your workflow, suitable for a PowerPoint slide:
+
+---
+
+**Value List Generator**  
+- Analyzes schema and node count plan  
+- Generates realistic sample lists for string properties (e.g., product names, cities)  
+- Ensures diversity and domain relevance in values
+
+**Generation Rule Generator**  
+- Examines non-string properties (numbers, dates, booleans)  
+- Defines value ranges, distributions, or logic for each property  
+- Ensures generated data is realistic and consistent with business rules
+
+**Python Code Planner**  
+- Integrates schema, counts, value lists, and rules  
+- Designs a step-by-step plan for Python code generation  
+- Ensures the final code will create data matching all specifications
+
+---
+
+**Summary:**  
+These agents automate value creation, rule definition, and code planning, ensuring the synthetic data is both realistic and ready for Neo4j import.
+
+Thank you for pointing that out! Here’s a succinct explanation for the **Python Code Generator** agent, in the same style:
+
+---
+
+**Python Code Generator**  
+- Uses the code plan, schema, value lists, and generation rules  
+- Automatically generates executable Python code  
+- Code creates synthetic data and outputs it in a format ready for Neo4j import  
+- Ensures all logic, relationships, and constraints are implemented
+
+---
+
+**Summary:**  
+The Python Code Generator is the final step, turning all previous planning and rules into working code for automated data generation.
